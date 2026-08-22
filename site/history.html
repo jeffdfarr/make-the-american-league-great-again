@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<title>MTALGA · History</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚾</text></svg>">
+
+<header class="mast">
+  <div class="wrap" style="padding-bottom:0">
+    <p class="eyebrow">Fantrax Dynasty Baseball · Est. 2020</p>
+    <h1><a href="index.html">Make the AL Great Again</a></h1>
+    <p class="sub" id="tagline">League HQ</p>
+    <nav class="main">
+      <a href="index.html" data-nav="index">Standings</a>
+      <a href="franchises.html" data-nav="franchises">Franchises</a>
+      <a href="seasons.html" data-nav="seasons">Seasons</a>
+      <a href="history.html" data-nav="history">History</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2>Champions</h2>
+  <div class="cards" id="champs"><span class="loading">Loading…</span></div>
+  <h2>All-time record book</h2>
+  <div class="cards" id="records"></div>
+  <footer></footer>
+</main>
+<script src="assets/app.js"></script>
+<script>
+document.querySelector('[data-nav="history"]').classList.add("active");
+(async () => {
+  const { standings, franchises, records, meta } = await MT.data("standings", "franchises", "records", "meta");
+  document.getElementById("tagline").textContent = "Banners and the record book";
+  const owners = Object.fromEntries(franchises.map(f => [f.owner_slug, f.owner_name]));
+
+  const champs = standings.filter(s => s.champion).sort((a, b) => b.year - a.year);
+  const runners = Object.fromEntries(standings.filter(s => s.final_app && !s.champion).map(s => [s.year, s.team_name]));
+  document.getElementById("champs").innerHTML = champs.map(c => `
+    <div class="card"><span class="c-cat">${c.year}</span><span class="c-val">${c.team_name}</span>
+    <span class="c-who">${c.owner_name} · def. ${runners[c.year] ?? "?"}</span></div>`).join("");
+
+  const fmt = r => r.category.toLowerCase().includes("pct") ? MT.pct(r.value)
+    : Math.abs(r.value) < 10 ? r.value.toFixed(3)
+    : MT.num(r.value, r.scope === "game" ? 1 : 0);
+  document.getElementById("records").innerHTML = records.map(r => `
+    <div class="card"><span class="c-val">${fmt(r)}</span><span class="c-cat">${r.category}</span>
+    <span class="c-who">${owners[r.owner_slug] ?? r.owner_slug} · ${r.year}</span></div>`).join("");
+  MT.footer(meta);
+})().catch(e => document.querySelector(".loading").textContent = "Could not load data: " + e.message);
+</script>
+
+</html>

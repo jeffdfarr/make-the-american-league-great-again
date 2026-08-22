@@ -40,3 +40,12 @@ def export_all(conn: sqlite3.Connection, out_dir: Path | None = None) -> None:
         rows = [dict(r) for r in conn.execute(sql).fetchall()]
         (out / f"{name}.json").write_text(json.dumps(rows, indent=1))
         print(f"[export] {name}.json ({len(rows)} rows)")
+
+    last = conn.execute("SELECT MAX(ran_at) AS t FROM sync_log").fetchone()
+    meta = {
+        "generated": (last["t"] or "")[:10],
+        "seasons": [r["year"] for r in conn.execute("SELECT year FROM seasons ORDER BY year")],
+        "games": conn.execute("SELECT COUNT(*)/2 AS n FROM games WHERE complete=1").fetchone()["n"],
+    }
+    (out / "meta.json").write_text(json.dumps(meta, indent=1))
+    print(f"[export] meta.json ({meta['generated']})")

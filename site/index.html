@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<title>MTALGA · Standings</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚾</text></svg>">
+
+<header class="mast">
+  <div class="wrap" style="padding-bottom:0">
+    <p class="eyebrow">Fantrax Dynasty Baseball · Est. 2020</p>
+    <h1><a href="index.html">Make the AL Great Again</a></h1>
+    <p class="sub" id="tagline">League HQ</p>
+    <nav class="main">
+      <a href="index.html" data-nav="index">Standings</a>
+      <a href="franchises.html" data-nav="franchises">Franchises</a>
+      <a href="seasons.html" data-nav="seasons">Seasons</a>
+      <a href="history.html" data-nav="history">History</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="tiles" class="tiles"></div>
+  <h2 id="season-h">Standings</h2>
+  <div class="tbl-scroll">
+    <table id="standings">
+      <thead><tr>
+        <th class="num">#</th><th class="left">Team</th>
+        <th data-key="w">W–L</th><th data-key="pf">PF</th><th data-key="pa">PA</th>
+        <th data-key="high">High</th><th data-key="exp">Exp. W–L</th>
+        <th data-key="luck">Luck</th><th data-key="opr">OPR</th>
+      </tr></thead>
+      <tbody><tr><td colspan="9" class="loading">Loading…</td></tr></tbody>
+    </table>
+  </div>
+  <p class="sub" style="margin-top:.5rem">Expected record: regression of wins on OPR over all completed full seasons. Luck = actual − expected wins. Click a column to sort.</p>
+  <footer></footer>
+</main>
+<script src="assets/app.js"></script>
+<script>
+document.querySelector('[data-nav="index"]').classList.add("active");
+(async () => {
+  const { standings, franchises, meta } = await MT.data("standings", "franchises", "meta");
+  const year = Math.max(...standings.map(s => s.year));
+  const cur = standings.filter(s => s.year === year).sort((a, b) => a.finish - b.finish);
+  const games = Math.max(...cur.map(s => s.rs_games));
+  document.getElementById("season-h").textContent = `${year} standings`;
+  document.getElementById("tagline").textContent =
+    `${year} season · through ${games} games · updated nightly`;
+
+  // tiles
+  const leader = cur[0];
+  const prevChamp = standings.find(s => s.year === year - 1 && s.champion);
+  const oprKing = [...franchises].sort((a, b) => (b.career_opr ?? 0) - (a.career_opr ?? 0))[0];
+  const lucky = [...cur].sort((a, b) => (b.luck ?? 0) - (a.luck ?? 0))[0];
+  document.getElementById("tiles").innerHTML = `
+    <div class="tile"><span class="t-label">${year} leader</span><span class="t-val">${MT.rec(leader)}</span><span class="t-who">${leader.team_name} · ${leader.owner_name}</span></div>
+    ${prevChamp ? `<div class="tile"><span class="t-label">Defending champ</span><span class="t-val">${year - 1}</span><span class="t-who">${prevChamp.team_name} · ${prevChamp.owner_name}</span></div>` : ""}
+    <div class="tile"><span class="t-label">Career OPR king</span><span class="t-val">${oprKing.career_opr.toFixed(3)}</span><span class="t-who">${oprKing.owner_name} · ${oprKing.seasons} seasons</span></div>
+    ${lucky?.luck != null ? `<div class="tile"><span class="t-label">Luckiest team</span><span class="t-val">${MT.signed(lucky.luck)} W</span><span class="t-who">${lucky.team_name} · vs. expected</span></div>` : ""}`;
+
+  // table
+  const oprs = cur.map(s => s.opr).filter(v => v != null);
+  const mn = Math.min(...oprs), mx = Math.max(...oprs);
+  const maxLuck = Math.max(...cur.map(s => Math.abs(s.luck ?? 0)), 0.1);
+  const body = cur.map(s => {
+    const exp = s.expected_wins != null ? `${s.expected_wins.toFixed(1)}–${(s.rs_games - s.expected_wins).toFixed(1)}` : "—";
+    return `<tr data-w="${s.w}" data-pf="${s.pf}" data-pa="${s.pa}" data-high="${s.high_game}"
+                data-exp="${s.expected_wins ?? -99}" data-luck="${s.luck ?? -99}" data-opr="${s.opr ?? -99}">
+      <td class="num rank">${s.finish}</td>${MT.teamCell(s)}
+      <td class="num strong">${MT.rec(s)}</td>
+      <td class="num">${MT.num(s.pf)}</td><td class="num">${MT.num(s.pa)}</td>
+      <td class="num">${MT.num(s.high_game)}</td><td class="num">${exp}</td>
+      ${MT.divergeCell(s.luck, maxLuck)}${MT.oprCell(s.opr, mn, mx)}
+    </tr>`;
+  }).join("");
+  const table = document.getElementById("standings");
+  table.querySelector("tbody").innerHTML = body;
+  MT.sortable(table);
+  MT.footer(meta);
+})().catch(e => document.querySelector(".loading").textContent = "Could not load data: " + e.message);
+</script>
+
+</html>

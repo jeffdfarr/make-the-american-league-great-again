@@ -1,0 +1,129 @@
+/* MTALGA League HQ — shared styles. Light + dark via system preference. */
+:root {
+  --paper: #F7F5F0; --surface: #FFFFFF; --surface-2: #EFECE4;
+  --ink: #1F2732; --ink-soft: #4A5261; --ink-faint: #7A8090;
+  --rule: #D9D4C8; --accent: #9E2B25;
+  --pos: #2F5E9E; --neg: #B4531F;
+  --bar: #2F5E9E; --bar-soft: rgba(47,94,158,.14);
+  --chip-bg: #1F2732; --chip-ink: #F7F5F0;
+  --gold: #8A6D1F;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #14171D; --surface: #1C2028; --surface-2: #232833;
+    --ink: #E7E4DC; --ink-soft: #B4B2AA; --ink-faint: #83858E;
+    --rule: #333945; --accent: #E0766C;
+    --pos: #5E8FD1; --neg: #D07840;
+    --bar: #5E8FD1; --bar-soft: rgba(94,143,209,.2);
+    --chip-bg: #E7E4DC; --chip-ink: #14171D;
+    --gold: #CFAE55;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); margin: 0;
+       font-family: "Public Sans", "Segoe UI", system-ui, sans-serif;
+       font-size: 16px; line-height: 1.55; }
+.wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+/* masthead + nav */
+header.mast { border-bottom: 3px solid var(--ink); padding: 2rem 0 0; }
+.eyebrow { font-family: "IBM Plex Mono", monospace; font-size: .7rem; letter-spacing: .14em;
+           text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 .5rem; }
+h1 { font-family: "Bitter", Georgia, serif; font-weight: 800;
+     font-size: clamp(1.6rem, 4.5vw, 2.4rem); line-height: 1.1; margin: 0 0 .3rem; text-wrap: balance; }
+h1 a { color: inherit; text-decoration: none; }
+.sub { color: var(--ink-soft); margin: 0; font-size: .95rem; }
+nav.main { display: flex; gap: 1.4rem; margin-top: 1.1rem; overflow-x: auto; }
+nav.main a { font-family: "IBM Plex Mono", monospace; font-size: .78rem; letter-spacing: .06em;
+             text-transform: uppercase; color: var(--ink-soft); text-decoration: none;
+             padding: .55rem 0 .65rem; border-bottom: 3px solid transparent; white-space: nowrap; }
+nav.main a:hover { color: var(--accent); }
+nav.main a.active { color: var(--ink); border-bottom-color: var(--accent); font-weight: 600; }
+
+h2 { font-family: "Bitter", Georgia, serif; font-weight: 700; font-size: 1.3rem; margin: 2.4rem 0 .9rem; }
+a { color: var(--accent); }
+
+/* stat tiles */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr)); gap: .8rem; margin-top: 1.6rem; }
+.tile { background: var(--surface); border: 1px solid var(--rule); border-top: 3px solid var(--accent);
+        border-radius: 6px; padding: .8rem 1rem; }
+.t-label { font-family: "IBM Plex Mono", monospace; font-size: .64rem; letter-spacing: .1em;
+           text-transform: uppercase; color: var(--ink-faint); display: block; }
+.t-val { font-family: "Bitter", Georgia, serif; font-weight: 800; font-size: 1.5rem;
+         font-variant-numeric: tabular-nums; display: block; margin: .1rem 0; }
+.t-who { font-size: .8rem; color: var(--ink-soft); display: block; }
+
+/* tables */
+.tbl-scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+th, td { padding: .55rem .65rem; border-bottom: 1px solid var(--rule); text-align: right; white-space: nowrap; }
+thead th { font-family: "IBM Plex Mono", monospace; font-size: .64rem; letter-spacing: .09em;
+           text-transform: uppercase; color: var(--ink-faint); border-bottom: 2px solid var(--ink);
+           cursor: pointer; user-select: none; }
+thead th.left, td.teamcell { text-align: left; }
+thead th[data-sorted="asc"]::after { content: " ↑"; color: var(--accent); }
+thead th[data-sorted="desc"]::after { content: " ↓"; color: var(--accent); }
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover td { background: var(--surface-2); }
+.num { font-variant-numeric: tabular-nums; }
+.strong { font-weight: 700; }
+.rank { color: var(--ink-faint); }
+.dim { color: var(--ink-faint); }
+
+/* team cells + logos */
+td.teamcell { display: flex; align-items: center; gap: .6rem; }
+.logo { flex: none; width: 2rem; height: 2rem; border-radius: 50%; object-fit: cover;
+        background: var(--surface-2); border: 1px solid var(--rule); }
+.mono-chip { flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: var(--chip-bg);
+             color: var(--chip-ink); font-family: "IBM Plex Mono", monospace; font-weight: 600;
+             font-size: .7rem; display: inline-flex; align-items: center; justify-content: center; }
+.tstack { display: inline-flex; flex-direction: column; line-height: 1.25; min-width: 0; }
+.tstack b { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 16rem; }
+.tstack small { color: var(--ink-faint); font-size: .72rem; }
+
+/* inline bars */
+.oprwrap { position: relative; display: inline-block; width: 6.8rem; padding: .12rem .4rem .12rem 0; }
+.oprbar { position: absolute; left: 0; top: 15%; bottom: 15%; background: var(--bar-soft);
+          border-left: 3px solid var(--bar); border-radius: 0 3px 3px 0; }
+.oprwrap b { position: relative; }
+.mgwrap { position: relative; display: inline-block; width: 6rem; }
+.mgwrap::before { content: ""; position: absolute; left: 50%; top: -10%; bottom: -10%; width: 1px; background: var(--rule); }
+.mgbar { position: absolute; top: 20%; bottom: 20%; border-radius: 2px; opacity: .3; }
+.mgbar.pos { background: var(--pos); }
+.mgbar.neg { background: var(--neg); }
+.mgval { position: relative; }
+td.pos .mgval { color: var(--pos); font-weight: 600; }
+td.neg .mgval { color: var(--neg); font-weight: 600; }
+
+/* badges */
+.badge { font-family: "IBM Plex Mono", monospace; font-size: .62rem; font-weight: 600;
+         letter-spacing: .05em; padding: .1rem .45rem; border-radius: 999px; white-space: nowrap; }
+.badge.champ { background: var(--gold); color: var(--paper); }
+.badge.final { background: var(--surface-2); color: var(--ink-soft); border: 1px solid var(--rule); }
+.badge.bye { background: var(--bar-soft); color: var(--pos); }
+
+/* cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr)); gap: .8rem; }
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: .75rem .9rem; }
+.c-val { font-family: "Bitter", Georgia, serif; font-weight: 800; font-size: 1.3rem;
+         font-variant-numeric: tabular-nums; display: block; }
+.c-cat { font-family: "IBM Plex Mono", monospace; font-size: .62rem; letter-spacing: .1em;
+         text-transform: uppercase; color: var(--accent); font-weight: 600; display: block; margin-top: .1rem; }
+.c-who { font-size: .76rem; color: var(--ink-soft); display: block; margin-top: .15rem; }
+
+/* year picker */
+.yearpick { display: flex; gap: .4rem; flex-wrap: wrap; margin: 1rem 0 1.2rem; }
+.yearpick button { font-family: "IBM Plex Mono", monospace; font-size: .8rem; font-weight: 600;
+                   padding: .35rem .8rem; border-radius: 999px; border: 1px solid var(--rule);
+                   background: var(--surface); color: var(--ink-soft); cursor: pointer; }
+.yearpick button:hover { border-color: var(--accent); color: var(--accent); }
+.yearpick button.active { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+
+.note { background: var(--surface-2); border: 1px solid var(--rule); border-radius: 6px;
+        padding: .8rem 1rem; font-size: .85rem; color: var(--ink-soft); margin-top: 2.2rem; }
+footer { margin-top: 2.6rem; padding-top: 1rem; border-top: 3px solid var(--ink);
+         font-family: "IBM Plex Mono", monospace; font-size: .74rem; color: var(--ink-faint); }
+.loading { color: var(--ink-faint); font-family: "IBM Plex Mono", monospace; padding: 2rem 0; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button:focus-visible { outline-offset: 1px; }

@@ -1,9 +1,13 @@
 """Rebuild every derived table from the games table. Runs nightly, from scratch.
 
-Order matters:
-  season aggregates -> league OPR normalizers -> OPR -> regression ->
-  expected wins -> SOS -> career -> H2H -> seed history -> record book ->
-  adjustments (always last, always logged).
+League conventions (reverse-engineered from the sheet and verified against it):
+  * Season points (PF/PA/PPG/high/low) are REGULAR SEASON ONLY — these feed OPR.
+  * W/L records count regular season + the championship bracket + the
+    3rd-place game. Consolation games (named side brackets, and main-bracket
+    games among non-qualifiers) count nothing.
+  * The championship bracket is derived by walking back from the final:
+    a postseason game is in the bracket iff its winner advances toward the
+    final. Byes fall out of first appearance round.
 """
 
 from __future__ import annotations
@@ -417,9 +421,9 @@ def _records(conn: sqlite3.Connection) -> None:
         ("Most points, season", "season",
          "SELECT owner_slug o, pf v, year y FROM season_stats ORDER BY pf DESC LIMIT 1"),
         ("Best season OPR", "season",
-         "SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL ORDER BY opr DESC LIMIT 1"),
+         "SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND rs_games >= 15 ORDER BY opr DESC LIMIT 1"),
         ("Best win pct, season", "season",
-         "SELECT owner_slug o, win_pct v, year y FROM season_stats WHERE games >= 6 ORDER BY win_pct DESC LIMIT 1"),
+         "SELECT owner_slug o, win_pct v, year y FROM season_stats WHERE rs_games >= 15 ORDER BY win_pct DESC LIMIT 1"),
     ]
     for category, scope, sql in specs:
         row = conn.execute(sql).fetchone()
