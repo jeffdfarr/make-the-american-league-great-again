@@ -30,90 +30,184 @@ def rebuild(conn: sqlite3.Connection, cfg: Config) -> None:
     _write_season_stats(conn, per_season)
     _career(conn)
     _h2h(conn)
-    _seed_history(conn, per_season)
     _records(conn)
     _adjustments(conn, cfg)
     conn.commit()
 
 
+# ------------------------------------------------------------- bracket walker
+
+def _classify_postseason(conn: sqlite3.Connection, year: int) -> dict:
+    """Classify each postseason matchup_uid.
+
+    Returns {matchup_uid: 'TREE' | 'THIRD' | 'CONS'} plus metadata under the
+    special keys '_final' (matchup_uid), '_byes' (set of team_season_ids).
+    """
+    rows = conn.execute(
+        """SELECT matchup_uid, period, bracket, game_type, team_season_id,
+                  opp_season_id, pts_for, pts_against
+           FROM games WHERE year=? AND game_type != 'R' AND complete=1
+             AND pts_for >= pts_against""",  # winner's row = one row per matchup
+        (year,),
+    ).fetchall()
+    out: dict = {"_final": None, "_byes": set()}
+    if not rows:
+        return out
+
+    # Named 3rd-place brackets count; other named brackets are consolation.
+    main, named_third = [], []
+    for r in rows:
+        if r["bracket"] is None:
+            main.append(r)
+        elif any(k in r["bracket"].lower() for k in ("3rd", "third")):
+            named_third.append(r)
+        else:
+            out[r["matchup_uid"]] = "CONS"
+    for r in named_third:
+        out[r["matchup_uid"]] = "THIRD"
+    if not main:
+        return out
+
+    if any(r["pts_for"] == r["pts_against"] for r in main):
+        # A tied postseason game breaks winner-walking; punt to CONS for safety.
+        for r in main:
+            out.setdefault(r["matchup_uid"], "CONS")
+        return out
+
+    periods = sorted({r["period"] for r in main})
+    fp = periods[-1]
+    fp_games = [r for r in main if r["period"] == fp]
+    prior_losers = {r["opp_season_id"] for r in main if r["period"] < fp}
+
+    finals = [g for g in fp_games
+              if g["team_season_id"] not in prior_losers and g["opp_season_id"] not in prior_losers]
+    if len(finals) != 1:
+        # Ambiguous structure — count everything in main as playoffs (old behavior)
+        for r in main:
+            out.setdefault(r["matchup_uid"], "TREE")
+        return out
+    final = finals[0]
+    out["_final"] = final["matchup_uid"]
+
+    tree = {final["matchup_uid"]}
+    survivors = {final["team_season_id"], final["opp_season_id"]}
+    for p in reversed(periods[:-1]):
+        games_p = [r for r in main if r["period"] == p]
+        tree_p = [r for r in games_p if r["team_season_id"] in survivors]
+        tree |= {r["matchup_uid"] for r in tree_p}
+        appeared = {t for r in games_p for t in (r["team_season_id"], r["opp_season_id"])}
+        survivors = ({t for r in tree_p for t in (r["team_season_id"], r["opp_season_id"])}
+                     | {t for t in survivors if t not in appeared})
+
+    # 3rd-place game hiding in the main bracket: final-period game whose
+    # participants both already lost a bracket game.
+    tree_losers = {r["opp_season_id"] for r in main
+                   if r["matchup_uid"] in tree and r["period"] < fp}
+    for g in fp_games:
+        if g["matchup_uid"] in tree:
+            continue
+        if g["team_season_id"] in tree_losers and g["opp_season_id"] in tree_losers:
+            out[g["matchup_uid"]] = "THIRD"
+
+    for r in main:
+        if r["matchup_uid"] in tree:
+            out[r["matchup_uid"]] = "TREE"
+        out.setdefault(r["matchup_uid"], "CONS")
+
+    # byes: bracket teams whose first bracket appearance is after round 1
+    first_seen: dict[int, int] = {}
+    for r in sorted(main, key=lambda r: r["period"]):
+        if r["matchup_uid"] in tree:
+            for t in (r["team_season_id"], r["opp_season_id"]):
+                first_seen.setdefault(t, r["period"])
+    if first_seen:
+        r1 = min(first_seen.values())
+        out["_byes"] = {t for t, p in first_seen.items() if p > r1}
+    return out
+
+
 # ---------------------------------------------------------------- season level
 
 def _season_stats(conn: sqlite3.Connection, year: int) -> list[dict]:
+    post = _classify_postseason(conn, year)
+    season_over = _season_complete(conn, year)
+
     rows = conn.execute(
-        """SELECT ts.id AS team_season_id, ts.owner_slug, g.game_type,
-                  g.pts_for, g.pts_against, g.period, g.complete
+        """SELECT ts.id AS team_season_id, ts.owner_slug, g.game_type, g.matchup_uid,
+                  g.pts_for, g.pts_against, g.period
            FROM games g JOIN team_seasons ts ON ts.id = g.team_season_id
            WHERE g.year = ? AND g.complete = 1""",
         (year,),
     ).fetchall()
 
-    by_team: dict[int, dict] = {}
-    for r in rows:
-        s = by_team.setdefault(r["team_season_id"], {
-            "team_season_id": r["team_season_id"], "year": year,
-            "owner_slug": r["owner_slug"],
+    def blank(tsid, slug):
+        return {
+            "team_season_id": tsid, "year": year, "owner_slug": slug,
             "games": 0, "w": 0, "l": 0, "t": 0,
             "rs_games": 0, "rs_w": 0, "rs_l": 0, "rs_t": 0,
             "pf": 0.0, "pa": 0.0, "high_game": None, "low_game": None,
             "playoff_app": 0, "playoff_w": 0, "playoff_l": 0,
-            "final_app": 0, "champion": 0, "bye": 0,
-            "_playoff_periods": [],
-        })
+            "final_app": 0, "champion": 0, "bye": 0, "third_w": 0,
+        }
+
+    by_team: dict[int, dict] = {}
+    for r in rows:
+        s = by_team.setdefault(r["team_season_id"], blank(r["team_season_id"], r["owner_slug"]))
         pf, pa = r["pts_for"], r["pts_against"]
         wlt = "w" if pf > pa else ("l" if pf < pa else "t")
-        if r["game_type"] in ("R", "P", "F"):  # sheet convention: consolation excluded
+
+        if r["game_type"] == "R":
+            # Regular season: counts for record AND for points/high/low (sheet rule)
+            s["rs_games"] += 1
+            s["rs_" + wlt] += 1
             s["games"] += 1
             s[wlt] += 1
             s["pf"] += pf
             s["pa"] += pa
             s["high_game"] = pf if s["high_game"] is None else max(s["high_game"], pf)
             s["low_game"] = pf if s["low_game"] is None else min(s["low_game"], pf)
-        if r["game_type"] == "R":
-            s["rs_games"] += 1
-            s["rs_" + wlt] += 1
-        if r["game_type"] in ("P", "F"):
-            s["playoff_app"] = 1
-            s["playoff_w" if wlt == "w" else "playoff_l"] += 1 if wlt in ("w", "l") else 0
-            s["_playoff_periods"].append((r["period"], wlt))
+        else:
+            cls = post.get(r["matchup_uid"], "CONS")
+            if cls in ("TREE", "THIRD"):
+                # counted postseason: record only, never points (sheet rule)
+                s["games"] += 1
+                s[wlt] += 1
+                if cls == "TREE":
+                    s["playoff_app"] = 1
+                    s["playoff_w" if wlt == "w" else "playoff_l"] += 1 if wlt in ("w", "l") else 0
+                    if r["matchup_uid"] == post.get("_final") and season_over:
+                        s["final_app"] = 1
+                        if wlt == "w":
+                            s["champion"] = 1
+                elif cls == "THIRD" and wlt == "w":
+                    s["third_w"] = 1
 
-    # champion: winner of the main-bracket playoff game in the final playoff period
-    final_period = conn.execute(
-        "SELECT MAX(period) AS p FROM games WHERE year=? AND game_type='P' AND complete=1",
-        (year,),
-    ).fetchone()["p"]
-    season_over = _season_complete(conn, year)
-    if final_period is not None and season_over:
-        finalists = conn.execute(
-            """SELECT team_season_id, pts_for, pts_against FROM games
-               WHERE year=? AND period=? AND game_type='P' AND bracket IS NULL""",
-            (year, final_period),
-        ).fetchall()
-        if len(finalists) == 2:
-            for fr in finalists:
-                s = by_team.get(fr["team_season_id"])
-                if s:
-                    s["final_app"] = 1
-                    if fr["pts_for"] > fr["pts_against"]:
-                        s["champion"] = 1
+    for tsid in post.get("_byes", set()):
+        if tsid in by_team:
+            by_team[tsid]["bye"] = 1
 
     out = []
     for s in by_team.values():
         s["win_pct"] = f.win_pct(s["w"], s["l"])
         s["rs_win_pct"] = f.win_pct(s["rs_w"], s["rs_l"])
-        s["ppg"] = s["pf"] / s["games"] if s["games"] else 0.0
-        s["papg"] = s["pa"] / s["games"] if s["games"] else 0.0
+        s["ppg"] = s["pf"] / s["rs_games"] if s["rs_games"] else 0.0
+        s["papg"] = s["pa"] / s["rs_games"] if s["rs_games"] else 0.0
         s["margin"] = s["pf"] - s["pa"]
-        s["margin_pg"] = s["margin"] / s["games"] if s["games"] else 0.0
-        s.pop("_playoff_periods")
+        s["margin_pg"] = s["margin"] / s["rs_games"] if s["rs_games"] else 0.0
         out.append(s)
 
-    # finish: final standings rank by RS wins then PF (playoff results refine
-    # top spots; good enough until Fantrax final standings are stored)
-    out.sort(key=lambda s: (-s["champion"], -s["final_app"], -s["rs_w"], -s["pf"]))
+    # finish: champion, runner-up, 3rd-place winner, then bracket teams,
+    # then the field — ties broken by regular-season record, then points.
+    def finish_key(s):
+        return (
+            -s["champion"], -s["final_app"], -s["third_w"], -s["playoff_app"],
+            -s["rs_w"], -s["pf"],
+        )
+    out.sort(key=finish_key)
     for i, s in enumerate(out, 1):
         s["finish"] = i
+        s.pop("third_w")
 
-    # moves + hitting/pitching splits
     for s in out:
         s["moves"] = conn.execute(
             "SELECT COUNT(*) AS n FROM transactions WHERE team_season_id=?",
@@ -139,7 +233,7 @@ def _season_complete(conn: sqlite3.Connection, year: int) -> bool:
 def _apply_opr(per_season: dict[int, list[dict]]) -> None:
     for year, stats in per_season.items():
         for s in stats:
-            if s["games"] and s["high_game"] is not None:
+            if s["rs_games"] and s["high_game"] is not None:
                 s["raw_opr"] = f.raw_opr(s["ppg"], s["high_game"], s["low_game"], s["rs_win_pct"])
             else:
                 s["raw_opr"] = None
@@ -204,7 +298,6 @@ def _write_season_stats(conn: sqlite3.Connection, per_season: dict[int, list[dic
 
 def _career(conn: sqlite3.Connection) -> None:
     owners = [r["slug"] for r in conn.execute("SELECT slug FROM owners")]
-    # league-average raw OPR per season, for career OPR normalization
     year_avgs = {
         r["year"]: r["avg_raw"]
         for r in conn.execute(
@@ -226,7 +319,8 @@ def _career(conn: sqlite3.Connection) -> None:
         rs_l = sum(s["rs_l"] for s in seasons)
         pf = sum(s["pf"] for s in seasons)
         pa = sum(s["pa"] for s in seasons)
-        ppg = pf / games if games else 0.0
+        rs_games = sum(s["rs_games"] for s in seasons)
+        ppg = pf / rs_games if rs_games else 0.0     # points are RS-only, so PPG is per RS game
         best_game = max((s["high_game"] for s in seasons if s["high_game"] is not None), default=None)
         worst_game = min((s["low_game"] for s in seasons if s["low_game"] is not None), default=None)
         wp = f.win_pct(w, l)
@@ -293,20 +387,14 @@ def _h2h(conn: sqlite3.Connection) -> None:
         )
 
 
-def _seed_history(conn: sqlite3.Connection, per_season) -> None:
-    # Requires final standings/seeds per season; populated once playoff seeds
-    # are confirmed (open question #5). Placeholder keeps the table present.
-    pass
-
-
 def _records(conn: sqlite3.Connection) -> None:
     specs = [
         ("Most points, game", "game",
-         "SELECT ts.owner_slug o, g.pts_for v, g.year y FROM games g JOIN team_seasons ts ON ts.id=g.team_season_id WHERE g.complete=1 AND g.game_type IN ('R','P','F') ORDER BY g.pts_for DESC LIMIT 1"),
+         "SELECT ts.owner_slug o, g.pts_for v, g.year y FROM games g JOIN team_seasons ts ON ts.id=g.team_season_id WHERE g.complete=1 AND g.game_type='R' ORDER BY g.pts_for DESC LIMIT 1"),
         ("Fewest points, game", "game",
-         "SELECT ts.owner_slug o, g.pts_for v, g.year y FROM games g JOIN team_seasons ts ON ts.id=g.team_season_id WHERE g.complete=1 AND g.game_type IN ('R','P','F') ORDER BY g.pts_for ASC LIMIT 1"),
+         "SELECT ts.owner_slug o, g.pts_for v, g.year y FROM games g JOIN team_seasons ts ON ts.id=g.team_season_id WHERE g.complete=1 AND g.game_type='R' ORDER BY g.pts_for ASC LIMIT 1"),
         ("Biggest blowout", "game",
-         "SELECT ts.owner_slug o, (g.pts_for-g.pts_against) v, g.year y FROM games g JOIN team_seasons ts ON ts.id=g.team_season_id WHERE g.complete=1 ORDER BY v DESC LIMIT 1"),
+         "SELECT ts.owner_slug o, (g.pts_for-g.pts_against) v, g.year y FROM games g JOIN team_seasons ts ON ts.id=g.team_season_id WHERE g.complete=1 AND g.game_type='R' ORDER BY v DESC LIMIT 1"),
         ("Most points, season", "season",
          "SELECT owner_slug o, pf v, year y FROM season_stats ORDER BY pf DESC LIMIT 1"),
         ("Best season OPR", "season",

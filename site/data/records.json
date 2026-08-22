@@ -29,8 +29,8 @@
  {
   "category": "Best season OPR",
   "scope": "season",
-  "value": 1.2336775703563903,
-  "display": "1.23368",
+  "value": 1.26976385042062,
+  "display": "1.26976",
   "owner_slug": "sorgaard",
   "year": 2020,
   "detail": null
@@ -47,10 +47,10 @@
  {
   "category": "Most points, season",
   "scope": "season",
-  "value": 9248.667000000001,
-  "display": "9248.67",
+  "value": 8534.166,
+  "display": "8534.17",
   "owner_slug": "bugar",
-  "year": 2024,
+  "year": 2025,
   "detail": null
  }
 ]
