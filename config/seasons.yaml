@@ -1,0 +1,47 @@
+# One block per MTALGA season. league_id comes from the Fantrax URL:
+# https://www.fantrax.com/fantasy/league/<league_id>/...
+#
+# reg_season_games / playoff_teams / byes: fill in per year (open questions
+# #4/#5 in the architecture doc). Values below marked TODO are best guesses
+# from the League History sheet and MUST be confirmed during backfill —
+# the sync cross-checks them against actual Fantrax data and warns on mismatch.
+
+seasons:
+  2020:
+    league_id: j072bpqfk6u407sm
+    reg_season_games: 6        # short season (sheet: /6 divisors, 9 total games for champ)
+    playoff_teams: null        # TODO confirm
+    byes: null                 # TODO confirm
+    notes: "COVID-shortened debut season"
+  2021:
+    league_id: jnba1l7jkg80y2k3
+    reg_season_games: 22
+    playoff_teams: null
+    byes: null
+  2022:
+    league_id: ughq7u3hkvpvpnfp
+    reg_season_games: 21       # TODO confirm
+    playoff_teams: null
+    byes: null
+  2023:
+    league_id: kxyhexk5ld4uu7ty
+    reg_season_games: 21       # TODO confirm
+    playoff_teams: null
+    byes: null
+  2024:
+    league_id: 877ahfbclnovys9g
+    reg_season_games: 21       # TODO confirm
+    playoff_teams: null
+    byes: null
+  2025:
+    league_id: fnd6melem4k904o2
+    reg_season_games: 21       # TODO confirm (sheet: Bugar 2025 = 21 reg season games)
+    playoff_teams: null
+    byes: null
+  2026:
+    league_id: bhbev187mhox8axz
+    reg_season_games: 21       # TODO confirm
+    playoff_teams: null
+    byes: null
+
+current_season: 2026

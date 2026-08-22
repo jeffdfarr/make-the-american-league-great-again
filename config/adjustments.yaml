@@ -1,0 +1,19 @@
+# Manual corrections, mirroring the sheet's hand-fix cells (e.g. `=3643-7.333`).
+# Applied by the metrics engine AFTER all computation, and logged on every run.
+# Never edit derived numbers anywhere else.
+#
+# Each entry:
+#   table:  season_stats | career_stats | games
+#   key:    identifies the row (owner slug + year for season_stats,
+#           owner slug for career_stats, game id for games)
+#   column: the field to adjust
+#   set:    absolute replacement value   (use exactly one of set/delta)
+#   delta:  additive correction
+#   reason: required — why this exists
+adjustments: []
+# Example:
+#   - table: season_stats
+#     key: { owner: jfarr, year: 2022 }
+#     column: pf
+#     delta: -7.333
+#     reason: "Week 9 scoring correction issued by Fantrax after stat change, per commissioner"

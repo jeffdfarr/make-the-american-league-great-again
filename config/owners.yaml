@@ -1,0 +1,60 @@
+# The owner registry: the durable identity behind changing team names.
+# Slugs match the League History sheet's owner tabs.
+#
+# team_map connects each season's Fantrax team ID to an owner. Fill it by
+# running:   python -m mtalga.cli discover --year 2020   (etc.)
+# which prints every team (id, name) the API sees for that season.
+
+owners:
+  - slug: tfarr
+    name: Tyler Farr
+    joined: 2020
+  - slug: tessman
+    name: Tessman
+    joined: 2020
+  - slug: bugar
+    name: Bugar
+    joined: 2020
+  - slug: moellerreed
+    name: Moeller-Reed
+    joined: 2020
+  - slug: drwall
+    name: Drwall
+    joined: 2020
+  - slug: jfarr
+    name: Jeff Farr
+    joined: 2020
+  - slug: kaufer
+    name: Kaufer
+    joined: 2020
+  - slug: krech
+    name: Krech
+    joined: 2020
+  - slug: sorgaard
+    name: Nick Sorgaard
+    joined: 2020
+  - slug: tasin
+    name: Tasin
+    joined: 2020
+  - slug: norman
+    name: Norman
+    joined: null   # TODO: first season
+  - slug: hegna
+    name: Hegna
+    joined: null   # TODO: first season
+  - slug: bruchu
+    name: Bruchu
+    joined: 2020
+    left: null     # TODO: last season (xBruchu tab = departed owner)
+
+# year -> { fantrax_team_id: owner_slug }
+# Populated during backfill; empty mappings make the sync fail loudly
+# rather than guess.
+team_map:
+  2020: {}
+  2021: {}
+  2022: {}
+  2023: {}
+  2024: {}
+  2025: {}
+  2026: {}

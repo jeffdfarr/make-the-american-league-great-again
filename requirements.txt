@@ -1,0 +1,4 @@
+fantraxapi>=1.0.1
+PyYAML>=6.0
+# local-only, for the one-time login helper:
+#   pip install selenium webdriver-manager
