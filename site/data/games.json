@@ -1,1 +1,2282 @@
-[]
+[
+ {
+  "year": 2026,
+  "period": 1,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "norman",
+  "pts_for": 528.0,
+  "pts_against": 421.0
+ },
+ {
+  "year": 2026,
+  "period": 1,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "kaufer",
+  "pts_for": 421.0,
+  "pts_against": 528.0
+ },
+ {
+  "year": 2026,
+  "period": 1,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "hegna",
+  "pts_for": 456.5,
+  "pts_against": 442.5
+ },
+ {
+  "year": 2026,
+  "period": 1,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "moellerreed",
+  "pts_for": 442.5,
+  "pts_against": 456.5
+ },
+ {
+  "year": 2026,
+  "period": 1,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "sorgaard",
+  "pts_for": 520.667,
+  "pts_against": 359.167
+ },
+ {
+  "year": 2026,
+  "period": 1,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "tfarr",
+  "pts_for": 359.167,
+  "pts_against": 520.667
+ },
+ {
+  "year": 2026,
+  "period": 1,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "krech",
+  "pts_for": 490.5,
+  "pts_against": 401.333
+ },
+ {
+  "year": 2026,
+  "period": 1,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "bugar",
+  "pts_for": 401.333,
+  "pts_against": 490.5
+ },
+ {
+  "year": 2026,
+  "period": 1,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "jfarr",
+  "pts_for": 529.667,
+  "pts_against": 528.5
+ },
+ {
+  "year": 2026,
+  "period": 1,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "tessman",
+  "pts_for": 528.5,
+  "pts_against": 529.667
+ },
+ {
+  "year": 2026,
+  "period": 1,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "tasin",
+  "pts_for": 378.667,
+  "pts_against": 395.5
+ },
+ {
+  "year": 2026,
+  "period": 1,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "drwall",
+  "pts_for": 395.5,
+  "pts_against": 378.667
+ },
+ {
+  "year": 2026,
+  "period": 2,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "hegna",
+  "pts_for": 314.667,
+  "pts_against": 235.667
+ },
+ {
+  "year": 2026,
+  "period": 2,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "kaufer",
+  "pts_for": 235.667,
+  "pts_against": 314.667
+ },
+ {
+  "year": 2026,
+  "period": 2,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "sorgaard",
+  "pts_for": 306.167,
+  "pts_against": 296.167
+ },
+ {
+  "year": 2026,
+  "period": 2,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "norman",
+  "pts_for": 296.167,
+  "pts_against": 306.167
+ },
+ {
+  "year": 2026,
+  "period": 2,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "krech",
+  "pts_for": 297.167,
+  "pts_against": 294.0
+ },
+ {
+  "year": 2026,
+  "period": 2,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "moellerreed",
+  "pts_for": 294.0,
+  "pts_against": 297.167
+ },
+ {
+  "year": 2026,
+  "period": 2,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "jfarr",
+  "pts_for": 318.833,
+  "pts_against": 292.667
+ },
+ {
+  "year": 2026,
+  "period": 2,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "tfarr",
+  "pts_for": 292.667,
+  "pts_against": 318.833
+ },
+ {
+  "year": 2026,
+  "period": 2,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "tasin",
+  "pts_for": 306.667,
+  "pts_against": 321.333
+ },
+ {
+  "year": 2026,
+  "period": 2,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "bugar",
+  "pts_for": 321.333,
+  "pts_against": 306.667
+ },
+ {
+  "year": 2026,
+  "period": 2,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "drwall",
+  "pts_for": 247.5,
+  "pts_against": 288.667
+ },
+ {
+  "year": 2026,
+  "period": 2,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "tessman",
+  "pts_for": 288.667,
+  "pts_against": 247.5
+ },
+ {
+  "year": 2026,
+  "period": 3,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "sorgaard",
+  "pts_for": 292.667,
+  "pts_against": 261.167
+ },
+ {
+  "year": 2026,
+  "period": 3,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "kaufer",
+  "pts_for": 261.167,
+  "pts_against": 292.667
+ },
+ {
+  "year": 2026,
+  "period": 3,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "krech",
+  "pts_for": 371.663,
+  "pts_against": 233.5
+ },
+ {
+  "year": 2026,
+  "period": 3,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "hegna",
+  "pts_for": 233.5,
+  "pts_against": 371.663
+ },
+ {
+  "year": 2026,
+  "period": 3,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "jfarr",
+  "pts_for": 231.833,
+  "pts_against": 315.167
+ },
+ {
+  "year": 2026,
+  "period": 3,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "norman",
+  "pts_for": 315.167,
+  "pts_against": 231.833
+ },
+ {
+  "year": 2026,
+  "period": 3,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "tasin",
+  "pts_for": 282.5,
+  "pts_against": 251.833
+ },
+ {
+  "year": 2026,
+  "period": 3,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "moellerreed",
+  "pts_for": 251.833,
+  "pts_against": 282.5
+ },
+ {
+  "year": 2026,
+  "period": 3,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "drwall",
+  "pts_for": 317.0,
+  "pts_against": 311.0
+ },
+ {
+  "year": 2026,
+  "period": 3,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "tfarr",
+  "pts_for": 311.0,
+  "pts_against": 317.0
+ },
+ {
+  "year": 2026,
+  "period": 3,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "tessman",
+  "pts_for": 459.667,
+  "pts_against": 323.333
+ },
+ {
+  "year": 2026,
+  "period": 3,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "bugar",
+  "pts_for": 323.333,
+  "pts_against": 459.667
+ },
+ {
+  "year": 2026,
+  "period": 4,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "krech",
+  "pts_for": 323.167,
+  "pts_against": 247.833
+ },
+ {
+  "year": 2026,
+  "period": 4,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "kaufer",
+  "pts_for": 247.833,
+  "pts_against": 323.167
+ },
+ {
+  "year": 2026,
+  "period": 4,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "jfarr",
+  "pts_for": 314.833,
+  "pts_against": 392.667
+ },
+ {
+  "year": 2026,
+  "period": 4,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "sorgaard",
+  "pts_for": 392.667,
+  "pts_against": 314.833
+ },
+ {
+  "year": 2026,
+  "period": 4,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "tasin",
+  "pts_for": 256.5,
+  "pts_against": 268.5
+ },
+ {
+  "year": 2026,
+  "period": 4,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "hegna",
+  "pts_for": 268.5,
+  "pts_against": 256.5
+ },
+ {
+  "year": 2026,
+  "period": 4,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "drwall",
+  "pts_for": 347.5,
+  "pts_against": 375.5
+ },
+ {
+  "year": 2026,
+  "period": 4,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "norman",
+  "pts_for": 375.5,
+  "pts_against": 347.5
+ },
+ {
+  "year": 2026,
+  "period": 4,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "tessman",
+  "pts_for": 243.667,
+  "pts_against": 373.167
+ },
+ {
+  "year": 2026,
+  "period": 4,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "moellerreed",
+  "pts_for": 373.167,
+  "pts_against": 243.667
+ },
+ {
+  "year": 2026,
+  "period": 4,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "bugar",
+  "pts_for": 358.833,
+  "pts_against": 312.5
+ },
+ {
+  "year": 2026,
+  "period": 4,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "tfarr",
+  "pts_for": 312.5,
+  "pts_against": 358.833
+ },
+ {
+  "year": 2026,
+  "period": 5,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "jfarr",
+  "pts_for": 312.5,
+  "pts_against": 347.833
+ },
+ {
+  "year": 2026,
+  "period": 5,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "kaufer",
+  "pts_for": 347.833,
+  "pts_against": 312.5
+ },
+ {
+  "year": 2026,
+  "period": 5,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "tasin",
+  "pts_for": 246.0,
+  "pts_against": 239.167
+ },
+ {
+  "year": 2026,
+  "period": 5,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "krech",
+  "pts_for": 239.167,
+  "pts_against": 246.0
+ },
+ {
+  "year": 2026,
+  "period": 5,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "drwall",
+  "pts_for": 305.0,
+  "pts_against": 287.833
+ },
+ {
+  "year": 2026,
+  "period": 5,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "sorgaard",
+  "pts_for": 287.833,
+  "pts_against": 305.0
+ },
+ {
+  "year": 2026,
+  "period": 5,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "tessman",
+  "pts_for": 305.167,
+  "pts_against": 426.333
+ },
+ {
+  "year": 2026,
+  "period": 5,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "hegna",
+  "pts_for": 426.333,
+  "pts_against": 305.167
+ },
+ {
+  "year": 2026,
+  "period": 5,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "bugar",
+  "pts_for": 238.83,
+  "pts_against": 366.833
+ },
+ {
+  "year": 2026,
+  "period": 5,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "norman",
+  "pts_for": 366.833,
+  "pts_against": 238.83
+ },
+ {
+  "year": 2026,
+  "period": 5,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "tfarr",
+  "pts_for": 273.833,
+  "pts_against": 292.167
+ },
+ {
+  "year": 2026,
+  "period": 5,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "moellerreed",
+  "pts_for": 292.167,
+  "pts_against": 273.833
+ },
+ {
+  "year": 2026,
+  "period": 6,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "tasin",
+  "pts_for": 417.667,
+  "pts_against": 191.167
+ },
+ {
+  "year": 2026,
+  "period": 6,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "kaufer",
+  "pts_for": 191.167,
+  "pts_against": 417.667
+ },
+ {
+  "year": 2026,
+  "period": 6,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "drwall",
+  "pts_for": 315.333,
+  "pts_against": 378.833
+ },
+ {
+  "year": 2026,
+  "period": 6,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "jfarr",
+  "pts_for": 378.833,
+  "pts_against": 315.333
+ },
+ {
+  "year": 2026,
+  "period": 6,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "tessman",
+  "pts_for": 271.333,
+  "pts_against": 266.333
+ },
+ {
+  "year": 2026,
+  "period": 6,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "krech",
+  "pts_for": 266.333,
+  "pts_against": 271.333
+ },
+ {
+  "year": 2026,
+  "period": 6,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "bugar",
+  "pts_for": 354.167,
+  "pts_against": 397.833
+ },
+ {
+  "year": 2026,
+  "period": 6,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "sorgaard",
+  "pts_for": 397.833,
+  "pts_against": 354.167
+ },
+ {
+  "year": 2026,
+  "period": 6,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "tfarr",
+  "pts_for": 246.167,
+  "pts_against": 307.167
+ },
+ {
+  "year": 2026,
+  "period": 6,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "hegna",
+  "pts_for": 307.167,
+  "pts_against": 246.167
+ },
+ {
+  "year": 2026,
+  "period": 6,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "moellerreed",
+  "pts_for": 238.833,
+  "pts_against": 289.667
+ },
+ {
+  "year": 2026,
+  "period": 6,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "norman",
+  "pts_for": 289.667,
+  "pts_against": 238.833
+ },
+ {
+  "year": 2026,
+  "period": 7,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "drwall",
+  "pts_for": 397.333,
+  "pts_against": 389.0
+ },
+ {
+  "year": 2026,
+  "period": 7,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "kaufer",
+  "pts_for": 389.0,
+  "pts_against": 397.333
+ },
+ {
+  "year": 2026,
+  "period": 7,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "tessman",
+  "pts_for": 253.5,
+  "pts_against": 341.0
+ },
+ {
+  "year": 2026,
+  "period": 7,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "tasin",
+  "pts_for": 341.0,
+  "pts_against": 253.5
+ },
+ {
+  "year": 2026,
+  "period": 7,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "bugar",
+  "pts_for": 337.667,
+  "pts_against": 352.167
+ },
+ {
+  "year": 2026,
+  "period": 7,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "jfarr",
+  "pts_for": 352.167,
+  "pts_against": 337.667
+ },
+ {
+  "year": 2026,
+  "period": 7,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "tfarr",
+  "pts_for": 319.833,
+  "pts_against": 241.833
+ },
+ {
+  "year": 2026,
+  "period": 7,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "krech",
+  "pts_for": 241.833,
+  "pts_against": 319.833
+ },
+ {
+  "year": 2026,
+  "period": 7,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "moellerreed",
+  "pts_for": 194.5,
+  "pts_against": 288.167
+ },
+ {
+  "year": 2026,
+  "period": 7,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "sorgaard",
+  "pts_for": 288.167,
+  "pts_against": 194.5
+ },
+ {
+  "year": 2026,
+  "period": 7,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "norman",
+  "pts_for": 285.333,
+  "pts_against": 199.833
+ },
+ {
+  "year": 2026,
+  "period": 7,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "hegna",
+  "pts_for": 199.833,
+  "pts_against": 285.333
+ },
+ {
+  "year": 2026,
+  "period": 8,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "tessman",
+  "pts_for": 406.0,
+  "pts_against": 302.0
+ },
+ {
+  "year": 2026,
+  "period": 8,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "kaufer",
+  "pts_for": 302.0,
+  "pts_against": 406.0
+ },
+ {
+  "year": 2026,
+  "period": 8,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "bugar",
+  "pts_for": 321.5,
+  "pts_against": 321.667
+ },
+ {
+  "year": 2026,
+  "period": 8,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "drwall",
+  "pts_for": 321.667,
+  "pts_against": 321.5
+ },
+ {
+  "year": 2026,
+  "period": 8,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "tfarr",
+  "pts_for": 280.333,
+  "pts_against": 267.833
+ },
+ {
+  "year": 2026,
+  "period": 8,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "tasin",
+  "pts_for": 267.833,
+  "pts_against": 280.333
+ },
+ {
+  "year": 2026,
+  "period": 8,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "moellerreed",
+  "pts_for": 262.0,
+  "pts_against": 256.5
+ },
+ {
+  "year": 2026,
+  "period": 8,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "jfarr",
+  "pts_for": 256.5,
+  "pts_against": 262.0
+ },
+ {
+  "year": 2026,
+  "period": 8,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "norman",
+  "pts_for": 289.333,
+  "pts_against": 235.667
+ },
+ {
+  "year": 2026,
+  "period": 8,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "krech",
+  "pts_for": 235.667,
+  "pts_against": 289.333
+ },
+ {
+  "year": 2026,
+  "period": 8,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "hegna",
+  "pts_for": 269.667,
+  "pts_against": 281.5
+ },
+ {
+  "year": 2026,
+  "period": 8,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "sorgaard",
+  "pts_for": 281.5,
+  "pts_against": 269.667
+ },
+ {
+  "year": 2026,
+  "period": 9,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "bugar",
+  "pts_for": 318.5,
+  "pts_against": 399.667
+ },
+ {
+  "year": 2026,
+  "period": 9,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "kaufer",
+  "pts_for": 399.667,
+  "pts_against": 318.5
+ },
+ {
+  "year": 2026,
+  "period": 9,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "tfarr",
+  "pts_for": 317.0,
+  "pts_against": 319.0
+ },
+ {
+  "year": 2026,
+  "period": 9,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "tessman",
+  "pts_for": 319.0,
+  "pts_against": 317.0
+ },
+ {
+  "year": 2026,
+  "period": 9,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "moellerreed",
+  "pts_for": 315.0,
+  "pts_against": 292.833
+ },
+ {
+  "year": 2026,
+  "period": 9,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "drwall",
+  "pts_for": 292.833,
+  "pts_against": 315.0
+ },
+ {
+  "year": 2026,
+  "period": 9,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "norman",
+  "pts_for": 263.0,
+  "pts_against": 240.667
+ },
+ {
+  "year": 2026,
+  "period": 9,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "tasin",
+  "pts_for": 240.667,
+  "pts_against": 263.0
+ },
+ {
+  "year": 2026,
+  "period": 9,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "hegna",
+  "pts_for": 379.0,
+  "pts_against": 311.333
+ },
+ {
+  "year": 2026,
+  "period": 9,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "jfarr",
+  "pts_for": 311.333,
+  "pts_against": 379.0
+ },
+ {
+  "year": 2026,
+  "period": 9,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "sorgaard",
+  "pts_for": 273.333,
+  "pts_against": 395.5
+ },
+ {
+  "year": 2026,
+  "period": 9,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "krech",
+  "pts_for": 395.5,
+  "pts_against": 273.333
+ },
+ {
+  "year": 2026,
+  "period": 10,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "tfarr",
+  "pts_for": 372.167,
+  "pts_against": 265.0
+ },
+ {
+  "year": 2026,
+  "period": 10,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "kaufer",
+  "pts_for": 265.0,
+  "pts_against": 372.167
+ },
+ {
+  "year": 2026,
+  "period": 10,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "moellerreed",
+  "pts_for": 271.0,
+  "pts_against": 275.5
+ },
+ {
+  "year": 2026,
+  "period": 10,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "bugar",
+  "pts_for": 275.5,
+  "pts_against": 271.0
+ },
+ {
+  "year": 2026,
+  "period": 10,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "norman",
+  "pts_for": 389.333,
+  "pts_against": 224.003
+ },
+ {
+  "year": 2026,
+  "period": 10,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "tessman",
+  "pts_for": 224.003,
+  "pts_against": 389.333
+ },
+ {
+  "year": 2026,
+  "period": 10,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "hegna",
+  "pts_for": 359.333,
+  "pts_against": 241.5
+ },
+ {
+  "year": 2026,
+  "period": 10,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "drwall",
+  "pts_for": 241.5,
+  "pts_against": 359.333
+ },
+ {
+  "year": 2026,
+  "period": 10,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "sorgaard",
+  "pts_for": 196.5,
+  "pts_against": 266.833
+ },
+ {
+  "year": 2026,
+  "period": 10,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "tasin",
+  "pts_for": 266.833,
+  "pts_against": 196.5
+ },
+ {
+  "year": 2026,
+  "period": 10,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "krech",
+  "pts_for": 301.167,
+  "pts_against": 343.0
+ },
+ {
+  "year": 2026,
+  "period": 10,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "jfarr",
+  "pts_for": 343.0,
+  "pts_against": 301.167
+ },
+ {
+  "year": 2026,
+  "period": 11,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "moellerreed",
+  "pts_for": 272.503,
+  "pts_against": 315.0
+ },
+ {
+  "year": 2026,
+  "period": 11,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "kaufer",
+  "pts_for": 315.0,
+  "pts_against": 272.503
+ },
+ {
+  "year": 2026,
+  "period": 11,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "norman",
+  "pts_for": 332.167,
+  "pts_against": 245.833
+ },
+ {
+  "year": 2026,
+  "period": 11,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "tfarr",
+  "pts_for": 245.833,
+  "pts_against": 332.167
+ },
+ {
+  "year": 2026,
+  "period": 11,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "hegna",
+  "pts_for": 349.833,
+  "pts_against": 329.0
+ },
+ {
+  "year": 2026,
+  "period": 11,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "bugar",
+  "pts_for": 329.0,
+  "pts_against": 349.833
+ },
+ {
+  "year": 2026,
+  "period": 11,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "sorgaard",
+  "pts_for": 438.333,
+  "pts_against": 297.0
+ },
+ {
+  "year": 2026,
+  "period": 11,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "tessman",
+  "pts_for": 297.0,
+  "pts_against": 438.333
+ },
+ {
+  "year": 2026,
+  "period": 11,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "krech",
+  "pts_for": 241.5,
+  "pts_against": 322.833
+ },
+ {
+  "year": 2026,
+  "period": 11,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "drwall",
+  "pts_for": 322.833,
+  "pts_against": 241.5
+ },
+ {
+  "year": 2026,
+  "period": 11,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "jfarr",
+  "pts_for": 240.167,
+  "pts_against": 328.5
+ },
+ {
+  "year": 2026,
+  "period": 11,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "tasin",
+  "pts_for": 328.5,
+  "pts_against": 240.167
+ },
+ {
+  "year": 2026,
+  "period": 12,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "norman",
+  "pts_for": 372.833,
+  "pts_against": 248.667
+ },
+ {
+  "year": 2026,
+  "period": 12,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "kaufer",
+  "pts_for": 248.667,
+  "pts_against": 372.833
+ },
+ {
+  "year": 2026,
+  "period": 12,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "hegna",
+  "pts_for": 329.0,
+  "pts_against": 300.167
+ },
+ {
+  "year": 2026,
+  "period": 12,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "moellerreed",
+  "pts_for": 300.167,
+  "pts_against": 329.0
+ },
+ {
+  "year": 2026,
+  "period": 12,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "sorgaard",
+  "pts_for": 309.167,
+  "pts_against": 269.833
+ },
+ {
+  "year": 2026,
+  "period": 12,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "tfarr",
+  "pts_for": 269.833,
+  "pts_against": 309.167
+ },
+ {
+  "year": 2026,
+  "period": 12,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "krech",
+  "pts_for": 323.333,
+  "pts_against": 247.333
+ },
+ {
+  "year": 2026,
+  "period": 12,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "bugar",
+  "pts_for": 247.333,
+  "pts_against": 323.333
+ },
+ {
+  "year": 2026,
+  "period": 12,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "jfarr",
+  "pts_for": 280.333,
+  "pts_against": 378.333
+ },
+ {
+  "year": 2026,
+  "period": 12,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "tessman",
+  "pts_for": 378.333,
+  "pts_against": 280.333
+ },
+ {
+  "year": 2026,
+  "period": 12,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "tasin",
+  "pts_for": 307.0,
+  "pts_against": 232.667
+ },
+ {
+  "year": 2026,
+  "period": 12,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "drwall",
+  "pts_for": 232.667,
+  "pts_against": 307.0
+ },
+ {
+  "year": 2026,
+  "period": 13,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "hegna",
+  "pts_for": 363.833,
+  "pts_against": 246.833
+ },
+ {
+  "year": 2026,
+  "period": 13,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "kaufer",
+  "pts_for": 246.833,
+  "pts_against": 363.833
+ },
+ {
+  "year": 2026,
+  "period": 13,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "sorgaard",
+  "pts_for": 307.0,
+  "pts_against": 373.667
+ },
+ {
+  "year": 2026,
+  "period": 13,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "norman",
+  "pts_for": 373.667,
+  "pts_against": 307.0
+ },
+ {
+  "year": 2026,
+  "period": 13,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "krech",
+  "pts_for": 322.333,
+  "pts_against": 354.0
+ },
+ {
+  "year": 2026,
+  "period": 13,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "moellerreed",
+  "pts_for": 354.0,
+  "pts_against": 322.333
+ },
+ {
+  "year": 2026,
+  "period": 13,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "jfarr",
+  "pts_for": 342.667,
+  "pts_against": 340.0
+ },
+ {
+  "year": 2026,
+  "period": 13,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "tfarr",
+  "pts_for": 340.0,
+  "pts_against": 342.667
+ },
+ {
+  "year": 2026,
+  "period": 13,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "tasin",
+  "pts_for": 311.0,
+  "pts_against": 215.833
+ },
+ {
+  "year": 2026,
+  "period": 13,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "bugar",
+  "pts_for": 215.833,
+  "pts_against": 311.0
+ },
+ {
+  "year": 2026,
+  "period": 13,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "drwall",
+  "pts_for": 397.0,
+  "pts_against": 263.0
+ },
+ {
+  "year": 2026,
+  "period": 13,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "tessman",
+  "pts_for": 263.0,
+  "pts_against": 397.0
+ },
+ {
+  "year": 2026,
+  "period": 14,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "sorgaard",
+  "pts_for": 358.333,
+  "pts_against": 281.667
+ },
+ {
+  "year": 2026,
+  "period": 14,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "kaufer",
+  "pts_for": 281.667,
+  "pts_against": 358.333
+ },
+ {
+  "year": 2026,
+  "period": 14,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "krech",
+  "pts_for": 241.667,
+  "pts_against": 447.833
+ },
+ {
+  "year": 2026,
+  "period": 14,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "hegna",
+  "pts_for": 447.833,
+  "pts_against": 241.667
+ },
+ {
+  "year": 2026,
+  "period": 14,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "jfarr",
+  "pts_for": 375.5,
+  "pts_against": 327.833
+ },
+ {
+  "year": 2026,
+  "period": 14,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "norman",
+  "pts_for": 327.833,
+  "pts_against": 375.5
+ },
+ {
+  "year": 2026,
+  "period": 14,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "tasin",
+  "pts_for": 403.833,
+  "pts_against": 216.833
+ },
+ {
+  "year": 2026,
+  "period": 14,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "moellerreed",
+  "pts_for": 216.833,
+  "pts_against": 403.833
+ },
+ {
+  "year": 2026,
+  "period": 14,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "drwall",
+  "pts_for": 376.0,
+  "pts_against": 328.0
+ },
+ {
+  "year": 2026,
+  "period": 14,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "tfarr",
+  "pts_for": 328.0,
+  "pts_against": 376.0
+ },
+ {
+  "year": 2026,
+  "period": 14,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "tessman",
+  "pts_for": 334.833,
+  "pts_against": 371.333
+ },
+ {
+  "year": 2026,
+  "period": 14,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "bugar",
+  "pts_for": 371.333,
+  "pts_against": 334.833
+ },
+ {
+  "year": 2026,
+  "period": 15,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "kaufer",
+  "pts_for": 355.167,
+  "pts_against": 411.667
+ },
+ {
+  "year": 2026,
+  "period": 15,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "krech",
+  "pts_for": 411.667,
+  "pts_against": 355.167
+ },
+ {
+  "year": 2026,
+  "period": 15,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "jfarr",
+  "pts_for": 279.333,
+  "pts_against": 330.667
+ },
+ {
+  "year": 2026,
+  "period": 15,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "sorgaard",
+  "pts_for": 330.667,
+  "pts_against": 279.333
+ },
+ {
+  "year": 2026,
+  "period": 15,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "tasin",
+  "pts_for": 251.5,
+  "pts_against": 235.333
+ },
+ {
+  "year": 2026,
+  "period": 15,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "hegna",
+  "pts_for": 235.333,
+  "pts_against": 251.5
+ },
+ {
+  "year": 2026,
+  "period": 15,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "drwall",
+  "pts_for": 225.167,
+  "pts_against": 260.333
+ },
+ {
+  "year": 2026,
+  "period": 15,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "norman",
+  "pts_for": 260.333,
+  "pts_against": 225.167
+ },
+ {
+  "year": 2026,
+  "period": 15,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "tessman",
+  "pts_for": 374.5,
+  "pts_against": 385.5
+ },
+ {
+  "year": 2026,
+  "period": 15,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "moellerreed",
+  "pts_for": 385.5,
+  "pts_against": 374.5
+ },
+ {
+  "year": 2026,
+  "period": 15,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "bugar",
+  "pts_for": 329.5,
+  "pts_against": 317.167
+ },
+ {
+  "year": 2026,
+  "period": 15,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "tfarr",
+  "pts_for": 317.167,
+  "pts_against": 329.5
+ },
+ {
+  "year": 2026,
+  "period": 16,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "jfarr",
+  "pts_for": 553.833,
+  "pts_against": 533.333
+ },
+ {
+  "year": 2026,
+  "period": 16,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "kaufer",
+  "pts_for": 533.333,
+  "pts_against": 553.833
+ },
+ {
+  "year": 2026,
+  "period": 16,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "tasin",
+  "pts_for": 497.167,
+  "pts_against": 435.333
+ },
+ {
+  "year": 2026,
+  "period": 16,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "krech",
+  "pts_for": 435.333,
+  "pts_against": 497.167
+ },
+ {
+  "year": 2026,
+  "period": 16,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "drwall",
+  "pts_for": 444.167,
+  "pts_against": 516.333
+ },
+ {
+  "year": 2026,
+  "period": 16,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "sorgaard",
+  "pts_for": 516.333,
+  "pts_against": 444.167
+ },
+ {
+  "year": 2026,
+  "period": 16,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "tessman",
+  "pts_for": 251.5,
+  "pts_against": 585.167
+ },
+ {
+  "year": 2026,
+  "period": 16,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "hegna",
+  "pts_for": 585.167,
+  "pts_against": 251.5
+ },
+ {
+  "year": 2026,
+  "period": 16,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "bugar",
+  "pts_for": 370.5,
+  "pts_against": 477.167
+ },
+ {
+  "year": 2026,
+  "period": 16,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "norman",
+  "pts_for": 477.167,
+  "pts_against": 370.5
+ },
+ {
+  "year": 2026,
+  "period": 16,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "tfarr",
+  "pts_for": 494.667,
+  "pts_against": 551.667
+ },
+ {
+  "year": 2026,
+  "period": 16,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "moellerreed",
+  "pts_for": 551.667,
+  "pts_against": 494.667
+ },
+ {
+  "year": 2026,
+  "period": 17,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "tasin",
+  "pts_for": 310.167,
+  "pts_against": 260.167
+ },
+ {
+  "year": 2026,
+  "period": 17,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "kaufer",
+  "pts_for": 260.167,
+  "pts_against": 310.167
+ },
+ {
+  "year": 2026,
+  "period": 17,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "drwall",
+  "pts_for": 285.167,
+  "pts_against": 340.667
+ },
+ {
+  "year": 2026,
+  "period": 17,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "jfarr",
+  "pts_for": 340.667,
+  "pts_against": 285.167
+ },
+ {
+  "year": 2026,
+  "period": 17,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "tessman",
+  "pts_for": 386.333,
+  "pts_against": 387.0
+ },
+ {
+  "year": 2026,
+  "period": 17,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "krech",
+  "pts_for": 387.0,
+  "pts_against": 386.333
+ },
+ {
+  "year": 2026,
+  "period": 17,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "bugar",
+  "pts_for": 279.167,
+  "pts_against": 364.833
+ },
+ {
+  "year": 2026,
+  "period": 17,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "sorgaard",
+  "pts_for": 364.833,
+  "pts_against": 279.167
+ },
+ {
+  "year": 2026,
+  "period": 17,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "tfarr",
+  "pts_for": 306.167,
+  "pts_against": 421.0
+ },
+ {
+  "year": 2026,
+  "period": 17,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "hegna",
+  "pts_for": 421.0,
+  "pts_against": 306.167
+ },
+ {
+  "year": 2026,
+  "period": 17,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "moellerreed",
+  "pts_for": 220.667,
+  "pts_against": 281.833
+ },
+ {
+  "year": 2026,
+  "period": 17,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "norman",
+  "pts_for": 281.833,
+  "pts_against": 220.667
+ },
+ {
+  "year": 2026,
+  "period": 18,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "drwall",
+  "pts_for": 393.0,
+  "pts_against": 278.5
+ },
+ {
+  "year": 2026,
+  "period": 18,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "kaufer",
+  "pts_for": 278.5,
+  "pts_against": 393.0
+ },
+ {
+  "year": 2026,
+  "period": 18,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "tessman",
+  "pts_for": 257.667,
+  "pts_against": 393.667
+ },
+ {
+  "year": 2026,
+  "period": 18,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "tasin",
+  "pts_for": 393.667,
+  "pts_against": 257.667
+ },
+ {
+  "year": 2026,
+  "period": 18,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "bugar",
+  "pts_for": 357.667,
+  "pts_against": 301.5
+ },
+ {
+  "year": 2026,
+  "period": 18,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "jfarr",
+  "pts_for": 301.5,
+  "pts_against": 357.667
+ },
+ {
+  "year": 2026,
+  "period": 18,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "tfarr",
+  "pts_for": 338.0,
+  "pts_against": 319.0
+ },
+ {
+  "year": 2026,
+  "period": 18,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "krech",
+  "pts_for": 319.0,
+  "pts_against": 338.0
+ },
+ {
+  "year": 2026,
+  "period": 18,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "moellerreed",
+  "pts_for": 189.333,
+  "pts_against": 401.5
+ },
+ {
+  "year": 2026,
+  "period": 18,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "sorgaard",
+  "pts_for": 401.5,
+  "pts_against": 189.333
+ },
+ {
+  "year": 2026,
+  "period": 18,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "norman",
+  "pts_for": 254.833,
+  "pts_against": 246.0
+ },
+ {
+  "year": 2026,
+  "period": 18,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "hegna",
+  "pts_for": 246.0,
+  "pts_against": 254.833
+ },
+ {
+  "year": 2026,
+  "period": 19,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "tessman",
+  "pts_for": 286.833,
+  "pts_against": 415.667
+ },
+ {
+  "year": 2026,
+  "period": 19,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "kaufer",
+  "pts_for": 415.667,
+  "pts_against": 286.833
+ },
+ {
+  "year": 2026,
+  "period": 19,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "bugar",
+  "pts_for": 323.0,
+  "pts_against": 358.333
+ },
+ {
+  "year": 2026,
+  "period": 19,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "drwall",
+  "pts_for": 358.333,
+  "pts_against": 323.0
+ },
+ {
+  "year": 2026,
+  "period": 19,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "tfarr",
+  "pts_for": 276.0,
+  "pts_against": 363.5
+ },
+ {
+  "year": 2026,
+  "period": 19,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "tasin",
+  "pts_for": 363.5,
+  "pts_against": 276.0
+ },
+ {
+  "year": 2026,
+  "period": 19,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "moellerreed",
+  "pts_for": 330.0,
+  "pts_against": 344.167
+ },
+ {
+  "year": 2026,
+  "period": 19,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "jfarr",
+  "pts_for": 344.167,
+  "pts_against": 330.0
+ },
+ {
+  "year": 2026,
+  "period": 19,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "norman",
+  "pts_for": 270.833,
+  "pts_against": 233.5
+ },
+ {
+  "year": 2026,
+  "period": 19,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "krech",
+  "pts_for": 233.5,
+  "pts_against": 270.833
+ },
+ {
+  "year": 2026,
+  "period": 19,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "hegna",
+  "pts_for": 215.333,
+  "pts_against": 243.333
+ },
+ {
+  "year": 2026,
+  "period": 19,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "sorgaard",
+  "pts_for": 243.333,
+  "pts_against": 215.333
+ }
+]

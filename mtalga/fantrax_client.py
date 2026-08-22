@@ -19,10 +19,11 @@ COOKIE_FILE = Path(__file__).resolve().parent.parent / "data" / "fantrax_cookies
 
 
 def _patch_matchup_parsing() -> None:
-    """Make fantraxapi's Matchup tolerant of malformed rows.
+    """Parse matchup rows by structure, not fixed positions.
 
-    Unknown teams become plain strings and unparseable scores become 0 —
-    both of which the sync skips safely.
+    MTALGA's schedule rows have 8 cells (Away, FPts, Adj, Total, Home, FPts,
+    Adj, Total); the library assumes 4. We find the two team cells and take
+    each side's last numeric column — the adjusted final total.
     """
     from decimal import Decimal, InvalidOperation
 
@@ -34,15 +35,20 @@ def _patch_matchup_parsing() -> None:
         self.scoring_period = scoring_period
         self.matchup_key = matchup_key
 
-        def cell(i):
-            try:
-                c = self._data[i]
-                return c if isinstance(c, dict) else {"content": str(c)}
-            except (IndexError, KeyError, TypeError):
-                return {}
+        raw_cells = self._data if isinstance(self._data, list) else []
+        cells = [c if isinstance(c, dict) else {"content": str(c)} for c in raw_cells]
 
-        def team_at(i):
-            c = cell(i)
+        def to_dec(raw):
+            raw = str(raw).replace(",", "").strip()
+            if raw in ("", "-", "–", "—", "TBD", "N/A"):
+                return None
+            try:
+                return Decimal(raw)
+            except InvalidOperation:
+                return None
+
+        def team_obj(i):
+            c = cells[i]
             tid = c.get("teamId")
             if tid:
                 try:
@@ -51,19 +57,26 @@ def _patch_matchup_parsing() -> None:
                     pass
             return str(c.get("content", ""))
 
-        def score_at(i):
-            raw = str(cell(i).get("content", "0")).replace(",", "").strip()
-            if raw in ("", "-", "–", "—", "TBD", "N/A"):
-                return Decimal(0)
-            try:
-                return Decimal(raw)
-            except InvalidOperation:
-                return Decimal(0)
+        def final_score(start, end):
+            val = None
+            for j in range(start, end):
+                d = to_dec(cells[j].get("content", ""))
+                if d is not None:
+                    val = d
+            return val if val is not None else Decimal(0)
 
-        self.away = team_at(0)
-        self._away_score = score_at(1)
-        self.home = team_at(2)
-        self._home_score = score_at(3)
+        team_idx = [i for i, c in enumerate(cells) if c.get("teamId")]
+        if len(team_idx) >= 2:
+            a, h = team_idx[0], team_idx[1]
+            self.away = team_obj(a)
+            self._away_score = final_score(a + 1, h)
+            self.home = team_obj(h)
+            self._home_score = final_score(h + 1, len(cells))
+        else:
+            self.away = str(cells[0].get("content", "")) if cells else ""
+            self._away_score = Decimal(0)
+            self.home = str(cells[2].get("content", "")) if len(cells) > 2 else ""
+            self._home_score = Decimal(0)
 
     sp.Matchup.__init__ = safe_init
 
@@ -72,12 +85,7 @@ _patch_matchup_parsing()
 
 
 def _patch_scoring_period_results() -> None:
-    """Fix fantraxapi's scoring_period_results for mid-season leagues.
-
-    Upstream bug: with no extra bracket tabs (playoffs not started), the API
-    helper returns a single dict instead of a list, and `responses[1:]`
-    raises KeyError. Same logic, plus normalization and guards.
-    """
+    """Fix fantraxapi's scoring_period_results for mid-season leagues."""
     import re as _re
 
     import fantraxapi.api as api
@@ -99,7 +107,7 @@ def _patch_scoring_period_results() -> None:
             try:
                 playoff_responses = api.get_standings(self, views=["PLAYOFFS"] + tabs)
             except Exception:
-                return periods  # no playoff view at all yet
+                return periods
             if not isinstance(playoff_responses, list):
                 playoff_responses = [playoff_responses]
 
@@ -125,7 +133,7 @@ def _patch_scoring_period_results() -> None:
                 try:
                     sp_ = ScoringPeriodResult(self, obj, other_data=other_data.get(n))
                 except Exception:
-                    continue  # unscheduled/TBD playoff period — nothing to store yet
+                    continue
                 periods[sp_.period.number] = sp_
 
         return periods

@@ -1,1 +1,56 @@
-[]
+[
+ {
+  "category": "Biggest blowout",
+  "scope": "game",
+  "value": 333.66700000000003,
+  "display": "333.667",
+  "owner_slug": "tessman",
+  "year": 2026,
+  "detail": null
+ },
+ {
+  "category": "Fewest points, game",
+  "scope": "game",
+  "value": 189.333,
+  "display": "189.333",
+  "owner_slug": "sorgaard",
+  "year": 2026,
+  "detail": null
+ },
+ {
+  "category": "Most points, game",
+  "scope": "game",
+  "value": 585.167,
+  "display": "585.167",
+  "owner_slug": "tessman",
+  "year": 2026,
+  "detail": null
+ },
+ {
+  "category": "Best season OPR",
+  "scope": "season",
+  "value": 1.1624887806935467,
+  "display": "1.16249",
+  "owner_slug": "tessman",
+  "year": 2026,
+  "detail": null
+ },
+ {
+  "category": "Best win pct, season",
+  "scope": "season",
+  "value": 0.7894736842105263,
+  "display": "0.789474",
+  "owner_slug": "kaufer",
+  "year": 2026,
+  "detail": null
+ },
+ {
+  "category": "Most points, season",
+  "scope": "season",
+  "value": 7169.666000000001,
+  "display": "7169.67",
+  "owner_slug": "tessman",
+  "year": 2026,
+  "detail": null
+ }
+]

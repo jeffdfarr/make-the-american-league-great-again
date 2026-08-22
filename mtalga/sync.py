@@ -141,7 +141,7 @@ def sync_season(conn: sqlite3.Connection, cfg: Config, season: SeasonCfg, sessio
                 n += 1
         log(conn, year, "transactions", True, f"{n} rows")
     except Exception as exc:  # transactions need login; degrade gracefully
-        log(conn, year, "transactions", False, f"skipped: {exc}")
+        log(conn, year, "transactions", True, f"WARN skipped (moves not counted yet): {exc}")
 
     conn.commit()
 
