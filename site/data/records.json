@@ -11,46 +11,46 @@
  {
   "category": "Fewest points, game",
   "scope": "game",
-  "value": 189.333,
-  "display": "189.333",
-  "owner_slug": "sorgaard",
-  "year": 2026,
+  "value": 132.0,
+  "display": "132",
+  "owner_slug": "tasin",
+  "year": 2022,
   "detail": null
  },
  {
   "category": "Most points, game",
   "scope": "game",
-  "value": 585.167,
-  "display": "585.167",
-  "owner_slug": "tessman",
-  "year": 2026,
+  "value": 676.833,
+  "display": "676.833",
+  "owner_slug": "bugar",
+  "year": 2024,
   "detail": null
  },
  {
   "category": "Best season OPR",
   "scope": "season",
-  "value": 1.1624887806935467,
-  "display": "1.16249",
-  "owner_slug": "tessman",
-  "year": 2026,
+  "value": 1.2336775703563903,
+  "display": "1.23368",
+  "owner_slug": "sorgaard",
+  "year": 2020,
   "detail": null
  },
  {
   "category": "Best win pct, season",
   "scope": "season",
-  "value": 0.7894736842105263,
-  "display": "0.789474",
-  "owner_slug": "kaufer",
-  "year": 2026,
+  "value": 0.9166666666666666,
+  "display": "0.916667",
+  "owner_slug": "tessman",
+  "year": 2021,
   "detail": null
  },
  {
   "category": "Most points, season",
   "scope": "season",
-  "value": 7169.666000000001,
-  "display": "7169.67",
-  "owner_slug": "tessman",
-  "year": 2026,
+  "value": 9248.667000000001,
+  "display": "9248.67",
+  "owner_slug": "bugar",
+  "year": 2024,
   "detail": null
  }
 ]

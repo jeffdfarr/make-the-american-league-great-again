@@ -16,7 +16,7 @@ owners:
     joined: 2020
   - slug: moellerreed
     name: KTown Moeller-Reed
-    joined: 2020
+    joined: 2021
   - slug: drwall
     name: Ben Drwall
     joined: 2020
@@ -37,23 +37,83 @@ owners:
     joined: 2020
   - slug: norman
     name: Zac Norman
-    joined: null   # TODO: first season
+    joined: 2026
   - slug: hegna
     name: Taylor Hegna
-    joined: null   # TODO: first season
+    joined: 2026
   - slug: bruchu
     name: Bruchu
     joined: 2020
-    left: null     # TODO: last season (xBruchu tab = departed owner)
+    left: 2020
 
 # year -> { fantrax_team_id: owner_slug }
 team_map:
-  2020: {}
-  2021: {}
-  2022: {}
-  2023: {}
-  2024: {}
-  2025: {}
+  2020:
+    lbcz8kg8k73vojue: jfarr         # Baby Face Assassins (BABY)
+    xzwflso9k73vojco: kaufer        # Backyard Melonheads (KAUF)
+    sydhi394k6u408d6: krech         # Bomba Squad (jakrech2)
+    pflm8i7ok73vok1r: bruchu        # Brushdog Millionaire (JB)
+    y8t5z9dvk73vojoc: tasin         # Electric Boogaloo (C$)
+    vob8a0byk73voj81: tfarr         # Hosmer-Sexuals (Dicks)
+    uezrkl0ck73voj1x: sorgaard      # Random Hero (Nick)
+    5age42s7k73vojhd: bugar         # Rocket City Trash Pandas (RCTP)
+    4e6zwmfnk73voj4l: drwall        # Steamed Hams (SH)
+    8964p8mgk73voj02: tessman       # Uncle Tom's Glavine (UTG)
+  2021:
+    bhnkwjkykg80y2ko: kaufer        # Backyard Melonheads
+    trr0qcl8kg80y2ks: krech         # Bomba Squad
+    729j0xogkg80y2kh: tasin         # Electric Boogaloo
+    q9xhpi06kg80y2kz: jfarr         # Moonlight Graham Crackers
+    k1qusapvkg80y2l1: moellerreed   # Pimps & Joses
+    p81k86h2kg80y2kj: sorgaard      # Random Hero
+    s8v8ivc5kg80y2km: bugar         # Rocket City Trash Pandas
+    zy0a44r9kg80y2kw: tfarr         # Some Lady Named Ruth
+    x8j0zmg9kg80y2ku: drwall        # Steamed Hams
+    6fo8xp4ikg80y2kq: tessman       # Uncle Tom's Glavine
+  2022:
+    36juxfvykvpvpnfq: kaufer        # Backyard Melonheads
+    xk9i5dvqkvpvpnfq: krech         # Bomba Squad
+    rmy0ubmpkvpvpnfq: tasin         # Electric Boogaloo
+    onchnfkykvpvpnfq: jfarr         # Moonlight Graham Crackers
+    fevm3niakvpvpnfq: moellerreed   # Pimps & Joses
+    4svjjavvkvpvpnfq: sorgaard      # Random Hero
+    dwu60os9kvpvpnfq: bugar         # Rocket City Trash Pandas
+    8bbalmwekvpvpnfq: tfarr         # Some Lady Named Ruth
+    fyg7pwjikvpvpnfq: drwall        # Steamed Hams
+    q6j24dz2kvpvpnfq: tessman       # Uncle Tom's Glavine
+  2023:
+    yg3qjyzgld4uu7u6: kaufer        # Backyard Melonheads
+    lif5uh5gld4uu7u6: krech         # Bomba Squad
+    n0u2bo7zld4uu7u6: tasin         # Electric Boogaloo
+    03pu6o4xld4uu7u6: bugar         # Goldilocks Balls
+    28sqbhf5ld4uu7u5: jfarr         # Moonlight Graham Crackers
+    xs23unebld4uu7u6: sorgaard      # Random Hero
+    omgyi3byld4uu7u6: tfarr         # Some Lady Named Ruth
+    fbhe3vp4ld4uu7u5: drwall        # Steamed Hams
+    zaskr1cold4uu7u6: moellerreed   # Texas Cub Cobblers
+    rj66jvbzld4uu7u6: tessman       # Uncle Tom's Glavine
+  2024:
+    jgad1ntvlnovys9h: kaufer        # Backyard Melonheads
+    ba7akmvvlnovys9h: krech         # Bomba Squad
+    sskpip0wlnovys9h: moellerreed   # Forced Happy Endings
+    umw2gqk4lnovys9h: jfarr         # Moonlight Graham Crackers
+    rydvzf3ulnovys9h: sorgaard      # Random Hero
+    r18zq3whlnovys9h: bugar         # Savannah Bananas
+    3ley2hmclnovys9h: tfarr         # Some Lady Named Ruth
+    bqj0dwj7lnovys9h: drwall        # Steamed Hams
+    ig389zu2lnovys9h: tasin         # Team TJ
+    h17dp59plnovys9h: tessman       # Uncle Tom's Glavine
+  2025:
+    b8xg5m6wm4k904o7: kaufer        # Backyard Melonheads
+    jhmlkw3km4k904o7: krech         # Bomba Squad
+    u056yrmgm4k904o7: moellerreed   # Forced Happy Endings
+    sfi44amjm4k904o7: jfarr         # Moonlight Graham Crackers
+    hy0t9lvxm4k904o7: sorgaard      # Random Hero
+    gn9ysvw5m4k904o7: bugar         # Savannah Bananas
+    meqxnc1tm4k904o7: tfarr         # Some Lady Named Ruth
+    f05hd5jqm4k904o7: drwall        # Steamed Hams
+    vnt7ithym4k904o7: tasin         # Tommy John's
+    nfkjyiclm4k904o7: tessman       # Uncle Tom's Glavine
   2026:
     pl8ghzb7mhox8ay3: kaufer        # Backyard Melonheads (KAUF)
     rwk262ucmhox8ay2: drwall        # Ben's Champions Chair (BCC)
