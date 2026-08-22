@@ -3,44 +3,43 @@
 #
 # team_map connects each season's Fantrax team ID to an owner. Fill it by
 # running:   python -m mtalga.cli discover --year 2020   (etc.)
-# which prints every team (id, name) the API sees for that season.
 
 owners:
   - slug: tfarr
     name: Tyler Farr
     joined: 2020
   - slug: tessman
-    name: Tessman
+    name: Nick Tessman
     joined: 2020
   - slug: bugar
-    name: Bugar
+    name: Seth Bugar
     joined: 2020
   - slug: moellerreed
-    name: Moeller-Reed
+    name: KTown Moeller-Reed
     joined: 2020
   - slug: drwall
-    name: Drwall
+    name: Ben Drwall
     joined: 2020
   - slug: jfarr
     name: Jeff Farr
     joined: 2020
   - slug: kaufer
-    name: Kaufer
+    name: Andy Kaufer
     joined: 2020
   - slug: krech
-    name: Krech
+    name: Jason Krech
     joined: 2020
   - slug: sorgaard
     name: Nick Sorgaard
     joined: 2020
   - slug: tasin
-    name: Tasin
+    name: Coirey Tasin
     joined: 2020
   - slug: norman
-    name: Norman
+    name: Zac Norman
     joined: null   # TODO: first season
   - slug: hegna
-    name: Hegna
+    name: Taylor Hegna
     joined: null   # TODO: first season
   - slug: bruchu
     name: Bruchu
@@ -48,8 +47,6 @@ owners:
     left: null     # TODO: last season (xBruchu tab = departed owner)
 
 # year -> { fantrax_team_id: owner_slug }
-# Populated during backfill; empty mappings make the sync fail loudly
-# rather than guess.
 team_map:
   2020: {}
   2021: {}
@@ -57,4 +54,16 @@ team_map:
   2023: {}
   2024: {}
   2025: {}
-  2026: {}
+  2026:
+    pl8ghzb7mhox8ay3: kaufer        # Backyard Melonheads (KAUF)
+    rwk262ucmhox8ay2: drwall        # Ben's Champions Chair (BCC)
+    tkfoeztwmhox8ay3: krech         # Bomba Squad (jakrech2)
+    uaujua3hmhox8ay3: moellerreed   # Forced Happy Endings (KMR)
+    v78a3v18mhox8ay3: jfarr         # Moonlight Graham Crackers (GRAHAM)
+    r68jzef5mhox8ay3: bugar         # Myrtle Beach Mermen (SETH)
+    dh49d1irmhox8ay3: sorgaard      # Random Hero (Nick)
+    zcezsx0vmhox8ay3: tfarr         # Some Lady Named Ruth (BABE)
+    ot21k2elmhox8ay3: tasin         # Tommy John's (TJ)
+    84psu1b0mhox8ay3: tessman       # Uncle Tom's Glavine (UTG)
+    iqej3639mhoxaj5e: norman        # Wade Boggs' Bar Tab (BEER)
+    nq4soxinmhoxaj5e: hegna         # Wiener Winners (DOMEDOG)
