@@ -49,6 +49,7 @@ CREATE TABLE IF NOT EXISTS games (
     year            INTEGER NOT NULL REFERENCES seasons(year),
     period          INTEGER NOT NULL,
     period_name     TEXT,                 -- raw Fantrax caption, for auditing
+    period_days     INTEGER,              -- length of the scoring period in days
     bracket         TEXT,                 -- NULL = main bracket; else Fantrax bracket name
     game_type       TEXT NOT NULL,        -- 'R' regular, 'P' playoff, 'C' consolation, 'F' final
     matchup_uid     TEXT NOT NULL,        -- year:period:sortedTeamIds
@@ -97,6 +98,7 @@ CREATE TABLE IF NOT EXISTS season_stats (
     margin REAL, margin_pg REAL,
     sos_win_pct REAL, sos_opr REAL,
     raw_opr REAL, opr REAL,
+    strd_high REAL, alt_raw_opr REAL, alt_opr REAL,
     expected_wins REAL, luck REAL,
     playoff_app INTEGER, bye INTEGER,
     playoff_w INTEGER, playoff_l INTEGER,
@@ -168,10 +170,23 @@ def connect(path: Path | str | None = None) -> sqlite3.Connection:
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON")
     conn.executescript(SCHEMA)
+    _migrate(conn)
     return conn
 
 
+def _migrate(conn: sqlite3.Connection) -> None:
+    """Additive migrations for source tables that predate a schema change."""
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(games)")}
+    if "period_days" not in cols:
+        conn.execute("ALTER TABLE games ADD COLUMN period_days INTEGER")
+
+
 def reset_derived(conn: sqlite3.Connection) -> None:
-    """Derived tables are always rebuilt from scratch — cheap at this scale."""
+    """Derived tables are always rebuilt from scratch — cheap at this scale.
+
+    DROP + recreate so schema additions to derived tables apply without
+    hand-run migrations.
+    """
     for table in DERIVED_TABLES:
-        conn.execute(f"DELETE FROM {table}")
+        conn.execute(f"DROP TABLE IF EXISTS {table}")
+    conn.executescript(SCHEMA)

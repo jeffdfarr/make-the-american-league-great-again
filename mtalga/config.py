@@ -18,6 +18,7 @@ class SeasonCfg:
     playoff_teams: int | None = None
     byes: int | None = None
     notes: str | None = None
+    exclude_from_projections: bool = False
 
 
 @dataclass
@@ -47,6 +48,7 @@ def load(config_dir: Path | str | None = None) -> Config:
             playoff_teams=cfg.get("playoff_teams"),
             byes=cfg.get("byes"),
             notes=cfg.get("notes"),
+            exclude_from_projections=bool(cfg.get("exclude_from_projections", False)),
         )
         for year, cfg in seasons_raw["seasons"].items()
     }

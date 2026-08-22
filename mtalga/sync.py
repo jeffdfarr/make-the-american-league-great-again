@@ -93,6 +93,7 @@ def sync_season(conn: sqlite3.Connection, cfg: Config, season: SeasonCfg, sessio
         if getattr(spr, "future", False):
             continue
         period = spr.period.number
+        period_days = getattr(spr, "days", None)
         buckets: list[tuple[str | None, list]] = [(None, spr.matchups)]
         for bracket_name, matchups in getattr(spr, "other_brackets", {}).items():
             buckets.append((bracket_name, matchups))
@@ -111,14 +112,15 @@ def sync_season(conn: sqlite3.Connection, cfg: Config, season: SeasonCfg, sessio
                     (home, away, m.home_score, m.away_score, 1),
                 ):
                     conn.execute(
-                        """INSERT INTO games (year, period, period_name, bracket, game_type, matchup_uid,
+                        """INSERT INTO games (year, period, period_name, period_days, bracket, game_type, matchup_uid,
                                               team_season_id, opp_season_id, pts_for, pts_against, is_home, complete)
-                           VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
+                           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
                            ON CONFLICT(matchup_uid, team_season_id) DO UPDATE SET
                              pts_for=excluded.pts_for, pts_against=excluded.pts_against,
                              game_type=excluded.game_type, bracket=excluded.bracket,
-                             period_name=excluded.period_name, complete=excluded.complete""",
-                        (year, period, spr.name, bracket, gtype, uid,
+                             period_name=excluded.period_name, period_days=excluded.period_days,
+                             complete=excluded.complete""",
+                        (year, period, spr.name, period_days, bracket, gtype, uid,
                          ts_ids[me.id], ts_ids[opp.id], pf, pa, is_home, int(spr.complete)),
                     )
                 n_games += 1

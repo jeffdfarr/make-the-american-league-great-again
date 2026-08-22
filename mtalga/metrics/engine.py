@@ -134,7 +134,7 @@ def _season_stats(conn: sqlite3.Connection, year: int) -> list[dict]:
 
     rows = conn.execute(
         """SELECT ts.id AS team_season_id, ts.owner_slug, g.game_type, g.matchup_uid,
-                  g.pts_for, g.pts_against, g.period
+                  g.pts_for, g.pts_against, g.period, g.period_days
            FROM games g JOIN team_seasons ts ON ts.id = g.team_season_id
            WHERE g.year = ? AND g.complete = 1""",
         (year,),
@@ -146,6 +146,7 @@ def _season_stats(conn: sqlite3.Connection, year: int) -> list[dict]:
             "games": 0, "w": 0, "l": 0, "t": 0,
             "rs_games": 0, "rs_w": 0, "rs_l": 0, "rs_t": 0,
             "pf": 0.0, "pa": 0.0, "high_game": None, "low_game": None,
+            "strd_high": None,
             "playoff_app": 0, "playoff_w": 0, "playoff_l": 0,
             "final_app": 0, "champion": 0, "bye": 0, "third_w": 0,
         }
@@ -166,6 +167,11 @@ def _season_stats(conn: sqlite3.Connection, year: int) -> list[dict]:
             s["pa"] += pa
             s["high_game"] = pf if s["high_game"] is None else max(s["high_game"], pf)
             s["low_game"] = pf if s["low_game"] is None else min(s["low_game"], pf)
+            # "Strd High": best score among STANDARD-LENGTH weeks only — the
+            # stretched periods (opening week, All-Star break) are excluded
+            # (commissioner's rule; feeds the alternate OPR).
+            if r["period_days"] is not None and r["period_days"] <= 8:
+                s["strd_high"] = pf if s["strd_high"] is None else max(s["strd_high"], pf)
         else:
             cls = post.get(r["matchup_uid"], "CONS")
             if cls in ("TREE", "THIRD"):
@@ -188,6 +194,8 @@ def _season_stats(conn: sqlite3.Connection, year: int) -> list[dict]:
 
     out = []
     for s in by_team.values():
+        if s["strd_high"] is None:      # no period-length data (or no standard weeks)
+            s["strd_high"] = s["high_game"]
         s["win_pct"] = f.win_pct(s["w"], s["l"])
         s["rs_win_pct"] = f.win_pct(s["rs_w"], s["rs_l"])
         s["ppg"] = s["pf"] / s["rs_games"] if s["rs_games"] else 0.0
@@ -235,18 +243,28 @@ def _apply_opr(per_season: dict[int, list[dict]]) -> None:
         for s in stats:
             if s["rs_games"] and s["high_game"] is not None:
                 s["raw_opr"] = f.raw_opr(s["ppg"], s["high_game"], s["low_game"], s["rs_win_pct"])
+                s["alt_raw_opr"] = f.raw_opr(s["ppg"], s["strd_high"], s["low_game"], s["rs_win_pct"])
             else:
-                s["raw_opr"] = None
+                s["raw_opr"] = s["alt_raw_opr"] = None
         raws = [s["raw_opr"] for s in stats if s["raw_opr"] is not None]
         avg = sum(raws) / len(raws) if raws else None
+        alts = [s["alt_raw_opr"] for s in stats if s["alt_raw_opr"] is not None]
+        alt_avg = sum(alts) / len(alts) if alts else None
         for s in stats:
             s["opr"] = f.normalized_opr(s["raw_opr"], avg) if s["raw_opr"] is not None and avg else None
+            s["alt_opr"] = (f.normalized_opr(s["alt_raw_opr"], alt_avg)
+                            if s["alt_raw_opr"] is not None and alt_avg else None)
 
 
 def _apply_expected_wins(per_season: dict[int, list[dict]], cfg: Config) -> None:
+    # Projections regress over completed FULL seasons only — 2020's short
+    # season is flagged exclude_from_projections in seasons.yaml
+    # (commissioner's rule, matching the sheet's hidden Projection tab).
+    excluded = {y for y, sc in cfg.seasons.items() if sc.exclude_from_projections}
     history = [
         (s["opr"], s["rs_w"])
-        for year, stats in per_season.items() if year < cfg.current_season
+        for year, stats in per_season.items()
+        if year < cfg.current_season and year not in excluded
         for s in stats if s["opr"] is not None and s["rs_games"]
     ]
     for year, stats in per_season.items():
@@ -284,7 +302,8 @@ def _write_season_stats(conn: sqlite3.Connection, per_season: dict[int, list[dic
             "rs_games", "rs_w", "rs_l", "rs_t", "win_pct", "rs_win_pct", "finish",
             "pf", "pa", "ppg", "papg", "high_game", "low_game",
             "pitching_pf", "hitting_pf", "moves", "margin", "margin_pg",
-            "sos_win_pct", "sos_opr", "raw_opr", "opr", "expected_wins", "luck",
+            "sos_win_pct", "sos_opr", "raw_opr", "opr",
+            "strd_high", "alt_raw_opr", "alt_opr", "expected_wins", "luck",
             "playoff_app", "bye", "playoff_w", "playoff_l", "final_app", "champion"]
     for stats in per_season.values():
         for s in stats:

@@ -13,6 +13,7 @@ seasons:
     playoff_teams: null        # TODO confirm
     byes: null                 # TODO confirm
     notes: "COVID-shortened debut season"
+    exclude_from_projections: true   # commissioner: projections regress on full seasons only
   2021:
     league_id: jnba1l7jkg80y2k3
     reg_season_games: 22

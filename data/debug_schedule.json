@@ -1,0 +1,419 @@
+{
+ "top_keys": [
+  "goBackDays",
+  "fantasyTeamInfo",
+  "displayedSelections",
+  "miscData",
+  "tableList",
+  "displayedLists"
+ ],
+ "pruned": {
+  "goBackDays": [
+   1,
+   7,
+   14,
+   "...TRUNCATED 2 more items"
+  ],
+  "fantasyTeamInfo": {
+   "nq4soxinmhoxaj5e": {
+    "name": "Wiener Winners",
+    "logoUrl512": "https://fantraximg.com/logos/99x/tmLogo_99xhpk53mk374uu8_512.webp",
+    "shortName": "DOMEDOG"
+   },
+   "tkfoeztwmhox8ay3": {
+    "name": "Bomba Squad",
+    "logoUrl512": "https://fantraximg.com/logos/3ww/tmLogo_3wwow3mik7l23fsl_512.jpg",
+    "shortName": "jakrech2"
+   },
+   "uaujua3hmhox8ay3": {
+    "name": "Forced Happy Endings",
+    "logoUrl512": "https://fantraximg.com/logos/ozg/tmLogo_ozge7sskm68ps8xo_512.jpeg",
+    "shortName": "KMR"
+   },
+   "dh49d1irmhox8ay3": {
+    "name": "Random Hero",
+    "logoUrl512": "https://fantraximg.com/logos/mr2/tmLogo_mr2ux3l0ksapp1sl_512.jpg",
+    "shortName": "Nick"
+   },
+   "ot21k2elmhox8ay3": {
+    "name": "Tommy John's",
+    "logoUrl512": "https://fantraximg.com/logos/ir4/tmLogo_ir4ryxjwk73x0zck_512.jpg",
+    "shortName": "TJ"
+   },
+   "pl8ghzb7mhox8ay3": {
+    "name": "Backyard Melonheads",
+    "logoUrl512": "https://fantraximg.com/logos/htn/tmLogo_htnnb0bok7aqt4vd_512.jpg",
+    "shortName": "KAUF"
+   },
+   "zcezsx0vmhox8ay3": {
+    "name": "Some Lady Named Ruth",
+    "logoUrl512": "https://fantraximg.com/logos/gnq/tmLogo_gnqmobl8krgh8pe0_512.jpg",
+    "shortName": "BABE"
+   },
+   "iqej3639mhoxaj5e": {
+    "name": "Wade Boggs' Bar Tab",
+    "logoUrl512": "https://fantraximg.com/logos/ol9/tmLogo_ol9r458smk4keoki_512.webp",
+    "shortName": "BEER"
+   },
+   "r68jzef5mhox8ay3": {
+    "name": "Myrtle Beach Mermen",
+    "logoUrl512": "https://fantraximg.com/logos/tic/tmLogo_ticmvxdpmjuvsdir_512.webp",
+    "shortName": "SETH"
+   },
+   "rwk262ucmhox8ay2": {
+    "name": "Ben's Champions Chair",
+    "logoUrl512": "https://fantraximg.com/logos/anm/tmLogo_anmqvslqmmtc5xg8_512.webp",
+    "shortName": "BCC"
+   },
+   "v78a3v18mhox8ay3": {
+    "name": "Moonlight Graham Crackers",
+    "logoUrl512": "https://fantraximg.com/logos/7fq/tmLogo_7fq4rlgcma7b1uun_512.webp",
+    "shortName": "GRAHAM"
+   },
+   "84psu1b0mhox8ay3": {
+    "name": "Uncle Tom's Glavine",
+    "logoUrl512": "https://fantraximg.com/logos/9l8/tmLogo_9l8au4ypk74s5ix5_512.jpg",
+    "shortName": "UTG"
+   }
+  },
+  "displayedSelections": {
+   "projectionsAvailable": true,
+   "period": 1,
+   "timeStartType": "PERIOD_ONLY",
+   "view": "SCHEDULE",
+   "optimal": false,
+   "showTabs": true,
+   "hideGoBackDays": true,
+   "timeframeType": "YEAR_TO_DATE",
+   "proj": false,
+   "displayedStartDate": 1774411200000,
+   "showOptimal": true,
+   "displayedEndDate": 1787371200000
+  },
+  "miscData": {
+   "displayedMinDate": 1774411200000,
+   "showLogos": true,
+   "heading": "2026 Make the AL Great Again",
+   "displayedMaxDate": 1790567999000
+  },
+  "tableList": [
+   {
+    "fixedRows": false,
+    "tableType": "H2hPointsBased3",
+    "caption": "Scoring Period 1",
+    "subCaption": "(Wed Mar 25, 2026 - Sun Apr 5, 2026)",
+    "header": {
+     "cells": [
+      {
+       "align": "LEFT",
+       "sortDirection": 1,
+       "name": "Away",
+       "shortName": "Away",
+       "key": "away"
+      },
+      {
+       "sortDirection": 1,
+       "name": "FPts",
+       "shortName": "FPts",
+       "key": "fpts"
+      },
+      {
+       "sortDirection": 1,
+       "name": "Adj",
+       "shortName": "Adj",
+       "key": "adj"
+      },
+      "...TRUNCATED 5 more items"
+     ]
+    },
+    "rows": [
+     {
+      "cells": [
+       {
+        "content": "Backyard Melonheads",
+        "leagueId": "bhbev187mhox8axz",
+        "id": "bhbev187mhox8axz",
+        "teamId": "pl8ghzb7mhox8ay3"
+       },
+       {
+        "content": "528"
+       },
+       {
+        "content": "0"
+       },
+       "...TRUNCATED 5 more items"
+      ]
+     },
+     {
+      "cells": [
+       {
+        "content": "Forced Happy Endings",
+        "leagueId": "bhbev187mhox8axz",
+        "id": "bhbev187mhox8axz",
+        "teamId": "uaujua3hmhox8ay3"
+       },
+       {
+        "content": "456.5"
+       },
+       {
+        "content": "0"
+       },
+       "...TRUNCATED 5 more items"
+      ]
+     },
+     {
+      "cells": [
+       {
+        "content": "Some Lady Named Ruth",
+        "leagueId": "bhbev187mhox8axz",
+        "id": "bhbev187mhox8axz",
+        "teamId": "zcezsx0vmhox8ay3"
+       },
+       {
+        "content": "520.667"
+       },
+       {
+        "content": "0"
+       },
+       "...TRUNCATED 5 more items"
+      ]
+     },
+     "...TRUNCATED 3 more items"
+    ]
+   },
+   {
+    "fixedRows": false,
+    "tableType": "H2hPointsBased3",
+    "caption": "Scoring Period 2",
+    "subCaption": "(Mon Apr 6, 2026 - Sun Apr 12, 2026)",
+    "header": {
+     "cells": [
+      {
+       "align": "LEFT",
+       "sortDirection": 1,
+       "name": "Away",
+       "shortName": "Away",
+       "key": "away"
+      },
+      {
+       "sortDirection": 1,
+       "name": "FPts",
+       "shortName": "FPts",
+       "key": "fpts"
+      },
+      {
+       "sortDirection": 1,
+       "name": "Adj",
+       "shortName": "Adj",
+       "key": "adj"
+      },
+      "...TRUNCATED 5 more items"
+     ]
+    },
+    "rows": [
+     {
+      "cells": [
+       {
+        "content": "Backyard Melonheads",
+        "leagueId": "bhbev187mhox8axz",
+        "id": "bhbev187mhox8axz",
+        "teamId": "pl8ghzb7mhox8ay3"
+       },
+       {
+        "content": "314.667"
+       },
+       {
+        "content": "0"
+       },
+       "...TRUNCATED 5 more items"
+      ]
+     },
+     {
+      "cells": [
+       {
+        "content": "Wade Boggs' Bar Tab",
+        "leagueId": "bhbev187mhox8axz",
+        "id": "bhbev187mhox8axz",
+        "teamId": "iqej3639mhoxaj5e"
+       },
+       {
+        "content": "306.167"
+       },
+       {
+        "content": "0"
+       },
+       "...TRUNCATED 5 more items"
+      ]
+     },
+     {
+      "cells": [
+       {
+        "content": "Forced Happy Endings",
+        "leagueId": "bhbev187mhox8axz",
+        "id": "bhbev187mhox8axz",
+        "teamId": "uaujua3hmhox8ay3"
+       },
+       {
+        "content": "297.167"
+       },
+       {
+        "content": "0"
+       },
+       "...TRUNCATED 5 more items"
+      ]
+     },
+     "...TRUNCATED 3 more items"
+    ]
+   },
+   {
+    "fixedRows": false,
+    "tableType": "H2hPointsBased3",
+    "caption": "Scoring Period 3",
+    "subCaption": "(Mon Apr 13, 2026 - Sun Apr 19, 2026)",
+    "header": {
+     "cells": [
+      {
+       "align": "LEFT",
+       "sortDirection": 1,
+       "name": "Away",
+       "shortName": "Away",
+       "key": "away"
+      },
+      {
+       "sortDirection": 1,
+       "name": "FPts",
+       "shortName": "FPts",
+       "key": "fpts"
+      },
+      {
+       "sortDirection": 1,
+       "name": "Adj",
+       "shortName": "Adj",
+       "key": "adj"
+      },
+      "...TRUNCATED 5 more items"
+     ]
+    },
+    "rows": [
+     {
+      "cells": [
+       {
+        "content": "Backyard Melonheads",
+        "leagueId": "bhbev187mhox8axz",
+        "id": "bhbev187mhox8axz",
+        "teamId": "pl8ghzb7mhox8ay3"
+       },
+       {
+        "content": "292.667"
+       },
+       {
+        "content": "0"
+       },
+       "...TRUNCATED 5 more items"
+      ]
+     },
+     {
+      "cells": [
+       {
+        "content": "Wiener Winners",
+        "leagueId": "bhbev187mhox8axz",
+        "id": "bhbev187mhox8axz",
+        "teamId": "nq4soxinmhoxaj5e"
+       },
+       {
+        "content": "398.333"
+       },
+       {
+        "content": "-26.67"
+       },
+       "...TRUNCATED 5 more items"
+      ]
+     },
+     {
+      "cells": [
+       {
+        "content": "Wade Boggs' Bar Tab",
+        "leagueId": "bhbev187mhox8axz",
+        "id": "bhbev187mhox8axz",
+        "teamId": "iqej3639mhoxaj5e"
+       },
+       {
+        "content": "253.333"
+       },
+       {
+        "content": "-21.5"
+       },
+       "...TRUNCATED 5 more items"
+      ]
+     },
+     "...TRUNCATED 3 more items"
+    ]
+   },
+   "...TRUNCATED 18 more items"
+  ],
+  "displayedLists": {
+   "goBackDays": [
+    1,
+    7,
+    14,
+    "...TRUNCATED 2 more items"
+   ],
+   "pagination": {
+    "startPageNum": 0,
+    "numTeamsPerPage": 25,
+    "endPageNum": 0,
+    "pageNum": 1
+   },
+   "tabs": [
+    {
+     "name": "Regular Season",
+     "id": "REGULAR_SEASON"
+    },
+    {
+     "name": "Results",
+     "id": "SCHEDULE"
+    },
+    {
+     "name": "Season Stats",
+     "id": "SEASON_STATS"
+    },
+    "...TRUNCATED 1 more items"
+   ],
+   "periods": [
+    {
+     "object2": "1 (Mar 25 - Apr 5)",
+     "object1": 1
+    },
+    {
+     "object2": "2 (Apr 6 - Apr 12)",
+     "object1": 2
+    },
+    {
+     "object2": "3 (Apr 13 - Apr 19)",
+     "object1": 3
+    },
+    "...TRUNCATED 22 more items"
+   ],
+   "timeframeTypes": [
+    {
+     "name": "YTD",
+     "id": "YEAR_TO_DATE"
+    },
+    {
+     "name": "By Period",
+     "id": "BY_PERIOD"
+    }
+   ],
+   "timeStartTypes": [
+    {
+     "object2": "Period Only",
+     "object1": "PERIOD_ONLY"
+    },
+    {
+     "object2": "From Start Of Season",
+     "object1": "FROM_SEASON_START"
+    }
+   ]
+  }
+ }
+}
