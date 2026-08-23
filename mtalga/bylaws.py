@@ -30,20 +30,6 @@ DATE_RE = re.compile(r"^\d{1,2}/\d{1,2}/\d{4}$")
 YEAR_RE = re.compile(r"^(19|20)\d{2}$")
 
 
-def _parse_trade_date(cell: str):
-    """Accept 8/23/2026, 8/23/26, 8-23-2026, or 2026-08-23 -> 'M/D/YYYY'."""
-    m = re.match(r"^(\d{1,2})[/-](\d{1,2})[/-](\d{2,4})$", cell)
-    if m:
-        mo, d, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
-        if y < 100:
-            y += 2000
-        return f"{mo}/{d}/{y}"
-    m = re.match(r"^(\d{4})-(\d{1,2})-(\d{1,2})$", cell)
-    if m:
-        return f"{int(m.group(2))}/{int(m.group(3))}/{int(m.group(1))}"
-    return None
-
-
 def _rows(text: str) -> list[list[str]]:
     return [[c.strip() for c in row] for row in csv.reader(io.StringIO(text))]
 
@@ -81,14 +67,13 @@ def parse_trades(rows: list[list[str]], max_col: int = 7) -> list[dict]:
         c = (row + [""] * max_col)[:max_col]
         if c[1] == "Owner" or (not any(c)):
             continue
-        nd = _parse_trade_date(c[0])
-        if nd:
+        if DATE_RE.match(c[0]):
             # Owner cells get the annotation guard too — side bets have been
             # found logged in the trade sheet with their own date row.
             o1 = c[1] if 0 < len(c[1]) <= 40 else ""
             o2 = c[4] if 0 < len(c[4]) <= 40 else ""
             trades.append({
-                "date": nd,
+                "date": c[0],
                 "sides": [
                     {"owner": o1, "players": [c[2]] if ok(c[2]) else [], "picks": [c[3]] if ok(c[3]) else []},
                     {"owner": o2, "players": [c[5]] if ok(c[5]) else [], "picks": [c[6]] if ok(c[6]) else []},
@@ -106,6 +91,45 @@ def parse_trades(rows: list[list[str]], max_col: int = 7) -> list[dict]:
 
 
 # ---------------------------------------------------------------- Draft boards
+
+_TRAIL_PAREN = re.compile(r"\s*\([^)]*\)\s*$")
+
+
+def _merge_draft_results(boards: list[dict]) -> list[dict]:
+    """A drafted year appears twice in the sheet: the pick-order board
+    (managers per slot) and a color-matched duplicate listing the players
+    taken at each slot. Join them positionally so the results board shows
+    "Player (Manager)" — who drafted whom."""
+    by_year: dict[int, dict] = {}
+    for b in boards:
+        by_year.setdefault(b["year"], {})[b["results"]] = b
+    out = []
+    for year in sorted(by_year, reverse=True):
+        pair = by_year[year]
+        if True in pair and False in pair:
+            res, own = pair[True], pair[False]
+            own_by_label = {r["round"].lower(): r for r in own["rounds"]}
+            for r_idx, rnd in enumerate(res["rounds"]):
+                own_r = own_by_label.get(rnd["round"].lower())
+                if own_r is None and r_idx < len(own["rounds"]):
+                    own_r = own["rounds"][r_idx]
+                if own_r is None:
+                    continue
+                own_by_num = {p["num"]: p for p in own_r["picks"]}
+                for s, p in enumerate(rnd["picks"]):
+                    src = own_by_num.get(p["num"])
+                    if src is None and s < len(own_r["picks"]):
+                        src = own_r["picks"][s]
+                    if src is None or "(" in p["owner"]:
+                        continue  # no match, or manager already typed by hand
+                    manager = _TRAIL_PAREN.sub("", src["owner"]).strip()
+                    if manager:
+                        p["owner"] = f"{p['owner']} ({manager})"
+            out.append(res)
+        else:
+            out.append(pair.get(True) or pair[False])
+    return out
+
 
 def parse_draftboard(rows: list[list[str]]) -> list[dict]:
     """Year blocks: a label row ("2027" for future ownership boards, or
@@ -142,7 +166,7 @@ def parse_draftboard(rows: list[list[str]]) -> list[dict]:
                 i += 2
             for r_idx, (num, name) in enumerate(pairs[: len(current["rounds"])]):
                 current["rounds"][r_idx]["picks"].append({"num": num, "owner": name})
-    return [b for b in boards if any(r["picks"] for r in b["rounds"])]
+    return _merge_draft_results([b for b in boards if any(r["picks"] for r in b["rounds"])])
 
 
 # ---------------------------------------------------------------- driver

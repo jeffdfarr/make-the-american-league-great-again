@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚾</text></svg>">
-
 <header class="mast">
   <div class="wrap" style="padding-bottom:0">
     <p class="eyebrow">Fantrax Dynasty Baseball · Est. 2020</p>
@@ -24,7 +23,6 @@
     </nav>
   </div>
 </header>
-
 <main class="wrap">
   <h2 style="margin-top:1.6rem" id="board-h">Rookie drafts</h2>
   <div class="yearpick" id="years"></div>
@@ -52,17 +50,22 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
   const pick = document.getElementById("years");
   pick.innerHTML = boards.map((b, i) => `<button data-i="${i}">${b.year}</button>`).join("");
 
-  const cell = p => {
+  const cell = (p, results) => {
     const m = p.owner.match(/^([^(]+?)\s*\((.+)\)\s*$/);
-    return m ? `<span class="traded">${esc(m[1].trim())}</span> <span class="via">via ${esc(m[2])}</span>` : esc(p.owner);
+    if (!m) return esc(p.owner);
+    return results
+      ? `${esc(m[1].trim())} <span class="via">· ${esc(m[2])}</span>`
+      : `<span class="traded">${esc(m[1].trim())}</span> <span class="via">via ${esc(m[2])}</span>`;
   };
   function render(i) {
     pick.querySelectorAll("button").forEach(b => b.classList.toggle("active", +b.dataset.i === i));
     const b = boards[i];
     document.getElementById("board-h").textContent =
       b.results ? b.year + " draft results" : b.year + " pick ownership";
+    const hasOwners = b.results && b.rounds.some(r => r.picks.some(p => /\(.+\)/.test(p.owner)));
     document.getElementById("board-note").textContent = b.results
-      ? "Players selected in the " + b.year + " rookie draft."
+      ? "Players selected in the " + b.year + " rookie draft." +
+        (hasOwners ? " The name after each player is the manager who made the pick." : "")
       : "A name in parentheses is the pick's original owner — \u201cTyler (Karleton)\u201d means Tyler acquired Karleton's slot.";
     const table = document.getElementById("board");
     table.querySelector("thead").innerHTML =
@@ -71,14 +74,17 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
     let rows = "";
     for (let s = 0; s < slots; s++) {
       rows += `<tr><td class="num">${s + 1}</td>` +
-        b.rounds.map(r => r.picks[s] ? `<td title="Pick ${r.picks[s].num}">${cell(r.picks[s])}</td>` : "<td></td>").join("") + `</tr>`;
+        b.rounds.map(r => r.picks[s] ? `<td title="Pick ${r.picks[s].num}">${cell(r.picks[s], b.results)}</td>` : "<td></td>").join("") + `</tr>`;
     }
     table.querySelector("tbody").innerHTML = rows;
   }
   pick.addEventListener("click", e => { if (e.target.dataset.i) render(+e.target.dataset.i); });
-  render(0);
+  const activeYear = (meta.seasons && meta.seasons.length)
+    ? Math.max(...meta.seasons) : new Date().getFullYear();
+  let start = boards.findIndex(b => b.year === activeYear);
+  if (start < 0) start = boards.findIndex(b => b.year < activeYear); // newest past board
+  if (start < 0) start = boards.length - 1;                          // all boards are future
+  render(start);
   MT.footer(meta);
 })().catch(e => document.querySelector(".loading").textContent = "Could not load draft boards: " + e.message);
 </script>
-
-</html>
