@@ -27,11 +27,16 @@
 
 <main class="wrap">
   <h2 style="margin-top:1.6rem">Trade log</h2>
-  <div class="yearpick" id="filters"></div>
+  <div class="frow"><span class="flabel">Season</span><div class="yearpick" id="f-year"></div></div>
+  <div class="frow"><span class="flabel">Manager</span><div class="yearpick" id="f-owner"></div></div>
   <div id="log"><p class="loading">Loading…</p></div>
   <footer></footer>
 </main>
 <style>
+  .frow { display: flex; align-items: baseline; gap: .8rem; margin: .5rem 0; }
+  .frow .yearpick { margin: 0; }
+  .flabel { flex: none; width: 4.6rem; font-family: "IBM Plex Mono", monospace; font-size: .64rem;
+            letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; }
   .trade { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px;
            padding: .9rem 1.1rem; margin: .7rem 0; }
   .t-date { font-family: "IBM Plex Mono", monospace; font-size: .7rem; letter-spacing: .08em;
@@ -59,32 +64,40 @@ document.querySelector('[data-nav="trades"]').classList.add("active");
   const owners = [...new Set(trades.flatMap(t => t.sides.map(s => s.owner)))].filter(Boolean).sort();
   const years = [...new Set(trades.map(t => year(t.date)))].filter(Boolean).sort().reverse();
 
-  const filters = document.getElementById("filters");
-  filters.innerHTML =
-    `<button data-f="all" class="active">All</button>` +
-    years.map(y => `<button data-f="y:${y}">${y}</button>`).join("") +
-    owners.map(o => `<button data-f="o:${esc(o)}">${esc(o)}</button>`).join("");
+  const fYear = document.getElementById("f-year");
+  const fOwner = document.getElementById("f-owner");
+  fYear.innerHTML = `<button data-v="" class="active">All</button>` +
+    years.map(y => `<button data-v="${y}">${y}</button>`).join("");
+  fOwner.innerHTML = `<button data-v="" class="active">All</button>` +
+    owners.map(o => `<button data-v="${esc(o)}">${esc(o)}</button>`).join("");
 
   const side = s => `<div class="t-side"><b>${esc(s.owner)} <small>sends</small></b><ul>` +
     s.players.map(p => `<li>${esc(p)}</li>`).join("") +
     s.picks.map(p => `<li class="pick">${esc(p)}</li>`).join("") + `</ul></div>`;
 
-  function render(f) {
+  const sel = { year: "", owner: "" };
+  function render() {
     const ts = d => { const [m, day, y] = d.split("/").map(Number); return y * 10000 + m * 100 + day; };
     let list = [...trades].sort((a, b) => ts(b.date) - ts(a.date));   // newest first
-    if (f.startsWith("y:")) list = list.filter(t => year(t.date) === f.slice(2));
-    if (f.startsWith("o:")) list = list.filter(t => t.sides.some(s => s.owner === f.slice(2)));
+    if (sel.year) list = list.filter(t => year(t.date) === sel.year);
+    if (sel.owner) list = list.filter(t => t.sides.some(s => s.owner === sel.owner));
+    const label = [sel.owner, sel.year].filter(Boolean).join(" · ");
     document.getElementById("log").innerHTML =
-      `<p class="count">${list.length} trade${list.length === 1 ? "" : "s"}</p>` +
+      `<p class="count">${list.length} trade${list.length === 1 ? "" : "s"}${label ? " — " + esc(label) : ""}</p>` +
       list.map(t => `<div class="trade"><span class="t-date">${esc(t.date)}</span>
         <div class="t-grid">${side(t.sides[0])}<span class="t-arrow">⇄</span>${side(t.sides[1])}</div></div>`).join("");
   }
-  filters.addEventListener("click", e => {
-    const f = e.target.dataset.f; if (!f) return;
-    filters.querySelectorAll("button").forEach(b => b.classList.toggle("active", b === e.target));
-    render(f);
-  });
-  render("all");
+  function wire(container, key) {
+    container.addEventListener("click", e => {
+      if (e.target.dataset.v === undefined) return;
+      sel[key] = e.target.dataset.v;
+      container.querySelectorAll("button").forEach(b => b.classList.toggle("active", b === e.target));
+      render();
+    });
+  }
+  wire(fYear, "year");
+  wire(fOwner, "owner");
+  render();
   MT.footer(meta);
 })().catch(e => document.querySelector(".loading").textContent = "Could not load trades: " + e.message);
 </script>
