@@ -33,11 +33,11 @@ jobs:
         run: |
           git config user.name "mtalga-bot"
           git config user.email "actions@users.noreply.github.com"
-          git pull --rebase
           git add site/data/
           if git diff --cached --quiet; then
             echo "Sheet changed but site data is identical — nothing to publish."
           else
             git commit -m "Rulebook update from sheet"
+            git pull --rebase
             git push
           fi
