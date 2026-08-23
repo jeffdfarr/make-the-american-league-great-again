@@ -30,6 +30,20 @@ DATE_RE = re.compile(r"^\d{1,2}/\d{1,2}/\d{4}$")
 YEAR_RE = re.compile(r"^(19|20)\d{2}$")
 
 
+def _parse_trade_date(cell: str):
+    """Accept 8/23/2026, 8/23/26, 8-23-2026, or 2026-08-23 -> 'M/D/YYYY'."""
+    m = re.match(r"^(\d{1,2})[/-](\d{1,2})[/-](\d{2,4})$", cell)
+    if m:
+        mo, d, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
+        if y < 100:
+            y += 2000
+        return f"{mo}/{d}/{y}"
+    m = re.match(r"^(\d{4})-(\d{1,2})-(\d{1,2})$", cell)
+    if m:
+        return f"{int(m.group(2))}/{int(m.group(3))}/{int(m.group(1))}"
+    return None
+
+
 def _rows(text: str) -> list[list[str]]:
     return [[c.strip() for c in row] for row in csv.reader(io.StringIO(text))]
 
@@ -67,13 +81,14 @@ def parse_trades(rows: list[list[str]], max_col: int = 7) -> list[dict]:
         c = (row + [""] * max_col)[:max_col]
         if c[1] == "Owner" or (not any(c)):
             continue
-        if DATE_RE.match(c[0]):
+        nd = _parse_trade_date(c[0])
+        if nd:
             # Owner cells get the annotation guard too — side bets have been
             # found logged in the trade sheet with their own date row.
             o1 = c[1] if 0 < len(c[1]) <= 40 else ""
             o2 = c[4] if 0 < len(c[4]) <= 40 else ""
             trades.append({
-                "date": c[0],
+                "date": nd,
                 "sides": [
                     {"owner": o1, "players": [c[2]] if ok(c[2]) else [], "picks": [c[3]] if ok(c[3]) else []},
                     {"owner": o2, "players": [c[5]] if ok(c[5]) else [], "picks": [c[6]] if ok(c[6]) else []},
