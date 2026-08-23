@@ -32,7 +32,7 @@ def rebuild(conn: sqlite3.Connection, cfg: Config) -> None:
     _apply_expected_wins(per_season, cfg)
     _apply_sos(conn, per_season)
     _write_season_stats(conn, per_season)
-    _career(conn)
+    _career(conn, cfg)
     _h2h(conn)
     _records(conn)
     _adjustments(conn, cfg)
@@ -319,7 +319,7 @@ def _write_season_stats(conn: sqlite3.Connection, per_season: dict[int, list[dic
 
 # ---------------------------------------------------------------- career level
 
-def _career(conn: sqlite3.Connection) -> None:
+def _career(conn: sqlite3.Connection, cfg: Config) -> None:
     owners = [r["slug"] for r in conn.execute("SELECT slug FROM owners")]
     year_avgs = {
         r["year"]: r["avg_raw"]
@@ -352,13 +352,18 @@ def _career(conn: sqlite3.Connection) -> None:
         wp = f.win_pct(w, l)
         rs_wp = f.win_pct(rs_w, rs_l)
 
-        # Career OPR, sheet convention (dominant formula across owner tabs):
-        # the season blend with career PPG standing in for high AND low —
-        # (6·PPG + 2·(PPG+PPG) + 2·(200·overall win%)) / 10 — normalized by
-        # the flat all-years league average.
+        # Career OPR — the sheet's exact formula (verified to 4 decimals
+        # against TFarr/JFarr/Tessman tabs): the season blend applied to
+        # SEASON PPGs — average, best, and worst season PPG (2020's short
+        # season excluded from these), with career win% (all seasons) —
+        # normalized by the flat mean of every year's league-average raw OPR.
         career_raw = career_norm = None
-        if rs_games:
-            career_raw = f.raw_opr(ppg, ppg, ppg, wp)
+        excluded = {y for y, sc in cfg.seasons.items() if sc.exclude_from_projections}
+        ppgs = [se["ppg"] for se in seasons if se["year"] not in excluded and se["rs_games"]]
+        if not ppgs:  # owner played only excluded seasons (e.g. 2020-only)
+            ppgs = [se["ppg"] for se in seasons if se["rs_games"]]
+        if ppgs:
+            career_raw = (6 * (sum(ppgs) / len(ppgs)) + 2 * (max(ppgs) + min(ppgs)) + 400 * wp) / 10
             if league_norm:
                 career_norm = career_raw / league_norm
 
