@@ -83,11 +83,12 @@ document.querySelector('[data-nav="rules"]').classList.add("active");
       closeLists(0);
       if (/^make the a/i.test(first)) continue;
       if (/^\d+\.\d/.test(first)) { html += `<h3>${numbered(first)}</h3>`; }
-      else {
+      else if (/^\d+\./.test(first) || first.length <= 40) {
         const id = "s" + (++hid);
         html += `<h2 id="${id}">${numbered(first)}</h2>`;
         toc += `<a href="#${id}">${esc(first)}</a>`;
       }
+      // long unnumbered depth-0 text = sheet annotation (side bets, notes) — not published
     } else {
       closeLists(b.depth);
       while (listDepth < b.depth) { html += "<ul>"; listDepth++; }
