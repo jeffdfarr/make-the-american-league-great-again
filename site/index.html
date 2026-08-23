@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚾</text></svg>">
-
 <header class="mast">
   <div class="wrap" style="padding-bottom:0">
     <p class="eyebrow">Fantrax Dynasty Baseball · Est. 2020</p>
@@ -19,27 +18,21 @@
       <a href="draft.html" data-nav="draft">Draft</a>
       <a href="rules.html" data-nav="rules">Rules</a>
       <a href="franchises.html" data-nav="franchises">Franchises</a>
-      <a href="seasons.html" data-nav="seasons">Seasons</a>
       <a href="history.html" data-nav="history">History</a>
     </nav>
   </div>
 </header>
-
 <main class="wrap">
   <div id="tiles" class="tiles"></div>
   <h2 id="season-h">Standings</h2>
+  <div class="yearpick" id="years"></div>
   <div class="tbl-scroll">
     <table id="standings">
-      <thead><tr>
-        <th class="num">#</th><th class="left">Team</th>
-        <th data-key="w">W–L</th><th data-key="pf">PF</th><th data-key="pa">PA</th>
-        <th data-key="high">High</th><th data-key="exp">Exp. W–L</th>
-        <th data-key="luck">Luck</th><th data-key="opr">OPR</th>
-      </tr></thead>
-      <tbody><tr><td colspan="9" class="loading">Loading…</td></tr></tbody>
+      <thead></thead>
+      <tbody><tr><td colspan="12" class="loading">Loading…</td></tr></tbody>
     </table>
   </div>
-  <p class="sub" style="margin-top:.5rem">Expected record: regression of wins on OPR over all completed full seasons. Luck = actual − expected wins. Click a column to sort.</p>
+  <p class="sub" style="margin-top:.5rem" id="tbl-note"></p>
   <footer></footer>
 </main>
 <script src="assets/app.js"></script>
@@ -47,44 +40,84 @@
 document.querySelector('[data-nav="index"]').classList.add("active");
 (async () => {
   const { standings, franchises, meta } = await MT.data("standings", "franchises", "meta");
-  const year = Math.max(...standings.map(s => s.year));
-  const cur = standings.filter(s => s.year === year).sort((a, b) => a.finish - b.finish);
+  const years = [...new Set(standings.map(s => s.year))].sort((a, b) => b - a);
+  const curYear = years[0];
+  const cur = standings.filter(s => s.year === curYear).sort((a, b) => a.finish - b.finish);
   const games = Math.max(...cur.map(s => s.rs_games));
-  document.getElementById("season-h").textContent = `${year} standings`;
   document.getElementById("tagline").textContent =
-    `${year} season · through ${games} games · updated nightly`;
+    `${curYear} season · through ${games} games · updated nightly`;
 
-  // tiles
+  // tiles — always the current state of the league
   const leader = cur[0];
-  const prevChamp = standings.find(s => s.year === year - 1 && s.champion);
+  const prevChamp = standings.find(s => s.year === curYear - 1 && s.champion);
   const oprKing = [...franchises].sort((a, b) => (b.career_opr ?? 0) - (a.career_opr ?? 0))[0];
   const lucky = [...cur].sort((a, b) => (b.luck ?? 0) - (a.luck ?? 0))[0];
   document.getElementById("tiles").innerHTML = `
-    <div class="tile"><span class="t-label">${year} leader</span><span class="t-val">${MT.rec(leader)}</span><span class="t-who">${leader.team_name} · ${leader.owner_name}</span></div>
-    ${prevChamp ? `<div class="tile"><span class="t-label">Defending champ</span><span class="t-val">${year - 1}</span><span class="t-who">${prevChamp.team_name} · ${prevChamp.owner_name}</span></div>` : ""}
+    <div class="tile"><span class="t-label">${curYear} leader</span><span class="t-val">${MT.rec(leader)}</span><span class="t-who">${leader.team_name} · ${leader.owner_name}</span></div>
+    ${prevChamp ? `<div class="tile"><span class="t-label">Defending champ</span><span class="t-val">${curYear - 1}</span><span class="t-who">${prevChamp.team_name} · ${prevChamp.owner_name}</span></div>` : ""}
     <div class="tile"><span class="t-label">Career OPR king</span><span class="t-val">${oprKing.career_opr.toFixed(3)}</span><span class="t-who">${oprKing.owner_name} · ${oprKing.seasons} seasons</span></div>
     ${lucky?.luck != null ? `<div class="tile"><span class="t-label">Luckiest team</span><span class="t-val">${MT.signed(lucky.luck)} W</span><span class="t-who">${lucky.team_name} · vs. expected</span></div>` : ""}`;
 
-  // table
-  const oprs = cur.map(s => s.opr).filter(v => v != null);
-  const mn = Math.min(...oprs), mx = Math.max(...oprs);
-  const maxLuck = Math.max(...cur.map(s => Math.abs(s.luck ?? 0)), 0.1);
-  const body = cur.map(s => {
-    const exp = s.expected_wins != null ? `${s.expected_wins.toFixed(1)}–${(s.rs_games - s.expected_wins).toFixed(1)}` : "—";
-    return `<tr data-w="${s.w}" data-pf="${s.pf}" data-pa="${s.pa}" data-high="${s.high_game}"
-                data-exp="${s.expected_wins ?? -99}" data-luck="${s.luck ?? -99}" data-opr="${s.opr ?? -99}">
-      <td class="num rank">${s.finish}</td>${MT.teamCell(s)}
-      <td class="num strong">${MT.rec(s)}</td>
-      <td class="num">${MT.num(s.pf)}</td><td class="num">${MT.num(s.pa)}</td>
-      <td class="num">${MT.num(s.high_game)}</td><td class="num">${exp}</td>
-      ${MT.divergeCell(s.luck, maxLuck)}${MT.oprCell(s.opr, mn, mx)}
-    </tr>`;
-  }).join("");
+  const pick = document.getElementById("years");
+  pick.innerHTML = years.map(y => `<button data-y="${y}">${y}</button>`).join("");
   const table = document.getElementById("standings");
-  table.querySelector("tbody").innerHTML = body;
-  MT.sortable(table);
+  const note = document.getElementById("tbl-note");
+
+  function render(year) {
+    pick.querySelectorAll("button").forEach(b => b.classList.toggle("active", +b.dataset.y === year));
+    const rows = standings.filter(s => s.year === year).sort((a, b) => a.finish - b.finish);
+    const oprs = rows.map(s => s.opr).filter(v => v != null);
+    const mn = Math.min(...oprs), mx = Math.max(...oprs);
+    if (year === curYear && !rows.some(s => s.champion)) {
+      // live season: expected record + luck
+      document.getElementById("season-h").textContent = `${year} standings`;
+      table.querySelector("thead").innerHTML = `<tr>
+        <th class="num">#</th><th class="left">Team</th>
+        <th data-key="w">W–L</th><th data-key="pf">PF</th><th data-key="pa">PA</th>
+        <th data-key="high">High</th><th data-key="exp">Exp. W–L</th>
+        <th data-key="luck">Luck</th><th data-key="opr">OPR</th></tr>`;
+      const maxLuck = Math.max(...rows.map(s => Math.abs(s.luck ?? 0)), 0.1);
+      table.querySelector("tbody").innerHTML = rows.map(s => {
+        const exp = s.expected_wins != null ? `${s.expected_wins.toFixed(1)}–${(s.rs_games - s.expected_wins).toFixed(1)}` : "—";
+        return `<tr data-w="${s.w}" data-pf="${s.pf}" data-pa="${s.pa}" data-high="${s.high_game}"
+                    data-exp="${s.expected_wins ?? -99}" data-luck="${s.luck ?? -99}" data-opr="${s.opr ?? -99}">
+          <td class="num rank">${s.finish}</td>${MT.teamCell(s)}
+          <td class="num strong">${MT.rec(s)}</td>
+          <td class="num">${MT.num(s.pf)}</td><td class="num">${MT.num(s.pa)}</td>
+          <td class="num">${MT.num(s.high_game)}</td><td class="num">${exp}</td>
+          ${MT.divergeCell(s.luck, maxLuck)}${MT.oprCell(s.opr, mn, mx)}
+        </tr>`;
+      }).join("");
+      note.textContent = "Expected record: regression of wins on OPR over all completed full seasons. Luck = actual − expected wins. Click a column to sort.";
+    } else {
+      // finished season: finishes, badges, full stat line
+      document.getElementById("season-h").textContent = `${year} final standings`;
+      table.querySelector("thead").innerHTML = `<tr>
+        <th class="num">#</th><th class="left">Team</th><th></th>
+        <th data-key="w">W–L</th><th data-key="pct">Pct</th>
+        <th data-key="pf">PF</th><th data-key="pa">PA</th>
+        <th data-key="high">High</th><th data-key="low">Low</th>
+        <th data-key="sos">SOS</th><th data-key="opr">OPR</th><th data-key="alt">Alt OPR</th></tr>`;
+      table.querySelector("tbody").innerHTML = rows.map(s => `
+        <tr data-w="${s.w}" data-pct="${s.win_pct}" data-pf="${s.pf}" data-pa="${s.pa}"
+            data-high="${s.high_game}" data-low="${s.low_game}" data-sos="${s.sos_win_pct ?? -1}"
+            data-opr="${s.opr ?? -99}" data-alt="${s.alt_opr ?? -99}">
+          <td class="num rank">${s.finish}</td>${MT.teamCell(s)}
+          <td style="text-align:left">${MT.badges(s)}</td>
+          <td class="num strong">${MT.rec(s)}</td>
+          <td class="num">${MT.pct(s.win_pct)}</td>
+          <td class="num">${MT.num(s.pf)}</td><td class="num">${MT.num(s.pa)}</td>
+          <td class="num">${MT.num(s.high_game)}</td><td class="num">${MT.num(s.low_game)}</td>
+          <td class="num">${MT.pct(s.sos_win_pct)}</td>
+          ${MT.oprCell(s.opr, mn, mx)}
+          <td class="num">${s.alt_opr != null ? s.alt_opr.toFixed(3) : "—"}</td>
+        </tr>`).join("");
+      note.textContent = "Points are regular-season; W–L includes the championship bracket and 3rd-place game. Alt OPR uses the best score from standard-length weeks only. Click a column to sort.";
+    }
+    MT.sortable(table);
+  }
+  pick.addEventListener("click", e => { if (e.target.dataset.y) render(+e.target.dataset.y); });
+  render(curYear);
   MT.footer(meta);
 })().catch(e => document.querySelector(".loading").textContent = "Could not load data: " + e.message);
 </script>
-
-</html>

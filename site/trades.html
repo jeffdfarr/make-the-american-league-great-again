@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚾</text></svg>">
-
 <header class="mast">
   <div class="wrap" style="padding-bottom:0">
     <p class="eyebrow">Fantrax Dynasty Baseball · Est. 2020</p>
@@ -19,12 +18,10 @@
       <a href="draft.html" data-nav="draft">Draft</a>
       <a href="rules.html" data-nav="rules">Rules</a>
       <a href="franchises.html" data-nav="franchises">Franchises</a>
-      <a href="seasons.html" data-nav="seasons">Seasons</a>
       <a href="history.html" data-nav="history">History</a>
     </nav>
   </div>
 </header>
-
 <main class="wrap">
   <h2 style="margin-top:1.6rem">Trade log</h2>
   <div class="frow"><span class="flabel">Season</span><div class="yearpick" id="f-year"></div></div>
@@ -101,5 +98,3 @@ document.querySelector('[data-nav="trades"]').classList.add("active");
   MT.footer(meta);
 })().catch(e => document.querySelector(".loading").textContent = "Could not load trades: " + e.message);
 </script>
-
-</html>
