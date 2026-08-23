@@ -71,13 +71,18 @@ tbody tr:hover td { background: var(--surface-2); }
 .rank { color: var(--ink-faint); }
 .dim { color: var(--ink-faint); }
 
-/* team cells + logos */
-td.teamcell { display: flex; align-items: center; gap: .6rem; }
-.logo { flex: none; width: 2rem; height: 2rem; border-radius: 50%; object-fit: cover;
-        background: var(--surface-2); border: 1px solid var(--rule); }
-.mono-chip { flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: var(--chip-bg);
+/* team cells + logos — td stays a real table cell so position:sticky
+   works in Safari; alignment via inline-flex children instead of flex td */
+td.teamcell { white-space: nowrap; }
+.logo { width: 2rem; height: 2rem; border-radius: 50%; object-fit: cover;
+        background: var(--surface-2); border: 1px solid var(--rule);
+        vertical-align: middle; margin-right: .6rem; }
+.mono-chip { width: 2rem; height: 2rem; border-radius: 50%; background: var(--chip-bg);
              color: var(--chip-ink); font-family: "IBM Plex Mono", monospace; font-weight: 600;
-             font-size: .7rem; display: inline-flex; align-items: center; justify-content: center; }
+             font-size: .7rem; display: inline-flex; align-items: center; justify-content: center;
+             vertical-align: middle; margin-right: .6rem; }
+td.teamcell .mono-chip, td.teamcell .logo { margin-right: .6rem; }
+td.teamcell .tstack { vertical-align: middle; }
 .tstack { display: inline-flex; flex-direction: column; line-height: 1.25; min-width: 0; }
 .tstack b { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 16rem; }
 .tstack small { color: var(--ink-faint); font-size: .72rem; }
@@ -144,4 +149,11 @@ tbody tr:hover td:first-child, tbody tr:hover td.teamcell { background: var(--su
 @media (max-width: 640px) {
   .tstack b { max-width: 7.5rem; }
   .tstack small { max-width: 7.5rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
+/* smallest phones: the frozen column collapses to just the chip/logo —
+   identity stays visible, stats get the room */
+@media (max-width: 480px) {
+  .tbl-scroll td.teamcell .tstack { display: none; }
+  .tbl-scroll td.teamcell .logo, .tbl-scroll td.teamcell .mono-chip { margin-right: 0; }
+  .tbl-scroll td.teamcell { width: 3rem; min-width: 3rem; }
 }
