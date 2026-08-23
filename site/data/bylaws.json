@@ -1,0 +1,7819 @@
+{
+ "sections": [
+  {
+   "tab": "Rules",
+   "blocks": [
+    {
+     "depth": 0,
+     "cells": [
+      "Make the American League Great Again"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1. League Structure"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1.1 League Overview"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 There will be 12 teams in 1 division. Teams play head to head in a regular season schedule for 21 weeks. After the regular season there will be a 3 week postseason."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1.2 Schedule"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 The leagues annual schedule will follow this format:"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "\u2022 Feb 20 \u2013 Voting on rule change submissions from previous year (starts 2024)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "\u2022 Mar 14 \u2013 Season fees due"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "\u2022 Mar 14 \u2013 Minor League Player Draft"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "\u2022\u00a0Mar 15 \u2013 Rosters unlocked, free agent and waiver wire open (1st Monday after rookie draft)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "\u2022\u00a0Mar 30 \u2013 Regular season begins"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "\u2022 Aug 6 \u2013 Trade deadline (1 week after MLB trade deadline)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "\u2022 Sep 4 \u2013 Post-season begins - free agent and waiver wire closed"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "\u2022 Oct 05 \u2013 Post-season ends"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "\u2022 Oct 06 \u2013 Rosters locked, free agent and waiver wire closed"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "\u2022 Oct 06 \u2013 Trading opens"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "\u2022\u00a0Oct 07 \u2013 Payouts allocated"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1.3 Rosters"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Rosters will be comprised of 30 possible slots"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 19 starting spots, 11 bench spots and 10 IL spots and unlimited minor league spots"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 C (1), 1B (1), 2B (1), 3B (1), SS (1), OF (3), UTIL (3), SP (3), RP (2), UTIL (3)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1.4 Position Eligibility"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Games needed from previous season for a player to qualify at a specific hitting position : 20"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Games needed from current season for a player to qualify at a specific hitting position: 10"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Starts needed from previous season for a player to qualify as a starter : 5"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022\u00a0Starts needed from current season for a player to qualify as a starter : 3"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Relief appearances needed from previous season for a player to qualify as a reliever : 8"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Relief appearances needed from current season for a player to qualify as a reliever: 5"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Suspended players are not allowed in an IR spot."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2. Scoring"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2.1 Points"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Hitting",
+      "Pitching"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "1B \u2013 1pt",
+      "IP \u2013 2pts"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "2B \u2013 2pts",
+      "ER \u2013 1pt"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "3B \u2013 3pts",
+      "W \u2013 5pts"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "HR \u2013 4pts",
+      "L \u2013 (-5pts)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "RBI \u2013 1pt",
+      "K \u2013 1pt"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Runs \u2013 1pt",
+      "H \u2013 (-0.5pt)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "HBP \u2013 1pt",
+      "BB \u2013 (-0.5pt)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "BB \u2013 1pt",
+      "HBP \u2013 (-1pt)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "SB \u2013 1pt",
+      "SV \u2013 4pts"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "CS: -1 pt",
+      "BS \u2013 (-2pts)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "K: -1 pt"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2.2 Limits"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 There will be a transaction limit of 5 per week."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Pitching starts are limited to 12 per week."
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "\u2022 If pitching starts exceed 12, total points will be adjusted for the matchup based on first pitch start time. For example: if a team comes into Sunday morning with 10 starts for the week, but they have 4 pitchers slated to start that day, the website will credit all four starts. To correct this, the pitchers with the two later start times will have their points removed (or added back in the case of a negative outing)."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Ties are allowable during the regular season."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2.3 Penalties"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022\u00a0A roster will be deemed illegal if you do not have a player in every starting position. An illegal roster will garner 0 points for each day during a matchup that it remains unfixed. Any starts accrued during these illegal lineups will be forfeited."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Any owner found neglecting their roster (i.e. multiple IL players in the starting lineup for multiple days/weeks) multiple times will be subject to expulsion."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Rosters and Minor Leagues must be in full compliance by midnight the day prior to the start of the league year (Draft Day). Anyone failing to do so will be docked a draft pick per player over the limit."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3. Drafting"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3.1 Initial Draft"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 The initial Dynasty Draft will be conducted on the Fantrax website using an auction set up. A subsequent rookie draft will be conducted, consisting of 5 rounds."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3.2 Minor League Draft"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Rookie draft consists of 5 rounds."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Players must be signed to a professional MLB contract."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 The prior year's champion receives the 12th overall pick, 2nd place receives 11th overall, and 3rd place receives 10th overall. Picks 5 through 9 are then determined by overall record."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Draft order for the 4 non-playoff teams is determined by their overall season rank (worst record picks highest). However, any team that misses more than 8 starts from the maximum available is ineligible for the 1st overall pick, provided at least one other bottom 4 team is within that threshold \u2014 in which case that team is pushed back accordingly. In the event of a tie in record, it falls to points for \u2014 lesser points for receives the higher pick."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3.3 Rookie Eligibility"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 A player shall be deemed rookie eligible if they meet the following criteria:"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "\u2022 Pitched 50 innings or less in their career to date."
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "\u2022 Had 130 or fewer at bats in their career to date."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3.4 Minor League Rosters"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Once drafted, a player retains minor league eligibility for a maximum of 5 seasons."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Each team receives 1 franchise tag per draft class. Once per season, a team may apply their franchise tag to a player at the end of their minor league eligibility, extending their rookie status for 1 additional season. A team may only have one active franchise tag at a time, unless a tagged player is acquired via trade."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022\u00a0Once a player is added to the major league roster, their minor league status and eligibility is forfeited. If cut, they are subject to waivers. A player called up during the regular season may not be returned to the minor league roster."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022\u00a0A minor league player may be called up to the major league roster during the playoffs and returned to the minor leagues before the following regular season. If a player is not returned to the minor league roster by Opening Day, they cannot be returned to the minor leagues."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4. Transactions"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4.1 Trading"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Trading minor league draft picks is allowed. In almost all cases, trades will not be subject to review or veto, though the commissioner reserves the right to intervene in the interest of long-term league ownership stability."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 The trade deadline falls 1 week after the official MLB trade deadline. There will be no voting on trades."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 When trading picks, an owner must specify the exact pick they want. Best/worst provisions are not allowed. Conditions such as innings limits, retirement clauses, and similar may still be attached to picks, however a pick subject to conditions is no longer tradeable."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 When trading for or away picks two or more years into the future, the league fee of $100 must be submitted to the commissioner before the trade will be processed."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 In the event that an owner acquires a franchise-tagged player via trade, they are permitted to retain that player even if they already have an active franchise tag in their minor leagues."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4.2 Waiver Wire/FAAB"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 All players cut during the regular season are subject to a 2-day waiver period from the day they are dropped. Waivers process daily at 11 AM EST."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Player acquisitions are conducted via a free agent auction budget (FAAB) system. Each team begins the year with $100. Tie bids are broken by current standings. $0 bids are allowed. FAAB budget is available for trade."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Players are eligible the day of their pickup as long as their game has not started."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 There is a transaction limit of 5 per week. During certain weeks, transactions will be prorated based on the days of the matchup."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5. Roster Eligibility"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5.1 Pick Up Availability"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Only players officially on their respective MLB team's 40-man roster at the time of acquisition are eligible to be added to a roster via free agency/waiver wire.  All others may only be acquired via rookie draft."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 The only source that the league will use to prove 40-man eligiblity is the officaial MLB 40-man transaction tracker.  Any other source is invalid for league purposes and detracts from our attempt to, in fact, Make the American League Great Again."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Any situation where a player deemed ineligible to be acquired will result in:  The transaction being un-done (ineligible player dropped from roster and former player returned to the team's roster), the owner will also forfeit any FAAB that they used to acquire that ineligible player.  This is black and white and is not subject to special circumstances, it is advised to make sure prior to placing a claim that someone is eligible."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 This also includes situations in which too many players are picked up and assigned to your minors. In the event you have someone picked up that exceeds your 30 man roster limit such that they are placed into the minors in error - you will forfeit that transaction for the week, any applicable FAAB and that player."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6. Playoffs"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6.1 Format"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 6 teams will make playoffs each year."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 The format will be a 3-week 1-1-1 style."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6.2 End Of Season Ties"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 The following order will determine a tie breaker."
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "1. Head to head season record"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "2. Head to head points in head to head matchups"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "3. Total points for"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "4. Coin flip"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 In the event of a 3 or more - way tie to determine playoff seeding, total points for will be used"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6.3 Roster Moves"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 No teams are permitted to make pick-ups during the postseason. You are allowed to call up players from your minor leagues and then return them to the minors ahead of next season."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7. Offseason"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7.1 Overview"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 The offseason begins when the postseason ends. After the final games are finalized, the trade window opens again. Free Agent acquisition through FAAB will close and will not be re-opened until the first Monday after the Rookie Draft."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7.2 Rule Changes"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022\u00a0With any league, there\u2019s always room to evolve and change, and this will be the time to bring up any rule discrepancies. All rules will be open for discussion. Rule changes can be proposed with a clear change, a timeline for the change to occur, and purpose."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 For a vote to pass, 8 of 12 votes need to happen."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8. League Fees & Rewards"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8.1 League Fees"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Each year there will be a $100 league fee to participate."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 League dues are due each year the day of the rookie draft."
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8.2 Rewards"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 The 21 week regular season will crown a regular season champion. First place will be awarded to the best head-to-head record, and in case of tie, most points scored. Payouts are as follows:"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$5 Weekly high points - $105 total"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$75 Regular season head-to head champion"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$195 Playoff Champion"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$100 Playoff runner-up"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$75 Third place in playoffs"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$200 to the dynasty pot."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Effective for the 2027 season the payouts have been updated:"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$210 Weekly high points - $10 each week"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$75 Regular season head-to head champion"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$275 Playoff Champion"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$150 Playoff runner-up"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$90 Third place in playoffs"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$200 to the dynasty pot."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "\u2022 Effective for the 2028 season the payouts have been updated:"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$315 Weekly high points - $15 Each Week"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$100 Regular season head-to head champion"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$335 Playoff Champion"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$150 Playoff runner-up"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$100 Third place in playoffs"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "$200 to the dynasty pot."
+     ]
+    }
+   ]
+  },
+  {
+   "tab": "Trades",
+   "blocks": [
+    {
+     "depth": 1,
+     "cells": [
+      "Owner",
+      "Players Sent",
+      "Picks Sent",
+      "Owner",
+      "Players Sent",
+      "Picks Sent"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/11/2026",
+      "Sorgaard",
+      "Colt Keith (3B-DET)",
+      "2026 1st Rounder (3rd)",
+      "Seth",
+      "Rafael Devers (1B-SF)",
+      "2026 4th Rounder (52)",
+      "Total Trades 2026"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2027 2nd Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/15/2026",
+      "Tyler",
+      "Aroldis Chapman (P-BOS)",
+      "2026 2nd Rounder (17)",
+      "Tessmonster",
+      "Colson Montgomery (SS-CWS)",
+      "16",
+      "58",
+      "74",
+      "Tessmonster",
+      "6",
+      "6",
+      "12"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Reynaldo Lopez (P-ATL)",
+      "Dalton Rushing (C-LAD)",
+      "43",
+      "19",
+      "62",
+      "Taylor",
+      "2",
+      "8",
+      "10"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/15/2026",
+      "Andy",
+      "Shea Langeliers (C-ATH)",
+      "Ben",
+      "2026 1st Rounder (12)",
+      "30",
+      "23",
+      "53",
+      "Tyler",
+      "5",
+      "3",
+      "8"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/30/2026",
+      "Jeff",
+      "Shane McClanahan (P-TBR)",
+      "Tessmonster",
+      "2026 1st Rounder (8)",
+      "24",
+      "22",
+      "46",
+      "Jeff",
+      "3",
+      "4",
+      "7"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/12/2026",
+      "Coirey",
+      "Fernando Tatis Jr. (OF-SDP)",
+      "Zac",
+      "Pablo Lopez (P-MIN)",
+      "18",
+      "21",
+      "39",
+      "Zac",
+      "4",
+      "5",
+      "9"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/15/2026",
+      "Zac",
+      "Ozzie Albies (2B-ATL)",
+      "Karleton",
+      "Otto Lopez (2B-MIA)",
+      "2026 3rd Rounder (34)",
+      "18",
+      "10",
+      "28",
+      "Jason",
+      "5",
+      "0",
+      "5"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2027 5th Rounder (Jason's)",
+      "21",
+      "4",
+      "25",
+      "Karleton",
+      "7",
+      "2",
+      "9"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/17/2026",
+      "Zac",
+      "Fernando Tatis Jr (OF-SDP)",
+      "Tyler",
+      "Josue De Paula (P-LAD)",
+      "2026 2nd Rounder (21)",
+      "6",
+      "17",
+      "23",
+      "Sorgaard",
+      "1",
+      "4",
+      "5"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Freddy Peralta (P-NYM)",
+      "2027 1st Rounder (Seth's)",
+      "8",
+      "14",
+      "22",
+      "Andy",
+      "3",
+      "0",
+      "3"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/19/2026",
+      "Jason",
+      "Dylan Crews (OF-WAS)",
+      "2026 4th (40)",
+      "Taylor",
+      "Royce Lewis (3B-MIN)",
+      "2026 3rd Rounder (26)",
+      "12",
+      "6",
+      "18",
+      "Ben",
+      "2",
+      "4",
+      "6"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2026 5th Rounder (50)",
+      "2",
+      "8",
+      "10",
+      "Coirey",
+      "1",
+      "1",
+      "2"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/19/2026",
+      "Tessmonster",
+      "Jonny Farmelo (OF-SEA)",
+      "2026 2nd (17)",
+      "Zac",
+      "Freddy Peralta (P-NYM)",
+      "4",
+      "5",
+      "9",
+      "Seth",
+      "0",
+      "1",
+      "1"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Harry Ford (C-WSH)",
+      "2027 1st (Sorgaard)",
+      "David Bednar (P-NYY)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Keegan Akin (P-BAL)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Jose Ferrer (P-SEA)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/20/2026",
+      "Jeff",
+      "Michael Arroyo (2B-SEA)",
+      "Taylor",
+      "Grant Taylor (P-CHW)",
+      "2026 4th Rounder (43)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/20/2026",
+      "Tessmonster",
+      "Josue Briceno (C, 1B - DET)",
+      "Taylor",
+      "Alec Burelson (1B/OF - STL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/20/2026",
+      "Karleton",
+      "Manny Machado (3B-SDP)",
+      "Ben",
+      "Corey Seager (SS-TEX)",
+      "2027 3rd Rounder (Seth)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/21/2026",
+      "Karleton",
+      "2027 5th Rounder (Tessmonster)",
+      "Tessmonster",
+      "Luis Castillo (P-SEA)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2028 1st Rounder"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2028 2nd Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/21/2026",
+      "Taylor",
+      "Bryan Bello (P-BOS)",
+      "Tyler",
+      "Colson Montgomery (SS-CHW)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Tony Gonsolin (P-FA)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/9/2026",
+      "Jason",
+      "2026 5th Rounder (50)",
+      "Tessmonster",
+      "Miguel Vargas (3B-CWS)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/13/2026",
+      "Taylor",
+      "Jarren Duran (OF-BOS)",
+      "Sorgaard",
+      "Brandon Sproat (P-MIL)",
+      "2026 2nd Rounder (17)"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2027 1st Rounder (Karleton)"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2027 3rd (Karleton)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/14/2026",
+      "Jason",
+      "2026 1st Rounder (11)",
+      "Jeff",
+      "2027 1st Rounder"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2027 2nd Rounder (Tyler)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/14/2026",
+      "Zac",
+      "2nd Round Comp (27th)",
+      "Seth",
+      "2027 2nd Rounder (Sorgaard)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/14/2026",
+      "Jeff",
+      "$50 FAAB",
+      "Coirey",
+      "2026 5th Rounder (68)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/14/2026",
+      "Andy",
+      "2027 4th Rounder (Ben)",
+      "Taylor",
+      "2026 5th Compensatory (70)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2027 4th Rounder",
+      "2027 4th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/16/2026",
+      "Jason",
+      "Casey Mize (P-DET)",
+      "Tyler",
+      "Jose Altuve (2B/OF - HOU)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Ryan Walker (P-SF)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/19/2026",
+      "Tyler",
+      "Dalton Rushing (C-LAD)",
+      "Jeff",
+      "Jacob Lopez (P-ATH)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Anthony Kay (P-CHW)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4/11/2026",
+      "Karleton",
+      "Hurston Waldrep (SP-ATL)",
+      "2028 5th Rounder",
+      "Zac",
+      "Cade Cavalli (SP-WSH)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Keider Montero (SP-DET)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4/12/2026",
+      "Karleton",
+      "2028 4th Rounder",
+      "Taylor",
+      "Adrian Houser (SP-SF)",
+      "2028 5th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4/22/2026",
+      "Karleton",
+      "2027 3rd Rounder (Seth's)",
+      "Tessmonster",
+      "Paul Sewald (RP-ARI)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4/29/2026",
+      "Tyler",
+      "Max Clark (OF-DET)",
+      "2028 3rd Rounder",
+      "Zac",
+      "Kris Bubic (P-KC)",
+      "$20 FAAB"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Casey Mize (P-DET)",
+      "2028 4th Rounder",
+      "Randy Vasquez (SD-P)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5/31/2026",
+      "Karleton",
+      "2028 3rd Rounder",
+      "Tessmonster",
+      "Jordan Wicks (P-CHC)",
+      "2028 4th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/12/2026",
+      "Tessmonster",
+      "2027 4th Rounder",
+      "Taylor",
+      "Michael Lorenzen (P-COL)",
+      "2027 5th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/22/2026",
+      "Tyler",
+      "Yainer Diaz (C-HOU)",
+      "2028 2nd Rounder",
+      "Taylor",
+      "Ivan Herrera (C-STL)",
+      "2028 4th Rounder (Karleton)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2029 3rd Rounder",
+      "2029 5th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/28/2026",
+      "Tyler",
+      "Gabriel Hughes (P-COL)",
+      "2028 4th Rounder (Karleton)",
+      "Zac",
+      "Trevor Megill (P-MIL)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2028 5th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/1/2026",
+      "Ben",
+      "Ryan Pepiot (P-TB)",
+      "2027 3rd Rounder",
+      "Sorgaard",
+      "Isaac Paredes (3B-HOU)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Travis Sykora (P-WSH)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/3/2026",
+      "Tyler",
+      "Seth Lugo (P-KC)",
+      "Karleton",
+      "2028 5th Rounder (Taylor)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Christian Yelich (OF-MIL)",
+      "2029 5th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/5/2026",
+      "Jason",
+      "Noah Schultz (P-CHW)",
+      "2027 3rd Rounder",
+      "Ben",
+      "Joe Ryan (P-MIN)",
+      "2027 5th Rounder"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Jonah Tong (P-NYM)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/6/2026",
+      "Tessmonster",
+      "Travis Bazzana (2B-CLE)",
+      "2027 1st Rounder",
+      "Jeff",
+      "Max Fried (P-NYY)",
+      "2027 2nd Rounder"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Colt Emerson (SS-SEA)",
+      "Louis Varland (P-TOR)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/6/2026",
+      "Tessmonster",
+      "2027 2nd Rounder (Seth)",
+      "Sorgaard",
+      "Foster Griffin (P-CLE)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2027 4th Rounder (Karleton)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/6/2026",
+      "Tessmonster",
+      "Cole Young (2B-SEA)",
+      "2027 2nd Rounder (Jeff)",
+      "Ben",
+      "Kyle Bradish (P-BAL)",
+      "2027 4th Rounder (Sorgaard)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/7/2026",
+      "Ben",
+      "George Kirby (P-SEA)",
+      "Jeff",
+      "Travis Bazanna (2B-CLE)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/10/2026",
+      "Andy",
+      "Garret Crochet (P-BOS)",
+      "2027 2nd Rounder",
+      "Taylor",
+      "Parker Messick (P-CLE)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Bubba Chandler (P-PIT)",
+      "2027 4th Rounder (Taylor)",
+      "Payton Tolle (P-BOS)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Edward Florentino (OF-PIT)",
+      "2028 1st Rounder",
+      "Dillon Dingler (C-DET)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Joshua Baez (OF-STL)",
+      "2028 2nd Rounder",
+      "Brandon Lowe (2B-PIT)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Dean Kremer (P-MIN)",
+      "2028 3rd Rounder"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Cody Bradford (P-TEX)",
+      "2029 1st Rounder"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Adley Rutschman (C-BOS)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/10/2026",
+      "Karleton",
+      "2029 2nd Rounder",
+      "Sorgaard",
+      "Clay Holmes (P-CHC)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/10/2026",
+      "Zac",
+      "Peter Lambert (P-HOU)",
+      "Seth",
+      "Bryce Rainer (SS-DET)",
+      "2027 4th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/13/2025",
+      "Karleton",
+      "Carlos Rodon (SP-NYY)",
+      "Tessmonster",
+      "Yandy Diaz (1B-TBR)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Pete Fairbanks (RP-TBR)",
+      "Lawrence Butler (OF-OAK)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/15/2025",
+      "Seth",
+      "Max Meyer (P-MIA)",
+      "2025 2nd Rounder (20th)",
+      "Jason",
+      "2025 2nd Rounder (19th)",
+      "From"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/31/2025",
+      "Jason",
+      "Logan Webb (P-SF)",
+      "2025 1st (2nd)",
+      "Tessmonster",
+      "2025 1st (1st)",
+      "2",
+      "24",
+      "26"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Jonathan India (2B-KC)",
+      "8",
+      "6",
+      "14"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/31/2025",
+      "Jason",
+      "Alex Bregman (3B-FA)",
+      "Tyler",
+      "Sonny Gray (P-STL)",
+      "2026 2nd Rounder",
+      "13",
+      "5",
+      "18"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Robert Suarez (P-SDP)",
+      "8",
+      "4",
+      "12"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Bryson Stott (2B-PHI)",
+      "8",
+      "3",
+      "11"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/31/2025",
+      "Ben",
+      "Zac Gallen (P-ARI)",
+      "2025 4th Rounder (38)",
+      "Sorgaard",
+      "Nico Hoerner (2B-CHC)",
+      "2025 3rd Rounder (21)",
+      "4",
+      "2",
+      "6"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Brenton Doyle (OF-COL)",
+      "2025 5th Rounder (48)",
+      "Jordan Lawlar (SS-ARI)",
+      "5",
+      "7",
+      "12"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/7/2025",
+      "Tessmonster",
+      "Emmanuel Rodriguez (OF-MIN)",
+      "2025 1st Rounder (8)",
+      "Sorgaard",
+      "Frambrer Valdez (P-HOU)",
+      "2025 4th Rounder (36)",
+      "5",
+      "1",
+      "6"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Ben Joyce (P-LAA)",
+      "2025 2nd Rounder (13)",
+      "3",
+      "4",
+      "7"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2026 3rd Rounder",
+      "2",
+      "3",
+      "5"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/10/2025",
+      "Jason",
+      "Kyle Gibson (P-FA)",
+      "2025 2nd Rounder (20th)",
+      "Sorgaard",
+      "Lucas Giolito (P-BOS)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/12/2025",
+      "Tyler",
+      "Spencer Steer (1B/OF-CIN)",
+      "Sorgaard",
+      "Zac Gallen (P-ARI)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Ryan Helsley (P-STL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/12/2025",
+      "Jason",
+      "Carlos Correa (SS-MIN)",
+      "2025 2nd Rounder (12)",
+      "Sorgaard",
+      "Tanner Bibee (P-CLE)",
+      "2025 4th Rounder (38)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Reese Olson (P-DET)",
+      "2025 2nd Rounder (16)",
+      "Macell Ozuna (OF-ATL)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Cade Horton (P-CHC)",
+      "2026 3rd Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/14/2025",
+      "Karleton",
+      "Lawrence Butler (OF-ATH)",
+      "Sorgaard",
+      "Ryan Helsley (P-STL)",
+      "2025 3rd Rounder (30th)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/14/2025",
+      "Andy",
+      "Adolis Garcia (OF-TEX)",
+      "2025 3rd Rounder (25)",
+      "Tessmonster",
+      "Luis Ortiz (P-CLE)",
+      "2025 4th Rounder (32)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2026 4th Rounder",
+      "2026 2nd Rounder (Karleton's)"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2026 5th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/26/2025",
+      "Jason",
+      "2025 4th Rounder (38)",
+      "Andy",
+      "Jack Leiter (P-TEX)",
+      "2026 5th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/28/2025",
+      "Karleton",
+      "2026 4th Rounder",
+      "Jason",
+      "Max Meyer (P-MIA)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/3/2025",
+      "Tessmonster",
+      "Colt Emerson (SS-SEA)",
+      "Sorgaard",
+      "Christian Walker (1B-HOU)",
+      "2026 3rd Rounder (Seth's)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/3/2025",
+      "Ben",
+      "Luis Arraez (1B/2B-SDP)",
+      "2026 4th Rounder (Andy)",
+      "Sorgaard",
+      "Reese Olson (P-DET)",
+      "2026 3rd Rounder"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Lazaro Montes (OF-SEA)",
+      "Connor Norby (3B-MIA)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/3/2025",
+      "Karleton",
+      "2025 3rd Rounder (30th) again",
+      "Sorgaard",
+      "Carlos Correa (SS-MIN)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/5/2025",
+      "Tyler",
+      "Isaac Paredes (3B -HOU)",
+      "Sorgaard",
+      "Luis Arraez (1B/2B-SDP)",
+      "2025 3rd Rounder (22)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Luis Gil (P-NYY)",
+      "Reynaldo Lopez (P-ATL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/5/2025",
+      "Tyler",
+      "Gabriel Moreno (C-AZ)",
+      "Jeff",
+      "2025 5th rounder (45)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/5/2025",
+      "Ben",
+      "Luis Castillo (P-SEA)",
+      "Tessmonster",
+      "Matt McLain (2B/SS-CIN)",
+      "2026 5th Rounder (Sorgaard)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Trea Turner (SS-PHI)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/5/2025",
+      "Seth",
+      "2025 2nd Rounder (19)",
+      "Tessmonster",
+      "2025 1st Rounder (9)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2026 1st Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/6/2025",
+      "Jeff",
+      "2026 1st Rounder",
+      "Coirey",
+      "2025 1st Rounder (7th)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/8/2025",
+      "Coirey",
+      "2025 4th Rounder (35)",
+      "Ben",
+      "2026 3rd Rounder (Tessy)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2025 5th Rounder (49)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/8/2025",
+      "Sorgaard",
+      "2025 2nd Rounder (16)",
+      "Andy",
+      "Emmet Sheehan",
+      "2025 4th Rounder (38)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/8/2025",
+      "Tessmonster",
+      "2026 2nd Rounder",
+      "Coirey",
+      "2025 3rd rd Rounder (24)"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2025 5th Rounder (44)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/8/2025",
+      "Tessmonster",
+      "2025 5th Rounder (47)",
+      "Sorgaard",
+      "2026 4th Rounder (Andy)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/11/2025",
+      "Jeff",
+      "Tyler Mahle (P-TEX)",
+      "Sorgaard",
+      "Kyle Finnegan (P-WSH)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/21/2025",
+      "Tyler",
+      "Moises Chace (P-PHI)",
+      "$15 FAAB",
+      "Jeff",
+      "Will Warren (P-NYY)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4/13/2025",
+      "Andy",
+      "Randy Vaszquez (P-SD)",
+      "2026 5th Rounder",
+      "Jason",
+      "Simeon Woods-Richardson (P-MIN)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4/14/2025",
+      "Tessmonster",
+      "Adolis Garcia (OF-TEX)",
+      "Jason",
+      "Triston Casas (1B-BOS)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5/12/2025",
+      "Karleton",
+      "Yusei Kikuchi (P-LAA)",
+      "Sorgaard",
+      "Kenley Jansen (P-LAA)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/3/2025",
+      "Tessmonster",
+      "DJ Herz (P-WAS)",
+      "2026 1st Rounder (Ben)",
+      "Sorgaard",
+      "Jameson Taillon (P-CHC)",
+      "2027 1st Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/5/2025",
+      "Tyler",
+      "Heliot Ramos (OF-SF)",
+      "2027 1st Rounder",
+      "Ben",
+      "Blake Snell (P-LAD)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Jared Jones (P-PIT)",
+      "Tyler Glasnow (P-LAD)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Aroldis Chapman (P-BOS)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/8/2025",
+      "Tessmonster",
+      "Ryan Berget (P-SD)",
+      "2027 5th Rounder",
+      "Karleton",
+      "2027 4th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/8/2025",
+      "Karleton",
+      "2027 1st Rounder",
+      "Sorgaard",
+      "Tyler Mahle (P-TEX)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Paul Goldschmidt (1B-NYY)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/9/2025",
+      "Ben",
+      "Jared Jones (P-PIT)",
+      "2027 1st Rounder (Tyler's)",
+      "Sorgaard",
+      "Jazz Chisholm (2B, 3B, OF-NYY)",
+      "2027 2nd Rounder"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Brandon Sproat (P-NYM)",
+      "2027 4th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/9/2025",
+      "Andy",
+      "George Kirby (P-SEA)",
+      "2026 1st Rounder",
+      "Ben",
+      "Kyle Tucker (OF-CHC)",
+      "2026 2nd Rounder"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Zebby Matthews (P-MIN)",
+      "2026 2nd Rounder",
+      "Zach Wheeler (P-PHI)",
+      "2027 4th Rounder"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Jackson Jobe (P-DET)",
+      "2027 1st Rounder",
+      "Garrett Crochet (P-BOS)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Wyatt Langford (OF-TEX)",
+      "Pablo Lopez (P-MIN)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Walker Jenkins (OF-MIN)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Max Clark (OF - DET)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/9/2025",
+      "Coirey",
+      "Ronald Acuna (OF-ATL)",
+      "2026 3rd Rounder (Sorgaard)",
+      "Ben",
+      "Jackson Jobe (P-DET)",
+      "2026 2nd Rounder (Andy)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Alejandro Rosario (P-TEX)",
+      "2026 3rd Rounder"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2027 1st Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/11/2025",
+      "Karleton",
+      "2027 2nd Rounder",
+      "Sorgaard",
+      "Zach Eflin (P-BAL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/18/2025",
+      "Tessmonster",
+      "Triston Casas (1B-BOS)",
+      "Sorgaard",
+      "Marcus Semien (2B-TEX)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/18/2025",
+      "Ben",
+      "2026 4th Rounder",
+      "Sorgaard",
+      "Yusei Kikuchi (P-LAA)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/24/2025",
+      "Tyler",
+      "Justin Steele (P-CHC)",
+      "2027 2nd Rounder",
+      "Jeff",
+      "Aaron Nola (P-PHI)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Kumar Rocker (P-TEX)",
+      "2027 3rd Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/5/2025",
+      "Seth",
+      "Mick Abel (P-PHI)",
+      "Sorgaard",
+      "2027 5th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/23/2025",
+      "Coirey",
+      "Mitch Keller (P-PIT)",
+      "Tessmonster",
+      "2026 3rd Rounder (Karleton's)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/23/2025",
+      "Karleton",
+      "AJ Smith-Shawver (P-ATL)",
+      "2027 5th Rounder (Karleton's)",
+      "Coirey",
+      "Matthew Boyd (P-CHC)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/23/2025",
+      "Tessmonster",
+      "Colton Cowser (OF-BAL)",
+      "2026 5th Rounder (Jason's)",
+      "Sorgaard",
+      "2026 4th Rounder (Conditional via Andy)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/26/2025",
+      "Tessmonster",
+      "Kevin McGonigle (2B-DET)",
+      "2026 3rd (Seth's)",
+      "Ben",
+      "Emmanuel Clase (P-CLE)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/28/2025",
+      "Sorgaard",
+      "Kris Bubic (P-KC)",
+      "Karleton",
+      "Bryan Reynolds (OF-PIT)",
+      "2027 3rd Rounder"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Max Meyer (P-MIA)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/28/2025",
+      "Seth",
+      "Evan Carter (OF-TEX)",
+      "2027 2nd Rounder",
+      "Sorgaard",
+      "Randy Arozarena (OF-SEA)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/28/2025",
+      "Seth",
+      "Nick Kurtz (1B-ATH)",
+      "2026 2nd Rounder",
+      "Ben",
+      "Tarik Skubal (P-DET)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Chase Burns (P-CIN)",
+      "2027 1st Rounder"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Gavin Williams (P-CLE)",
+      "2027 3rd Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/30/2025",
+      "Tessmonster",
+      "Christian Javier (P-HOU)",
+      "2026 1st Rounder (Seth)",
+      "Jason",
+      "Sonny Gray (P-STL)",
+      "2026 2nd Rounder (Jason)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2026 4th Rounder (Tyler)",
+      "Robert Suarez (P-SD)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/30/2025",
+      "Jason",
+      "Jacob deGrom (P-TEX)",
+      "2026 3rd Rounder (Tyler)",
+      "Karleton",
+      "Gerrit Cole (P-NYY)",
+      "2026 1st Rounder"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2026 5th Rounder (Karleton)",
+      "Kris Bubic (P-KC)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2027 5th Rounder",
+      "Casey Mize (P-DET)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/1/2025",
+      "Jason",
+      "Byron Buxton (OF-MIN)",
+      "2026 3rd Rounder",
+      "Tyler",
+      "Zac Gallen (P-AZ)",
+      "2027 4th Rounder"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Logan Henderson (P-MIL)",
+      "2027 5th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/1/2025",
+      "Tyler",
+      "Michael Wacha (P-KC)",
+      "2026 3rd Rounder (Jason)",
+      "Coirey",
+      "Emilio Pagan (P-CIN)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Troy Melton (P-DET)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/5/2025",
+      "Jason",
+      "Pete Alonso (1B-NYM)",
+      "2026 4th Rounder (Karleton)",
+      "Seth",
+      "Royce Lewis (3B-MIN)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Lucas Giolito (P-BOS)",
+      "2026 4th Rounder (Tyler)",
+      "Bailey Ober (P-MIN)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Noah Schultz (P-CWS)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Jac Caglianone (1B-KC)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Grayson Rodriguez (P-BAL)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Luke Keaschall (2B-MIN)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/5/2025",
+      "Tessmonster",
+      "Pete Fairbanks (P-TB)",
+      "Karleton",
+      "Ryan Helsley (P-NYM)",
+      "2026 5th Rounder (Tyler)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/5/2025",
+      "Tessmonster",
+      "Brady House (3B-WAS)",
+      "2026 4th Rounder (Jason)",
+      "Jason",
+      "Max Muncy (3B-LAD)",
+      "2026 5th Rounder (Tessy)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/5/2025",
+      "Andy",
+      "Michael Harris II (OF-ATL)",
+      "2026 2nd Rounder (Sorgaard)",
+      "Sorgaard",
+      "Jacob Misiorowski (P-MIL)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Bryce Eldridge (1B-SF)",
+      "2026 2nd Rounder (Ben)",
+      "Andrew Abbott (P-CIN)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Kyle Bradish (P-BAL)",
+      "2027 3rd Rounder"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Travis Sykora (P-WAS)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "12/5/2025",
+      "Jeff",
+      "Matt Olson (1B-ATL)",
+      "2026 2nd Rounder",
+      "Tyler",
+      "Mookie Betts (LAD-SS)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Chase Dollander (P-COL)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Kumar Rocker (P-TEX)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "12/10/2025",
+      "Tyler",
+      "Joe Ryan (P-MIN)",
+      "Ben",
+      "Max Clark (OF-DET)",
+      "2027 1st Rounder (Seth)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Josue DePaula (OF-LAD)",
+      "2026 2nd Rounder (Seth)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "12/13/2025",
+      "Tessmonster",
+      "Bryce Miller (P-SEA)",
+      "2026 2nd Rounder (Jason)",
+      "Sorgaard",
+      "Colt Emerson (SS-SEA)",
+      "2027 2nd Rounder (Seth)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Drew Thorpe (P-CHW)",
+      "2027 3rd Rounder (Andy)"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2027 3rd Rounder (Sorgaard)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "12/15/2025",
+      "Ben",
+      "Austin Riley (3B-ATL)",
+      "2027 2nd Rounder (Nick S)",
+      "Sorgaard",
+      "Kyle Bradish (P-BAL)",
+      "2026 1st Rounder (Ben)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "12/17/2025",
+      "Jeff",
+      "Shane Smith (P-CWS)",
+      "2026 3rd Rounder",
+      "Sorgaard",
+      "Aidan Miller (3B-PHI)",
+      "2026 2nd Rounder (Ben)"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2027 2nd Rounder (Karleton)"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Owner",
+      "Players Sent",
+      "Picks Sent",
+      "Owner",
+      "Players Sent",
+      "Picks Sent",
+      "Total Trades 2024"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/7/2024",
+      "Andy",
+      "Jordan Lawler (SS - ARI)",
+      "2024 19th overall",
+      "Sorgaard",
+      "Bryce Harper (1B-PHI)",
+      "2025 3rd round"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Kyle Harrison (P-SF)",
+      "2024 49th overall",
+      "2026 2nd round",
+      "Tyler",
+      "13",
+      "3",
+      "16"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Ronny Mauricio (SS-NYM)",
+      "2025 2nd round",
+      "Tessmonster",
+      "8",
+      "8",
+      "16"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Emerson Hancock (P-SEA)",
+      "Sorgaard",
+      "5",
+      "10",
+      "15"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/9/2024",
+      "Jason",
+      "Marcus Stroman (P-FA)",
+      "2024 4th overall",
+      "Tessmonster",
+      "Masataka Yoshida (OF-BOS)",
+      "2024 13th overall (2nd round)",
+      "Jason",
+      "5",
+      "7",
+      "12"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Sean Manea (P-NYM)",
+      "Andy",
+      "5",
+      "1",
+      "6"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/17/2024",
+      "Tyler",
+      "Pete Fairbanks (P-TBR)",
+      "Karleton",
+      "2024 25th overall (3rd round)",
+      "Coirey",
+      "0",
+      "6",
+      "6"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/19/2024",
+      "Tessmonster",
+      "4th overall",
+      "Jeff",
+      "2024 25th overall (3rd Round)",
+      "Jeff",
+      "3",
+      "5",
+      "8"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2025 1st rounder",
+      "Ben",
+      "5",
+      "2",
+      "7"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2025 2nd rounder",
+      "Karleton",
+      "1",
+      "6",
+      "7"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/19/2024",
+      "Tessmonster",
+      "Heston Kjerstad (OF-BAL)",
+      "Tyler",
+      "2024 44th overall",
+      "Seth",
+      "4",
+      "2",
+      "6"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2025 2nd rounder"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "5th round 2025 via Karleton"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/19/2024",
+      "Tessmonster",
+      "2025 4th",
+      "Jason",
+      "Austin Martin (SS-MIN)",
+      "2025 5th via Tyler"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/22/2024",
+      "Sorgaard",
+      "Adbert Alzolay (P-CHC)",
+      "Jason",
+      "Alek Thomas (OF-ARI)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/31/2024",
+      "Tyler",
+      "Ryan Pepiot (P-TBR)",
+      "2026 4th Round",
+      "Ben",
+      "2024 10th overall"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/1/2024",
+      "Tyler",
+      "Rhys Hoskins (1B - MIL)",
+      "2026 5th",
+      "Karleton",
+      "Sonny Gray (SP - STL)",
+      "N/A"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/8/2024",
+      "Jason",
+      "Kerry Carpenter (OF-DET)",
+      "2024 2nd (13th)",
+      "Sorgaard",
+      "Lance McCullers (P-HOU)",
+      "2026 3rd Round"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2024 3rd (28th)",
+      "Robbie Ray (P-SFG)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/8/2024",
+      "Tyler",
+      "Spencer Jones (1B/OF-NYY)",
+      "2024 3rd (30th)",
+      "Sorgaard",
+      "Ketel Marte (2B-ARI)",
+      "2026 5th Round"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2025 3rd Round"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2026 3rd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/10/2024",
+      "Jeff",
+      "Jazz Chisholm (OF-MIA)",
+      "Sorgaard",
+      "Cole Ragans (SP-KC)",
+      "2024 15th overall"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Curtis Mead (3B-TB)",
+      "2025 2nd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/10/2024",
+      "Tyler",
+      "Jorge Polanco (2B-SEA)",
+      "2025 1st Round",
+      "Tessmonster",
+      "Andrew Abbot (P-CIN)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/11/2024",
+      "Tessmonster",
+      "Lucas Giolito (P-BOS)",
+      "2024 4th Round (37)",
+      "Sorgaard",
+      "Seiya Suzuki (OF-CHC)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/11/2024",
+      "Tyler",
+      "Jack Flaherty (P-DET)",
+      "Karleton",
+      "Nate Lowe (1B-TEX)",
+      "2026 5th Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/5/2024",
+      "Ben",
+      "Bryan Reynolds (OF-PIT)",
+      "Tessmonster",
+      "Andrew Vaughn (1B-CWS)",
+      "2024 43rd overall"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2025 2nd round (worst)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/9/2024",
+      "Tyler",
+      "Chase Delauter (Drafted)",
+      "Jeff",
+      "2024 2nd Round (15th)"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2025 2nd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/9/2024",
+      "Andy",
+      "2025 3rd Round (Sorgaard)",
+      "Coirey",
+      "2024 3rd Round (27th)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/9/2024",
+      "Seth",
+      "2025 3rd Round (Karleton)",
+      "Coirey",
+      "2024 4th Round (31st)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/9/2024",
+      "Ben",
+      "Miguel Vargas (2B-LAD)",
+      "2024 4th Round (40th)",
+      "Sorgaard",
+      "2024 3rd Round (30th)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2026 4th (tyler)",
+      "2024 5th Round (42nd)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/9/2024",
+      "Tyler",
+      "2025 2nd (Ben's)",
+      "Sorgaard",
+      "2024 4th (38th)"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2024 4th (40th)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/9/2024",
+      "Andy",
+      "2025 4th Round",
+      "Coirey",
+      "2024 5th Round (41st)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2026 5th Round",
+      "2025 5th Round (Jason)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/9/2024",
+      "Andy",
+      "2025 3rd (Conditional Worst)",
+      "Sorgaard",
+      "2024 5th (49th)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2025 5th (Andy)",
+      "2026 4th Round (Conditional Best)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/11/2024",
+      "Jason",
+      "2025 5th Round",
+      "Jeff",
+      "$10 FAAB"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/27/2024",
+      "Seth",
+      "Dansby Swanson (SS-CHC)",
+      "Karleton",
+      "2025 2nd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4/26/2024",
+      "Andy",
+      "Ezequiel Tovar (SS-COL)",
+      "Coirey",
+      "2025 3rd Round (originally Sorgaard's)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5/1/2024",
+      "Tessmonster",
+      "George Springer (OF-TOR)",
+      "Tyler",
+      "Orion Kenkering (RP-PHI)",
+      "2026 5th (originally Sorgaard's)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5/7/2024",
+      "Tyler",
+      "Jose Butto (SP-NYM)",
+      "2026 5th Round",
+      "Andy",
+      "2025 3rd Round (Jason's)"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2026 4th Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5/10/2024",
+      "Tyler",
+      "Colt Keith (2B-DET)",
+      "Sorgaard",
+      "Freddie Freeman (1B-LAD)",
+      "2025 3rd Round"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Heston Kjerstad (UT-BAL)",
+      "2025 5th Round"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Andrew Abbott (SP-CIN)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Gavin Stone (P-LAD)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Gleyber Torres (2B-NYY)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5/16/2024",
+      "Tessmonster",
+      "2025 5th Round",
+      "Sorgaard",
+      "$30 FAAB"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5/31/2024",
+      "Ben",
+      "Jace Jung (2B - DET)",
+      "Coirey",
+      "Logan O'Hoppe (C-LAA)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5/31/2024",
+      "Tessmonster",
+      "Brady Singer (P-KC)",
+      "Sorgaard",
+      "Nestor Cortes Jr. (P-NYY)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/4/2024",
+      "Sorgaard",
+      "Brooks Lee (SS-MIN)",
+      "2025 5th Round",
+      "Jason",
+      "Craig Kimbrel (P-BAL)",
+      "2026 4th Round"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2026 5th Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/11/2024",
+      "Jason",
+      "Jose Altuve (2B-HOU)",
+      "2026 3rd Round",
+      "Tyler",
+      "Lourdes Gurriel Jr. (OF-ARI)",
+      "2026 1st Round"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Christian Yelich (OF-MIL)",
+      "2025 4th Round",
+      "TJ Friedl (OF-CIN)",
+      "2026 4th Round"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2025 5th Round",
+      "Christian Encarnacion-Strand (1B-CIN)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Kyle Manzardo (1B-CLE)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Matt Shaw (2B-CHC)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/7/2024",
+      "Tyler",
+      "Justyn-Henry Malloy (OF-DET)",
+      "2025 3rd",
+      "Coirey",
+      "Seth Lugo (P-KC)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2025 5th"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2026 3rd"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/8/2024",
+      "Sorgaard",
+      "Kerry Carpenter (OF-DET)",
+      "2026 5th (Jason's)",
+      "Tessmonster",
+      "Kenley Jansen (P-BOS)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/9/2024",
+      "Tyler",
+      "Colt Emerson (SS-SEA)",
+      "2025 3rd (Jason's)",
+      "Tessmonster",
+      "Robert Suarez (P-SD)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Chase Hampton (P-NYY)",
+      "2025 5th (Jason's)",
+      "Justin Verlander (P-HOU)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/9/2024",
+      "Sorgaard",
+      "Cade Horton (P-CHC)",
+      "2026 3rd Round",
+      "Jason",
+      "Reynaldo Lopez (P-ATL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/9/2024",
+      "Ben",
+      "Jaison Chourio (OF-CLE)",
+      "2026 3rd Round",
+      "Jason",
+      "Masataka Yoshida (OF-BOS)",
+      "2026 4th Round"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Edouard Julien (2B-MIN)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/9/2024",
+      "Jeff",
+      "Dalton Rushing (C-LAD)",
+      "Tessmonster",
+      "Kirby Yates (P-TEX)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/10/2024",
+      "Karleton",
+      "Matt McLain (2B - CIN)",
+      "2026 2nd Round",
+      "Tessmonster",
+      "Kevin Gausman (P-TOR)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Drew Rassmussen (P-TB)",
+      "Bryan Reynolds (OF-PIT)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Joey Estes (P-OAK)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Dansby Swanson (SS-CHC)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/10/2024",
+      "Sorgaard",
+      "Bo Bichette (SS-TOR)",
+      "Karleton",
+      "Randy Arozarena (OF-TB)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/16/2024",
+      "Tyler",
+      "Sandy Alcantara (P-MIA)",
+      "Jason",
+      "Spencer Steer (OF-CIN)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Brock Wilken (3B-MIL)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Luis Rengifo (2B-LAA)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Matt Wallner (OF-MIN)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/20/2024",
+      "Jason",
+      "Dean Kremer (P-BAL)",
+      "Sorgaard",
+      "2025 2nd Round Pick"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/20/2024",
+      "Tessmonster",
+      "Xander Bogaerts (SS-SD)",
+      "2025 3rd Round Pick",
+      "Sorgaard",
+      "Bryce Miller (P-SEA)",
+      "2025 4th Round Pick"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Kyle Finnegan (P-WAS)",
+      "2025 3rd Round Pick",
+      "Cole Young (SS-SEA)",
+      "2026 4th Round Pick"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/24/2024",
+      "Tyler",
+      "2025 4th",
+      "Jeff",
+      "Kirby Yates (P-TEX)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/25/2024",
+      "Jeff",
+      "Carlos Estevez (P-LAA)",
+      "Seth",
+      "2025 5th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/27/2024",
+      "Tessmonster",
+      "Carlos Rodon (P-NYY)",
+      "Karleton",
+      "Kodai Senga (P-NYM)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/28/2024",
+      "Tessmonster",
+      "Zach Wheeler (P-PHI)",
+      "Ben",
+      "Eury Perez (P-MIA)",
+      "2025 1st Rounder"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Emannuel Rodriguez (OF-MN)",
+      "2026 1st Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/30/2024",
+      "Seth",
+      "Brandon Woodruff (P-MIL)",
+      "Jeff",
+      "Devin Williams (P-MIL)",
+      "2025 5th Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/31/2024",
+      "Sorgaard",
+      "Paul Sewald (P-ARI)",
+      "Karleton",
+      "Gabriel Gonzalez (OF-MIN)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/2/2024",
+      "Jason",
+      "Salvador Perez (C-KC)",
+      "Seth",
+      "David Festa (P-MIN)",
+      "2026 3rd Rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/5/2024",
+      "Tessmonster",
+      "Yusei Kikuchi (P-HOU)",
+      "Karleton",
+      "Tanner Scott (P-SD)",
+      "2026 3rd Rounder"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Yennier Cano (P-BAL)",
+      "Jordan HIcks (P-SF)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/5/2024",
+      "Ben",
+      "Reese Olson (P-DET)",
+      "2025 2nd Rounder",
+      "Jason",
+      "Blake Snell (P-SF)",
+      "2026 3rd Rounder (via Ben)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Tanner Houck (P-BOS)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Anthony Volpe (SS-NYY)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Tink Hence (P-STL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/6/2024",
+      "Seth",
+      "Brady House (SS-WSH)",
+      "2025 2nd Rounder (K-Town)",
+      "Tessmonster",
+      "Nolan Arenado (3B-STL)",
+      "2025 5th Rounder (Tessy)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Juan Yepez (1B/OF - WSH)",
+      "$5 FAAB"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/6/2024",
+      "Andy",
+      "Jarren Duran (OF-BOS)",
+      "2025 1st Rounder",
+      "Coirey",
+      "Yoshinobu Yamamoto (P-LAD)",
+      "2026 1st Rounder"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Spencer Strider (P-ATL)",
+      "2025 3rd Rounder (Karleton)"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Owner",
+      "Players Sent",
+      "Picks Sent",
+      "Owner",
+      "Players Sent",
+      "Picks Sent"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/11/2023",
+      "Jason",
+      "Yandy Diaz (1B-TBR)",
+      "2023 3rd Round",
+      "Tessmonster",
+      "Ryan Pressly (P-HOU)",
+      "Total Trades 2023"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Cole Irvin (P-BAL)",
+      "2023 4th Round",
+      "Gregory Soto (P-PHI)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/1/2023",
+      "Jason",
+      "Keibert Ruiz (C-WSH)",
+      "2023 2nd round",
+      "Tessmonster",
+      "Salvador Perez (C-KCR)",
+      "2023 3rd Round",
+      "Sorgaard",
+      "4",
+      "14",
+      "18"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2023 4th Round",
+      "Tyler",
+      "10",
+      "6",
+      "16"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/18/2023",
+      "Sorgaard",
+      "Francisco Lindor (SS-NYM)",
+      "Tyler",
+      "DJ LeMehieu (2B-NYY)",
+      "2023 2nd Round",
+      "Karleton",
+      "5",
+      "6",
+      "11"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Trevor Story (SS-BOS)",
+      "JT Realmuto (C-PHI)",
+      "2024 5th Round",
+      "Jason",
+      "5",
+      "5",
+      "10"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Miguel Vargas (3B-LAD)",
+      "Tessmonster",
+      "6",
+      "4",
+      "10"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/19/2023",
+      "Tyler",
+      "2023 4th Round",
+      "Jeff",
+      "Tyler Anderson (P-LAA)",
+      "2024 5th Round",
+      "Seth",
+      "2",
+      "3",
+      "5"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2024 4th Round",
+      "Forest Whitley (P-HOU)",
+      "Jeff",
+      "1",
+      "4",
+      "5"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/19/2023",
+      "Sorgaard",
+      "Marcus Semien (2B-TEX)",
+      "Karleton",
+      "Jose Abreu (1B-HOU)",
+      "2024 1st Round",
+      "Coirey",
+      "1",
+      "4",
+      "5"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Alex Bregman (3B-HOU)",
+      "Michael Kopech (P-CWS)",
+      "Ben",
+      "4",
+      "0",
+      "4"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Nico Hoerner (2B-CHC)",
+      "Andy",
+      "3",
+      "0",
+      "3"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/20/2023",
+      "Tyler",
+      "Daniel Bard (P-COL)",
+      "2023 5th Round",
+      "Tessmonster",
+      "Reid Detmers (P-LAA)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Kenley Jansen (P-BOS)",
+      "2024 3rd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/20/2023",
+      "Coirey",
+      "Jeff McNeil (2B-NYM)",
+      "2023 2nd Round (11th)",
+      "Seth",
+      "2023 1st Round (6th overall)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Nick Pratto (1B-KCR)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/24/2023",
+      "Coirey",
+      "2023 5th Round",
+      "Jeff",
+      "Trevor Bauer (P-FA)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/25/2023",
+      "Ben",
+      "Josiah Gray (P-WSH)",
+      "Sorgaard",
+      "2023 4th Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/27/2023",
+      "Tessmonster",
+      "Christian Yelich (OF-MIL)",
+      "2023 2nd Round (20th)",
+      "Sorgaard",
+      "Carlos Rodon (P-NYY)",
+      "2023 5th Round (49th)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Ketel Marte (2B-ARI)",
+      "2024 3rd Round (Best)",
+      "2024 5th Round (Worst)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Aaron Ashby (P-MIL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/2/2023",
+      "Ben",
+      "Dylan Cease (P-CHW)",
+      "2023 2nd Round (13th)",
+      "Karleton",
+      "Gunnar Henderson (SS-BAL)",
+      "Conditional 2024 2nd if he gets sent down. Karleton gets 2024 3rd"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/6/2023",
+      "Jason",
+      "Manny Machado (3B-SDP)",
+      "2023 4th (33rd)",
+      "Karleton",
+      "Alex Bregman (3B-HOU)",
+      "2023 1st Round (10th overall)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/6/2023",
+      "Jason",
+      "Daniel Espino (P-CLE)",
+      "2023 1st Round (6th)",
+      "Tyler",
+      "Pete Alonso (1B-NYM)",
+      "2025 3rd Round"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2023 1st Round (10th)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2025 5th Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/7/2023",
+      "Andy",
+      "Daulton Varsho (C/OF-TOR)",
+      "2023 3rd Round (22nd)",
+      "Sorgaard",
+      "Oswald Peraza (SS-NYY)",
+      "2023 3rd Round (29th)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2023 5th Round (42nd)",
+      "2024 1st Round"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2024 4th Round",
+      "2025 2nd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/7/2023",
+      "Coirey",
+      "Max Muncy (3B-LAD)",
+      "Tessmonster",
+      "Cole Irvin (P-BAL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/7/2023",
+      "Sorgaard",
+      "Shane Bieber (P-CLE)",
+      "2025 1st Round",
+      "Seth",
+      "Bryce Harper (OF-PHI)",
+      "2023 2nd Round (15th)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2024 4th Round (Best)",
+      "Shane Baz (P-TBR)",
+      "2023 4th Round (35th)"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2024 2nd Round"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2025 Pick - 2nd, 3rd, 4th depending on conditional"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/8/2023",
+      "Sorgaard",
+      "Christian Yelich (OF-MIL)",
+      "2024 5th Round",
+      "Jason",
+      "Eduardo Rodriguez (P-DET)",
+      "2024 4th Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/10/2023",
+      "Ben",
+      "Tyler O'Neill (OF-STL)",
+      "2024 Conditional (3rd/4th)",
+      "Karleton",
+      "Tyler Glasnow (P-TBR)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/11/2023",
+      "Andy",
+      "Ezequiel Tovar (SS-COL)",
+      "Jason",
+      "2023 1st Round (9th)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/11/2023",
+      "Andy",
+      "2023 2nd Round (14th)",
+      "Seth",
+      "2023 2nd Round (11th)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2023 3rd Round (29th)",
+      "2023 5th Round (45th)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/11/2023",
+      "Tessmonster",
+      "Nolan Gorman (2B-STL)",
+      "2023 5th Round (49th)",
+      "Sorgaard",
+      "2023 4th Round (35th)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/14/2023",
+      "Andy",
+      "Peter Crow-Armstrong (OF-CHC)",
+      "2024 3rd Round",
+      "Jason",
+      "Ezequiel Tovar (SS-COL)",
+      "2024 5th Round"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2025 5th Round",
+      "2025 3rd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/16/2023",
+      "Tessmonster",
+      "Rasiel Iglesias (P-ATL)",
+      "Karelton",
+      "Jake Cronenworth (2B-SDP)",
+      "2024 4th Round"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Harry Ford (C-SEA)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/16/2023",
+      "Ben",
+      "Lance McCullers (P-HOU)",
+      "2025 2nd Round",
+      "Sorgaard",
+      "Miguel Vargas (3B-LAD)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/16/2023",
+      "Karleton",
+      "Eric Lauer (P-MIL)",
+      "2025 3rd Round",
+      "Sorgaard",
+      "2024 2nd Round"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2024 3rd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/23/2023",
+      "Karleton",
+      "Christian Walker (1B-ARI)",
+      "Sorgaard",
+      "Nate Lowe (1B-TEX)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Tommy Edman (2B-STL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/27/2023",
+      "Karelton",
+      "2024 2nd Round",
+      "Tyler",
+      "Chris Bassit (P-TOR)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2025 4th Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/29/2023",
+      "Tyler",
+      "Carlos Carrasco (P-NYM)",
+      "2025 5th Round",
+      "Jason",
+      "2025 4th Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5/11/2023",
+      "Tyler",
+      "Patrick Sandoval (P-LAA)",
+      "Tessmonster",
+      "Jack Flaherty (P-STL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5/14/2023",
+      "Tyler",
+      "2024 5th Round",
+      "Jeff",
+      "Kyle Freeland (P-COL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5/21/2023",
+      "Karleton",
+      "Robbie Ray (P-SEA)",
+      "Sorgaard",
+      "Lance Lynn (P-CHW)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/5/2023",
+      "Tyler",
+      "2025 5th Round",
+      "Coirey",
+      "$40 FAAB"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/8/2023",
+      "Andy",
+      "Bryce Elder (P-ATL)",
+      "2024 5th Round",
+      "Sorgaard",
+      "Shane Baz (P-TBR)",
+      "2025 Conditional Pick from Seth"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/11/2023",
+      "Tessmonster",
+      "Mike Mayers (P-KCR)",
+      "Karleton",
+      "$5 FAAB"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/29/2023",
+      "Tessmonster",
+      "Logan Allen (P-CLE)",
+      "2024 3rd Round",
+      "Tyler",
+      "Xander Bogaerts (SS-SDP)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Ben Joyce (P-LAA)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/5/2023",
+      "Tessmonster",
+      "Willy Adames (SS-MIL)",
+      "2024 Cond. 4th Round",
+      "Tyler",
+      "Brandon Nimmo (OF-NYM)",
+      "2024 5th Round (via Jeff)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Curtis Mead (2B-TBR)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Spencer Jones (OF-NYY)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/11/2023",
+      "Karleton",
+      "Logan O'Hoppe (C-LAA)",
+      "2024 2nd Round",
+      "Coirey",
+      "Nathan Eovaldi"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2025 1st Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/11/2023",
+      "Karleton",
+      "Max Scherzer (P-NYM)",
+      "Sorgaard",
+      "Paul Goldschmidt (1B-STL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/20/2023",
+      "Tyler",
+      "Jacob DeGrom (P-TEX)",
+      "Jason",
+      "Mason Miller (P-OAK)",
+      "2024 1st Round"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Trevor Story (SS-BOS)",
+      "2025 3rd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/25/2023",
+      "Tyler",
+      "Felix Bautista (P-BAL)",
+      "2025 4th Round",
+      "Karleton",
+      "Edwin Diaz (P-NYM)",
+      "2024 3rd Round"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Connor Norby (IF-BAL)",
+      "2025 5th Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/26/2023",
+      "Seth",
+      "Shane Bieber (P-CLE)",
+      "2024 3rd Round",
+      "Coirey",
+      "Cody Bellinger (OF-CHC)",
+      "2024 2nd Round"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Luis Garcia (P-HOU)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/28/2023",
+      "Tyler",
+      "Curtis Mead (2B-TBR)",
+      "2024 4th Round",
+      "Jeff",
+      "Christian Encarnacion-Strand (1B-CIN)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Ryan Helsley (P-STL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/31/2023",
+      "Jason",
+      "CJ Cron (1B-LAA)",
+      "2024 5th Round",
+      "Tyler",
+      "2024 3rd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/4/2023",
+      "Tyler",
+      "Logan Allen (P-CLE)",
+      "Coirey",
+      "Camilo Doval (P-SF)",
+      "2024 3rd Round (Best)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Daniel Espino (P-CLE)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/7/2023",
+      "Seth",
+      "$35 FAAB",
+      "Karleton",
+      "2024 5th Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/8/2023",
+      "Jeff",
+      "Bryce Miller (P-SEA)",
+      "2024 2nd Round",
+      "Sorgaard",
+      "Bobby Miller (P-LAD)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/11/2023",
+      "Seth",
+      "Bo Bichette (SS-TOR)",
+      "Sorgaard",
+      "Max Scherzer (P-TEX)",
+      "2024 2nd Round"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Royce Lewis (3B-MIN)",
+      "2025 3rd Round"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2025 5th Round"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "Additional 2024 2nd if Scherzer retires before draft"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/11/2023",
+      "Karleton",
+      "Nestor Cortes (P-NYY)",
+      "Sorgaard",
+      "Yu Darvish (P-SDP)",
+      "2024 3rd (via Tessmonster)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "JD Martinez (DH-LAD)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/11/2023",
+      "Tyler",
+      "Connor Norby (IF-BAL)",
+      "2024 3rd Round",
+      "Sorgaard",
+      "Gleyber Torres (2B-NYY)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2025 4th Round (via Jason)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/10/2023",
+      "If Gavin Stone and Bobby Miller both have at least 2 starts in 2023. Jeff gets Tyler's 2024 5th rounder. If not, Tyler gets Jeff's 2024 5th rounder"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Owner",
+      "Players Sent",
+      "Picks Sent",
+      "Owner",
+      "Players Sent",
+      "Picks Sent"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/25/2022",
+      "Andy",
+      "Freddie Freeman (1B-LAD)",
+      "Sorgaard",
+      "Wander Franco (SS-TBR)",
+      "2024 1st Round",
+      "Total Trades 2022"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Trevor Story (SS-COL)",
+      "Alex Kiriloff (OF-MIN)",
+      "2023 2nd Round"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Yu Darvish (P-SDP)",
+      "2023 2nd Round",
+      "Tyler",
+      "5",
+      "4",
+      "9"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/7/2022",
+      "Tyler",
+      "Carlos Rodon (P-SFG)",
+      "2022 1st Round (6th)",
+      "Tessmonster",
+      "2022 1st Round (9th)",
+      "Tessmonster",
+      "3",
+      "4",
+      "7"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2022 2nd Round (15th)",
+      "Andy",
+      "6",
+      "1",
+      "7"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2022 3rd Round (25th)",
+      "Sorgaard",
+      "3",
+      "3",
+      "6"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2022 3rd Round (29th)",
+      "Jason",
+      "4",
+      "1",
+      "5"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2/24/2022",
+      "Jason",
+      "Chris Paddack (P-SDP)",
+      "2022 3rd Round (30th)",
+      "Sorgaard",
+      "Trevor Bauer (P-LAD)",
+      "Karleton",
+      "2",
+      "2",
+      "4"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Royce Lewis (3B-MIN)",
+      "Coirey",
+      "2",
+      "1",
+      "3"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/21/2022",
+      "Sorgaard",
+      "Anthony Rizzo (1B-NYY)",
+      "Seth",
+      "2022 3rd Round (23rd)",
+      "Jeff",
+      "0",
+      "2",
+      "2"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2022 3rd Round (26th)",
+      "Ben",
+      "0",
+      "1",
+      "1"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/21/2022",
+      "Sorgaard",
+      "Willy Adames (SS-MIL)",
+      "Tessmonster",
+      "Zach Plesac (P-CLE)",
+      "Seth",
+      "0",
+      "0",
+      "0"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4/5/2022",
+      "Tessmonster",
+      "2023 1st Round",
+      "Seth",
+      "2022 2nd Round (13th)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2023 3rd Round",
+      "2023 3rd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4/5/2022",
+      "Sorgaard",
+      "Jake Cronenworth (IF-SDP)",
+      "Jason",
+      "Mitch Haniger (OF-SEA)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4/5/2022",
+      "Andy",
+      "Craig Kimbrel (P-CHC)",
+      "Jason",
+      "Chris Bassit (P-TOR)",
+      "2024 2nd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/20/2022",
+      "Tessmonster",
+      "Jesse Winker (OF-SEA)",
+      "Tyler",
+      "Christian Javier (P-HOU)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Tanner Scott (P-MIA)",
+      "Josh Naylor (1B-CLE)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "JT Realmuto (C-PHI)",
+      "Cody Bellinger (OF-LAD)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/23/2022",
+      "Karleton",
+      "Marcus Stroman (P-CHC)",
+      "Coirey",
+      "Randy Arozarena (OF-TBR)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Camilo Doval (P-SFG)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/6/2022",
+      "Andy",
+      "Chris Bassit (P-NYM)",
+      "Tyler",
+      "Zac Veen (OF-COL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/6/2022",
+      "Tyler",
+      "Keibert Ruiz (C-WSH)",
+      "Jason",
+      "2024 3rd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/13/2022",
+      "Tessmonster",
+      "Aroldis Chapman (P-NYY)",
+      "Tyler",
+      "2024 3rd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/15/2022",
+      "Andy",
+      "Ty France (2B-SEA)",
+      "2023 2nd Round",
+      "Jeff",
+      "Jordan Walker (OF-STL)",
+      "2023 1st Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/18/2022",
+      "Jason",
+      "George Springer (OF-TOR)",
+      "2023 2nd Round (Cond.)",
+      "Ben",
+      "2023 1st Round"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2023 1st Round (Cond.)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/18/2022",
+      "Jason",
+      "DJ Lemahieu (2B-NYY)",
+      "Tyler",
+      "Tristan Casas (1B-BOS)",
+      "2024 1st Round"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Kenley Jansen (P-ATL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/19/2022",
+      "Andy",
+      "Gerrit Cole (P-NYY)",
+      "Karleton",
+      "Ozzie Albies (2B-ATL)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "George Kirby (P-SEA)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/20/2022",
+      "Karleton",
+      "Lance Lynn (P-CHW)",
+      "Sorgaard",
+      "2023 3rd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/20/2022",
+      "Tyler",
+      "Eloy Jimenez (OF-CHW)",
+      "Jeff",
+      "Miguel Vargas (3B-LAD)",
+      "2023 2nd Round"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Asa Lacy (P-KCR)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/21/2022",
+      "Jason",
+      "Justin Verlander (P-HOU)",
+      "2024 3rd Round (Cond.)",
+      "Tessmonster",
+      "Noah Syndergaard (P-LAA)",
+      "2024 1st Round"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Jeter Downs (SS-BOS)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/21/2022",
+      "Andy",
+      "Jorge Lopez (P-BAL)",
+      "Tessmonster",
+      "2023 2nd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/23/2022",
+      "Tyler",
+      "Khalil Watson (SS-MIA)",
+      "Coirey",
+      "Carlos Carrasco (P-NYM)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/23/2022",
+      "Andy",
+      "Martin Perez (P-TEX)",
+      "Sorgaard",
+      "Cade Cavalli (P-WSH)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/26/2022",
+      "Coirey",
+      "Jordan Montgomery (P-STL)",
+      "Jason",
+      "DL Hall (P-BAL)",
+      "2024 2nd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/26/2022",
+      "Coirey",
+      "Tommy Edman (2B-STL)",
+      "Karleton",
+      "Marcelo Mayer (SS-BOS)",
+      "2024 3rd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/27/2022",
+      "Jason",
+      "Trevor Rogers (P-MIA)",
+      "2023 2nd Round",
+      "Andy",
+      "Blake Snell (P-SDP)",
+      "2023 2nd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/15/2022",
+      "Tyler",
+      "Asa Lacy (P-KCR)",
+      "Jason",
+      "Daniel Bard (P-COL)",
+      "2023 3rd Round"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Taylor Rogers (P-MIL)"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Owner",
+      "Players Sent",
+      "Picks Sent",
+      "Owner",
+      "Players Sent",
+      "Picks Sent"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/26/2021",
+      "Tyler",
+      "Taylor Trammell (SEA-OF)",
+      "2021 2nd Round (15)",
+      "Jason",
+      "Matt Chapman (OAK-3B)",
+      "2021 3rd Rounder (23)"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Yasmani Grandal (CWS-C)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/20/2021",
+      "Jeff",
+      "2021 3rd Round (25th)",
+      "Tyler",
+      "Evan White (1B-SEA)",
+      "2022 3rd Round",
+      "Total Trades 2021"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3/26/2021",
+      "Tyler",
+      "Reid Detmers (P-LAA)",
+      "2022 1st Round",
+      "Jason",
+      "Pete Alonso (1B-NYM)"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2023 2nd Round",
+      "Tyler",
+      "4",
+      "3",
+      "7"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5/4/2021",
+      "Andy",
+      "2022 3rd Round",
+      "Karleton",
+      "Nolan Jones (OF-CLE)",
+      "Sorgaard",
+      "2",
+      "3",
+      "5"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5/25/2021",
+      "Ben",
+      "Anthony Rendon (3B-LAA)",
+      "Tyler",
+      "Matt Chapman (3B-OAK)",
+      "Karleton",
+      "2",
+      "3",
+      "5"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Pablo Lopez (P-MIA)",
+      "Jason",
+      "2",
+      "2",
+      "4"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6/23/2021",
+      "Tyler",
+      "Mike Soroka (P-ATL)",
+      "2023 3rd Round",
+      "Coirey",
+      "Eloy Jimenez (OF-CHW)",
+      "Ben",
+      "3",
+      "0",
+      "3"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Quinn Priester (P-PIT)",
+      "Tessmonster",
+      "0",
+      "2",
+      "2"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/4/2021",
+      "Sorgaard",
+      "Max Scherzer (P-WSH)",
+      "Karleton",
+      "Nate Pearson (P-TOR)",
+      "2022 3rd Round",
+      "Andy",
+      "2",
+      "0",
+      "2"
+     ]
+    },
+    {
+     "depth": 6,
+     "cells": [
+      "2022 3rd Round",
+      "Coirey",
+      "0",
+      "1",
+      "1"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/5/2021",
+      "Seth",
+      "Liam Hendricks (P-CHW)",
+      "Karleton",
+      "Jordan Groshans (SS-TOR)",
+      "2022 3rd Round",
+      "Jeff",
+      "1",
+      "0",
+      "1"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/6/2021",
+      "Jason",
+      "Lucas Giolito (P-CHW)",
+      "2022 2nd Round",
+      "Tessmonster",
+      "Julio Rodriguez (OF-SEA)",
+      "2022 1st Round",
+      "Seth",
+      "0",
+      "0",
+      "0"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "2022 3rd Round",
+      "2022 3rd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/6/2021",
+      "Jason",
+      "Jacob DeGrom (P-NYM)",
+      "Tyler",
+      "Chris Paddack (P-SDP)",
+      "2023 1st Round"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Carlos Rodon (P-CHW)",
+      "Trevor Rogers (P-MIA)",
+      "2024 2nd Round"
+     ]
+    },
+    {
+     "depth": 2,
+     "cells": [
+      "Reid Detmers (P-LAA)",
+      "Mick Abel (P-PHI)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Nick Gonzales (2B-PIT)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/6/2021",
+      "Karleton",
+      "Alex Kiriloff (OF-MIN)",
+      "2023 2nd Round",
+      "Sorgaard",
+      "Lance Lynn (P-CHW)"
+     ]
+    },
+    {
+     "depth": 5,
+     "cells": [
+      "Trey Mancini (OF-BAL)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/11/2021",
+      "Ben",
+      "Robbie Ray (P-TOR)",
+      "Karleton",
+      "Josiah Gray (P-WSH)",
+      "2023 3rd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8/16/2021",
+      "Andy",
+      "Mark Melancon (P-SDP)",
+      "Sorgaard",
+      "2022 3rd Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "11/7/2021",
+      "Karleton",
+      "Jose Altuve (2B-HOU)",
+      "Jason",
+      "Brennen Davis (OF-CHC)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "11/7/2021",
+      "Tyler",
+      "Clayton Kershaw (P-LAD)",
+      "Karleton",
+      "Tristan Casas (1B-BOS)",
+      "2022 1st Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "11/11/2021",
+      "Ben",
+      "Mike Clevinger (P-CLE)",
+      "Sorgaard",
+      "Nate Pearson (P-TOR)",
+      "2023 1st Round"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "11/23/2021",
+      "Sorgaard",
+      "Tim Anderson (SS-CHW)",
+      "Karleton",
+      "CJ Abrams (SS-SDP)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "12/30/2021",
+      "Tyler",
+      "Reid Detmers (P-LAA)",
+      "Tessmonster",
+      "Patrick Sandoval (P-LAA)"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Owner",
+      "Players Sent",
+      "Picks Sent",
+      "Owner",
+      "Players Sent",
+      "Picks Sent"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7/31/2020",
+      "Tyler",
+      "Gary Sanchez (C-NYY)",
+      "Sorgaard",
+      "2nd rounder"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1/9/2021",
+      "Tyler",
+      "Max Scherzer (P-WSH)",
+      "Cond. 1st rounder",
+      "Sorgaard",
+      "Xander Bogaerts",
+      "30th overall 2021"
+     ]
+    },
+    {
+     "depth": 3,
+     "cells": [
+      "27th overall 2021"
+     ]
+    }
+   ]
+  },
+  {
+   "tab": "Rookie Draft",
+   "blocks": [
+    {
+     "depth": 1,
+     "cells": [
+      "2029"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "1st",
+      "2nd",
+      "3rd",
+      "4th",
+      "5th"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Coirey",
+      "13",
+      "Coirey",
+      "25",
+      "Coirey",
+      "37",
+      "Coirey",
+      "49",
+      "Coirey"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Karleton",
+      "14",
+      "Nick S (Karleton)",
+      "26",
+      "Karleton",
+      "38",
+      "Karleton",
+      "50",
+      "Tyler (Karleton)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "Jason",
+      "15",
+      "Jason",
+      "27",
+      "Jason",
+      "39",
+      "Jason",
+      "51",
+      "Jason"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Jeff",
+      "16",
+      "Jeff",
+      "28",
+      "Jeff",
+      "40",
+      "Jeff",
+      "52",
+      "Jeff"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Tessy",
+      "17",
+      "Tessy",
+      "29",
+      "Tessy",
+      "41",
+      "Tessy",
+      "53",
+      "Tessy"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Ben",
+      "18",
+      "Ben",
+      "30",
+      "Ben",
+      "42",
+      "Ben",
+      "54",
+      "Ben"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Taylor (Andy)",
+      "19",
+      "Andy",
+      "31",
+      "Andy",
+      "43",
+      "Andy",
+      "55",
+      "Andy"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Tyler",
+      "20",
+      "Tyler",
+      "32",
+      "Taylor (Tyler)",
+      "44",
+      "Tyler",
+      "56",
+      "Tyler"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Seth",
+      "21",
+      "Seth",
+      "33",
+      "Seth",
+      "45",
+      "Seth",
+      "57",
+      "Seth"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "Nick S",
+      "22",
+      "Nick S",
+      "34",
+      "Nick S",
+      "46",
+      "Nick S",
+      "58",
+      "Nick S"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "11",
+      "Zac",
+      "23",
+      "Zac",
+      "35",
+      "Zac",
+      "47",
+      "Zac",
+      "59",
+      "Zac"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "12",
+      "Taylor",
+      "24",
+      "Taylor",
+      "36",
+      "Taylor",
+      "48",
+      "Taylor",
+      "60",
+      "Tyler (Taylor)"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "2028"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "1st",
+      "2nd",
+      "3rd",
+      "4th",
+      "5th"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Coirey",
+      "13",
+      "Coirey",
+      "25",
+      "Coirey",
+      "37",
+      "Coirey",
+      "49",
+      "Coirey"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Tessy (Karleton)",
+      "14",
+      "Tessy (Karleton)",
+      "26",
+      "Karleton",
+      "38",
+      "Zac (Tyler (Taylor (Karleton)",
+      "50",
+      "Zac (Karleton)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "Jason",
+      "15",
+      "Jason",
+      "27",
+      "Jason",
+      "39",
+      "Jason",
+      "51",
+      "Jason"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Jeff",
+      "16",
+      "Jeff",
+      "28",
+      "Jeff",
+      "40",
+      "Jeff",
+      "52",
+      "Jeff"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Tessy",
+      "17",
+      "Tessy",
+      "29",
+      "Tessy",
+      "41",
+      "Tessy",
+      "53",
+      "Tessy"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Ben",
+      "18",
+      "Ben",
+      "30",
+      "Ben",
+      "42",
+      "Ben",
+      "54",
+      "Ben"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Taylor (Andy)",
+      "19",
+      "Taylor (Andy)",
+      "31",
+      "Taylor (Andy)",
+      "43",
+      "Andy",
+      "55",
+      "Andy"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Tyler",
+      "20",
+      "Taylor (Tyler)",
+      "32",
+      "Zac (Tyler)",
+      "44",
+      "Zac (Tyler)",
+      "56",
+      "Zac (Tyler)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Seth",
+      "21",
+      "Seth",
+      "33",
+      "Zac (Seth)",
+      "45",
+      "Seth",
+      "57",
+      "Seth"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "Nick S",
+      "22",
+      "Nick S",
+      "34",
+      "Nick S",
+      "46",
+      "Nick S",
+      "58",
+      "Nick S"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "11",
+      "Zac",
+      "23",
+      "Zac",
+      "35",
+      "Zac",
+      "47",
+      "Zac",
+      "59",
+      "Zac"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "12",
+      "Taylor",
+      "24",
+      "Taylor",
+      "36",
+      "Taylor",
+      "48",
+      "Taylor",
+      "60",
+      "Tyler (Karleton (Taylor)"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "2027"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "1st",
+      "2nd",
+      "3rd",
+      "4th",
+      "5th"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Coirey",
+      "13",
+      "Coirey",
+      "25",
+      "Coirey",
+      "37",
+      "Coirey",
+      "49",
+      "Coirey"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Taylor (Nick S (Karleton)",
+      "14",
+      "Jeff (Nick S (Karleton))",
+      "26",
+      "Taylor (Nick S (Karleton)",
+      "38",
+      "Nick S (Tessy (Karleton))",
+      "50",
+      "Coirey (Karleton)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "Jason",
+      "15",
+      "Jason",
+      "27",
+      "Ben (Jason)",
+      "39",
+      "Jason",
+      "51",
+      "Zac (Karleton (Jason)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Jason (Jeff)",
+      "16",
+      "Ben (Tessy (Jeff))",
+      "28",
+      "Jeff",
+      "40",
+      "Jeff",
+      "52",
+      "Jeff"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Jeff (Tessy)",
+      "17",
+      "Tessy",
+      "29",
+      "Tessy",
+      "41",
+      "Taylor (Tessy)",
+      "53",
+      "Tessy (Karleton (Tessy)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Coirey (Ben)",
+      "18",
+      "Ben",
+      "30",
+      "Nick S (Ben)",
+      "42",
+      "Taylor (Andy (Ben)",
+      "54",
+      "Jason (Ben)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Ben (Andy)",
+      "19",
+      "Taylor (Andy)",
+      "31",
+      "Tessy (Nick S (Andy))",
+      "43",
+      "Taylor (Andy)",
+      "55",
+      "Andy"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Nick S (Ben (Tyler)",
+      "20",
+      "Jason (Jeff (Tyler)",
+      "32",
+      "Jeff (Tyler)",
+      "44",
+      "Jason (Tyler)",
+      "56",
+      "Jason (Tyler)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Zac (Tyler (Ben (Seth))",
+      "21",
+      "Nick S (Tessy (Nick S (Seth)))",
+      "33",
+      "Tessy (Karleton (Ben (Seth)",
+      "45",
+      "Seth",
+      "57",
+      "Seth"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "Zac (Tessy (Nick S))",
+      "22",
+      "Zac (Seth (Nick S (Ben (Nick S))",
+      "34",
+      "Tessy (Nick S)",
+      "46",
+      "Tessy (Ben (Nick S))",
+      "58",
+      "Seth (Nick S)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "11",
+      "Zac",
+      "23",
+      "Zac",
+      "35",
+      "Zac",
+      "47",
+      "Zac",
+      "59",
+      "Zac"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "12",
+      "Taylor",
+      "24",
+      "Taylor",
+      "36",
+      "Taylor",
+      "48",
+      "Taylor (Andy (Taylor)",
+      "60",
+      "Tessy (Taylor)"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "2026 Picks"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "1st",
+      "Compensatory",
+      "2nd",
+      "Compensatory",
+      "3rd",
+      "Compensatory",
+      "4th",
+      "Compensatory",
+      "5th",
+      "Compensatory"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Tatsuya Imai",
+      "13",
+      "Ryan Sloan",
+      "15",
+      "Payton Tolle",
+      "27",
+      "Aiva Arquette",
+      "29",
+      "Emil Morales",
+      "41",
+      "Luis Hernandez",
+      "43",
+      "Devin Fitz-Gerald",
+      "55",
+      "Juan Sanchez",
+      "57",
+      "Eduardo Tait",
+      "69",
+      "Steele Hall"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Carson Benge",
+      "14",
+      "Liam Doyle",
+      "16",
+      "Braden Montgomery",
+      "28",
+      "Theo Gillen",
+      "30",
+      "Jojo Parker",
+      "42",
+      "Francisco Rentaria",
+      "44",
+      "Justin Gonzales",
+      "56",
+      "Jaxson Wiggins",
+      "58",
+      "Slater DeBrun",
+      "70",
+      "Welbyn Francisca"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "Kade Anderson",
+      "17",
+      "Jamie Arnold",
+      "31",
+      "Tanner McDougal",
+      "45",
+      "Kendry Chourio",
+      "59",
+      "Didier Fuentes"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Eduardo Quintero",
+      "18",
+      "Rainiel Rodriguez",
+      "32",
+      "Ryan Clifford",
+      "46",
+      "Mike Sirota",
+      "60",
+      "Gage Jump"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Ethan Holliday",
+      "19",
+      "Dax Kilby",
+      "33",
+      "George Lombard Jr.",
+      "47",
+      "Josh Hammond",
+      "61",
+      "Xavier Neyens"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Edward Florentino",
+      "20",
+      "Ralphy Velazquez",
+      "34",
+      "Cam Caminiti",
+      "48",
+      "Jace LaViolette",
+      "62",
+      "Arjun Nimmala"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Eli Willits",
+      "21",
+      "Brody Hopkins",
+      "35",
+      "Brice Matthews",
+      "49",
+      "Kaelen Culpepper",
+      "63",
+      "Connelly Early"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Caleb Bonemer",
+      "22",
+      "Gavin Fien",
+      "36",
+      "Junieker Caceres",
+      "50",
+      "Kayson Cunningham",
+      "64",
+      "Jake Cook"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Carter Jensen",
+      "23",
+      "AJ Ewing",
+      "37",
+      "Ethan Conrad",
+      "51",
+      "Carlos Lagrange",
+      "65",
+      "Munetaka Murakami"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "Jonah Tong",
+      "24",
+      "Seth Hernandez",
+      "38",
+      "Caden Scarborough",
+      "52",
+      "Jefferson Rojas",
+      "66",
+      "Kevin DeFrank"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "11",
+      "Josuar Gonzales",
+      "25",
+      "Joshua B\u00e1ez",
+      "39",
+      "Kyson Witherspoon",
+      "53",
+      "Andrew Fischer",
+      "67",
+      "Ethan Frey"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "12",
+      "Luis Pe\u00f1a",
+      "26",
+      "Tyler Bremmer",
+      "40",
+      "Luke Dickerson",
+      "54",
+      "Kazuka Okamoto",
+      "68",
+      "Kevin Alvarez"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "1st",
+      "Compensatory",
+      "2nd",
+      "Compensatory",
+      "3rd",
+      "Compensatory",
+      "4th",
+      "Compensatory",
+      "5th",
+      "Compensatory"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Zac",
+      "13",
+      "Zac",
+      "15",
+      "Taylor",
+      "27",
+      "Seth (Zac)",
+      "29",
+      "Zac",
+      "41",
+      "Zac",
+      "43",
+      "Jeff (Taylor)",
+      "55",
+      "Zac",
+      "57",
+      "Taylor",
+      "69",
+      "Taylor"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Taylor",
+      "14",
+      "Zac",
+      "16",
+      "Zac",
+      "28",
+      "Taylor",
+      "30",
+      "Jason (Taylor)",
+      "42",
+      "Zac",
+      "44",
+      "Zac",
+      "56",
+      "Zac",
+      "58",
+      "Tessy (Jason (Taylor)",
+      "70",
+      "Andy (Taylor)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "Seth (Nick S)",
+      "17",
+      "Nick S (Andy (Nick S)",
+      "31",
+      "Ben (Coirey (Tyler (Jason (Sorgaard)",
+      "45",
+      "Tessy (Nick S)",
+      "59",
+      "Ben (Tessy (Tyler (Nick S)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Jason",
+      "18",
+      "Nick S (Tessy (Jason))",
+      "32",
+      "Coirey (Tyler (Jason)",
+      "46",
+      "Taylor (Jason (Tessy (Sorgaard (Jason)",
+      "60",
+      "Sorgaard (Tessy (Sorgaard (Jason)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Coirey (Jeff)",
+      "19",
+      "Zac (Tessy (Tyler (Jeff)))",
+      "33",
+      "Nick S (Jeff)",
+      "47",
+      "Jeff",
+      "61",
+      "Jeff"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Andy (Coirey)",
+      "20",
+      "Coirey",
+      "34",
+      "Coirey",
+      "48",
+      "Coirey",
+      "62",
+      "Coirey"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Ben (Nick S (Tessy (Ben))",
+      "21",
+      "Jeff (Nick S (Andy (Ben))",
+      "35",
+      "Coirey (Ben (Jason(Ben)",
+      "49",
+      "Nick S (Ben)",
+      "63",
+      "Ben"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Jeff (Tessy)",
+      "22",
+      "Coirey (Tessy)",
+      "36",
+      "Coirey (Ben (Sorgaard (Tessy)",
+      "50",
+      "Tessy",
+      "64",
+      "Tessy (Jason (Andy (Tessy)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Jason (Tessy (Seth)",
+      "23",
+      "Zac (Tyler (Ben (Seth))",
+      "37",
+      "Ben (Tessy (Sorgaard (Jason (Seth))))",
+      "51",
+      "Seth",
+      "65",
+      "Seth"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "Jason (Tyler)",
+      "24",
+      "Jason (Tyler)",
+      "38",
+      "Zac (Karleton (Jason (Sorgaard (Tyler)",
+      "52",
+      "Nick S (Seth (Jason (Tessy (Andy (Sorgaard (Ben (Tyler)",
+      "66",
+      "Tessy (Karleton (Tyler)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "11",
+      "Jeff (Jason (Karleton)",
+      "25",
+      "Andy (Tessy (Karleton)",
+      "39",
+      "Coirey (Tessy (Karleton)",
+      "53",
+      "Seth (Jason (Karleton)",
+      "67",
+      "Karleton (Jason (Andy (Tyler (Karleton)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "12",
+      "Andy (Ben (Andy)",
+      "26",
+      "Coirey (Ben (Andy)",
+      "40",
+      "Andy",
+      "54",
+      "Tessy (Sorgaard (Ben (Jason (Tyler (Andy)",
+      "68",
+      "Jeff (Coirey (Andy)"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "2025 Picks"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "1st",
+      "2nd",
+      "3rd",
+      "4th",
+      "5th"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Roki Sasaki",
+      "11",
+      "JJ Wetherholt",
+      "21",
+      "Alejandro Rosario",
+      "31",
+      "Will Warren",
+      "41",
+      "Trey Yesavage"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Kristian Campbell",
+      "12",
+      "Thomas White",
+      "22",
+      "Kumar Rocker",
+      "32",
+      "Craig Yoho",
+      "42",
+      "Drake Baldwin"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "Travis Bazzana",
+      "13",
+      "Cam Smith",
+      "23",
+      "Michael Arroyo",
+      "33",
+      "Alfredo Duno",
+      "43",
+      "Bryce Rainer"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Jesus Made",
+      "14",
+      "Zyhir Hope",
+      "24",
+      "Demitrio Crisantes",
+      "34",
+      "Jarlin Susana",
+      "44",
+      "Aroon Escobar"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Christian Moore",
+      "15",
+      "Konnor Griffin",
+      "25",
+      "Josue Briceno",
+      "35",
+      "Charlie Condon",
+      "45",
+      "Moises Chace"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Nick Kurtz",
+      "16",
+      "Travis Sykora",
+      "26",
+      "Thomas Harrington",
+      "36",
+      "Angel Genao",
+      "46",
+      "Cooper Pratt"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Chase Dollander",
+      "17",
+      "Justin Crawford",
+      "27",
+      "Felnin Celesten",
+      "37",
+      "Agustin Ramirez",
+      "47",
+      "Moises Ballestaros"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Quinn Matthews",
+      "18",
+      "Hagen Smith",
+      "28",
+      "Brandon Sproat",
+      "38",
+      "Braylon Payne",
+      "48",
+      "Brayden Taylor"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Chase Burns",
+      "19",
+      "Jonny Farmelo",
+      "29",
+      "Griffin Burkholder",
+      "39",
+      "AJ Smith Shawver",
+      "49",
+      "Sean Burke"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "Jac Caglianone",
+      "20",
+      "Aidan Miller",
+      "30",
+      "Jackson Ferris",
+      "40",
+      "Luke Keashall",
+      "50",
+      "Ryan Waldschmidt"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Jason (Tessy)",
+      "11",
+      "Tessy",
+      "21",
+      "Ben (Sorgaard (Tessmonster)",
+      "31",
+      "Jeff (Tyler (Jason (Tessy)",
+      "41",
+      "Seth (Tessy)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Tessy (Jason)",
+      "12",
+      "Sorgaard (Jason)",
+      "22",
+      "Tyler (Sorgaard (Tessy (Tyler (Andy (Jason)",
+      "32",
+      "Andy (Tessy (Sorgaard (Tyler (Jason)",
+      "42",
+      "Tessy (Tyler (Sorgaard (Andy (Coirey (Tyler (Jason)))"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "Tessy (Jeff)",
+      "13",
+      "Sorgaard (Tessy (Jeff)",
+      "23",
+      "Jeff",
+      "33",
+      "Jeff",
+      "43",
+      "Seth (Jeff)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Coirey",
+      "14",
+      "Coirey",
+      "24",
+      "Tessy (Coirey)",
+      "34",
+      "Coirey",
+      "44",
+      "Tessy (Coirey)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Coirey (Andy)",
+      "15",
+      "Andy",
+      "25",
+      "Tessy (Andy)",
+      "35",
+      "Ben (Coirey (Andy)",
+      "45",
+      "Tyler (Jeff (Jason (Andy)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Seth (Nick S)",
+      "16",
+      "Andy (Sorgaard (Jason (Sorgaard)",
+      "26",
+      "Andy (Coirey (Andy (Nick S)",
+      "36",
+      "Tessy (Sorgaard)",
+      "46",
+      "Seth (Nick S)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Jeff (Coirey (Karleton)",
+      "17",
+      "Ben (Tessy (Seth (Karleton)",
+      "27",
+      "Andy (Coirey (Seth (Nick S (Karleton)",
+      "37",
+      "Jeff (Tyler (Karleton)",
+      "47",
+      "Sorgaard (Tessy (Tyler (Karleton)))"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Sorgaard (Tessy(Ben)",
+      "18",
+      "Sorgaard (Tyler (Jeff (Nick S (Ben)))",
+      "28",
+      "Ben",
+      "38",
+      "Sorgaard (Andy (Jason (Sorgaard (Ben)",
+      "48",
+      "Sorgaard (Ben)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Seth (Tessy (Tyler)",
+      "19",
+      "Tessy (Seth (Jason (Ben (Tessy (Tyler)",
+      "29",
+      "Coirey (Tyler (Sorgaard (Tyler (Jason (Tyler)",
+      "39",
+      "Karleton (Tyler)",
+      "49",
+      "Ben (Coirey (Tyler (Jason (Sorgaard (Tessy (Jason (Tyler))"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "Seth",
+      "20",
+      "Sorgaard (Jason (Seth)",
+      "30",
+      "Sorgaard (Karleton (Sorgaard (Andy (Seth)",
+      "40",
+      "Seth",
+      "50",
+      "Jeff (Seth)"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Ben gets worst 2025 2nd Rounder from Tess"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Conditional Picks"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Nick S gets Seth's 2nd if Baz has >70 IP, 3rd if 70 - 119 IP 4th if 120+ IP in 2024"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Andy get's Seth's conditional pick in the above scenario"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Nick S gets Andy's worst 3rd in 2025"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "1st",
+      "2nd",
+      "3rd",
+      "4th",
+      "5th"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Coirey",
+      "11",
+      "Coirey",
+      "21",
+      "Tyler (Coirey)",
+      "31",
+      "Seth (Coirey)",
+      "41",
+      "Andy (Coirey)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Andy",
+      "12",
+      "Andy",
+      "22",
+      "Tessy (Jason (Andy)",
+      "32",
+      "Seth (Nick S (Andy)",
+      "42",
+      "Ben (Nick S (Andy))"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "Jason (Tessy)",
+      "13",
+      "Sorgaard (Jason (Tessy)",
+      "23",
+      "Tessy",
+      "33",
+      "Jeff(Tyler (Tessy)",
+      "43",
+      "Ben (Tessy)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Jeff (Tessy (Jason)",
+      "14",
+      "Seth (Coirey (Jason)",
+      "24",
+      "Karelton (Nick S (Tessy (Tyler (Jason)",
+      "34",
+      "Nick S (Jason)",
+      "44",
+      "Tessy (Tyler (Jason)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Jeff",
+      "15",
+      "Tyler (Jeff (Sorgaard (Jeff)",
+      "25",
+      "Tessy (Jeff)",
+      "35",
+      "Jeff",
+      "45",
+      "Tessy (Tyler (Jeff)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Seth",
+      "16",
+      "Tyler (Karleton (Nick S (Seth)",
+      "26",
+      "Coirey (Seth)",
+      "36",
+      "Seth",
+      "46",
+      "Seth"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Andy (Nick S (Karleton )",
+      "17",
+      "Coirey (Karleton)",
+      "27",
+      "Andy (Coirey (Karleton)",
+      "37",
+      "Sorgaard (Tessy (Karleton)",
+      "47",
+      "Seth (Karleton )"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Andy (Nick S)",
+      "18",
+      "Seth (Nick S)",
+      "28",
+      "Sorgaard (Jason (Tyler (Karleton (Nick S)",
+      "38",
+      "Tyler (Nick S)",
+      "48",
+      "Tessy (Nick S)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Tyler (Jason (Tyler)",
+      "19",
+      "Sorgaard (Andy (Jason (Tyler)",
+      "29",
+      "Sorgaard (Tyler (Tessy (Tyler)",
+      "39",
+      "Jeff (Tyler)",
+      "49",
+      "Andy (Nick S (Andy (Jason (Nick S (Tyler))"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "Jeff (Tyler (Ben) - Picked by Ty",
+      "20",
+      "Ben",
+      "30",
+      "Sorgaard (Tyler (Karleton (Ben))",
+      "40",
+      "Tyler (Sorgaard (Ben))",
+      "50",
+      "Ben"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "1st",
+      "2nd",
+      "3rd",
+      "4th",
+      "5th"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Yoshinobu Yamamoto",
+      "11",
+      "Roman Anthony",
+      "21",
+      "Colt Emerson",
+      "31",
+      "Brady House",
+      "41",
+      "Bubba Chandler"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Wyatt Langford",
+      "12",
+      "Jackson Jobe",
+      "22",
+      "Jung Hoo Lee",
+      "32",
+      "Sabastian Walcott",
+      "42",
+      "Josue De Paula"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "Dylan Crews",
+      "13",
+      "Cade Horton",
+      "23",
+      "Shota Imanaga",
+      "33",
+      "Leodalis De Vries",
+      "43",
+      "Lazaro Montes"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Samuel Basallo",
+      "14",
+      "Ethan Salas",
+      "24",
+      "Hurston Waldrep",
+      "34",
+      "Tyler Black",
+      "44",
+      "Sal Stewart"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Coby Mayo",
+      "15",
+      "Matt Shaw",
+      "25",
+      "Rhett Lowder",
+      "35",
+      "Carson Williams",
+      "45",
+      "Xavier Isaac"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Paul Skenes",
+      "16",
+      "Brock Wilken",
+      "26",
+      "Noble Meyer",
+      "36",
+      "Christian Scott",
+      "46",
+      "Noah Schultz"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Walker Jenkins",
+      "17",
+      "Oihwen Cassie",
+      "27",
+      "Bryce Eldridge",
+      "37",
+      "Drew Thorpe",
+      "47",
+      "David Festa"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Max Clark",
+      "18",
+      "Robby Snelling",
+      "28",
+      "Cole Young",
+      "38",
+      "Chase Hampton",
+      "48",
+      "Kevin McGonigle"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Colt Keith",
+      "19",
+      "Jacob Misiorowski",
+      "29",
+      "Drew Gilbert",
+      "39",
+      "Graham Pauley",
+      "49",
+      "Dylan Beavers"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "Chase Delauter",
+      "20",
+      "Parker Meadows",
+      "30",
+      "Jace Jung",
+      "40",
+      "Justyn-Henry Malloy",
+      "50",
+      "Jaison Chourio"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Conditional Picks"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Andy gets the lesser of Jason's 2nd round picks"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Tessy gets Jason's 3rd unless Justin Verlander retires before 2023, then it becomes a 2nd"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Nick S gets Tessy's best 2024 3rd rounder, Tessy get's Nick S' worst 5th rounder in 2024"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Seth gets Nick S' best 4th rounder"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Karleton gets Ben's 2024 3rd rounder unless Tyler Glasnow does not get 75 IP in 2023.  If he fails to reach 75 IP then it becomes a 4th rounder"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Tyler gets Nick's 2nd best 2024 3rd"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Tyler gets NIck's worst 4th rounder in 2024"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Tyler gets Coirey's best 3rd in 2024"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Seth gets Sorgaard's other 2nd if Scherzer retires before 2024 draft"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Jeff gets Tyler's 4th round pick if Gavin Stone and Bobby Miller both get 2 starts in 2023."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "1st",
+      "2nd",
+      "3rd",
+      "4th",
+      "5th"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Coirey",
+      "11",
+      "Andy (Seth(Coirey)",
+      "21",
+      "Coirey",
+      "31",
+      "Coirey",
+      "41",
+      "Jeff (Coirey)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Andy",
+      "12",
+      "Andy",
+      "22",
+      "Nick S (Andy)",
+      "32",
+      "Andy",
+      "42",
+      "Nick S (Andy)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "Jason",
+      "13",
+      "Karleton (Ben (Jason))",
+      "23",
+      "Tessy (Jason)",
+      "33",
+      "Karleton (Jason (Tessy (Jason)",
+      "43",
+      "Tessy (Jason)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Seth (Tessy)",
+      "14",
+      "Seth (Andy(Tessy)",
+      "24",
+      "Seth (Tessy)",
+      "34",
+      "Tessy",
+      "44",
+      "Tessy"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Coirey (Seth)",
+      "15",
+      "Nick S (Seth)",
+      "25",
+      "Tessy (Seth)",
+      "35",
+      "Tessy (Nick S (Seth)",
+      "45",
+      "Andy (Seth)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Tyler (Jason (Tyler)",
+      "16",
+      "Jeff (Andy (Jason (Tyler)",
+      "26",
+      "Coirey (Tyler)",
+      "36",
+      "Jeff (Tyler)",
+      "46",
+      "Tessy (Tyler)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Andy (Jeff)",
+      "17",
+      "Nick S (Tyler (Jeff)",
+      "27",
+      "Jeff",
+      "37",
+      "Jeff",
+      "47",
+      "Jeff"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Jason (Ben)",
+      "18",
+      "Ben",
+      "28",
+      "Ben",
+      "38",
+      "Ben",
+      "48",
+      "Ben"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Andy (Jason (Ben (Nick S))",
+      "19",
+      "Andy (Nick S)",
+      "29",
+      "Seth (Andy (Nick S)",
+      "39",
+      "Ben (Nick S)",
+      "49",
+      "Nick S (Tessy (Nick S)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "Tyler (Jason(Karleton)",
+      "20",
+      "Nick S (Tessy (Jason (Andy (Nick S (Karleton )",
+      "30",
+      "Ben (Karleton)",
+      "40",
+      "Karleton",
+      "50",
+      "Karleton"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "1st",
+      "2nd",
+      "3rd",
+      "4th",
+      "5th"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Andrew Painter",
+      "11",
+      "Taj Bradley",
+      "21",
+      "Jackson Merril",
+      "31",
+      "Brett Baty",
+      "41",
+      "Bryce Miller"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Elly De La Cruz",
+      "12",
+      "Elijah Geen",
+      "22",
+      "Tanner Bibee",
+      "32",
+      "Junior Caminero",
+      "42",
+      "Kyle Mueller"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "James Wood",
+      "13",
+      "Kodai Senga",
+      "23",
+      "Curtis Mead",
+      "33",
+      "Connor Norby",
+      "43",
+      "Colson Montgomery"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Jackson Chourrio",
+      "14",
+      "Gavin Williams",
+      "24",
+      "Termarr Johnson",
+      "34",
+      "Sal Frelick",
+      "44",
+      "Miguel Bleis"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Ricky Tiedemann",
+      "15",
+      "Bobby Miller",
+      "25",
+      "Masataka Yoshida",
+      "35",
+      "Spencer Jones",
+      "45",
+      "Luis Angel-Acuna"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Kyle Manzardo",
+      "16",
+      "Brandon Pfaadt",
+      "26",
+      "Kevin Alcantara",
+      "36",
+      "Jake Eder",
+      "46",
+      "Adell Amador"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Druw Jones",
+      "17",
+      "Cam Collier",
+      "27",
+      "Diego Cartaya",
+      "37",
+      "Christian Encarnacion-Strand",
+      "47",
+      "Dalton Rushing"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Jackson Holliday",
+      "18",
+      "Matt Mervis",
+      "28",
+      "Tink Hence",
+      "38",
+      "Edouard Joulien",
+      "48",
+      "Kevin Parada"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Kyle Harrison",
+      "19",
+      "Peter Crow-Armstrong",
+      "29",
+      "Evan Carter",
+      "39",
+      "Oscar Colas",
+      "49",
+      "Brooks Lee"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "Gavin Stone",
+      "20",
+      "Endy Rodriguez",
+      "30",
+      "Emmanuel Rodriguez",
+      "40",
+      "Harry Ford",
+      "50",
+      "Gabe Gonzalez"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Conditional Picks"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "If Ben makes playoffs, Jason receives both 1st round picks and gives Ben the higher of his 2nd round picks"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "If Ben misses playoffs, Jason gets Ben's 2nd round pick and gives Ben a 3rd"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Jason and Andy 2nd round pick swap - Andy gets the better bottom 5 2nd rounder and Jason gets the worse bottom 5 2nd rounder"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "1st",
+      "2nd",
+      "3rd"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Ben",
+      "11",
+      "Karleton (Ben)",
+      "21",
+      "Ben"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Andy",
+      "12",
+      "Andy",
+      "22",
+      "Andy (Nick S (Karleton (Andy)))"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "Seth",
+      "13",
+      "Tessy (Seth)",
+      "23",
+      "Nick S (Seth)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Coirey",
+      "14",
+      "Coirey",
+      "24",
+      "Coirey"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Jason (Tyler)",
+      "15",
+      "Tyler (Nick S (Tyler))",
+      "25",
+      "Tyler (Nick S (Karleton (Tyler)))"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Nick S (Tyler (Karleton))",
+      "16",
+      "Karleton",
+      "26",
+      "Nick S (Seth (Karleton))"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Jeff",
+      "17",
+      "Jeff",
+      "27",
+      "Jeff (Tyler (Jeff))"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Jason",
+      "18",
+      "Tessy (Jason)",
+      "28",
+      "Tessy (Jason)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Tyler (Nick S)",
+      "19",
+      "Ben (Nick S)",
+      "29",
+      "Tyler (Nick S)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "Jason (Tessy)",
+      "20",
+      "Tessy",
+      "30",
+      "Nick S (Jason (Tessy))"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "1st",
+      "2nd",
+      "3rd"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Anthony Volpe",
+      "11",
+      "M. Mayer",
+      "21",
+      "Eury Perez"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Jack Leiter",
+      "12",
+      "Jordan Lawler",
+      "22",
+      "Cristian Hernandez"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "Oneil Cruz",
+      "13",
+      "Henry Davis",
+      "23",
+      "Nick Yorke"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Robert Hassell III",
+      "14",
+      "Tyler Soderstrom",
+      "24",
+      "Nick Pratto"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Daniel Espino",
+      "15",
+      "MJ Melendez",
+      "25",
+      "Bryson Stott"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Luis Matos",
+      "16",
+      "George Valera",
+      "26",
+      "Cade Cavalli"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Jordan Walker",
+      "17",
+      "Miguel Vargas",
+      "27",
+      "Vinnie Pasquantino"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Alek Thomas",
+      "18",
+      "Matt Brash",
+      "28",
+      "Hedbert Perez"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Kahlil Watson",
+      "19",
+      "Jose Miranda",
+      "29",
+      "Gabriel Moreno"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "Francisco Alvarez",
+      "20",
+      "Colton Cowser",
+      "30",
+      "Oswald Peraza"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Conditional Pick Transaction"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Nick S gets Tyler's 1st round pick if Tyler places top 3 in the league in playoffs (draft spots 8 - 10)"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "IF Tyler finishes in any other spot, that pick reverts to a 2nd round pick"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Jason gets the remaning 1st or 2nd round pick"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Karleton gets Ben's 2nd Round pick if Lance McCullers pitches 130+ innings in 2021.  It reverts to a 3rd round pick if he pitches under 130."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Karleton gets Jeff's 1st round pick in 2022 if Jeff wins the 2021 championship."
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "Seth Gets Karleton's 2nd round pick if he wins the championship otherwise it is a 3rd rounder"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "1st",
+      "2nd",
+      "3rd"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Coirey",
+      "11",
+      "Coirey",
+      "21",
+      "Tyler (Coirey)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Karleton",
+      "12",
+      "Tyler (Jeff (Karleton))",
+      "22",
+      "Tessy (Nick S(Karleton))"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "Jason",
+      "13",
+      "Jason",
+      "23",
+      "Karleton (Tyler (Jason))"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Tyler (Jeff)",
+      "14",
+      "Tyler (Karleton (Jeff))",
+      "24",
+      "Jeff (Karleton (Tyler (Jeff)))"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Jeff (Tyler (Tessy))",
+      "15",
+      "Jason (Tyler(Karleton (Tessy)))",
+      "25",
+      "Jeff (Tyler (Ben(Karleton(Tessy))))"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Ben",
+      "16",
+      "Karleton (Ben)",
+      "26",
+      "Ben"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Andy",
+      "17",
+      "Andy",
+      "27",
+      "Ben (Nick S (Tyler (Andy)))"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Tessy (Tyler)",
+      "18",
+      "Tyler (Jeff (Tyler))",
+      "28",
+      "Tessy (Tyler)"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Seth",
+      "19",
+      "Seth",
+      "29",
+      "Seth"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "Karleton (Jeff (Tyler (Karleton (Nick S))))",
+      "20",
+      "Andy (Tyler (Nick S))",
+      "30",
+      "Coirey (Tyler (Nick S))"
+     ]
+    },
+    {
+     "depth": 1,
+     "cells": [
+      "1st",
+      "2nd",
+      "3rd"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "1",
+      "Spencer Torkelson",
+      "11",
+      "Nick Lodolo",
+      "21",
+      "Matt Allan"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "2",
+      "Tristan Casas",
+      "12",
+      "Zac Veen",
+      "22",
+      "Erick Pena"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "3",
+      "Austin Martin",
+      "13",
+      "DL Hall",
+      "23",
+      "Austin Hendrick"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "4",
+      "Nick Gonzales",
+      "14",
+      "Quinn Priester",
+      "24",
+      "Michael Buscheeha"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "5",
+      "Ass Lacy",
+      "15",
+      "Brennen Davis",
+      "25",
+      "Mick Abel"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "6",
+      "Corbin Carrol",
+      "16",
+      "Jordan Groshans",
+      "26",
+      "Daniel Lynch"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "7",
+      "Emerson Hancock",
+      "17",
+      "Jarren Duran",
+      "27",
+      "Josh Jung"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "8",
+      "Heston Kjerstad",
+      "18",
+      "Reid Detmers",
+      "28",
+      "Hunter Bishop"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "9",
+      "Max Meyer",
+      "19",
+      "Garrett Mitchell",
+      "29",
+      "Shane Baz"
+     ]
+    },
+    {
+     "depth": 0,
+     "cells": [
+      "10",
+      "George Kirby",
+      "20",
+      "Aaron Bracho",
+      "30",
+      "Brailyn Marquez"
+     ]
+    }
+   ]
+  }
+ ]
+}

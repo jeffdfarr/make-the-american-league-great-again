@@ -1,0 +1,57 @@
+name: Nightly Fantrax sync
+
+on:
+  schedule:
+    - cron: "0 7 * * *"   # 2:00am CT during DST — after West Coast games settle
+  workflow_dispatch: {}    # manual runs from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Sync current season + rebuild metrics + export JSON
+        env:
+          FANTRAX_COOKIES: ${{ secrets.FANTRAX_COOKIES }}
+        run: python -m mtalga.cli sync
+
+      - name: Refresh bylaws from the rulebook sheet
+        run: python -m mtalga.cli bylaws || echo "bylaws refresh failed; keeping previous version"
+
+      - name: Commit updated data
+        run: |
+          git config user.name "mtalga-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/mtalga.db site/data/
+          if git diff --cached --quiet; then
+            echo "No changes tonight."
+          else
+            git commit -m "Nightly sync $(date -u +%F)"
+            git push
+          fi
+
+      # Optional: notify the league chat on failure. Create a Discord webhook
+      # and save it as the DISCORD_WEBHOOK secret to enable.
+      - name: Alert on failure
+        if: failure()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          if [ -n "$DISCORD_WEBHOOK" ]; then
+            curl -sS -H "Content-Type: application/json" \
+              -d '{"content":"⚠️ MTALGA nightly sync FAILED — check GitHub Actions. (Expired Fantrax cookie? Rerun login_helper and update the FANTRAX_COOKIES secret.)"}' \
+              "$DISCORD_WEBHOOK"
+          else
+            echo "No DISCORD_WEBHOOK secret set; GitHub will email the repo owner instead."
+          fi

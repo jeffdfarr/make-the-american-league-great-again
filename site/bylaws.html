@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<title>MTALGA · Bylaws</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚾</text></svg>">
+
+<header class="mast">
+  <div class="wrap" style="padding-bottom:0">
+    <p class="eyebrow">Fantrax Dynasty Baseball · Est. 2020</p>
+    <h1><a href="index.html">Make the AL Great Again</a></h1>
+    <p class="sub" id="tagline">League HQ</p>
+    <nav class="main">
+      <a href="index.html" data-nav="index">Standings</a>
+      <a href="franchises.html" data-nav="franchises">Franchises</a>
+      <a href="seasons.html" data-nav="seasons">Seasons</a>
+      <a href="history.html" data-nav="history">History</a>
+      <a href="bylaws.html" data-nav="bylaws">Bylaws</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="bylaws-layout">
+    <nav class="toc" id="toc" aria-label="Sections"></nav>
+    <div id="content"><p class="loading">Loading…</p></div>
+  </div>
+  <footer></footer>
+</main>
+<style>
+  .bylaws-layout { display: grid; grid-template-columns: 13rem 1fr; gap: 2.5rem; margin-top: 1.8rem; }
+  @media (max-width: 760px) { .bylaws-layout { grid-template-columns: 1fr; } .toc { position: static !important; } }
+  .toc { position: sticky; top: 1rem; align-self: start; display: flex; flex-direction: column; gap: .3rem; }
+  .toc a { font-family: "IBM Plex Mono", monospace; font-size: .76rem; color: var(--ink-soft);
+           text-decoration: none; padding: .2rem 0; }
+  .toc a:hover { color: var(--accent); }
+  #content { max-width: 46rem; min-width: 0; }
+  #content h2 { margin-top: 2.6rem; padding-bottom: .4rem; border-bottom: 2px solid var(--rule); }
+  #content h2:first-child { margin-top: .5rem; }
+  #content h3 { font-family: "Bitter", Georgia, serif; font-size: 1.05rem; margin: 1.6rem 0 .5rem; }
+  #content h4 { font-family: "Bitter", Georgia, serif; font-size: .95rem; margin: 1.2rem 0 .4rem; }
+  #content ul { margin: .3rem 0 .8rem; padding-left: 1.3rem; }
+  #content li { margin: .3rem 0; }
+  #content li::marker { color: var(--accent); }
+  .cols { display: grid; gap: .15rem 2.5rem;
+          background: var(--surface); border: 1px solid var(--rule); border-radius: 6px;
+          padding: .7rem 1rem; margin: .6rem 0 1rem; font-variant-numeric: tabular-nums; font-size: .92rem; }
+  .cols .colhead { font-family: "IBM Plex Mono", monospace; font-size: .68rem; letter-spacing: .08em;
+                   text-transform: uppercase; color: var(--accent); font-weight: 600; }
+</style>
+<script src="assets/app.js"></script>
+<script>
+document.querySelector('[data-nav="bylaws"]').classList.add("active");
+(async () => {
+  const { bylaws, meta } = await MT.data("bylaws", "meta");
+  document.getElementById("tagline").textContent = "The rulebook · edited in Google Sheets, synced nightly";
+  const esc = t => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/^•\s*/, "");
+  const slug = t => t.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
+  let html = "", toc = "";
+  for (const sec of bylaws.sections) {
+    const id = slug(sec.tab);
+    toc += `<a href="#${id}">${sec.tab}</a>`;
+    html += `<h2 id="${id}">${sec.tab}</h2>`;
+    let listDepth = 0, inCols = false;
+    const closeLists = to => { while (listDepth > to) { html += "</ul>"; listDepth--; } };
+    const closeCols = () => { if (inCols) { html += "</div>"; inCols = false; } };
+    for (const b of sec.blocks) {
+      const texts = b.cells.map(esc);
+      const first = b.cells[0];
+      if (b.cells.length > 1) {                      // multi-column row → grid
+        closeLists(0);
+        if (!inCols) { html += `<div class="cols" style="grid-template-columns: repeat(${b.cells.length}, max-content)">`; inCols = true; }
+        const head = !/\d/.test(first);
+        html += texts.map(t => `<span${head ? ' class="colhead"' : ""}>${t}</span>`).join("");
+        continue;
+      }
+      closeCols();
+      if (b.depth === 0) {                           // heading in column A
+        closeLists(0);
+        if (first === "Make the American League Great Again") continue;
+        html += /^\d+\.\d/.test(first) ? `<h4>${texts[0]}</h4>`
+              : /^\d+\./.test(first) ? `<h3>${texts[0]}</h3>`
+              : `<h4>${texts[0]}</h4>`;
+      } else {                                       // bullet at depth 1+
+        closeLists(b.depth);
+        while (listDepth < b.depth) { html += "<ul>"; listDepth++; }
+        html += `<li>${texts[0]}</li>`;
+      }
+    }
+    closeCols(); closeLists(0);
+  }
+  document.getElementById("toc").innerHTML = toc;
+  document.getElementById("content").innerHTML = html;
+  MT.footer(meta);
+})().catch(e => document.querySelector(".loading").textContent = "Could not load bylaws: " + e.message);
+</script>
+
+</html>
