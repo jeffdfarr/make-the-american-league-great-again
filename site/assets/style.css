@@ -127,3 +127,21 @@ footer { margin-top: 2.6rem; padding-top: 1rem; border-top: 3px solid var(--ink)
 .loading { color: var(--ink-faint); font-family: "IBM Plex Mono", monospace; padding: 2rem 0; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 button:focus-visible { outline-offset: 1px; }
+
+/* ---- frozen identity columns: rank + team/owner stay put while stats scroll ---- */
+.tbl-scroll th:first-child, .tbl-scroll td:first-child {
+  position: sticky; left: 0; z-index: 2;
+  background: var(--surface);
+  width: 2.4rem; min-width: 2.4rem;
+}
+.tbl-scroll td.teamcell, .tbl-scroll thead th.left {
+  position: sticky; left: 2.4rem; z-index: 2;
+  background: var(--surface);
+  box-shadow: 6px 0 8px -6px rgba(0, 0, 0, .35);
+}
+.tbl-scroll thead th:first-child, .tbl-scroll thead th.left { z-index: 3; }
+tbody tr:hover td:first-child, tbody tr:hover td.teamcell { background: var(--surface-2); }
+@media (max-width: 640px) {
+  .tstack b { max-width: 7.5rem; }
+  .tstack small { max-width: 7.5rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
