@@ -139,6 +139,7 @@ def parse_draftboard(rows: list[list[str]]) -> list[dict]:
     boards: list[dict] = []
     current = None
     prev_first = None  # last slot row's first-column pick number
+    sub = 1  # which table of the year block we're in (1 = players/first, 2 = companion)
     for row in rows:
         non_empty = [c for c in row if c]
         if not non_empty:
@@ -148,16 +149,24 @@ def parse_draftboard(rows: list[list[str]]) -> list[dict]:
             current = {"year": int(m.group(1)), "rounds": [], "results": "picks" in non_empty[0].lower()}
             boards.append(current)
             prev_first = None
+            sub = 1
             continue
         if current is None:
             continue
         hits = [c for c in non_empty if ROUND.match(c)]
         if hits and len(hits) >= max(2, len(non_empty) - 1):
             if current["rounds"]:
+                if sub == 2:
+                    # a third table with no fresh year label — an old,
+                    # unlabeled draft class; stop until the next label
+                    current = None
+                    prev_first = None
+                    continue
                 # repeated header under the same year label: the companion
                 # pick-order table starts here — make it its own board
                 current = {"year": current["year"], "rounds": [], "results": False}
                 boards.append(current)
+                sub = 2
             current["rounds"] = [{"round": c, "picks": []} for c in non_empty]
             prev_first = None
             continue
@@ -166,6 +175,11 @@ def parse_draftboard(rows: list[list[str]]) -> list[dict]:
         if row[0].isdigit() and len(row[0]) <= 3:
             first = int(row[0])
             if prev_first is not None and first < prev_first:
+                if sub == 2:
+                    # numbering restarted a second time — unlabeled old table
+                    current = None
+                    prev_first = None
+                    continue
                 # numbering restarted with no header row between: the
                 # companion pick-order table begins here (same rounds)
                 current = {
@@ -174,6 +188,7 @@ def parse_draftboard(rows: list[list[str]]) -> list[dict]:
                     "results": False,
                 }
                 boards.append(current)
+                sub = 2
             prev_first = first
             i = 0
             while i + 1 < len(row):
