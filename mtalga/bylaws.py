@@ -132,11 +132,13 @@ def parse_draftboard(rows: list[list[str]]) -> list[dict]:
     possibly with Compensatory columns), then slot rows alternating
     pick#/name column pairs. A drafted year stacks TWO tables under one
     label — players taken, then the pick-order duplicate — separated by a
-    repeated round-header row. Annotation rows (side bets etc.) are ignored."""
+    repeated round-header row, or by nothing at all (the slot numbering just
+    restarts at 1). Annotation rows (side bets etc.) are ignored."""
     YEAR_LABEL = re.compile(r"^((?:19|20)\d{2})(?:\s+picks)?$", re.I)
     ROUND = re.compile(r"^(\d+(?:st|nd|rd|th)|comp\w*)$", re.I)
     boards: list[dict] = []
     current = None
+    prev_first = None  # last slot row's first-column pick number
     for row in rows:
         non_empty = [c for c in row if c]
         if not non_empty:
@@ -145,6 +147,7 @@ def parse_draftboard(rows: list[list[str]]) -> list[dict]:
         if m:
             current = {"year": int(m.group(1)), "rounds": [], "results": "picks" in non_empty[0].lower()}
             boards.append(current)
+            prev_first = None
             continue
         if current is None:
             continue
@@ -156,10 +159,22 @@ def parse_draftboard(rows: list[list[str]]) -> list[dict]:
                 current = {"year": current["year"], "rounds": [], "results": False}
                 boards.append(current)
             current["rounds"] = [{"round": c, "picks": []} for c in non_empty]
+            prev_first = None
             continue
         if not current["rounds"]:
             continue
         if row[0].isdigit() and len(row[0]) <= 3:
+            first = int(row[0])
+            if prev_first is not None and first < prev_first:
+                # numbering restarted with no header row between: the
+                # companion pick-order table begins here (same rounds)
+                current = {
+                    "year": current["year"],
+                    "rounds": [{"round": r["round"], "picks": []} for r in current["rounds"]],
+                    "results": False,
+                }
+                boards.append(current)
+            prev_first = first
             i = 0
             while i + 1 < len(row):
                 num, name = row[i], row[i + 1]
