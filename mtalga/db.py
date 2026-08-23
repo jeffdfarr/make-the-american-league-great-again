@@ -72,6 +72,17 @@ CREATE TABLE IF NOT EXISTS transactions (
     PRIMARY KEY (fantrax_tx_id, player)
 );
 
+-- Per-team season category totals (SEASON_STATS standings view):
+-- side 'H' hitting / 'P' pitching, stat 'HR','SB','QS','SV',...
+CREATE TABLE IF NOT EXISTS category_stats (
+    year            INTEGER NOT NULL REFERENCES seasons(year),
+    team_season_id  INTEGER NOT NULL REFERENCES team_seasons(id),
+    side            TEXT NOT NULL,
+    stat            TEXT NOT NULL,
+    value           REAL,
+    PRIMARY KEY (year, team_season_id, side, stat)
+);
+
 -- Weekly hitting/pitching split (filled by the roster fetch; nullable early on)
 CREATE TABLE IF NOT EXISTS period_splits (
     year            INTEGER NOT NULL,

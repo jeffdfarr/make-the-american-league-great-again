@@ -27,6 +27,141 @@
   "detail": null
  },
  {
+  "category": "Most RBI",
+  "scope": "hitting",
+  "value": 5873.0,
+  "display": "5,873",
+  "owner_slug": "bugar",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most doubles",
+  "scope": "hitting",
+  "value": 2143.0,
+  "display": "2,143",
+  "owner_slug": "sorgaard",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most home runs",
+  "scope": "hitting",
+  "value": 1826.0,
+  "display": "1,826",
+  "owner_slug": "bugar",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most runs scored",
+  "scope": "hitting",
+  "value": 6061.0,
+  "display": "6,061",
+  "owner_slug": "drwall",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most singles",
+  "scope": "hitting",
+  "value": 6809.0,
+  "display": "6,809",
+  "owner_slug": "drwall",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most stolen bases",
+  "scope": "hitting",
+  "value": 1061.0,
+  "display": "1,061",
+  "owner_slug": "kaufer",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most strikeouts, hitter",
+  "scope": "hitting",
+  "value": 9939.0,
+  "display": "9,939",
+  "owner_slug": "bugar",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most triples",
+  "scope": "hitting",
+  "value": 217.0,
+  "display": "217",
+  "owner_slug": "kaufer",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most walks taken",
+  "scope": "hitting",
+  "value": 4438.0,
+  "display": "4,438",
+  "owner_slug": "bugar",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most blown saves",
+  "scope": "pitching",
+  "value": 135.0,
+  "display": "135",
+  "owner_slug": "tfarr",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most losses",
+  "scope": "pitching",
+  "value": 737.0,
+  "display": "737",
+  "owner_slug": "tessman",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most quality starts",
+  "scope": "pitching",
+  "value": 795.0,
+  "display": "795",
+  "owner_slug": "sorgaard",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most saves",
+  "scope": "pitching",
+  "value": 760.0,
+  "display": "760",
+  "owner_slug": "tessman",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most strikeouts, pitcher",
+  "scope": "pitching",
+  "value": 12412.0,
+  "display": "12,412",
+  "owner_slug": "tfarr",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most wins",
+  "scope": "pitching",
+  "value": 744.0,
+  "display": "744",
+  "owner_slug": "tfarr",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
   "category": "Best season OPR",
   "scope": "season",
   "value": 1.1851047823481078,

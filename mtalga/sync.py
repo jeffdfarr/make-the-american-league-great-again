@@ -126,6 +126,14 @@ def sync_season(conn: sqlite3.Connection, cfg: Config, season: SeasonCfg, sessio
                 n_games += 1
     log(conn, year, "games", True, f"{n_games} team-games upserted")
 
+    # --- hitting/pitching category totals (season-to-date snapshot)
+    try:
+        from .catstats import sync_category_stats
+        n_cat = sync_category_stats(conn, year, lg, ts_ids)
+        log(conn, year, "catstats", n_cat > 0, f"{n_cat} stat cells")
+    except Exception as e:
+        log(conn, year, "catstats", False, f"{type(e).__name__}: {e}")
+
     # --- transactions (moves)
     try:
         txs = lg.transactions(count=1000)
@@ -142,7 +150,10 @@ def sync_season(conn: sqlite3.Connection, cfg: Config, season: SeasonCfg, sessio
                 )
                 n += 1
         log(conn, year, "transactions", True, f"{n} rows")
-    except Exception as exc:  # transactions need login; degrade gracefully
+    except Exception as exc:
+        # Non-fatal: MTALGA's transaction table has a different cell layout
+        # than the library expects. Moves counting comes later — log as a
+        # warning so the nightly run doesn't fail over it.
         log(conn, year, "transactions", True, f"WARN skipped (moves not counted yet): {exc}")
 
     conn.commit()

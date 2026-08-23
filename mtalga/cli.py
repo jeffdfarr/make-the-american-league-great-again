@@ -35,6 +35,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("metrics", help="rebuild derived tables only")
     sub.add_parser("export", help="write site JSON from derived tables")
     sub.add_parser("bylaws", help="refresh site bylaws from the rulebook Google Sheet")
+    sub.add_parser("catstats", help="fetch hitting/pitching category totals for all seasons, then metrics + export")
 
     args = ap.parse_args(argv)
     cfg = cfgm.load()
@@ -66,6 +67,9 @@ def main(argv: list[str] | None = None) -> int:
     elif args.cmd == "bylaws":
         from .bylaws import export_bylaws
         export_bylaws()
+    elif args.cmd == "catstats":
+        from .catstats import backfill_catstats
+        backfill_catstats(conn, cfg)
 
     # any FAIL rows this run?
     fails = conn.execute(

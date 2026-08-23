@@ -445,6 +445,45 @@ def _records(conn: sqlite3.Connection) -> None:
                 (category, scope, row["v"], f"{row['v']:g}", row["o"], row["y"], None),
             )
     _streak_records(conn)
+    _category_records(conn)
+
+
+CATEGORY_RECORDS = [
+    ("Most runs scored", "hitting", "H", "R"),
+    ("Most singles", "hitting", "H", "1B"),
+    ("Most doubles", "hitting", "H", "2B"),
+    ("Most triples", "hitting", "H", "3B"),
+    ("Most home runs", "hitting", "H", "HR"),
+    ("Most RBI", "hitting", "H", "RBI"),
+    ("Most walks taken", "hitting", "H", "BB"),
+    ("Most strikeouts, hitter", "hitting", "H", "SO"),
+    ("Most stolen bases", "hitting", "H", "SB"),
+    ("Most wins", "pitching", "P", "W"),
+    ("Most losses", "pitching", "P", "L"),
+    ("Most quality starts", "pitching", "P", "QS"),
+    ("Most strikeouts, pitcher", "pitching", "P", "K"),
+    ("Most saves", "pitching", "P", "SV"),
+    ("Most blown saves", "pitching", "P", "BS"),
+]
+
+
+def _category_records(conn: sqlite3.Connection) -> None:
+    """All-time franchise totals per raw counting stat (career sums)."""
+    for category, scope, side, stat in CATEGORY_RECORDS:
+        row = conn.execute(
+            """SELECT ts.owner_slug o, SUM(cs.value) v
+               FROM category_stats cs
+               JOIN team_seasons ts ON ts.id = cs.team_season_id
+               WHERE cs.side=? AND cs.stat=? AND ts.owner_slug IS NOT NULL
+               GROUP BY ts.owner_slug ORDER BY v DESC LIMIT 1""",
+            (side, stat),
+        ).fetchone()
+        if row and row["v"]:
+            conn.execute(
+                """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
+                   VALUES (?,?,?,?,?,?,?)""",
+                (category, scope, row["v"], f"{row['v']:,.0f}", row["o"], None, "all-time"),
+            )
 
 
 def _streak_records(conn: sqlite3.Connection) -> None:
