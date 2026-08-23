@@ -52,5 +52,23 @@
   "owner_slug": "bugar",
   "year": 2025,
   "detail": null
+ },
+ {
+  "category": "Longest losing streak",
+  "scope": "streak",
+  "value": 16.0,
+  "display": "16 games",
+  "owner_slug": "tasin",
+  "year": 2023,
+  "detail": "2023"
+ },
+ {
+  "category": "Longest win streak",
+  "scope": "streak",
+  "value": 17.0,
+  "display": "17 games",
+  "owner_slug": "bugar",
+  "year": 2025,
+  "detail": "2024\u20132025"
  }
 ]

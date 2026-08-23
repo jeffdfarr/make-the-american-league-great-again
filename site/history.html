@@ -33,7 +33,7 @@
 <script>
 document.querySelector('[data-nav="history"]').classList.add("active");
 (async () => {
-  const { standings, franchises, records, meta } = await MT.data("standings", "franchises", "records", "meta");
+  const { standings, franchises, records, trades, meta } = await MT.data("standings", "franchises", "records", "trades", "meta");
   document.getElementById("tagline").textContent = "Banners and the record book";
   const owners = Object.fromEntries(franchises.map(f => [f.owner_slug, f.owner_name]));
 
@@ -43,12 +43,34 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     <div class="card"><span class="c-cat">${c.year}</span><span class="c-val">${c.team_name}</span>
     <span class="c-who">${c.owner_name} · def. ${runners[c.year] ?? "?"}</span></div>`).join("");
 
-  const fmt = r => r.category.toLowerCase().includes("pct") ? MT.pct(r.value)
+  const fmt = r => r.scope === "streak" ? r.display
+    : r.category.toLowerCase().includes("pct") ? MT.pct(r.value)
     : Math.abs(r.value) < 10 ? r.value.toFixed(3)
     : MT.num(r.value, r.scope === "game" ? 1 : 0);
-  document.getElementById("records").innerHTML = records.map(r => `
+  let cards = records.map(r => `
     <div class="card"><span class="c-val">${fmt(r)}</span><span class="c-cat">${r.category}</span>
-    <span class="c-who">${owners[r.owner_slug] ?? r.owner_slug} · ${r.year}</span></div>`).join("");
+    <span class="c-who">${owners[r.owner_slug] ?? r.owner_slug} · ${r.detail ?? r.year}</span></div>`);
+
+  // trade records straight from the trades sheet
+  const tc = {}, pairs = {};
+  (trades || []).forEach(t => {
+    const names = (t.sides || []).map(s => s.owner).filter(Boolean);
+    names.forEach(n => tc[n] = (tc[n] || 0) + 1);
+    if (names.length === 2) {
+      const k = [...names].sort().join(" & ");
+      pairs[k] = (pairs[k] || 0) + 1;
+    }
+  });
+  const top = o => Object.entries(o).sort((a, b) => b[1] - a[1])[0];
+  const n = c => `${c} trade${c === 1 ? "" : "s"}`;
+  const trader = top(tc), pair = top(pairs);
+  if (trader) cards.push(`
+    <div class="card"><span class="c-val">${n(trader[1])}</span><span class="c-cat">Most trades</span>
+    <span class="c-who">${trader[0]} · all-time</span></div>`);
+  if (pair) cards.push(`
+    <div class="card"><span class="c-val">${n(pair[1])}</span><span class="c-cat">Favorite trade partners</span>
+    <span class="c-who">${pair[0]}</span></div>`);
+  document.getElementById("records").innerHTML = cards.join("");
   MT.footer(meta);
 })().catch(e => document.querySelector(".loading").textContent = "Could not load data: " + e.message);
 </script>

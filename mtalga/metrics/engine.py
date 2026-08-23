@@ -444,6 +444,52 @@ def _records(conn: sqlite3.Connection) -> None:
                    VALUES (?,?,?,?,?,?,?)""",
                 (category, scope, row["v"], f"{row['v']:g}", row["o"], row["y"], None),
             )
+    _streak_records(conn)
+
+
+def _streak_records(conn: sqlite3.Connection) -> None:
+    """Longest win / losing streaks across the games that count for W-L
+    (regular season + championship bracket + 3rd-place game; consolation
+    never counts — same convention as season records). Streaks may span
+    seasons. Ties break both kinds of streak."""
+    years = [r["year"] for r in conn.execute("SELECT year FROM seasons ORDER BY year")]
+    timeline: dict[str, list] = defaultdict(list)  # owner -> [(year, period, 'W'/'L'/'T')]
+    for year in years:
+        post = _classify_postseason(conn, year)
+        rows = conn.execute(
+            """SELECT ts.owner_slug slug, g.game_type, g.matchup_uid, g.period,
+                      g.pts_for pf, g.pts_against pa
+               FROM games g JOIN team_seasons ts ON ts.id = g.team_season_id
+               WHERE g.year=? AND g.complete=1 AND ts.owner_slug IS NOT NULL
+               ORDER BY g.period""",
+            (year,),
+        ).fetchall()
+        for r in rows:
+            if r["game_type"] != "R" and post.get(r["matchup_uid"]) not in ("TREE", "THIRD"):
+                continue
+            res = "W" if r["pf"] > r["pa"] else ("L" if r["pf"] < r["pa"] else "T")
+            timeline[r["slug"]].append((year, r["period"], res))
+    best = {"W": None, "L": None}  # (length, slug, start_year, end_year)
+    for slug, games in timeline.items():
+        run_kind, run_len, run_start = None, 0, None
+        for year, _period, res in games:
+            if res == run_kind:
+                run_len += 1
+            else:
+                run_kind, run_len, run_start = res, 1, year
+            if res in best and (best[res] is None or run_len > best[res][0]):
+                best[res] = (run_len, slug, run_start, year)
+    for kind, category in (("W", "Longest win streak"), ("L", "Longest losing streak")):
+        b = best[kind]
+        if b is None:
+            continue
+        length, slug, y0, y1 = b
+        span = str(y0) if y0 == y1 else f"{y0}–{y1}"
+        conn.execute(
+            """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
+               VALUES (?,?,?,?,?,?,?)""",
+            (category, "streak", length, f"{length} games", slug, y1, span),
+        )
 
 
 # ---------------------------------------------------------------- adjustments
