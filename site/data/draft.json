@@ -267,7 +267,8 @@
      }
     ]
    }
-  ]
+  ],
+  "results": false
  },
  {
   "year": 2028,
@@ -537,7 +538,8 @@
      }
     ]
    }
-  ]
+  ],
+  "results": false
  },
  {
   "year": 2027,
@@ -592,7 +594,230 @@
      {
       "num": 12,
       "owner": "Taylor"
+     }
+    ]
+   },
+   {
+    "round": "2nd",
+    "picks": [
+     {
+      "num": 13,
+      "owner": "Coirey"
      },
+     {
+      "num": 14,
+      "owner": "Jeff (Nick S (Karleton))"
+     },
+     {
+      "num": 15,
+      "owner": "Jason"
+     },
+     {
+      "num": 16,
+      "owner": "Ben (Tessy (Jeff))"
+     },
+     {
+      "num": 17,
+      "owner": "Tessy"
+     },
+     {
+      "num": 18,
+      "owner": "Ben"
+     },
+     {
+      "num": 19,
+      "owner": "Taylor (Andy)"
+     },
+     {
+      "num": 20,
+      "owner": "Jason (Jeff (Tyler)"
+     },
+     {
+      "num": 21,
+      "owner": "Nick S (Tessy (Nick S (Seth)))"
+     },
+     {
+      "num": 22,
+      "owner": "Zac (Seth (Nick S (Ben (Nick S))"
+     },
+     {
+      "num": 23,
+      "owner": "Zac"
+     },
+     {
+      "num": 24,
+      "owner": "Taylor"
+     }
+    ]
+   },
+   {
+    "round": "3rd",
+    "picks": [
+     {
+      "num": 25,
+      "owner": "Coirey"
+     },
+     {
+      "num": 26,
+      "owner": "Taylor (Nick S (Karleton)"
+     },
+     {
+      "num": 27,
+      "owner": "Ben (Jason)"
+     },
+     {
+      "num": 28,
+      "owner": "Jeff"
+     },
+     {
+      "num": 29,
+      "owner": "Tessy"
+     },
+     {
+      "num": 30,
+      "owner": "Nick S (Ben)"
+     },
+     {
+      "num": 31,
+      "owner": "Tessy (Nick S (Andy))"
+     },
+     {
+      "num": 32,
+      "owner": "Jeff (Tyler)"
+     },
+     {
+      "num": 33,
+      "owner": "Tessy (Karleton (Ben (Seth)"
+     },
+     {
+      "num": 34,
+      "owner": "Tessy (Nick S)"
+     },
+     {
+      "num": 35,
+      "owner": "Zac"
+     },
+     {
+      "num": 36,
+      "owner": "Taylor"
+     }
+    ]
+   },
+   {
+    "round": "4th",
+    "picks": [
+     {
+      "num": 37,
+      "owner": "Coirey"
+     },
+     {
+      "num": 38,
+      "owner": "Nick S (Tessy (Karleton))"
+     },
+     {
+      "num": 39,
+      "owner": "Jason"
+     },
+     {
+      "num": 40,
+      "owner": "Jeff"
+     },
+     {
+      "num": 41,
+      "owner": "Taylor (Tessy)"
+     },
+     {
+      "num": 42,
+      "owner": "Taylor (Andy (Ben)"
+     },
+     {
+      "num": 43,
+      "owner": "Taylor (Andy)"
+     },
+     {
+      "num": 44,
+      "owner": "Jason (Tyler)"
+     },
+     {
+      "num": 45,
+      "owner": "Seth"
+     },
+     {
+      "num": 46,
+      "owner": "Tessy (Ben (Nick S))"
+     },
+     {
+      "num": 47,
+      "owner": "Zac"
+     },
+     {
+      "num": 48,
+      "owner": "Taylor (Andy (Taylor)"
+     }
+    ]
+   },
+   {
+    "round": "5th",
+    "picks": [
+     {
+      "num": 49,
+      "owner": "Coirey"
+     },
+     {
+      "num": 50,
+      "owner": "Coirey (Karleton)"
+     },
+     {
+      "num": 51,
+      "owner": "Zac (Karleton (Jason)"
+     },
+     {
+      "num": 52,
+      "owner": "Jeff"
+     },
+     {
+      "num": 53,
+      "owner": "Tessy (Karleton (Tessy)"
+     },
+     {
+      "num": 54,
+      "owner": "Jason (Ben)"
+     },
+     {
+      "num": 55,
+      "owner": "Andy"
+     },
+     {
+      "num": 56,
+      "owner": "Jason (Tyler)"
+     },
+     {
+      "num": 57,
+      "owner": "Seth"
+     },
+     {
+      "num": 58,
+      "owner": "Seth (Nick S)"
+     },
+     {
+      "num": 59,
+      "owner": "Zac"
+     },
+     {
+      "num": 60,
+      "owner": "Tessy (Taylor)"
+     }
+    ]
+   }
+  ],
+  "results": false
+ },
+ {
+  "year": 2026,
+  "rounds": [
+   {
+    "round": "1st",
+    "picks": [
      {
       "num": 1,
       "owner": "Tatsuya Imai"
@@ -688,7 +913,523 @@
      {
       "num": 12,
       "owner": "Andy (Ben (Andy)"
+     }
+    ]
+   },
+   {
+    "round": "Compensatory",
+    "picks": [
+     {
+      "num": 13,
+      "owner": "Ryan Sloan"
      },
+     {
+      "num": 14,
+      "owner": "Liam Doyle"
+     },
+     {
+      "num": 17,
+      "owner": "Jamie Arnold"
+     },
+     {
+      "num": 18,
+      "owner": "Rainiel Rodriguez"
+     },
+     {
+      "num": 19,
+      "owner": "Dax Kilby"
+     },
+     {
+      "num": 20,
+      "owner": "Ralphy Velazquez"
+     },
+     {
+      "num": 21,
+      "owner": "Brody Hopkins"
+     },
+     {
+      "num": 22,
+      "owner": "Gavin Fien"
+     },
+     {
+      "num": 23,
+      "owner": "AJ Ewing"
+     },
+     {
+      "num": 24,
+      "owner": "Seth Hernandez"
+     },
+     {
+      "num": 25,
+      "owner": "Joshua B\u00e1ez"
+     },
+     {
+      "num": 26,
+      "owner": "Tyler Bremmer"
+     },
+     {
+      "num": 13,
+      "owner": "Zac"
+     },
+     {
+      "num": 14,
+      "owner": "Zac"
+     },
+     {
+      "num": 17,
+      "owner": "Nick S (Andy (Nick S)"
+     },
+     {
+      "num": 18,
+      "owner": "Nick S (Tessy (Jason))"
+     },
+     {
+      "num": 19,
+      "owner": "Zac (Tessy (Tyler (Jeff)))"
+     },
+     {
+      "num": 20,
+      "owner": "Coirey"
+     },
+     {
+      "num": 21,
+      "owner": "Jeff (Nick S (Andy (Ben))"
+     },
+     {
+      "num": 22,
+      "owner": "Coirey (Tessy)"
+     },
+     {
+      "num": 23,
+      "owner": "Zac (Tyler (Ben (Seth))"
+     },
+     {
+      "num": 24,
+      "owner": "Jason (Tyler)"
+     },
+     {
+      "num": 25,
+      "owner": "Andy (Tessy (Karleton)"
+     },
+     {
+      "num": 26,
+      "owner": "Coirey (Ben (Andy)"
+     }
+    ]
+   },
+   {
+    "round": "2nd",
+    "picks": [
+     {
+      "num": 15,
+      "owner": "Payton Tolle"
+     },
+     {
+      "num": 16,
+      "owner": "Braden Montgomery"
+     },
+     {
+      "num": 31,
+      "owner": "Tanner McDougal"
+     },
+     {
+      "num": 32,
+      "owner": "Ryan Clifford"
+     },
+     {
+      "num": 33,
+      "owner": "George Lombard Jr."
+     },
+     {
+      "num": 34,
+      "owner": "Cam Caminiti"
+     },
+     {
+      "num": 35,
+      "owner": "Brice Matthews"
+     },
+     {
+      "num": 36,
+      "owner": "Junieker Caceres"
+     },
+     {
+      "num": 37,
+      "owner": "Ethan Conrad"
+     },
+     {
+      "num": 38,
+      "owner": "Caden Scarborough"
+     },
+     {
+      "num": 39,
+      "owner": "Kyson Witherspoon"
+     },
+     {
+      "num": 40,
+      "owner": "Luke Dickerson"
+     },
+     {
+      "num": 15,
+      "owner": "Taylor"
+     },
+     {
+      "num": 16,
+      "owner": "Zac"
+     },
+     {
+      "num": 31,
+      "owner": "Ben (Coirey (Tyler (Jason (Sorgaard)"
+     },
+     {
+      "num": 32,
+      "owner": "Coirey (Tyler (Jason)"
+     },
+     {
+      "num": 33,
+      "owner": "Nick S (Jeff)"
+     },
+     {
+      "num": 34,
+      "owner": "Coirey"
+     },
+     {
+      "num": 35,
+      "owner": "Coirey (Ben (Jason(Ben)"
+     },
+     {
+      "num": 36,
+      "owner": "Coirey (Ben (Sorgaard (Tessy)"
+     },
+     {
+      "num": 37,
+      "owner": "Ben (Tessy (Sorgaard (Jason (Seth))))"
+     },
+     {
+      "num": 38,
+      "owner": "Zac (Karleton (Jason (Sorgaard (Tyler)"
+     },
+     {
+      "num": 39,
+      "owner": "Coirey (Tessy (Karleton)"
+     },
+     {
+      "num": 40,
+      "owner": "Andy"
+     }
+    ]
+   },
+   {
+    "round": "Compensatory",
+    "picks": [
+     {
+      "num": 27,
+      "owner": "Aiva Arquette"
+     },
+     {
+      "num": 28,
+      "owner": "Theo Gillen"
+     },
+     {
+      "num": 45,
+      "owner": "Kendry Chourio"
+     },
+     {
+      "num": 46,
+      "owner": "Mike Sirota"
+     },
+     {
+      "num": 47,
+      "owner": "Josh Hammond"
+     },
+     {
+      "num": 48,
+      "owner": "Jace LaViolette"
+     },
+     {
+      "num": 49,
+      "owner": "Kaelen Culpepper"
+     },
+     {
+      "num": 50,
+      "owner": "Kayson Cunningham"
+     },
+     {
+      "num": 51,
+      "owner": "Carlos Lagrange"
+     },
+     {
+      "num": 52,
+      "owner": "Jefferson Rojas"
+     },
+     {
+      "num": 53,
+      "owner": "Andrew Fischer"
+     },
+     {
+      "num": 54,
+      "owner": "Kazuka Okamoto"
+     },
+     {
+      "num": 27,
+      "owner": "Seth (Zac)"
+     },
+     {
+      "num": 28,
+      "owner": "Taylor"
+     },
+     {
+      "num": 45,
+      "owner": "Tessy (Nick S)"
+     },
+     {
+      "num": 46,
+      "owner": "Taylor (Jason (Tessy (Sorgaard (Jason)"
+     },
+     {
+      "num": 47,
+      "owner": "Jeff"
+     },
+     {
+      "num": 48,
+      "owner": "Coirey"
+     },
+     {
+      "num": 49,
+      "owner": "Nick S (Ben)"
+     },
+     {
+      "num": 50,
+      "owner": "Tessy"
+     },
+     {
+      "num": 51,
+      "owner": "Seth"
+     },
+     {
+      "num": 66,
+      "owner": "Tessy (Karleton (Tyler)"
+     },
+     {
+      "num": 53,
+      "owner": "Seth (Jason (Karleton)"
+     },
+     {
+      "num": 54,
+      "owner": "Tessy (Sorgaard (Ben (Jason (Tyler (Andy)"
+     }
+    ]
+   },
+   {
+    "round": "3rd",
+    "picks": [
+     {
+      "num": 29,
+      "owner": "Emil Morales"
+     },
+     {
+      "num": 30,
+      "owner": "Jojo Parker"
+     },
+     {
+      "num": 59,
+      "owner": "Didier Fuentes"
+     },
+     {
+      "num": 60,
+      "owner": "Gage Jump"
+     },
+     {
+      "num": 61,
+      "owner": "Xavier Neyens"
+     },
+     {
+      "num": 62,
+      "owner": "Arjun Nimmala"
+     },
+     {
+      "num": 63,
+      "owner": "Connelly Early"
+     },
+     {
+      "num": 64,
+      "owner": "Jake Cook"
+     },
+     {
+      "num": 65,
+      "owner": "Munetaka Murakami"
+     },
+     {
+      "num": 66,
+      "owner": "Kevin DeFrank"
+     },
+     {
+      "num": 67,
+      "owner": "Ethan Frey"
+     },
+     {
+      "num": 68,
+      "owner": "Kevin Alvarez"
+     },
+     {
+      "num": 29,
+      "owner": "Zac"
+     },
+     {
+      "num": 30,
+      "owner": "Jason (Taylor)"
+     },
+     {
+      "num": 59,
+      "owner": "Ben (Tessy (Tyler (Nick S)"
+     },
+     {
+      "num": 60,
+      "owner": "Sorgaard (Tessy (Sorgaard (Jason)"
+     },
+     {
+      "num": 61,
+      "owner": "Jeff"
+     },
+     {
+      "num": 62,
+      "owner": "Coirey"
+     },
+     {
+      "num": 63,
+      "owner": "Ben"
+     },
+     {
+      "num": 64,
+      "owner": "Tessy (Jason (Andy (Tessy)"
+     },
+     {
+      "num": 65,
+      "owner": "Seth"
+     },
+     {
+      "num": 67,
+      "owner": "Karleton (Jason (Andy (Tyler (Karleton)"
+     },
+     {
+      "num": 68,
+      "owner": "Jeff (Coirey (Andy)"
+     }
+    ]
+   },
+   {
+    "round": "Compensatory",
+    "picks": [
+     {
+      "num": 41,
+      "owner": "Luis Hernandez"
+     },
+     {
+      "num": 42,
+      "owner": "Francisco Rentaria"
+     },
+     {
+      "num": 41,
+      "owner": "Zac"
+     },
+     {
+      "num": 42,
+      "owner": "Zac"
+     }
+    ]
+   },
+   {
+    "round": "4th",
+    "picks": [
+     {
+      "num": 43,
+      "owner": "Devin Fitz-Gerald"
+     },
+     {
+      "num": 44,
+      "owner": "Justin Gonzales"
+     },
+     {
+      "num": 43,
+      "owner": "Jeff (Taylor)"
+     },
+     {
+      "num": 44,
+      "owner": "Zac"
+     }
+    ]
+   },
+   {
+    "round": "Compensatory",
+    "picks": [
+     {
+      "num": 55,
+      "owner": "Juan Sanchez"
+     },
+     {
+      "num": 56,
+      "owner": "Jaxson Wiggins"
+     },
+     {
+      "num": 55,
+      "owner": "Zac"
+     },
+     {
+      "num": 56,
+      "owner": "Zac"
+     }
+    ]
+   },
+   {
+    "round": "5th",
+    "picks": [
+     {
+      "num": 57,
+      "owner": "Eduardo Tait"
+     },
+     {
+      "num": 58,
+      "owner": "Slater DeBrun"
+     },
+     {
+      "num": 57,
+      "owner": "Taylor"
+     },
+     {
+      "num": 58,
+      "owner": "Tessy (Jason (Taylor)"
+     }
+    ]
+   },
+   {
+    "round": "Compensatory",
+    "picks": [
+     {
+      "num": 69,
+      "owner": "Steele Hall"
+     },
+     {
+      "num": 70,
+      "owner": "Welbyn Francisca"
+     },
+     {
+      "num": 69,
+      "owner": "Taylor"
+     },
+     {
+      "num": 70,
+      "owner": "Andy (Taylor)"
+     }
+    ]
+   }
+  ],
+  "results": true
+ },
+ {
+  "year": 2025,
+  "rounds": [
+   {
+    "round": "1st",
+    "picks": [
      {
       "num": 1,
       "owner": "Roki Sasaki"
@@ -1095,150 +1836,6 @@
     "round": "2nd",
     "picks": [
      {
-      "num": 13,
-      "owner": "Coirey"
-     },
-     {
-      "num": 14,
-      "owner": "Jeff (Nick S (Karleton))"
-     },
-     {
-      "num": 15,
-      "owner": "Jason"
-     },
-     {
-      "num": 16,
-      "owner": "Ben (Tessy (Jeff))"
-     },
-     {
-      "num": 17,
-      "owner": "Tessy"
-     },
-     {
-      "num": 18,
-      "owner": "Ben"
-     },
-     {
-      "num": 19,
-      "owner": "Taylor (Andy)"
-     },
-     {
-      "num": 20,
-      "owner": "Jason (Jeff (Tyler)"
-     },
-     {
-      "num": 21,
-      "owner": "Nick S (Tessy (Nick S (Seth)))"
-     },
-     {
-      "num": 22,
-      "owner": "Zac (Seth (Nick S (Ben (Nick S))"
-     },
-     {
-      "num": 23,
-      "owner": "Zac"
-     },
-     {
-      "num": 24,
-      "owner": "Taylor"
-     },
-     {
-      "num": 13,
-      "owner": "Ryan Sloan"
-     },
-     {
-      "num": 14,
-      "owner": "Liam Doyle"
-     },
-     {
-      "num": 17,
-      "owner": "Jamie Arnold"
-     },
-     {
-      "num": 18,
-      "owner": "Rainiel Rodriguez"
-     },
-     {
-      "num": 19,
-      "owner": "Dax Kilby"
-     },
-     {
-      "num": 20,
-      "owner": "Ralphy Velazquez"
-     },
-     {
-      "num": 21,
-      "owner": "Brody Hopkins"
-     },
-     {
-      "num": 22,
-      "owner": "Gavin Fien"
-     },
-     {
-      "num": 23,
-      "owner": "AJ Ewing"
-     },
-     {
-      "num": 24,
-      "owner": "Seth Hernandez"
-     },
-     {
-      "num": 25,
-      "owner": "Joshua B\u00e1ez"
-     },
-     {
-      "num": 26,
-      "owner": "Tyler Bremmer"
-     },
-     {
-      "num": 13,
-      "owner": "Zac"
-     },
-     {
-      "num": 14,
-      "owner": "Zac"
-     },
-     {
-      "num": 17,
-      "owner": "Nick S (Andy (Nick S)"
-     },
-     {
-      "num": 18,
-      "owner": "Nick S (Tessy (Jason))"
-     },
-     {
-      "num": 19,
-      "owner": "Zac (Tessy (Tyler (Jeff)))"
-     },
-     {
-      "num": 20,
-      "owner": "Coirey"
-     },
-     {
-      "num": 21,
-      "owner": "Jeff (Nick S (Andy (Ben))"
-     },
-     {
-      "num": 22,
-      "owner": "Coirey (Tessy)"
-     },
-     {
-      "num": 23,
-      "owner": "Zac (Tyler (Ben (Seth))"
-     },
-     {
-      "num": 24,
-      "owner": "Jason (Tyler)"
-     },
-     {
-      "num": 25,
-      "owner": "Andy (Tessy (Karleton)"
-     },
-     {
-      "num": 26,
-      "owner": "Coirey (Ben (Andy)"
-     },
-     {
       "num": 11,
       "owner": "JJ Wetherholt"
      },
@@ -1643,150 +2240,6 @@
    {
     "round": "3rd",
     "picks": [
-     {
-      "num": 25,
-      "owner": "Coirey"
-     },
-     {
-      "num": 26,
-      "owner": "Taylor (Nick S (Karleton)"
-     },
-     {
-      "num": 27,
-      "owner": "Ben (Jason)"
-     },
-     {
-      "num": 28,
-      "owner": "Jeff"
-     },
-     {
-      "num": 29,
-      "owner": "Tessy"
-     },
-     {
-      "num": 30,
-      "owner": "Nick S (Ben)"
-     },
-     {
-      "num": 31,
-      "owner": "Tessy (Nick S (Andy))"
-     },
-     {
-      "num": 32,
-      "owner": "Jeff (Tyler)"
-     },
-     {
-      "num": 33,
-      "owner": "Tessy (Karleton (Ben (Seth)"
-     },
-     {
-      "num": 34,
-      "owner": "Tessy (Nick S)"
-     },
-     {
-      "num": 35,
-      "owner": "Zac"
-     },
-     {
-      "num": 36,
-      "owner": "Taylor"
-     },
-     {
-      "num": 15,
-      "owner": "Payton Tolle"
-     },
-     {
-      "num": 16,
-      "owner": "Braden Montgomery"
-     },
-     {
-      "num": 31,
-      "owner": "Tanner McDougal"
-     },
-     {
-      "num": 32,
-      "owner": "Ryan Clifford"
-     },
-     {
-      "num": 33,
-      "owner": "George Lombard Jr."
-     },
-     {
-      "num": 34,
-      "owner": "Cam Caminiti"
-     },
-     {
-      "num": 35,
-      "owner": "Brice Matthews"
-     },
-     {
-      "num": 36,
-      "owner": "Junieker Caceres"
-     },
-     {
-      "num": 37,
-      "owner": "Ethan Conrad"
-     },
-     {
-      "num": 38,
-      "owner": "Caden Scarborough"
-     },
-     {
-      "num": 39,
-      "owner": "Kyson Witherspoon"
-     },
-     {
-      "num": 40,
-      "owner": "Luke Dickerson"
-     },
-     {
-      "num": 15,
-      "owner": "Taylor"
-     },
-     {
-      "num": 16,
-      "owner": "Zac"
-     },
-     {
-      "num": 31,
-      "owner": "Ben (Coirey (Tyler (Jason (Sorgaard)"
-     },
-     {
-      "num": 32,
-      "owner": "Coirey (Tyler (Jason)"
-     },
-     {
-      "num": 33,
-      "owner": "Nick S (Jeff)"
-     },
-     {
-      "num": 34,
-      "owner": "Coirey"
-     },
-     {
-      "num": 35,
-      "owner": "Coirey (Ben (Jason(Ben)"
-     },
-     {
-      "num": 36,
-      "owner": "Coirey (Ben (Sorgaard (Tessy)"
-     },
-     {
-      "num": 37,
-      "owner": "Ben (Tessy (Sorgaard (Jason (Seth))))"
-     },
-     {
-      "num": 38,
-      "owner": "Zac (Karleton (Jason (Sorgaard (Tyler)"
-     },
-     {
-      "num": 39,
-      "owner": "Coirey (Tessy (Karleton)"
-     },
-     {
-      "num": 40,
-      "owner": "Andy"
-     },
      {
       "num": 21,
       "owner": "Alejandro Rosario"
@@ -2193,150 +2646,6 @@
     "round": "4th",
     "picks": [
      {
-      "num": 37,
-      "owner": "Coirey"
-     },
-     {
-      "num": 38,
-      "owner": "Nick S (Tessy (Karleton))"
-     },
-     {
-      "num": 39,
-      "owner": "Jason"
-     },
-     {
-      "num": 40,
-      "owner": "Jeff"
-     },
-     {
-      "num": 41,
-      "owner": "Taylor (Tessy)"
-     },
-     {
-      "num": 42,
-      "owner": "Taylor (Andy (Ben)"
-     },
-     {
-      "num": 43,
-      "owner": "Taylor (Andy)"
-     },
-     {
-      "num": 44,
-      "owner": "Jason (Tyler)"
-     },
-     {
-      "num": 45,
-      "owner": "Seth"
-     },
-     {
-      "num": 46,
-      "owner": "Tessy (Ben (Nick S))"
-     },
-     {
-      "num": 47,
-      "owner": "Zac"
-     },
-     {
-      "num": 48,
-      "owner": "Taylor (Andy (Taylor)"
-     },
-     {
-      "num": 27,
-      "owner": "Aiva Arquette"
-     },
-     {
-      "num": 28,
-      "owner": "Theo Gillen"
-     },
-     {
-      "num": 45,
-      "owner": "Kendry Chourio"
-     },
-     {
-      "num": 46,
-      "owner": "Mike Sirota"
-     },
-     {
-      "num": 47,
-      "owner": "Josh Hammond"
-     },
-     {
-      "num": 48,
-      "owner": "Jace LaViolette"
-     },
-     {
-      "num": 49,
-      "owner": "Kaelen Culpepper"
-     },
-     {
-      "num": 50,
-      "owner": "Kayson Cunningham"
-     },
-     {
-      "num": 51,
-      "owner": "Carlos Lagrange"
-     },
-     {
-      "num": 52,
-      "owner": "Jefferson Rojas"
-     },
-     {
-      "num": 53,
-      "owner": "Andrew Fischer"
-     },
-     {
-      "num": 54,
-      "owner": "Kazuka Okamoto"
-     },
-     {
-      "num": 27,
-      "owner": "Seth (Zac)"
-     },
-     {
-      "num": 28,
-      "owner": "Taylor"
-     },
-     {
-      "num": 45,
-      "owner": "Tessy (Nick S)"
-     },
-     {
-      "num": 46,
-      "owner": "Taylor (Jason (Tessy (Sorgaard (Jason)"
-     },
-     {
-      "num": 47,
-      "owner": "Jeff"
-     },
-     {
-      "num": 48,
-      "owner": "Coirey"
-     },
-     {
-      "num": 49,
-      "owner": "Nick S (Ben)"
-     },
-     {
-      "num": 50,
-      "owner": "Tessy"
-     },
-     {
-      "num": 51,
-      "owner": "Seth"
-     },
-     {
-      "num": 52,
-      "owner": "Nick S (Seth (Jason (Tessy (Andy (Sorgaard (Ben (Tyler)"
-     },
-     {
-      "num": 53,
-      "owner": "Seth (Jason (Karleton)"
-     },
-     {
-      "num": 54,
-      "owner": "Tessy (Sorgaard (Ben (Jason (Tyler (Andy)"
-     },
-     {
       "num": 31,
       "owner": "Will Warren"
      },
@@ -2582,150 +2891,6 @@
     "round": "5th",
     "picks": [
      {
-      "num": 49,
-      "owner": "Coirey"
-     },
-     {
-      "num": 50,
-      "owner": "Coirey (Karleton)"
-     },
-     {
-      "num": 51,
-      "owner": "Zac (Karleton (Jason)"
-     },
-     {
-      "num": 52,
-      "owner": "Jeff"
-     },
-     {
-      "num": 53,
-      "owner": "Tessy (Karleton (Tessy)"
-     },
-     {
-      "num": 54,
-      "owner": "Jason (Ben)"
-     },
-     {
-      "num": 55,
-      "owner": "Andy"
-     },
-     {
-      "num": 56,
-      "owner": "Jason (Tyler)"
-     },
-     {
-      "num": 57,
-      "owner": "Seth"
-     },
-     {
-      "num": 58,
-      "owner": "Seth (Nick S)"
-     },
-     {
-      "num": 59,
-      "owner": "Zac"
-     },
-     {
-      "num": 60,
-      "owner": "Tessy (Taylor)"
-     },
-     {
-      "num": 29,
-      "owner": "Emil Morales"
-     },
-     {
-      "num": 30,
-      "owner": "Jojo Parker"
-     },
-     {
-      "num": 59,
-      "owner": "Didier Fuentes"
-     },
-     {
-      "num": 60,
-      "owner": "Gage Jump"
-     },
-     {
-      "num": 61,
-      "owner": "Xavier Neyens"
-     },
-     {
-      "num": 62,
-      "owner": "Arjun Nimmala"
-     },
-     {
-      "num": 63,
-      "owner": "Connelly Early"
-     },
-     {
-      "num": 64,
-      "owner": "Jake Cook"
-     },
-     {
-      "num": 65,
-      "owner": "Munetaka Murakami"
-     },
-     {
-      "num": 66,
-      "owner": "Kevin DeFrank"
-     },
-     {
-      "num": 67,
-      "owner": "Ethan Frey"
-     },
-     {
-      "num": 68,
-      "owner": "Kevin Alvarez"
-     },
-     {
-      "num": 29,
-      "owner": "Zac"
-     },
-     {
-      "num": 30,
-      "owner": "Jason (Taylor)"
-     },
-     {
-      "num": 59,
-      "owner": "Ben (Tessy (Tyler (Nick S)"
-     },
-     {
-      "num": 60,
-      "owner": "Sorgaard (Tessy (Sorgaard (Jason)"
-     },
-     {
-      "num": 61,
-      "owner": "Jeff"
-     },
-     {
-      "num": 62,
-      "owner": "Coirey"
-     },
-     {
-      "num": 63,
-      "owner": "Ben"
-     },
-     {
-      "num": 64,
-      "owner": "Tessy (Jason (Andy (Tessy)"
-     },
-     {
-      "num": 65,
-      "owner": "Seth"
-     },
-     {
-      "num": 66,
-      "owner": "Tessy (Karleton (Tyler)"
-     },
-     {
-      "num": 67,
-      "owner": "Karleton (Jason (Andy (Tyler (Karleton)"
-     },
-     {
-      "num": 68,
-      "owner": "Jeff (Coirey (Andy)"
-     },
-     {
       "num": 41,
       "owner": "Trey Yesavage"
      },
@@ -2770,10 +2935,6 @@
       "owner": "Seth (Tessy)"
      },
      {
-      "num": 42,
-      "owner": "Tessy (Tyler (Sorgaard (Andy (Coirey (Tyler (Jason)))"
-     },
-     {
       "num": 43,
       "owner": "Seth (Jeff)"
      },
@@ -2796,10 +2957,6 @@
      {
       "num": 48,
       "owner": "Sorgaard (Ben)"
-     },
-     {
-      "num": 49,
-      "owner": "Ben (Coirey (Tyler (Jason (Sorgaard (Tessy (Jason (Tyler))"
      },
      {
       "num": 50,
@@ -2967,6 +3124,7 @@
      }
     ]
    }
-  ]
+  ],
+  "results": true
  }
 ]

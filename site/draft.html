@@ -26,13 +26,13 @@
 </header>
 
 <main class="wrap">
-  <h2 style="margin-top:1.6rem">Rookie draft pick ownership</h2>
+  <h2 style="margin-top:1.6rem" id="board-h">Rookie drafts</h2>
   <div class="yearpick" id="years"></div>
   <div class="tbl-scroll"><table id="board">
     <thead></thead>
     <tbody><tr><td class="loading">Loading…</td></tr></tbody>
   </table></div>
-  <p class="sub" style="margin-top:.5rem">A name in parentheses is the pick's original owner — “Tyler (Karleton)” means Tyler acquired Karleton's slot.</p>
+  <p class="sub" style="margin-top:.5rem" id="board-note"></p>
   <footer></footer>
 </main>
 <style>
@@ -59,6 +59,11 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
   function render(i) {
     pick.querySelectorAll("button").forEach(b => b.classList.toggle("active", +b.dataset.i === i));
     const b = boards[i];
+    document.getElementById("board-h").textContent =
+      b.results ? b.year + " draft results" : b.year + " pick ownership";
+    document.getElementById("board-note").textContent = b.results
+      ? "Players selected in the " + b.year + " rookie draft."
+      : "A name in parentheses is the pick's original owner — \u201cTyler (Karleton)\u201d means Tyler acquired Karleton's slot.";
     const table = document.getElementById("board");
     table.querySelector("thead").innerHTML =
       `<tr><th class="num">#</th>` + b.rounds.map(r => `<th>${esc(r.round)} Round</th>`).join("") + `</tr>`;

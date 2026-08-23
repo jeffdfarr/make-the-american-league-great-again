@@ -83,36 +83,40 @@ def parse_trades(rows: list[list[str]], max_col: int = 7) -> list[dict]:
 # ---------------------------------------------------------------- Draft boards
 
 def parse_draftboard(rows: list[list[str]]) -> list[dict]:
-    """Year blocks: a row whose only content is a year, then a round-header
-    row, then slot rows alternating pick#/owner across the columns."""
+    """Year blocks: a label row ("2027" for future ownership boards, or
+    "2026 Picks" for past draft results), a round-header row (1st/2nd/...,
+    possibly with Compensatory columns), then slot rows alternating
+    pick#/name pairs. Annotation rows (side bets etc.) are ignored."""
+    YEAR_LABEL = re.compile(r"^((?:19|20)\d{2})(?:\s+picks)?$", re.I)
+    ROUND = re.compile(r"^(\d+(?:st|nd|rd|th)|comp\w*)$", re.I)
     boards: list[dict] = []
     current = None
-    round_names: list[str] = []
     for row in rows:
         non_empty = [c for c in row if c]
-        if len(non_empty) == 1 and YEAR_RE.match(non_empty[0]):
-            current = {"year": int(non_empty[0]), "rounds": []}
+        m = YEAR_LABEL.match(non_empty[0]) if len(non_empty) == 1 else None
+        if m:
+            current = {"year": int(m.group(1)), "rounds": [], "results": "picks" in non_empty[0].lower()}
             boards.append(current)
-            round_names = []
             continue
         if current is None:
             continue
-        if not round_names and non_empty and all(not ch.isdigit() or True for ch in non_empty[0]) \
-           and any(n.lower().endswith(("st", "nd", "rd", "th")) for n in non_empty):
-            round_names = non_empty
-            current["rounds"] = [{"round": n, "picks": []} for n in round_names]
+        if not current["rounds"]:
+            hits = [c for c in non_empty if ROUND.match(c)]
+            if hits and len(hits) >= max(2, len(non_empty) - 1):
+                current["rounds"] = [{"round": c, "picks": []} for c in non_empty]
             continue
-        if round_names and row and row[0].isdigit():
-            # pairs: (pick#, owner) starting at col 0
+        if row and row[0].isdigit() and len(row[0]) <= 3:
             pairs = []
             i = 0
             while i + 1 < len(row):
-                num, owner = row[i], row[i + 1]
-                if num.isdigit() and owner:
-                    pairs.append((int(num), owner))
+                num, name = row[i], row[i + 1]
+                if num.isdigit() and name and len(name) <= 48:
+                    pairs.append((int(num), name))
+                elif name and len(name) > 48:
+                    pass  # annotation text sharing the row — drop it
                 i += 2
-            for r_idx, (num, owner) in enumerate(pairs[: len(current["rounds"])]):
-                current["rounds"][r_idx]["picks"].append({"num": num, "owner": owner})
+            for r_idx, (num, name) in enumerate(pairs[: len(current["rounds"])]):
+                current["rounds"][r_idx]["picks"].append({"num": num, "owner": name})
     return [b for b in boards if any(r["picks"] for r in b["rounds"])]
 
 
