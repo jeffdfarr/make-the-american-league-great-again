@@ -47,7 +47,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     <div class="card"><span class="c-cat">${c.year}</span><span class="c-val">${c.team_name}</span>
     <span class="c-who">${c.owner_name} · def. ${runners[c.year] ?? "?"}</span></div>`).join("");
 
-  const fmt = r => ["streak", "hitting", "pitching"].includes(r.scope) ? r.display
+  const fmt = r => ["streak", "hitting", "pitching", "hitting-season", "pitching-season"].includes(r.scope) ? r.display
     : r.category.toLowerCase().includes("pct") ? MT.pct(r.value)
     : Math.abs(r.value) < 10 ? r.value.toFixed(3)
     : MT.num(r.value, r.scope === "game" ? 1 : 0);
@@ -57,17 +57,19 @@ document.querySelector('[data-nav="history"]').classList.add("active");
 
   const ORDER = ["Most runs scored","Most singles","Most doubles","Most triples","Most home runs",
     "Most RBI","Most walks taken","Most strikeouts, hitter","Most stolen bases",
-    "Most wins","Most losses","Most quality starts","Most strikeouts, pitcher","Most saves","Most blown saves"];
+    "Most wins","Most losses","Most quality starts","Most strikeouts, pitcher","Most saves","Most blown saves"]
+    .flatMap(l => [l, l + ", season"]);   // all-time card, then its best-season twin
   const byOrder = (a, b) => ORDER.indexOf(a.category) - ORDER.indexOf(b.category);
+  const CAT_SCOPES = ["hitting", "pitching", "hitting-season", "pitching-season"];
   for (const [scope, hid, cid] of [["hitting", "hit-h", "hit-records"], ["pitching", "pit-h", "pit-records"]]) {
-    const group = records.filter(r => r.scope === scope).sort(byOrder);
+    const group = records.filter(r => r.scope === scope || r.scope === scope + "-season").sort(byOrder);
     if (group.length) {
       document.getElementById(hid).style.display = "";
       document.getElementById(cid).innerHTML = group.map(card).join("");
     }
   }
 
-  let cards = records.filter(r => !["hitting", "pitching"].includes(r.scope)).map(card);
+  let cards = records.filter(r => !CAT_SCOPES.includes(r.scope)).map(card);
 
   // trade records straight from the trades sheet
   const tc = {}, pairs = {};

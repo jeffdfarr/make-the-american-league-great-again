@@ -468,9 +468,9 @@ CATEGORY_RECORDS = [
 
 
 def _category_records(conn: sqlite3.Connection) -> None:
-    """All-time franchise totals per raw counting stat (career sums)."""
+    """Raw counting-stat records: all-time franchise totals AND best single season."""
     for category, scope, side, stat in CATEGORY_RECORDS:
-        row = conn.execute(
+        career = conn.execute(
             """SELECT ts.owner_slug o, SUM(cs.value) v
                FROM category_stats cs
                JOIN team_seasons ts ON ts.id = cs.team_season_id
@@ -478,11 +478,26 @@ def _category_records(conn: sqlite3.Connection) -> None:
                GROUP BY ts.owner_slug ORDER BY v DESC LIMIT 1""",
             (side, stat),
         ).fetchone()
-        if row and row["v"]:
+        if career and career["v"]:
             conn.execute(
                 """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
                    VALUES (?,?,?,?,?,?,?)""",
-                (category, scope, row["v"], f"{row['v']:,.0f}", row["o"], None, "all-time"),
+                (category, scope, career["v"], f"{career['v']:,.0f}", career["o"], None, "all-time"),
+            )
+        season = conn.execute(
+            """SELECT ts.owner_slug o, SUM(cs.value) v, cs.year y
+               FROM category_stats cs
+               JOIN team_seasons ts ON ts.id = cs.team_season_id
+               WHERE cs.side=? AND cs.stat=? AND ts.owner_slug IS NOT NULL
+               GROUP BY ts.owner_slug, cs.year ORDER BY v DESC LIMIT 1""",
+            (side, stat),
+        ).fetchone()
+        if season and season["v"]:
+            conn.execute(
+                """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
+                   VALUES (?,?,?,?,?,?,?)""",
+                (category + ", season", scope + "-season", season["v"], f"{season['v']:,.0f}",
+                 season["o"], season["y"], None),
             )
 
 

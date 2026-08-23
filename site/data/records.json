@@ -56,8 +56,8 @@
  {
   "category": "Most runs scored",
   "scope": "hitting",
-  "value": 6061.0,
-  "display": "6,061",
+  "value": 6062.0,
+  "display": "6,062",
   "owner_slug": "drwall",
   "year": null,
   "detail": "all-time"
@@ -83,8 +83,8 @@
  {
   "category": "Most strikeouts, hitter",
   "scope": "hitting",
-  "value": 9939.0,
-  "display": "9,939",
+  "value": 9940.0,
+  "display": "9,940",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time"
@@ -106,6 +106,87 @@
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time"
+ },
+ {
+  "category": "Most RBI, season",
+  "scope": "hitting-season",
+  "value": 1085.0,
+  "display": "1,085",
+  "owner_slug": "moellerreed",
+  "year": 2025,
+  "detail": null
+ },
+ {
+  "category": "Most doubles, season",
+  "scope": "hitting-season",
+  "value": 407.0,
+  "display": "407",
+  "owner_slug": "tasin",
+  "year": 2023,
+  "detail": null
+ },
+ {
+  "category": "Most home runs, season",
+  "scope": "hitting-season",
+  "value": 339.0,
+  "display": "339",
+  "owner_slug": "moellerreed",
+  "year": 2025,
+  "detail": null
+ },
+ {
+  "category": "Most runs scored, season",
+  "scope": "hitting-season",
+  "value": 1067.0,
+  "display": "1,067",
+  "owner_slug": "drwall",
+  "year": 2023,
+  "detail": null
+ },
+ {
+  "category": "Most singles, season",
+  "scope": "hitting-season",
+  "value": 1175.0,
+  "display": "1,175",
+  "owner_slug": "drwall",
+  "year": 2024,
+  "detail": null
+ },
+ {
+  "category": "Most stolen bases, season",
+  "scope": "hitting-season",
+  "value": 239.0,
+  "display": "239",
+  "owner_slug": "kaufer",
+  "year": 2025,
+  "detail": null
+ },
+ {
+  "category": "Most strikeouts, hitter, season",
+  "scope": "hitting-season",
+  "value": 1845.0,
+  "display": "1,845",
+  "owner_slug": "moellerreed",
+  "year": 2024,
+  "detail": null
+ },
+ {
+  "category": "Most triples, season",
+  "scope": "hitting-season",
+  "value": 43.0,
+  "display": "43",
+  "owner_slug": "drwall",
+  "year": 2023,
+  "detail": null
+ },
+ {
+  "category": "Most walks taken, season",
+  "scope": "hitting-season",
+  "value": 819.0,
+  "display": "819",
+  "owner_slug": "bugar",
+  "year": 2025,
+  "detail": null
  },
  {
   "category": "Most blown saves",
@@ -160,6 +241,60 @@
   "owner_slug": "tfarr",
   "year": null,
   "detail": "all-time"
+ },
+ {
+  "category": "Most blown saves, season",
+  "scope": "pitching-season",
+  "value": 36.0,
+  "display": "36",
+  "owner_slug": "tessman",
+  "year": 2025,
+  "detail": null
+ },
+ {
+  "category": "Most losses, season",
+  "scope": "pitching-season",
+  "value": 136.0,
+  "display": "136",
+  "owner_slug": "moellerreed",
+  "year": 2025,
+  "detail": null
+ },
+ {
+  "category": "Most quality starts, season",
+  "scope": "pitching-season",
+  "value": 163.0,
+  "display": "163",
+  "owner_slug": "jfarr",
+  "year": 2022,
+  "detail": null
+ },
+ {
+  "category": "Most saves, season",
+  "scope": "pitching-season",
+  "value": 149.0,
+  "display": "149",
+  "owner_slug": "drwall",
+  "year": 2024,
+  "detail": null
+ },
+ {
+  "category": "Most strikeouts, pitcher, season",
+  "scope": "pitching-season",
+  "value": 2229.0,
+  "display": "2,229",
+  "owner_slug": "tfarr",
+  "year": 2024,
+  "detail": null
+ },
+ {
+  "category": "Most wins, season",
+  "scope": "pitching-season",
+  "value": 151.0,
+  "display": "151",
+  "owner_slug": "bugar",
+  "year": 2024,
+  "detail": null
  },
  {
   "category": "Best season OPR",
