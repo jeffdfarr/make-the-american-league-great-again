@@ -1,0 +1,43 @@
+name: Rulebook update from sheet
+
+on:
+  repository_dispatch:
+    types: [sheet-updated]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+# If several edits arrive close together, queue them instead of racing
+concurrency:
+  group: sheet-update
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Refresh rulebook data from the Google Sheet
+        run: python -m mtalga.cli bylaws
+
+      - name: Commit updated data
+        run: |
+          git config user.name "mtalga-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase
+          git add site/data/
+          if git diff --cached --quiet; then
+            echo "Sheet changed but site data is identical — nothing to publish."
+          else
+            git commit -m "Rulebook update from sheet"
+            git push
+          fi
