@@ -53,6 +53,18 @@
           font-variant-numeric: tabular-nums; font-size: .92rem; width: max-content; max-width: 100%; overflow-x: auto; }
   .cols .colhead { font-family: "IBM Plex Mono", monospace; font-size: .68rem; letter-spacing: .08em;
                    text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .dtable { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px;
+            margin: .6rem 0 1rem; overflow: hidden; }
+  .drow { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem;
+          padding: .5rem .9rem; border-bottom: 1px solid var(--rule); }
+  .drow:last-child { border-bottom: none; }
+  .drow .d { font-family: "IBM Plex Mono", monospace; font-size: .78rem; font-weight: 600;
+             color: var(--accent); white-space: nowrap; padding-top: .1rem; }
+  .drow .e { font-size: .92rem; line-height: 1.5; }
+  @media (max-width: 760px) {
+    #content h2 { position: sticky; top: 0; z-index: 5; background: var(--paper);
+                  margin-top: 2.2rem; padding-top: .5rem; }
+  }
 </style>
 <script src="assets/app.js"></script>
 <script>
@@ -65,20 +77,21 @@ document.querySelector('[data-nav="rules"]').classList.add("active");
     const m = t.match(/^(\d+(?:\.\d+)*)\.?\s+(.*)$/);
     return m ? `<span class="no">${m[1]}</span>${esc(m[2])}` : esc(t);
   };
-  let html = "", toc = "", listDepth = 0, inCols = false;
+  let html = "", toc = "", listDepth = 0, inCols = false, inDates = false;
   const closeLists = to => { while (listDepth > to) { html += "</ul>"; listDepth--; } };
   const closeCols = () => { if (inCols) { html += "</div>"; inCols = false; } };
+  const closeDates = () => { if (inDates) { html += "</div>"; inDates = false; } };
   let hid = 0;
   for (const b of rules) {
     const first = b.cells[0];
     if (b.cells.length > 1) {
-      closeLists(0);
+      closeLists(0); closeDates();
       if (!inCols) { html += `<div class="cols" style="grid-template-columns: repeat(${b.cells.length}, max-content)">`; inCols = true; }
       const head = !/\d/.test(first);
       html += b.cells.map(t => `<span${head ? ' class="colhead"' : ""}>${esc(t)}</span>`).join("");
       continue;
     }
-    closeCols();
+    closeCols(); closeDates();
     if (b.depth === 0) {
       closeLists(0);
       if (/^make the a/i.test(first)) continue;
@@ -90,12 +103,20 @@ document.querySelector('[data-nav="rules"]').classList.add("active");
       }
       // long unnumbered depth-0 text = sheet annotation (side bets, notes) — not published
     } else {
+      const dm = esc(first).match(/^([A-Z][a-z]{2,9}\.?\s+\d{1,2})\s*[\u2013\u2014-]\s*(.+)$/);
+      if (dm) {
+        closeLists(0);
+        if (!inDates) { html += `<div class="dtable">`; inDates = true; }
+        html += `<div class="drow"><span class="d">${dm[1]}</span><span class="e">${dm[2]}</span></div>`;
+        continue;
+      }
+      closeDates();
       closeLists(b.depth);
       while (listDepth < b.depth) { html += "<ul>"; listDepth++; }
       html += `<li>${esc(first)}</li>`;
     }
   }
-  closeCols(); closeLists(0);
+  closeCols(); closeDates(); closeLists(0);
   document.getElementById("toc").innerHTML = toc;
   document.getElementById("content").innerHTML = html;
   MT.footer(meta);
