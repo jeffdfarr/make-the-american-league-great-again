@@ -58,6 +58,10 @@ def parse_trades(rows: list[list[str]], max_col: int = 7) -> list[dict]:
     """Columns A..G: date, owner1, player1, pick1, owner2, player2, pick2.
     Continuation rows add more players/picks to the trade above. Columns
     beyond max_col belong to a side summary table and are ignored."""
+    def ok(text: str) -> bool:
+        # Real players/picks are short; long text = sheet annotation (side bets etc.)
+        return 0 < len(text) <= 60
+
     trades: list[dict] = []
     for row in rows:
         c = (row + [""] * max_col)[:max_col]
@@ -67,16 +71,16 @@ def parse_trades(rows: list[list[str]], max_col: int = 7) -> list[dict]:
             trades.append({
                 "date": c[0],
                 "sides": [
-                    {"owner": c[1], "players": [c[2]] if c[2] else [], "picks": [c[3]] if c[3] else []},
-                    {"owner": c[4], "players": [c[5]] if c[5] else [], "picks": [c[6]] if c[6] else []},
+                    {"owner": c[1], "players": [c[2]] if ok(c[2]) else [], "picks": [c[3]] if ok(c[3]) else []},
+                    {"owner": c[4], "players": [c[5]] if ok(c[5]) else [], "picks": [c[6]] if ok(c[6]) else []},
                 ],
             })
         elif trades:
             t = trades[-1]
-            if c[2]: t["sides"][0]["players"].append(c[2])
-            if c[3]: t["sides"][0]["picks"].append(c[3])
-            if c[5]: t["sides"][1]["players"].append(c[5])
-            if c[6]: t["sides"][1]["picks"].append(c[6])
+            if ok(c[2]): t["sides"][0]["players"].append(c[2])
+            if ok(c[3]): t["sides"][0]["picks"].append(c[3])
+            if ok(c[5]): t["sides"][1]["players"].append(c[5])
+            if ok(c[6]): t["sides"][1]["picks"].append(c[6])
     return trades
 
 
