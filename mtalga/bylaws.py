@@ -68,11 +68,15 @@ def parse_trades(rows: list[list[str]], max_col: int = 7) -> list[dict]:
         if c[1] == "Owner" or (not any(c)):
             continue
         if DATE_RE.match(c[0]):
+            # Owner cells get the annotation guard too — side bets have been
+            # found logged in the trade sheet with their own date row.
+            o1 = c[1] if 0 < len(c[1]) <= 40 else ""
+            o2 = c[4] if 0 < len(c[4]) <= 40 else ""
             trades.append({
                 "date": c[0],
                 "sides": [
-                    {"owner": c[1], "players": [c[2]] if ok(c[2]) else [], "picks": [c[3]] if ok(c[3]) else []},
-                    {"owner": c[4], "players": [c[5]] if ok(c[5]) else [], "picks": [c[6]] if ok(c[6]) else []},
+                    {"owner": o1, "players": [c[2]] if ok(c[2]) else [], "picks": [c[3]] if ok(c[3]) else []},
+                    {"owner": o2, "players": [c[5]] if ok(c[5]) else [], "picks": [c[6]] if ok(c[6]) else []},
                 ],
             })
         elif trades:
@@ -81,7 +85,9 @@ def parse_trades(rows: list[list[str]], max_col: int = 7) -> list[dict]:
             if ok(c[3]): t["sides"][0]["picks"].append(c[3])
             if ok(c[5]): t["sides"][1]["players"].append(c[5])
             if ok(c[6]): t["sides"][1]["picks"].append(c[6])
-    return trades
+    # drop rows that were pure annotation (no owners, no assets survive the guards)
+    return [t for t in trades
+            if any(sd["owner"] or sd["players"] or sd["picks"] for sd in t["sides"])]
 
 
 # ---------------------------------------------------------------- Draft boards
