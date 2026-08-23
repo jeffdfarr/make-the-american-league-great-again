@@ -92,14 +92,12 @@ def parse_trades(rows: list[list[str]], max_col: int = 7) -> list[dict]:
 
 # ---------------------------------------------------------------- Draft boards
 
-_TRAIL_PAREN = re.compile(r"\s*\([^)]*\)\s*$")
-
-
 def _merge_draft_results(boards: list[dict]) -> list[dict]:
-    """A drafted year appears twice in the sheet: the pick-order board
-    (managers per slot) and a color-matched duplicate listing the players
-    taken at each slot. Join them positionally so the results board shows
-    "Player (Manager)" — who drafted whom."""
+    """A drafted year appears twice in the sheet under one label: the table of
+    players taken, then a color-matched duplicate of the pick-order board
+    (managers per slot, with trade chains). Join them by pick number so the
+    results board shows "Player (Manager)" — who drafted whom. The manager is
+    the name before any parenthetical: the slot's final owner made the pick."""
     by_year: dict[int, dict] = {}
     for b in boards:
         by_year.setdefault(b["year"], {})[b["results"]] = b
@@ -108,13 +106,10 @@ def _merge_draft_results(boards: list[dict]) -> list[dict]:
         pair = by_year[year]
         if True in pair and False in pair:
             res, own = pair[True], pair[False]
-            own_by_label = {r["round"].lower(): r for r in own["rounds"]}
             for r_idx, rnd in enumerate(res["rounds"]):
-                own_r = own_by_label.get(rnd["round"].lower())
-                if own_r is None and r_idx < len(own["rounds"]):
-                    own_r = own["rounds"][r_idx]
-                if own_r is None:
+                if r_idx >= len(own["rounds"]):
                     continue
+                own_r = own["rounds"][r_idx]
                 own_by_num = {p["num"]: p for p in own_r["picks"]}
                 for s, p in enumerate(rnd["picks"]):
                     src = own_by_num.get(p["num"])
@@ -122,9 +117,9 @@ def _merge_draft_results(boards: list[dict]) -> list[dict]:
                         src = own_r["picks"][s]
                     if src is None or "(" in p["owner"]:
                         continue  # no match, or manager already typed by hand
-                    manager = _TRAIL_PAREN.sub("", src["owner"]).strip()
+                    manager = src["owner"].split("(")[0].strip()
                     if manager:
-                        p["owner"] = f"{p['owner']} ({manager})"
+                        p["owner"] = f"{p['owner'].strip()} ({manager})"
             out.append(res)
         else:
             out.append(pair.get(True) or pair[False])
@@ -135,13 +130,17 @@ def parse_draftboard(rows: list[list[str]]) -> list[dict]:
     """Year blocks: a label row ("2027" for future ownership boards, or
     "2026 Picks" for past draft results), a round-header row (1st/2nd/...,
     possibly with Compensatory columns), then slot rows alternating
-    pick#/name pairs. Annotation rows (side bets etc.) are ignored."""
+    pick#/name column pairs. A drafted year stacks TWO tables under one
+    label — players taken, then the pick-order duplicate — separated by a
+    repeated round-header row. Annotation rows (side bets etc.) are ignored."""
     YEAR_LABEL = re.compile(r"^((?:19|20)\d{2})(?:\s+picks)?$", re.I)
     ROUND = re.compile(r"^(\d+(?:st|nd|rd|th)|comp\w*)$", re.I)
     boards: list[dict] = []
     current = None
     for row in rows:
         non_empty = [c for c in row if c]
+        if not non_empty:
+            continue
         m = YEAR_LABEL.match(non_empty[0]) if len(non_empty) == 1 else None
         if m:
             current = {"year": int(m.group(1)), "rounds": [], "results": "picks" in non_empty[0].lower()}
@@ -149,23 +148,25 @@ def parse_draftboard(rows: list[list[str]]) -> list[dict]:
             continue
         if current is None:
             continue
-        if not current["rounds"]:
-            hits = [c for c in non_empty if ROUND.match(c)]
-            if hits and len(hits) >= max(2, len(non_empty) - 1):
-                current["rounds"] = [{"round": c, "picks": []} for c in non_empty]
+        hits = [c for c in non_empty if ROUND.match(c)]
+        if hits and len(hits) >= max(2, len(non_empty) - 1):
+            if current["rounds"]:
+                # repeated header under the same year label: the companion
+                # pick-order table starts here — make it its own board
+                current = {"year": current["year"], "rounds": [], "results": False}
+                boards.append(current)
+            current["rounds"] = [{"round": c, "picks": []} for c in non_empty]
             continue
-        if row and row[0].isdigit() and len(row[0]) <= 3:
-            pairs = []
+        if not current["rounds"]:
+            continue
+        if row[0].isdigit() and len(row[0]) <= 3:
             i = 0
             while i + 1 < len(row):
                 num, name = row[i], row[i + 1]
-                if num.isdigit() and name and len(name) <= 48:
-                    pairs.append((int(num), name))
-                elif name and len(name) > 48:
-                    pass  # annotation text sharing the row — drop it
+                r_idx = i // 2  # each round owns a fixed pick#/name column pair
+                if num.isdigit() and name and len(name) <= 48 and r_idx < len(current["rounds"]):
+                    current["rounds"][r_idx]["picks"].append({"num": int(num), "owner": name})
                 i += 2
-            for r_idx, (num, name) in enumerate(pairs[: len(current["rounds"])]):
-                current["rounds"][r_idx]["picks"].append({"num": num, "owner": name})
     return _merge_draft_results([b for b in boards if any(r["picks"] for r in b["rounds"])])
 
 
