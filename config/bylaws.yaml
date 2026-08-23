@@ -1,12 +1,8 @@
-# The league rulebook Google Sheet (link-readable). Each listed tab becomes
-# a section of the site's Bylaws page, in this order.
-#
-# PRIVACY: the Owners tab holds personal phone numbers. It is excluded AND
-# the exporter hard-refuses anything that looks like contact info.
+# The league rulebook Google Sheet (link-readable).
+# PRIVACY: only these tabs are fetched; the Owners tab (phone numbers) is
+# never listed here and the exporter refuses contact-looking content.
 sheet_id: 1-CI4Coq19ezTv5t1GObPi-4k_qbJCK0fK1x-qTz5LyY
-tabs:
-  - Rules
-  - Trades
-  - Rookie Draft
-exclude_tabs:
-  - Owners
+pages:
+  rules:  { tab: "Rules",        mode: outline }
+  trades: { tab: "Trades",       mode: trades }
+  draft:  { tab: "Rookie Draft", mode: draftboard }

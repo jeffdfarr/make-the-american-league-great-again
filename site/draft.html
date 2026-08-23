@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<title>MTALGA · Draft</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚾</text></svg>">
+
+<header class="mast">
+  <div class="wrap" style="padding-bottom:0">
+    <p class="eyebrow">Fantrax Dynasty Baseball · Est. 2020</p>
+    <h1><a href="index.html">Make the AL Great Again</a></h1>
+    <p class="sub" id="tagline">League HQ</p>
+    <nav class="main">
+      <a href="index.html" data-nav="index">Standings</a>
+      <a href="franchises.html" data-nav="franchises">Franchises</a>
+      <a href="seasons.html" data-nav="seasons">Seasons</a>
+      <a href="history.html" data-nav="history">History</a>
+      <a href="rules.html" data-nav="rules">Rules</a>
+      <a href="trades.html" data-nav="trades">Trades</a>
+      <a href="draft.html" data-nav="draft">Draft</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2 style="margin-top:1.6rem">Rookie draft pick ownership</h2>
+  <div class="yearpick" id="years"></div>
+  <div class="tbl-scroll"><table id="board">
+    <thead></thead>
+    <tbody><tr><td class="loading">Loading…</td></tr></tbody>
+  </table></div>
+  <p class="sub" style="margin-top:.5rem">A name in parentheses is the pick's original owner — “Tyler (Karleton)” means Tyler acquired Karleton's slot.</p>
+  <footer></footer>
+</main>
+<style>
+  #board td, #board th { text-align: left; white-space: nowrap; }
+  #board td.num, #board th.num { text-align: right; color: var(--ink-faint); }
+  .via { color: var(--ink-faint); font-size: .82em; }
+  .traded { color: var(--accent); font-weight: 600; }
+</style>
+<script src="assets/app.js"></script>
+<script>
+document.querySelector('[data-nav="draft"]').classList.add("active");
+(async () => {
+  const { draft, meta } = await MT.data("draft", "meta");
+  document.getElementById("tagline").textContent = "Who owns whose picks · synced nightly";
+  const esc = t => t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  const boards = draft.sort((a, b) => b.year - a.year);
+  const pick = document.getElementById("years");
+  pick.innerHTML = boards.map((b, i) => `<button data-i="${i}">${b.year}</button>`).join("");
+
+  const cell = p => {
+    const m = p.owner.match(/^([^(]+?)\s*\((.+)\)\s*$/);
+    return m ? `<span class="traded">${esc(m[1].trim())}</span> <span class="via">via ${esc(m[2])}</span>` : esc(p.owner);
+  };
+  function render(i) {
+    pick.querySelectorAll("button").forEach(b => b.classList.toggle("active", +b.dataset.i === i));
+    const b = boards[i];
+    const table = document.getElementById("board");
+    table.querySelector("thead").innerHTML =
+      `<tr><th class="num">#</th>` + b.rounds.map(r => `<th>${esc(r.round)} Round</th>`).join("") + `</tr>`;
+    const slots = Math.max(...b.rounds.map(r => r.picks.length));
+    let rows = "";
+    for (let s = 0; s < slots; s++) {
+      rows += `<tr><td class="num">${s + 1}</td>` +
+        b.rounds.map(r => r.picks[s] ? `<td title="Pick ${r.picks[s].num}">${cell(r.picks[s])}</td>` : "<td></td>").join("") + `</tr>`;
+    }
+    table.querySelector("tbody").innerHTML = rows;
+  }
+  pick.addEventListener("click", e => { if (e.target.dataset.i) render(+e.target.dataset.i); });
+  render(0);
+  MT.footer(meta);
+})().catch(e => document.querySelector(".loading").textContent = "Could not load draft boards: " + e.message);
+</script>
+
+</html>

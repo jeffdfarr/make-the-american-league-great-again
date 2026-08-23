@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<title>MTALGA · Rules</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚾</text></svg>">
+
+<header class="mast">
+  <div class="wrap" style="padding-bottom:0">
+    <p class="eyebrow">Fantrax Dynasty Baseball · Est. 2020</p>
+    <h1><a href="index.html">Make the AL Great Again</a></h1>
+    <p class="sub" id="tagline">League HQ</p>
+    <nav class="main">
+      <a href="index.html" data-nav="index">Standings</a>
+      <a href="franchises.html" data-nav="franchises">Franchises</a>
+      <a href="seasons.html" data-nav="seasons">Seasons</a>
+      <a href="history.html" data-nav="history">History</a>
+      <a href="rules.html" data-nav="rules">Rules</a>
+      <a href="trades.html" data-nav="trades">Trades</a>
+      <a href="draft.html" data-nav="draft">Draft</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="rules-layout">
+    <nav class="toc" id="toc" aria-label="Sections"></nav>
+    <div id="content"><p class="loading">Loading…</p></div>
+  </div>
+  <footer></footer>
+</main>
+<style>
+  .rules-layout { display: grid; grid-template-columns: 14rem 1fr; gap: 2.5rem; margin-top: 1.8rem; }
+  @media (max-width: 760px) { .rules-layout { grid-template-columns: 1fr; } .toc { position: static !important; } }
+  .toc { position: sticky; top: 1rem; align-self: start; display: flex; flex-direction: column; gap: .25rem; }
+  .toc a { font-family: "IBM Plex Mono", monospace; font-size: .74rem; color: var(--ink-soft);
+           text-decoration: none; padding: .18rem 0; line-height: 1.35; }
+  .toc a:hover { color: var(--accent); }
+  #content { max-width: 46rem; min-width: 0; }
+  #content h2 { font-size: 1.35rem; margin: 2.8rem 0 .8rem; padding-bottom: .4rem;
+                border-bottom: 2px solid var(--ink); }
+  #content h2:first-child { margin-top: .4rem; }
+  #content h2 .no, #content h3 .no { color: var(--accent); font-variant-numeric: tabular-nums; margin-right: .5rem; }
+  #content h3 { font-family: "Bitter", Georgia, serif; font-size: 1.02rem; margin: 1.7rem 0 .45rem; }
+  #content ul { margin: .3rem 0 .9rem; padding-left: 1.25rem; }
+  #content li { margin: .35rem 0; line-height: 1.6; }
+  #content li::marker { color: var(--accent); }
+  .cols { display: grid; gap: .2rem 2.5rem; background: var(--surface); border: 1px solid var(--rule);
+          border-radius: 6px; padding: .8rem 1.1rem; margin: .7rem 0 1.1rem;
+          font-variant-numeric: tabular-nums; font-size: .92rem; width: max-content; max-width: 100%; overflow-x: auto; }
+  .cols .colhead { font-family: "IBM Plex Mono", monospace; font-size: .68rem; letter-spacing: .08em;
+                   text-transform: uppercase; color: var(--accent); font-weight: 600; }
+</style>
+<script src="assets/app.js"></script>
+<script>
+document.querySelector('[data-nav="rules"]').classList.add("active");
+(async () => {
+  const { rules, meta } = await MT.data("rules", "meta");
+  document.getElementById("tagline").textContent = "The rulebook · edited in Google Sheets, synced nightly";
+  const esc = t => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/^•\s*/, "");
+  const numbered = t => {
+    const m = t.match(/^(\d+(?:\.\d+)*)\.?\s+(.*)$/);
+    return m ? `<span class="no">${m[1]}</span>${esc(m[2])}` : esc(t);
+  };
+  let html = "", toc = "", listDepth = 0, inCols = false;
+  const closeLists = to => { while (listDepth > to) { html += "</ul>"; listDepth--; } };
+  const closeCols = () => { if (inCols) { html += "</div>"; inCols = false; } };
+  let hid = 0;
+  for (const b of rules) {
+    const first = b.cells[0];
+    if (b.cells.length > 1) {
+      closeLists(0);
+      if (!inCols) { html += `<div class="cols" style="grid-template-columns: repeat(${b.cells.length}, max-content)">`; inCols = true; }
+      const head = !/\d/.test(first);
+      html += b.cells.map(t => `<span${head ? ' class="colhead"' : ""}>${esc(t)}</span>`).join("");
+      continue;
+    }
+    closeCols();
+    if (b.depth === 0) {
+      closeLists(0);
+      if (/^make the a/i.test(first)) continue;
+      if (/^\d+\.\d/.test(first)) { html += `<h3>${numbered(first)}</h3>`; }
+      else {
+        const id = "s" + (++hid);
+        html += `<h2 id="${id}">${numbered(first)}</h2>`;
+        toc += `<a href="#${id}">${esc(first)}</a>`;
+      }
+    } else {
+      closeLists(b.depth);
+      while (listDepth < b.depth) { html += "<ul>"; listDepth++; }
+      html += `<li>${esc(first)}</li>`;
+    }
+  }
+  closeCols(); closeLists(0);
+  document.getElementById("toc").innerHTML = toc;
+  document.getElementById("content").innerHTML = html;
+  MT.footer(meta);
+})().catch(e => document.querySelector(".loading").textContent = "Could not load rules: " + e.message);
+</script>
+
+</html>

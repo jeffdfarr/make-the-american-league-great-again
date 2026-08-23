@@ -1,0 +1,2972 @@
+[
+ {
+  "year": 2029,
+  "rounds": [
+   {
+    "round": "1st",
+    "picks": [
+     {
+      "num": 1,
+      "owner": "Coirey"
+     },
+     {
+      "num": 2,
+      "owner": "Karleton"
+     },
+     {
+      "num": 3,
+      "owner": "Jason"
+     },
+     {
+      "num": 4,
+      "owner": "Jeff"
+     },
+     {
+      "num": 5,
+      "owner": "Tessy"
+     },
+     {
+      "num": 6,
+      "owner": "Ben"
+     },
+     {
+      "num": 7,
+      "owner": "Taylor (Andy)"
+     },
+     {
+      "num": 8,
+      "owner": "Tyler"
+     },
+     {
+      "num": 9,
+      "owner": "Seth"
+     },
+     {
+      "num": 10,
+      "owner": "Nick S"
+     },
+     {
+      "num": 11,
+      "owner": "Zac"
+     },
+     {
+      "num": 12,
+      "owner": "Taylor"
+     }
+    ]
+   },
+   {
+    "round": "2nd",
+    "picks": [
+     {
+      "num": 13,
+      "owner": "Coirey"
+     },
+     {
+      "num": 14,
+      "owner": "Nick S (Karleton)"
+     },
+     {
+      "num": 15,
+      "owner": "Jason"
+     },
+     {
+      "num": 16,
+      "owner": "Jeff"
+     },
+     {
+      "num": 17,
+      "owner": "Tessy"
+     },
+     {
+      "num": 18,
+      "owner": "Ben"
+     },
+     {
+      "num": 19,
+      "owner": "Andy"
+     },
+     {
+      "num": 20,
+      "owner": "Tyler"
+     },
+     {
+      "num": 21,
+      "owner": "Seth"
+     },
+     {
+      "num": 22,
+      "owner": "Nick S"
+     },
+     {
+      "num": 23,
+      "owner": "Zac"
+     },
+     {
+      "num": 24,
+      "owner": "Taylor"
+     }
+    ]
+   },
+   {
+    "round": "3rd",
+    "picks": [
+     {
+      "num": 25,
+      "owner": "Coirey"
+     },
+     {
+      "num": 26,
+      "owner": "Karleton"
+     },
+     {
+      "num": 27,
+      "owner": "Jason"
+     },
+     {
+      "num": 28,
+      "owner": "Jeff"
+     },
+     {
+      "num": 29,
+      "owner": "Tessy"
+     },
+     {
+      "num": 30,
+      "owner": "Ben"
+     },
+     {
+      "num": 31,
+      "owner": "Andy"
+     },
+     {
+      "num": 32,
+      "owner": "Taylor (Tyler)"
+     },
+     {
+      "num": 33,
+      "owner": "Seth"
+     },
+     {
+      "num": 34,
+      "owner": "Nick S"
+     },
+     {
+      "num": 35,
+      "owner": "Zac"
+     },
+     {
+      "num": 36,
+      "owner": "Taylor"
+     }
+    ]
+   },
+   {
+    "round": "4th",
+    "picks": [
+     {
+      "num": 37,
+      "owner": "Coirey"
+     },
+     {
+      "num": 38,
+      "owner": "Karleton"
+     },
+     {
+      "num": 39,
+      "owner": "Jason"
+     },
+     {
+      "num": 40,
+      "owner": "Jeff"
+     },
+     {
+      "num": 41,
+      "owner": "Tessy"
+     },
+     {
+      "num": 42,
+      "owner": "Ben"
+     },
+     {
+      "num": 43,
+      "owner": "Andy"
+     },
+     {
+      "num": 44,
+      "owner": "Tyler"
+     },
+     {
+      "num": 45,
+      "owner": "Seth"
+     },
+     {
+      "num": 46,
+      "owner": "Nick S"
+     },
+     {
+      "num": 47,
+      "owner": "Zac"
+     },
+     {
+      "num": 48,
+      "owner": "Taylor"
+     }
+    ]
+   },
+   {
+    "round": "5th",
+    "picks": [
+     {
+      "num": 49,
+      "owner": "Coirey"
+     },
+     {
+      "num": 50,
+      "owner": "Tyler (Karleton)"
+     },
+     {
+      "num": 51,
+      "owner": "Jason"
+     },
+     {
+      "num": 52,
+      "owner": "Jeff"
+     },
+     {
+      "num": 53,
+      "owner": "Tessy"
+     },
+     {
+      "num": 54,
+      "owner": "Ben"
+     },
+     {
+      "num": 55,
+      "owner": "Andy"
+     },
+     {
+      "num": 56,
+      "owner": "Tyler"
+     },
+     {
+      "num": 57,
+      "owner": "Seth"
+     },
+     {
+      "num": 58,
+      "owner": "Nick S"
+     },
+     {
+      "num": 59,
+      "owner": "Zac"
+     },
+     {
+      "num": 60,
+      "owner": "Tyler (Taylor)"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "year": 2028,
+  "rounds": [
+   {
+    "round": "1st",
+    "picks": [
+     {
+      "num": 1,
+      "owner": "Coirey"
+     },
+     {
+      "num": 2,
+      "owner": "Tessy (Karleton)"
+     },
+     {
+      "num": 3,
+      "owner": "Jason"
+     },
+     {
+      "num": 4,
+      "owner": "Jeff"
+     },
+     {
+      "num": 5,
+      "owner": "Tessy"
+     },
+     {
+      "num": 6,
+      "owner": "Ben"
+     },
+     {
+      "num": 7,
+      "owner": "Taylor (Andy)"
+     },
+     {
+      "num": 8,
+      "owner": "Tyler"
+     },
+     {
+      "num": 9,
+      "owner": "Seth"
+     },
+     {
+      "num": 10,
+      "owner": "Nick S"
+     },
+     {
+      "num": 11,
+      "owner": "Zac"
+     },
+     {
+      "num": 12,
+      "owner": "Taylor"
+     }
+    ]
+   },
+   {
+    "round": "2nd",
+    "picks": [
+     {
+      "num": 13,
+      "owner": "Coirey"
+     },
+     {
+      "num": 14,
+      "owner": "Tessy (Karleton)"
+     },
+     {
+      "num": 15,
+      "owner": "Jason"
+     },
+     {
+      "num": 16,
+      "owner": "Jeff"
+     },
+     {
+      "num": 17,
+      "owner": "Tessy"
+     },
+     {
+      "num": 18,
+      "owner": "Ben"
+     },
+     {
+      "num": 19,
+      "owner": "Taylor (Andy)"
+     },
+     {
+      "num": 20,
+      "owner": "Taylor (Tyler)"
+     },
+     {
+      "num": 21,
+      "owner": "Seth"
+     },
+     {
+      "num": 22,
+      "owner": "Nick S"
+     },
+     {
+      "num": 23,
+      "owner": "Zac"
+     },
+     {
+      "num": 24,
+      "owner": "Taylor"
+     }
+    ]
+   },
+   {
+    "round": "3rd",
+    "picks": [
+     {
+      "num": 25,
+      "owner": "Coirey"
+     },
+     {
+      "num": 26,
+      "owner": "Karleton"
+     },
+     {
+      "num": 27,
+      "owner": "Jason"
+     },
+     {
+      "num": 28,
+      "owner": "Jeff"
+     },
+     {
+      "num": 29,
+      "owner": "Tessy"
+     },
+     {
+      "num": 30,
+      "owner": "Ben"
+     },
+     {
+      "num": 31,
+      "owner": "Taylor (Andy)"
+     },
+     {
+      "num": 32,
+      "owner": "Zac (Tyler)"
+     },
+     {
+      "num": 33,
+      "owner": "Zac (Seth)"
+     },
+     {
+      "num": 34,
+      "owner": "Nick S"
+     },
+     {
+      "num": 35,
+      "owner": "Zac"
+     },
+     {
+      "num": 36,
+      "owner": "Taylor"
+     }
+    ]
+   },
+   {
+    "round": "4th",
+    "picks": [
+     {
+      "num": 37,
+      "owner": "Coirey"
+     },
+     {
+      "num": 38,
+      "owner": "Zac (Tyler (Taylor (Karleton)"
+     },
+     {
+      "num": 39,
+      "owner": "Jason"
+     },
+     {
+      "num": 40,
+      "owner": "Jeff"
+     },
+     {
+      "num": 41,
+      "owner": "Tessy"
+     },
+     {
+      "num": 42,
+      "owner": "Ben"
+     },
+     {
+      "num": 43,
+      "owner": "Andy"
+     },
+     {
+      "num": 44,
+      "owner": "Zac (Tyler)"
+     },
+     {
+      "num": 45,
+      "owner": "Seth"
+     },
+     {
+      "num": 46,
+      "owner": "Nick S"
+     },
+     {
+      "num": 47,
+      "owner": "Zac"
+     },
+     {
+      "num": 48,
+      "owner": "Taylor"
+     }
+    ]
+   },
+   {
+    "round": "5th",
+    "picks": [
+     {
+      "num": 49,
+      "owner": "Coirey"
+     },
+     {
+      "num": 50,
+      "owner": "Zac (Karleton)"
+     },
+     {
+      "num": 51,
+      "owner": "Jason"
+     },
+     {
+      "num": 52,
+      "owner": "Jeff"
+     },
+     {
+      "num": 53,
+      "owner": "Tessy"
+     },
+     {
+      "num": 54,
+      "owner": "Ben"
+     },
+     {
+      "num": 55,
+      "owner": "Andy"
+     },
+     {
+      "num": 56,
+      "owner": "Zac (Tyler)"
+     },
+     {
+      "num": 57,
+      "owner": "Seth"
+     },
+     {
+      "num": 58,
+      "owner": "Nick S"
+     },
+     {
+      "num": 59,
+      "owner": "Zac"
+     },
+     {
+      "num": 60,
+      "owner": "Tyler (Karleton (Taylor)"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "year": 2027,
+  "rounds": [
+   {
+    "round": "1st",
+    "picks": [
+     {
+      "num": 1,
+      "owner": "Coirey"
+     },
+     {
+      "num": 2,
+      "owner": "Taylor (Nick S (Karleton)"
+     },
+     {
+      "num": 3,
+      "owner": "Jason"
+     },
+     {
+      "num": 4,
+      "owner": "Jason (Jeff)"
+     },
+     {
+      "num": 5,
+      "owner": "Jeff (Tessy)"
+     },
+     {
+      "num": 6,
+      "owner": "Coirey (Ben)"
+     },
+     {
+      "num": 7,
+      "owner": "Ben (Andy)"
+     },
+     {
+      "num": 8,
+      "owner": "Nick S (Ben (Tyler)"
+     },
+     {
+      "num": 9,
+      "owner": "Zac (Tyler (Ben (Seth))"
+     },
+     {
+      "num": 10,
+      "owner": "Zac (Tessy (Nick S))"
+     },
+     {
+      "num": 11,
+      "owner": "Zac"
+     },
+     {
+      "num": 12,
+      "owner": "Taylor"
+     },
+     {
+      "num": 1,
+      "owner": "Tatsuya Imai"
+     },
+     {
+      "num": 2,
+      "owner": "Carson Benge"
+     },
+     {
+      "num": 3,
+      "owner": "Kade Anderson"
+     },
+     {
+      "num": 4,
+      "owner": "Eduardo Quintero"
+     },
+     {
+      "num": 5,
+      "owner": "Ethan Holliday"
+     },
+     {
+      "num": 6,
+      "owner": "Edward Florentino"
+     },
+     {
+      "num": 7,
+      "owner": "Eli Willits"
+     },
+     {
+      "num": 8,
+      "owner": "Caleb Bonemer"
+     },
+     {
+      "num": 9,
+      "owner": "Carter Jensen"
+     },
+     {
+      "num": 10,
+      "owner": "Jonah Tong"
+     },
+     {
+      "num": 11,
+      "owner": "Josuar Gonzales"
+     },
+     {
+      "num": 12,
+      "owner": "Luis Pe\u00f1a"
+     },
+     {
+      "num": 1,
+      "owner": "Zac"
+     },
+     {
+      "num": 2,
+      "owner": "Taylor"
+     },
+     {
+      "num": 3,
+      "owner": "Seth (Nick S)"
+     },
+     {
+      "num": 4,
+      "owner": "Jason"
+     },
+     {
+      "num": 5,
+      "owner": "Coirey (Jeff)"
+     },
+     {
+      "num": 6,
+      "owner": "Andy (Coirey)"
+     },
+     {
+      "num": 7,
+      "owner": "Ben (Nick S (Tessy (Ben))"
+     },
+     {
+      "num": 8,
+      "owner": "Jeff (Tessy)"
+     },
+     {
+      "num": 9,
+      "owner": "Jason (Tessy (Seth)"
+     },
+     {
+      "num": 10,
+      "owner": "Jason (Tyler)"
+     },
+     {
+      "num": 11,
+      "owner": "Jeff (Jason (Karleton)"
+     },
+     {
+      "num": 12,
+      "owner": "Andy (Ben (Andy)"
+     },
+     {
+      "num": 1,
+      "owner": "Roki Sasaki"
+     },
+     {
+      "num": 2,
+      "owner": "Kristian Campbell"
+     },
+     {
+      "num": 3,
+      "owner": "Travis Bazzana"
+     },
+     {
+      "num": 4,
+      "owner": "Jesus Made"
+     },
+     {
+      "num": 5,
+      "owner": "Christian Moore"
+     },
+     {
+      "num": 6,
+      "owner": "Nick Kurtz"
+     },
+     {
+      "num": 7,
+      "owner": "Chase Dollander"
+     },
+     {
+      "num": 8,
+      "owner": "Quinn Matthews"
+     },
+     {
+      "num": 9,
+      "owner": "Chase Burns"
+     },
+     {
+      "num": 10,
+      "owner": "Jac Caglianone"
+     },
+     {
+      "num": 1,
+      "owner": "Jason (Tessy)"
+     },
+     {
+      "num": 2,
+      "owner": "Tessy (Jason)"
+     },
+     {
+      "num": 3,
+      "owner": "Tessy (Jeff)"
+     },
+     {
+      "num": 4,
+      "owner": "Coirey"
+     },
+     {
+      "num": 5,
+      "owner": "Coirey (Andy)"
+     },
+     {
+      "num": 6,
+      "owner": "Seth (Nick S)"
+     },
+     {
+      "num": 7,
+      "owner": "Jeff (Coirey (Karleton)"
+     },
+     {
+      "num": 8,
+      "owner": "Sorgaard (Tessy(Ben)"
+     },
+     {
+      "num": 9,
+      "owner": "Seth (Tessy (Tyler)"
+     },
+     {
+      "num": 10,
+      "owner": "Seth"
+     },
+     {
+      "num": 1,
+      "owner": "Coirey"
+     },
+     {
+      "num": 2,
+      "owner": "Andy"
+     },
+     {
+      "num": 3,
+      "owner": "Jason (Tessy)"
+     },
+     {
+      "num": 4,
+      "owner": "Jeff (Tessy (Jason)"
+     },
+     {
+      "num": 5,
+      "owner": "Jeff"
+     },
+     {
+      "num": 6,
+      "owner": "Seth"
+     },
+     {
+      "num": 7,
+      "owner": "Andy (Nick S (Karleton )"
+     },
+     {
+      "num": 8,
+      "owner": "Andy (Nick S)"
+     },
+     {
+      "num": 9,
+      "owner": "Tyler (Jason (Tyler)"
+     },
+     {
+      "num": 10,
+      "owner": "Jeff (Tyler (Ben) - Picked by Ty"
+     },
+     {
+      "num": 1,
+      "owner": "Yoshinobu Yamamoto"
+     },
+     {
+      "num": 2,
+      "owner": "Wyatt Langford"
+     },
+     {
+      "num": 3,
+      "owner": "Dylan Crews"
+     },
+     {
+      "num": 4,
+      "owner": "Samuel Basallo"
+     },
+     {
+      "num": 5,
+      "owner": "Coby Mayo"
+     },
+     {
+      "num": 6,
+      "owner": "Paul Skenes"
+     },
+     {
+      "num": 7,
+      "owner": "Walker Jenkins"
+     },
+     {
+      "num": 8,
+      "owner": "Max Clark"
+     },
+     {
+      "num": 9,
+      "owner": "Colt Keith"
+     },
+     {
+      "num": 10,
+      "owner": "Chase Delauter"
+     },
+     {
+      "num": 1,
+      "owner": "Coirey"
+     },
+     {
+      "num": 2,
+      "owner": "Andy"
+     },
+     {
+      "num": 3,
+      "owner": "Jason"
+     },
+     {
+      "num": 4,
+      "owner": "Seth (Tessy)"
+     },
+     {
+      "num": 5,
+      "owner": "Coirey (Seth)"
+     },
+     {
+      "num": 6,
+      "owner": "Tyler (Jason (Tyler)"
+     },
+     {
+      "num": 7,
+      "owner": "Andy (Jeff)"
+     },
+     {
+      "num": 8,
+      "owner": "Jason (Ben)"
+     },
+     {
+      "num": 9,
+      "owner": "Andy (Jason (Ben (Nick S))"
+     },
+     {
+      "num": 10,
+      "owner": "Tyler (Jason(Karleton)"
+     },
+     {
+      "num": 1,
+      "owner": "Andrew Painter"
+     },
+     {
+      "num": 2,
+      "owner": "Elly De La Cruz"
+     },
+     {
+      "num": 3,
+      "owner": "James Wood"
+     },
+     {
+      "num": 4,
+      "owner": "Jackson Chourrio"
+     },
+     {
+      "num": 5,
+      "owner": "Ricky Tiedemann"
+     },
+     {
+      "num": 6,
+      "owner": "Kyle Manzardo"
+     },
+     {
+      "num": 7,
+      "owner": "Druw Jones"
+     },
+     {
+      "num": 8,
+      "owner": "Jackson Holliday"
+     },
+     {
+      "num": 9,
+      "owner": "Kyle Harrison"
+     },
+     {
+      "num": 10,
+      "owner": "Gavin Stone"
+     },
+     {
+      "num": 1,
+      "owner": "Ben"
+     },
+     {
+      "num": 2,
+      "owner": "Andy"
+     },
+     {
+      "num": 3,
+      "owner": "Seth"
+     },
+     {
+      "num": 4,
+      "owner": "Coirey"
+     },
+     {
+      "num": 5,
+      "owner": "Jason (Tyler)"
+     },
+     {
+      "num": 6,
+      "owner": "Nick S (Tyler (Karleton))"
+     },
+     {
+      "num": 7,
+      "owner": "Jeff"
+     },
+     {
+      "num": 8,
+      "owner": "Jason"
+     },
+     {
+      "num": 9,
+      "owner": "Tyler (Nick S)"
+     },
+     {
+      "num": 10,
+      "owner": "Jason (Tessy)"
+     },
+     {
+      "num": 1,
+      "owner": "Anthony Volpe"
+     },
+     {
+      "num": 2,
+      "owner": "Jack Leiter"
+     },
+     {
+      "num": 3,
+      "owner": "Oneil Cruz"
+     },
+     {
+      "num": 4,
+      "owner": "Robert Hassell III"
+     },
+     {
+      "num": 5,
+      "owner": "Daniel Espino"
+     },
+     {
+      "num": 6,
+      "owner": "Luis Matos"
+     },
+     {
+      "num": 7,
+      "owner": "Jordan Walker"
+     },
+     {
+      "num": 8,
+      "owner": "Alek Thomas"
+     },
+     {
+      "num": 9,
+      "owner": "Kahlil Watson"
+     },
+     {
+      "num": 10,
+      "owner": "Francisco Alvarez"
+     },
+     {
+      "num": 1,
+      "owner": "Coirey"
+     },
+     {
+      "num": 2,
+      "owner": "Karleton"
+     },
+     {
+      "num": 3,
+      "owner": "Jason"
+     },
+     {
+      "num": 4,
+      "owner": "Tyler (Jeff)"
+     },
+     {
+      "num": 5,
+      "owner": "Jeff (Tyler (Tessy))"
+     },
+     {
+      "num": 6,
+      "owner": "Ben"
+     },
+     {
+      "num": 7,
+      "owner": "Andy"
+     },
+     {
+      "num": 8,
+      "owner": "Tessy (Tyler)"
+     },
+     {
+      "num": 9,
+      "owner": "Seth"
+     },
+     {
+      "num": 10,
+      "owner": "Karleton (Jeff (Tyler (Karleton (Nick S))))"
+     },
+     {
+      "num": 1,
+      "owner": "Spencer Torkelson"
+     },
+     {
+      "num": 2,
+      "owner": "Tristan Casas"
+     },
+     {
+      "num": 3,
+      "owner": "Austin Martin"
+     },
+     {
+      "num": 4,
+      "owner": "Nick Gonzales"
+     },
+     {
+      "num": 5,
+      "owner": "Ass Lacy"
+     },
+     {
+      "num": 6,
+      "owner": "Corbin Carrol"
+     },
+     {
+      "num": 7,
+      "owner": "Emerson Hancock"
+     },
+     {
+      "num": 8,
+      "owner": "Heston Kjerstad"
+     },
+     {
+      "num": 9,
+      "owner": "Max Meyer"
+     },
+     {
+      "num": 10,
+      "owner": "George Kirby"
+     }
+    ]
+   },
+   {
+    "round": "2nd",
+    "picks": [
+     {
+      "num": 13,
+      "owner": "Coirey"
+     },
+     {
+      "num": 14,
+      "owner": "Jeff (Nick S (Karleton))"
+     },
+     {
+      "num": 15,
+      "owner": "Jason"
+     },
+     {
+      "num": 16,
+      "owner": "Ben (Tessy (Jeff))"
+     },
+     {
+      "num": 17,
+      "owner": "Tessy"
+     },
+     {
+      "num": 18,
+      "owner": "Ben"
+     },
+     {
+      "num": 19,
+      "owner": "Taylor (Andy)"
+     },
+     {
+      "num": 20,
+      "owner": "Jason (Jeff (Tyler)"
+     },
+     {
+      "num": 21,
+      "owner": "Nick S (Tessy (Nick S (Seth)))"
+     },
+     {
+      "num": 22,
+      "owner": "Zac (Seth (Nick S (Ben (Nick S))"
+     },
+     {
+      "num": 23,
+      "owner": "Zac"
+     },
+     {
+      "num": 24,
+      "owner": "Taylor"
+     },
+     {
+      "num": 13,
+      "owner": "Ryan Sloan"
+     },
+     {
+      "num": 14,
+      "owner": "Liam Doyle"
+     },
+     {
+      "num": 17,
+      "owner": "Jamie Arnold"
+     },
+     {
+      "num": 18,
+      "owner": "Rainiel Rodriguez"
+     },
+     {
+      "num": 19,
+      "owner": "Dax Kilby"
+     },
+     {
+      "num": 20,
+      "owner": "Ralphy Velazquez"
+     },
+     {
+      "num": 21,
+      "owner": "Brody Hopkins"
+     },
+     {
+      "num": 22,
+      "owner": "Gavin Fien"
+     },
+     {
+      "num": 23,
+      "owner": "AJ Ewing"
+     },
+     {
+      "num": 24,
+      "owner": "Seth Hernandez"
+     },
+     {
+      "num": 25,
+      "owner": "Joshua B\u00e1ez"
+     },
+     {
+      "num": 26,
+      "owner": "Tyler Bremmer"
+     },
+     {
+      "num": 13,
+      "owner": "Zac"
+     },
+     {
+      "num": 14,
+      "owner": "Zac"
+     },
+     {
+      "num": 17,
+      "owner": "Nick S (Andy (Nick S)"
+     },
+     {
+      "num": 18,
+      "owner": "Nick S (Tessy (Jason))"
+     },
+     {
+      "num": 19,
+      "owner": "Zac (Tessy (Tyler (Jeff)))"
+     },
+     {
+      "num": 20,
+      "owner": "Coirey"
+     },
+     {
+      "num": 21,
+      "owner": "Jeff (Nick S (Andy (Ben))"
+     },
+     {
+      "num": 22,
+      "owner": "Coirey (Tessy)"
+     },
+     {
+      "num": 23,
+      "owner": "Zac (Tyler (Ben (Seth))"
+     },
+     {
+      "num": 24,
+      "owner": "Jason (Tyler)"
+     },
+     {
+      "num": 25,
+      "owner": "Andy (Tessy (Karleton)"
+     },
+     {
+      "num": 26,
+      "owner": "Coirey (Ben (Andy)"
+     },
+     {
+      "num": 11,
+      "owner": "JJ Wetherholt"
+     },
+     {
+      "num": 12,
+      "owner": "Thomas White"
+     },
+     {
+      "num": 13,
+      "owner": "Cam Smith"
+     },
+     {
+      "num": 14,
+      "owner": "Zyhir Hope"
+     },
+     {
+      "num": 15,
+      "owner": "Konnor Griffin"
+     },
+     {
+      "num": 16,
+      "owner": "Travis Sykora"
+     },
+     {
+      "num": 17,
+      "owner": "Justin Crawford"
+     },
+     {
+      "num": 18,
+      "owner": "Hagen Smith"
+     },
+     {
+      "num": 19,
+      "owner": "Jonny Farmelo"
+     },
+     {
+      "num": 20,
+      "owner": "Aidan Miller"
+     },
+     {
+      "num": 11,
+      "owner": "Tessy"
+     },
+     {
+      "num": 12,
+      "owner": "Sorgaard (Jason)"
+     },
+     {
+      "num": 13,
+      "owner": "Sorgaard (Tessy (Jeff)"
+     },
+     {
+      "num": 14,
+      "owner": "Coirey"
+     },
+     {
+      "num": 15,
+      "owner": "Andy"
+     },
+     {
+      "num": 16,
+      "owner": "Andy (Sorgaard (Jason (Sorgaard)"
+     },
+     {
+      "num": 17,
+      "owner": "Ben (Tessy (Seth (Karleton)"
+     },
+     {
+      "num": 18,
+      "owner": "Sorgaard (Tyler (Jeff (Nick S (Ben)))"
+     },
+     {
+      "num": 19,
+      "owner": "Tessy (Seth (Jason (Ben (Tessy (Tyler)"
+     },
+     {
+      "num": 20,
+      "owner": "Sorgaard (Jason (Seth)"
+     },
+     {
+      "num": 11,
+      "owner": "Coirey"
+     },
+     {
+      "num": 12,
+      "owner": "Andy"
+     },
+     {
+      "num": 13,
+      "owner": "Sorgaard (Jason (Tessy)"
+     },
+     {
+      "num": 14,
+      "owner": "Seth (Coirey (Jason)"
+     },
+     {
+      "num": 15,
+      "owner": "Tyler (Jeff (Sorgaard (Jeff)"
+     },
+     {
+      "num": 16,
+      "owner": "Tyler (Karleton (Nick S (Seth)"
+     },
+     {
+      "num": 17,
+      "owner": "Coirey (Karleton)"
+     },
+     {
+      "num": 18,
+      "owner": "Seth (Nick S)"
+     },
+     {
+      "num": 19,
+      "owner": "Sorgaard (Andy (Jason (Tyler)"
+     },
+     {
+      "num": 20,
+      "owner": "Ben"
+     },
+     {
+      "num": 11,
+      "owner": "Roman Anthony"
+     },
+     {
+      "num": 12,
+      "owner": "Jackson Jobe"
+     },
+     {
+      "num": 13,
+      "owner": "Cade Horton"
+     },
+     {
+      "num": 14,
+      "owner": "Ethan Salas"
+     },
+     {
+      "num": 15,
+      "owner": "Matt Shaw"
+     },
+     {
+      "num": 16,
+      "owner": "Brock Wilken"
+     },
+     {
+      "num": 17,
+      "owner": "Oihwen Cassie"
+     },
+     {
+      "num": 18,
+      "owner": "Robby Snelling"
+     },
+     {
+      "num": 19,
+      "owner": "Jacob Misiorowski"
+     },
+     {
+      "num": 20,
+      "owner": "Parker Meadows"
+     },
+     {
+      "num": 11,
+      "owner": "Andy (Seth(Coirey)"
+     },
+     {
+      "num": 12,
+      "owner": "Andy"
+     },
+     {
+      "num": 13,
+      "owner": "Karleton (Ben (Jason))"
+     },
+     {
+      "num": 14,
+      "owner": "Seth (Andy(Tessy)"
+     },
+     {
+      "num": 15,
+      "owner": "Nick S (Seth)"
+     },
+     {
+      "num": 16,
+      "owner": "Jeff (Andy (Jason (Tyler)"
+     },
+     {
+      "num": 17,
+      "owner": "Nick S (Tyler (Jeff)"
+     },
+     {
+      "num": 18,
+      "owner": "Ben"
+     },
+     {
+      "num": 19,
+      "owner": "Andy (Nick S)"
+     },
+     {
+      "num": 20,
+      "owner": "Nick S (Tessy (Jason (Andy (Nick S (Karleton )"
+     },
+     {
+      "num": 11,
+      "owner": "Taj Bradley"
+     },
+     {
+      "num": 12,
+      "owner": "Elijah Geen"
+     },
+     {
+      "num": 13,
+      "owner": "Kodai Senga"
+     },
+     {
+      "num": 14,
+      "owner": "Gavin Williams"
+     },
+     {
+      "num": 15,
+      "owner": "Bobby Miller"
+     },
+     {
+      "num": 16,
+      "owner": "Brandon Pfaadt"
+     },
+     {
+      "num": 17,
+      "owner": "Cam Collier"
+     },
+     {
+      "num": 18,
+      "owner": "Matt Mervis"
+     },
+     {
+      "num": 19,
+      "owner": "Peter Crow-Armstrong"
+     },
+     {
+      "num": 20,
+      "owner": "Endy Rodriguez"
+     },
+     {
+      "num": 11,
+      "owner": "Karleton (Ben)"
+     },
+     {
+      "num": 12,
+      "owner": "Andy"
+     },
+     {
+      "num": 13,
+      "owner": "Tessy (Seth)"
+     },
+     {
+      "num": 14,
+      "owner": "Coirey"
+     },
+     {
+      "num": 15,
+      "owner": "Tyler (Nick S (Tyler))"
+     },
+     {
+      "num": 16,
+      "owner": "Karleton"
+     },
+     {
+      "num": 17,
+      "owner": "Jeff"
+     },
+     {
+      "num": 18,
+      "owner": "Tessy (Jason)"
+     },
+     {
+      "num": 19,
+      "owner": "Ben (Nick S)"
+     },
+     {
+      "num": 20,
+      "owner": "Tessy"
+     },
+     {
+      "num": 11,
+      "owner": "M. Mayer"
+     },
+     {
+      "num": 12,
+      "owner": "Jordan Lawler"
+     },
+     {
+      "num": 13,
+      "owner": "Henry Davis"
+     },
+     {
+      "num": 14,
+      "owner": "Tyler Soderstrom"
+     },
+     {
+      "num": 15,
+      "owner": "MJ Melendez"
+     },
+     {
+      "num": 16,
+      "owner": "George Valera"
+     },
+     {
+      "num": 17,
+      "owner": "Miguel Vargas"
+     },
+     {
+      "num": 18,
+      "owner": "Matt Brash"
+     },
+     {
+      "num": 19,
+      "owner": "Jose Miranda"
+     },
+     {
+      "num": 20,
+      "owner": "Colton Cowser"
+     },
+     {
+      "num": 11,
+      "owner": "Coirey"
+     },
+     {
+      "num": 12,
+      "owner": "Tyler (Jeff (Karleton))"
+     },
+     {
+      "num": 13,
+      "owner": "Jason"
+     },
+     {
+      "num": 14,
+      "owner": "Tyler (Karleton (Jeff))"
+     },
+     {
+      "num": 15,
+      "owner": "Jason (Tyler(Karleton (Tessy)))"
+     },
+     {
+      "num": 16,
+      "owner": "Karleton (Ben)"
+     },
+     {
+      "num": 17,
+      "owner": "Andy"
+     },
+     {
+      "num": 18,
+      "owner": "Tyler (Jeff (Tyler))"
+     },
+     {
+      "num": 19,
+      "owner": "Seth"
+     },
+     {
+      "num": 20,
+      "owner": "Andy (Tyler (Nick S))"
+     },
+     {
+      "num": 11,
+      "owner": "Nick Lodolo"
+     },
+     {
+      "num": 12,
+      "owner": "Zac Veen"
+     },
+     {
+      "num": 13,
+      "owner": "DL Hall"
+     },
+     {
+      "num": 14,
+      "owner": "Quinn Priester"
+     },
+     {
+      "num": 15,
+      "owner": "Brennen Davis"
+     },
+     {
+      "num": 16,
+      "owner": "Jordan Groshans"
+     },
+     {
+      "num": 17,
+      "owner": "Jarren Duran"
+     },
+     {
+      "num": 18,
+      "owner": "Reid Detmers"
+     },
+     {
+      "num": 19,
+      "owner": "Garrett Mitchell"
+     },
+     {
+      "num": 20,
+      "owner": "Aaron Bracho"
+     }
+    ]
+   },
+   {
+    "round": "3rd",
+    "picks": [
+     {
+      "num": 25,
+      "owner": "Coirey"
+     },
+     {
+      "num": 26,
+      "owner": "Taylor (Nick S (Karleton)"
+     },
+     {
+      "num": 27,
+      "owner": "Ben (Jason)"
+     },
+     {
+      "num": 28,
+      "owner": "Jeff"
+     },
+     {
+      "num": 29,
+      "owner": "Tessy"
+     },
+     {
+      "num": 30,
+      "owner": "Nick S (Ben)"
+     },
+     {
+      "num": 31,
+      "owner": "Tessy (Nick S (Andy))"
+     },
+     {
+      "num": 32,
+      "owner": "Jeff (Tyler)"
+     },
+     {
+      "num": 33,
+      "owner": "Tessy (Karleton (Ben (Seth)"
+     },
+     {
+      "num": 34,
+      "owner": "Tessy (Nick S)"
+     },
+     {
+      "num": 35,
+      "owner": "Zac"
+     },
+     {
+      "num": 36,
+      "owner": "Taylor"
+     },
+     {
+      "num": 15,
+      "owner": "Payton Tolle"
+     },
+     {
+      "num": 16,
+      "owner": "Braden Montgomery"
+     },
+     {
+      "num": 31,
+      "owner": "Tanner McDougal"
+     },
+     {
+      "num": 32,
+      "owner": "Ryan Clifford"
+     },
+     {
+      "num": 33,
+      "owner": "George Lombard Jr."
+     },
+     {
+      "num": 34,
+      "owner": "Cam Caminiti"
+     },
+     {
+      "num": 35,
+      "owner": "Brice Matthews"
+     },
+     {
+      "num": 36,
+      "owner": "Junieker Caceres"
+     },
+     {
+      "num": 37,
+      "owner": "Ethan Conrad"
+     },
+     {
+      "num": 38,
+      "owner": "Caden Scarborough"
+     },
+     {
+      "num": 39,
+      "owner": "Kyson Witherspoon"
+     },
+     {
+      "num": 40,
+      "owner": "Luke Dickerson"
+     },
+     {
+      "num": 15,
+      "owner": "Taylor"
+     },
+     {
+      "num": 16,
+      "owner": "Zac"
+     },
+     {
+      "num": 31,
+      "owner": "Ben (Coirey (Tyler (Jason (Sorgaard)"
+     },
+     {
+      "num": 32,
+      "owner": "Coirey (Tyler (Jason)"
+     },
+     {
+      "num": 33,
+      "owner": "Nick S (Jeff)"
+     },
+     {
+      "num": 34,
+      "owner": "Coirey"
+     },
+     {
+      "num": 35,
+      "owner": "Coirey (Ben (Jason(Ben)"
+     },
+     {
+      "num": 36,
+      "owner": "Coirey (Ben (Sorgaard (Tessy)"
+     },
+     {
+      "num": 37,
+      "owner": "Ben (Tessy (Sorgaard (Jason (Seth))))"
+     },
+     {
+      "num": 38,
+      "owner": "Zac (Karleton (Jason (Sorgaard (Tyler)"
+     },
+     {
+      "num": 39,
+      "owner": "Coirey (Tessy (Karleton)"
+     },
+     {
+      "num": 40,
+      "owner": "Andy"
+     },
+     {
+      "num": 21,
+      "owner": "Alejandro Rosario"
+     },
+     {
+      "num": 22,
+      "owner": "Kumar Rocker"
+     },
+     {
+      "num": 23,
+      "owner": "Michael Arroyo"
+     },
+     {
+      "num": 24,
+      "owner": "Demitrio Crisantes"
+     },
+     {
+      "num": 25,
+      "owner": "Josue Briceno"
+     },
+     {
+      "num": 26,
+      "owner": "Thomas Harrington"
+     },
+     {
+      "num": 27,
+      "owner": "Felnin Celesten"
+     },
+     {
+      "num": 28,
+      "owner": "Brandon Sproat"
+     },
+     {
+      "num": 29,
+      "owner": "Griffin Burkholder"
+     },
+     {
+      "num": 30,
+      "owner": "Jackson Ferris"
+     },
+     {
+      "num": 21,
+      "owner": "Ben (Sorgaard (Tessmonster)"
+     },
+     {
+      "num": 22,
+      "owner": "Tyler (Sorgaard (Tessy (Tyler (Andy (Jason)"
+     },
+     {
+      "num": 23,
+      "owner": "Jeff"
+     },
+     {
+      "num": 24,
+      "owner": "Tessy (Coirey)"
+     },
+     {
+      "num": 25,
+      "owner": "Tessy (Andy)"
+     },
+     {
+      "num": 26,
+      "owner": "Andy (Coirey (Andy (Nick S)"
+     },
+     {
+      "num": 27,
+      "owner": "Andy (Coirey (Seth (Nick S (Karleton)"
+     },
+     {
+      "num": 28,
+      "owner": "Ben"
+     },
+     {
+      "num": 29,
+      "owner": "Coirey (Tyler (Sorgaard (Tyler (Jason (Tyler)"
+     },
+     {
+      "num": 30,
+      "owner": "Sorgaard (Karleton (Sorgaard (Andy (Seth)"
+     },
+     {
+      "num": 21,
+      "owner": "Tyler (Coirey)"
+     },
+     {
+      "num": 22,
+      "owner": "Tessy (Jason (Andy)"
+     },
+     {
+      "num": 23,
+      "owner": "Tessy"
+     },
+     {
+      "num": 24,
+      "owner": "Karelton (Nick S (Tessy (Tyler (Jason)"
+     },
+     {
+      "num": 25,
+      "owner": "Tessy (Jeff)"
+     },
+     {
+      "num": 26,
+      "owner": "Coirey (Seth)"
+     },
+     {
+      "num": 27,
+      "owner": "Andy (Coirey (Karleton)"
+     },
+     {
+      "num": 28,
+      "owner": "Sorgaard (Jason (Tyler (Karleton (Nick S)"
+     },
+     {
+      "num": 29,
+      "owner": "Sorgaard (Tyler (Tessy (Tyler)"
+     },
+     {
+      "num": 30,
+      "owner": "Sorgaard (Tyler (Karleton (Ben))"
+     },
+     {
+      "num": 21,
+      "owner": "Colt Emerson"
+     },
+     {
+      "num": 22,
+      "owner": "Jung Hoo Lee"
+     },
+     {
+      "num": 23,
+      "owner": "Shota Imanaga"
+     },
+     {
+      "num": 24,
+      "owner": "Hurston Waldrep"
+     },
+     {
+      "num": 25,
+      "owner": "Rhett Lowder"
+     },
+     {
+      "num": 26,
+      "owner": "Noble Meyer"
+     },
+     {
+      "num": 27,
+      "owner": "Bryce Eldridge"
+     },
+     {
+      "num": 28,
+      "owner": "Cole Young"
+     },
+     {
+      "num": 29,
+      "owner": "Drew Gilbert"
+     },
+     {
+      "num": 30,
+      "owner": "Jace Jung"
+     },
+     {
+      "num": 21,
+      "owner": "Coirey"
+     },
+     {
+      "num": 22,
+      "owner": "Nick S (Andy)"
+     },
+     {
+      "num": 23,
+      "owner": "Tessy (Jason)"
+     },
+     {
+      "num": 24,
+      "owner": "Seth (Tessy)"
+     },
+     {
+      "num": 25,
+      "owner": "Tessy (Seth)"
+     },
+     {
+      "num": 26,
+      "owner": "Coirey (Tyler)"
+     },
+     {
+      "num": 27,
+      "owner": "Jeff"
+     },
+     {
+      "num": 28,
+      "owner": "Ben"
+     },
+     {
+      "num": 29,
+      "owner": "Seth (Andy (Nick S)"
+     },
+     {
+      "num": 30,
+      "owner": "Ben (Karleton)"
+     },
+     {
+      "num": 21,
+      "owner": "Jackson Merril"
+     },
+     {
+      "num": 22,
+      "owner": "Tanner Bibee"
+     },
+     {
+      "num": 23,
+      "owner": "Curtis Mead"
+     },
+     {
+      "num": 24,
+      "owner": "Termarr Johnson"
+     },
+     {
+      "num": 25,
+      "owner": "Masataka Yoshida"
+     },
+     {
+      "num": 26,
+      "owner": "Kevin Alcantara"
+     },
+     {
+      "num": 27,
+      "owner": "Diego Cartaya"
+     },
+     {
+      "num": 28,
+      "owner": "Tink Hence"
+     },
+     {
+      "num": 29,
+      "owner": "Evan Carter"
+     },
+     {
+      "num": 30,
+      "owner": "Emmanuel Rodriguez"
+     },
+     {
+      "num": 21,
+      "owner": "Ben"
+     },
+     {
+      "num": 22,
+      "owner": "Andy (Nick S (Karleton (Andy)))"
+     },
+     {
+      "num": 23,
+      "owner": "Nick S (Seth)"
+     },
+     {
+      "num": 24,
+      "owner": "Coirey"
+     },
+     {
+      "num": 25,
+      "owner": "Tyler (Nick S (Karleton (Tyler)))"
+     },
+     {
+      "num": 26,
+      "owner": "Nick S (Seth (Karleton))"
+     },
+     {
+      "num": 27,
+      "owner": "Jeff (Tyler (Jeff))"
+     },
+     {
+      "num": 28,
+      "owner": "Tessy (Jason)"
+     },
+     {
+      "num": 29,
+      "owner": "Tyler (Nick S)"
+     },
+     {
+      "num": 30,
+      "owner": "Nick S (Jason (Tessy))"
+     },
+     {
+      "num": 21,
+      "owner": "Eury Perez"
+     },
+     {
+      "num": 22,
+      "owner": "Cristian Hernandez"
+     },
+     {
+      "num": 23,
+      "owner": "Nick Yorke"
+     },
+     {
+      "num": 24,
+      "owner": "Nick Pratto"
+     },
+     {
+      "num": 25,
+      "owner": "Bryson Stott"
+     },
+     {
+      "num": 26,
+      "owner": "Cade Cavalli"
+     },
+     {
+      "num": 27,
+      "owner": "Vinnie Pasquantino"
+     },
+     {
+      "num": 28,
+      "owner": "Hedbert Perez"
+     },
+     {
+      "num": 29,
+      "owner": "Gabriel Moreno"
+     },
+     {
+      "num": 30,
+      "owner": "Oswald Peraza"
+     },
+     {
+      "num": 21,
+      "owner": "Tyler (Coirey)"
+     },
+     {
+      "num": 22,
+      "owner": "Tessy (Nick S(Karleton))"
+     },
+     {
+      "num": 23,
+      "owner": "Karleton (Tyler (Jason))"
+     },
+     {
+      "num": 24,
+      "owner": "Jeff (Karleton (Tyler (Jeff)))"
+     },
+     {
+      "num": 25,
+      "owner": "Jeff (Tyler (Ben(Karleton(Tessy))))"
+     },
+     {
+      "num": 26,
+      "owner": "Ben"
+     },
+     {
+      "num": 27,
+      "owner": "Ben (Nick S (Tyler (Andy)))"
+     },
+     {
+      "num": 28,
+      "owner": "Tessy (Tyler)"
+     },
+     {
+      "num": 29,
+      "owner": "Seth"
+     },
+     {
+      "num": 30,
+      "owner": "Coirey (Tyler (Nick S))"
+     },
+     {
+      "num": 21,
+      "owner": "Matt Allan"
+     },
+     {
+      "num": 22,
+      "owner": "Erick Pena"
+     },
+     {
+      "num": 23,
+      "owner": "Austin Hendrick"
+     },
+     {
+      "num": 24,
+      "owner": "Michael Buscheeha"
+     },
+     {
+      "num": 25,
+      "owner": "Mick Abel"
+     },
+     {
+      "num": 26,
+      "owner": "Daniel Lynch"
+     },
+     {
+      "num": 27,
+      "owner": "Josh Jung"
+     },
+     {
+      "num": 28,
+      "owner": "Hunter Bishop"
+     },
+     {
+      "num": 29,
+      "owner": "Shane Baz"
+     },
+     {
+      "num": 30,
+      "owner": "Brailyn Marquez"
+     }
+    ]
+   },
+   {
+    "round": "4th",
+    "picks": [
+     {
+      "num": 37,
+      "owner": "Coirey"
+     },
+     {
+      "num": 38,
+      "owner": "Nick S (Tessy (Karleton))"
+     },
+     {
+      "num": 39,
+      "owner": "Jason"
+     },
+     {
+      "num": 40,
+      "owner": "Jeff"
+     },
+     {
+      "num": 41,
+      "owner": "Taylor (Tessy)"
+     },
+     {
+      "num": 42,
+      "owner": "Taylor (Andy (Ben)"
+     },
+     {
+      "num": 43,
+      "owner": "Taylor (Andy)"
+     },
+     {
+      "num": 44,
+      "owner": "Jason (Tyler)"
+     },
+     {
+      "num": 45,
+      "owner": "Seth"
+     },
+     {
+      "num": 46,
+      "owner": "Tessy (Ben (Nick S))"
+     },
+     {
+      "num": 47,
+      "owner": "Zac"
+     },
+     {
+      "num": 48,
+      "owner": "Taylor (Andy (Taylor)"
+     },
+     {
+      "num": 27,
+      "owner": "Aiva Arquette"
+     },
+     {
+      "num": 28,
+      "owner": "Theo Gillen"
+     },
+     {
+      "num": 45,
+      "owner": "Kendry Chourio"
+     },
+     {
+      "num": 46,
+      "owner": "Mike Sirota"
+     },
+     {
+      "num": 47,
+      "owner": "Josh Hammond"
+     },
+     {
+      "num": 48,
+      "owner": "Jace LaViolette"
+     },
+     {
+      "num": 49,
+      "owner": "Kaelen Culpepper"
+     },
+     {
+      "num": 50,
+      "owner": "Kayson Cunningham"
+     },
+     {
+      "num": 51,
+      "owner": "Carlos Lagrange"
+     },
+     {
+      "num": 52,
+      "owner": "Jefferson Rojas"
+     },
+     {
+      "num": 53,
+      "owner": "Andrew Fischer"
+     },
+     {
+      "num": 54,
+      "owner": "Kazuka Okamoto"
+     },
+     {
+      "num": 27,
+      "owner": "Seth (Zac)"
+     },
+     {
+      "num": 28,
+      "owner": "Taylor"
+     },
+     {
+      "num": 45,
+      "owner": "Tessy (Nick S)"
+     },
+     {
+      "num": 46,
+      "owner": "Taylor (Jason (Tessy (Sorgaard (Jason)"
+     },
+     {
+      "num": 47,
+      "owner": "Jeff"
+     },
+     {
+      "num": 48,
+      "owner": "Coirey"
+     },
+     {
+      "num": 49,
+      "owner": "Nick S (Ben)"
+     },
+     {
+      "num": 50,
+      "owner": "Tessy"
+     },
+     {
+      "num": 51,
+      "owner": "Seth"
+     },
+     {
+      "num": 52,
+      "owner": "Nick S (Seth (Jason (Tessy (Andy (Sorgaard (Ben (Tyler)"
+     },
+     {
+      "num": 53,
+      "owner": "Seth (Jason (Karleton)"
+     },
+     {
+      "num": 54,
+      "owner": "Tessy (Sorgaard (Ben (Jason (Tyler (Andy)"
+     },
+     {
+      "num": 31,
+      "owner": "Will Warren"
+     },
+     {
+      "num": 32,
+      "owner": "Craig Yoho"
+     },
+     {
+      "num": 33,
+      "owner": "Alfredo Duno"
+     },
+     {
+      "num": 34,
+      "owner": "Jarlin Susana"
+     },
+     {
+      "num": 35,
+      "owner": "Charlie Condon"
+     },
+     {
+      "num": 36,
+      "owner": "Angel Genao"
+     },
+     {
+      "num": 37,
+      "owner": "Agustin Ramirez"
+     },
+     {
+      "num": 38,
+      "owner": "Braylon Payne"
+     },
+     {
+      "num": 39,
+      "owner": "AJ Smith Shawver"
+     },
+     {
+      "num": 40,
+      "owner": "Luke Keashall"
+     },
+     {
+      "num": 31,
+      "owner": "Jeff (Tyler (Jason (Tessy)"
+     },
+     {
+      "num": 32,
+      "owner": "Andy (Tessy (Sorgaard (Tyler (Jason)"
+     },
+     {
+      "num": 33,
+      "owner": "Jeff"
+     },
+     {
+      "num": 34,
+      "owner": "Coirey"
+     },
+     {
+      "num": 35,
+      "owner": "Ben (Coirey (Andy)"
+     },
+     {
+      "num": 36,
+      "owner": "Tessy (Sorgaard)"
+     },
+     {
+      "num": 37,
+      "owner": "Jeff (Tyler (Karleton)"
+     },
+     {
+      "num": 38,
+      "owner": "Sorgaard (Andy (Jason (Sorgaard (Ben)"
+     },
+     {
+      "num": 39,
+      "owner": "Karleton (Tyler)"
+     },
+     {
+      "num": 40,
+      "owner": "Seth"
+     },
+     {
+      "num": 31,
+      "owner": "Seth (Coirey)"
+     },
+     {
+      "num": 32,
+      "owner": "Seth (Nick S (Andy)"
+     },
+     {
+      "num": 33,
+      "owner": "Jeff(Tyler (Tessy)"
+     },
+     {
+      "num": 34,
+      "owner": "Nick S (Jason)"
+     },
+     {
+      "num": 35,
+      "owner": "Jeff"
+     },
+     {
+      "num": 36,
+      "owner": "Seth"
+     },
+     {
+      "num": 37,
+      "owner": "Sorgaard (Tessy (Karleton)"
+     },
+     {
+      "num": 38,
+      "owner": "Tyler (Nick S)"
+     },
+     {
+      "num": 39,
+      "owner": "Jeff (Tyler)"
+     },
+     {
+      "num": 40,
+      "owner": "Tyler (Sorgaard (Ben))"
+     },
+     {
+      "num": 31,
+      "owner": "Brady House"
+     },
+     {
+      "num": 32,
+      "owner": "Sabastian Walcott"
+     },
+     {
+      "num": 33,
+      "owner": "Leodalis De Vries"
+     },
+     {
+      "num": 34,
+      "owner": "Tyler Black"
+     },
+     {
+      "num": 35,
+      "owner": "Carson Williams"
+     },
+     {
+      "num": 36,
+      "owner": "Christian Scott"
+     },
+     {
+      "num": 37,
+      "owner": "Drew Thorpe"
+     },
+     {
+      "num": 38,
+      "owner": "Chase Hampton"
+     },
+     {
+      "num": 39,
+      "owner": "Graham Pauley"
+     },
+     {
+      "num": 40,
+      "owner": "Justyn-Henry Malloy"
+     },
+     {
+      "num": 31,
+      "owner": "Coirey"
+     },
+     {
+      "num": 32,
+      "owner": "Andy"
+     },
+     {
+      "num": 33,
+      "owner": "Karleton (Jason (Tessy (Jason)"
+     },
+     {
+      "num": 34,
+      "owner": "Tessy"
+     },
+     {
+      "num": 35,
+      "owner": "Tessy (Nick S (Seth)"
+     },
+     {
+      "num": 36,
+      "owner": "Jeff (Tyler)"
+     },
+     {
+      "num": 37,
+      "owner": "Jeff"
+     },
+     {
+      "num": 38,
+      "owner": "Ben"
+     },
+     {
+      "num": 39,
+      "owner": "Ben (Nick S)"
+     },
+     {
+      "num": 40,
+      "owner": "Karleton"
+     },
+     {
+      "num": 31,
+      "owner": "Brett Baty"
+     },
+     {
+      "num": 32,
+      "owner": "Junior Caminero"
+     },
+     {
+      "num": 33,
+      "owner": "Connor Norby"
+     },
+     {
+      "num": 34,
+      "owner": "Sal Frelick"
+     },
+     {
+      "num": 35,
+      "owner": "Spencer Jones"
+     },
+     {
+      "num": 36,
+      "owner": "Jake Eder"
+     },
+     {
+      "num": 37,
+      "owner": "Christian Encarnacion-Strand"
+     },
+     {
+      "num": 38,
+      "owner": "Edouard Joulien"
+     },
+     {
+      "num": 39,
+      "owner": "Oscar Colas"
+     },
+     {
+      "num": 40,
+      "owner": "Harry Ford"
+     }
+    ]
+   },
+   {
+    "round": "5th",
+    "picks": [
+     {
+      "num": 49,
+      "owner": "Coirey"
+     },
+     {
+      "num": 50,
+      "owner": "Coirey (Karleton)"
+     },
+     {
+      "num": 51,
+      "owner": "Zac (Karleton (Jason)"
+     },
+     {
+      "num": 52,
+      "owner": "Jeff"
+     },
+     {
+      "num": 53,
+      "owner": "Tessy (Karleton (Tessy)"
+     },
+     {
+      "num": 54,
+      "owner": "Jason (Ben)"
+     },
+     {
+      "num": 55,
+      "owner": "Andy"
+     },
+     {
+      "num": 56,
+      "owner": "Jason (Tyler)"
+     },
+     {
+      "num": 57,
+      "owner": "Seth"
+     },
+     {
+      "num": 58,
+      "owner": "Seth (Nick S)"
+     },
+     {
+      "num": 59,
+      "owner": "Zac"
+     },
+     {
+      "num": 60,
+      "owner": "Tessy (Taylor)"
+     },
+     {
+      "num": 29,
+      "owner": "Emil Morales"
+     },
+     {
+      "num": 30,
+      "owner": "Jojo Parker"
+     },
+     {
+      "num": 59,
+      "owner": "Didier Fuentes"
+     },
+     {
+      "num": 60,
+      "owner": "Gage Jump"
+     },
+     {
+      "num": 61,
+      "owner": "Xavier Neyens"
+     },
+     {
+      "num": 62,
+      "owner": "Arjun Nimmala"
+     },
+     {
+      "num": 63,
+      "owner": "Connelly Early"
+     },
+     {
+      "num": 64,
+      "owner": "Jake Cook"
+     },
+     {
+      "num": 65,
+      "owner": "Munetaka Murakami"
+     },
+     {
+      "num": 66,
+      "owner": "Kevin DeFrank"
+     },
+     {
+      "num": 67,
+      "owner": "Ethan Frey"
+     },
+     {
+      "num": 68,
+      "owner": "Kevin Alvarez"
+     },
+     {
+      "num": 29,
+      "owner": "Zac"
+     },
+     {
+      "num": 30,
+      "owner": "Jason (Taylor)"
+     },
+     {
+      "num": 59,
+      "owner": "Ben (Tessy (Tyler (Nick S)"
+     },
+     {
+      "num": 60,
+      "owner": "Sorgaard (Tessy (Sorgaard (Jason)"
+     },
+     {
+      "num": 61,
+      "owner": "Jeff"
+     },
+     {
+      "num": 62,
+      "owner": "Coirey"
+     },
+     {
+      "num": 63,
+      "owner": "Ben"
+     },
+     {
+      "num": 64,
+      "owner": "Tessy (Jason (Andy (Tessy)"
+     },
+     {
+      "num": 65,
+      "owner": "Seth"
+     },
+     {
+      "num": 66,
+      "owner": "Tessy (Karleton (Tyler)"
+     },
+     {
+      "num": 67,
+      "owner": "Karleton (Jason (Andy (Tyler (Karleton)"
+     },
+     {
+      "num": 68,
+      "owner": "Jeff (Coirey (Andy)"
+     },
+     {
+      "num": 41,
+      "owner": "Trey Yesavage"
+     },
+     {
+      "num": 42,
+      "owner": "Drake Baldwin"
+     },
+     {
+      "num": 43,
+      "owner": "Bryce Rainer"
+     },
+     {
+      "num": 44,
+      "owner": "Aroon Escobar"
+     },
+     {
+      "num": 45,
+      "owner": "Moises Chace"
+     },
+     {
+      "num": 46,
+      "owner": "Cooper Pratt"
+     },
+     {
+      "num": 47,
+      "owner": "Moises Ballestaros"
+     },
+     {
+      "num": 48,
+      "owner": "Brayden Taylor"
+     },
+     {
+      "num": 49,
+      "owner": "Sean Burke"
+     },
+     {
+      "num": 50,
+      "owner": "Ryan Waldschmidt"
+     },
+     {
+      "num": 41,
+      "owner": "Seth (Tessy)"
+     },
+     {
+      "num": 42,
+      "owner": "Tessy (Tyler (Sorgaard (Andy (Coirey (Tyler (Jason)))"
+     },
+     {
+      "num": 43,
+      "owner": "Seth (Jeff)"
+     },
+     {
+      "num": 44,
+      "owner": "Tessy (Coirey)"
+     },
+     {
+      "num": 45,
+      "owner": "Tyler (Jeff (Jason (Andy)"
+     },
+     {
+      "num": 46,
+      "owner": "Seth (Nick S)"
+     },
+     {
+      "num": 47,
+      "owner": "Sorgaard (Tessy (Tyler (Karleton)))"
+     },
+     {
+      "num": 48,
+      "owner": "Sorgaard (Ben)"
+     },
+     {
+      "num": 49,
+      "owner": "Ben (Coirey (Tyler (Jason (Sorgaard (Tessy (Jason (Tyler))"
+     },
+     {
+      "num": 50,
+      "owner": "Jeff (Seth)"
+     },
+     {
+      "num": 41,
+      "owner": "Andy (Coirey)"
+     },
+     {
+      "num": 42,
+      "owner": "Ben (Nick S (Andy))"
+     },
+     {
+      "num": 43,
+      "owner": "Ben (Tessy)"
+     },
+     {
+      "num": 44,
+      "owner": "Tessy (Tyler (Jason)"
+     },
+     {
+      "num": 45,
+      "owner": "Tessy (Tyler (Jeff)"
+     },
+     {
+      "num": 46,
+      "owner": "Seth"
+     },
+     {
+      "num": 47,
+      "owner": "Seth (Karleton )"
+     },
+     {
+      "num": 48,
+      "owner": "Tessy (Nick S)"
+     },
+     {
+      "num": 49,
+      "owner": "Andy (Nick S (Andy (Jason (Nick S (Tyler))"
+     },
+     {
+      "num": 50,
+      "owner": "Ben"
+     },
+     {
+      "num": 41,
+      "owner": "Bubba Chandler"
+     },
+     {
+      "num": 42,
+      "owner": "Josue De Paula"
+     },
+     {
+      "num": 43,
+      "owner": "Lazaro Montes"
+     },
+     {
+      "num": 44,
+      "owner": "Sal Stewart"
+     },
+     {
+      "num": 45,
+      "owner": "Xavier Isaac"
+     },
+     {
+      "num": 46,
+      "owner": "Noah Schultz"
+     },
+     {
+      "num": 47,
+      "owner": "David Festa"
+     },
+     {
+      "num": 48,
+      "owner": "Kevin McGonigle"
+     },
+     {
+      "num": 49,
+      "owner": "Dylan Beavers"
+     },
+     {
+      "num": 50,
+      "owner": "Jaison Chourio"
+     },
+     {
+      "num": 41,
+      "owner": "Jeff (Coirey)"
+     },
+     {
+      "num": 42,
+      "owner": "Nick S (Andy)"
+     },
+     {
+      "num": 43,
+      "owner": "Tessy (Jason)"
+     },
+     {
+      "num": 44,
+      "owner": "Tessy"
+     },
+     {
+      "num": 45,
+      "owner": "Andy (Seth)"
+     },
+     {
+      "num": 46,
+      "owner": "Tessy (Tyler)"
+     },
+     {
+      "num": 47,
+      "owner": "Jeff"
+     },
+     {
+      "num": 48,
+      "owner": "Ben"
+     },
+     {
+      "num": 49,
+      "owner": "Nick S (Tessy (Nick S)"
+     },
+     {
+      "num": 50,
+      "owner": "Karleton"
+     },
+     {
+      "num": 41,
+      "owner": "Bryce Miller"
+     },
+     {
+      "num": 42,
+      "owner": "Kyle Mueller"
+     },
+     {
+      "num": 43,
+      "owner": "Colson Montgomery"
+     },
+     {
+      "num": 44,
+      "owner": "Miguel Bleis"
+     },
+     {
+      "num": 45,
+      "owner": "Luis Angel-Acuna"
+     },
+     {
+      "num": 46,
+      "owner": "Adell Amador"
+     },
+     {
+      "num": 47,
+      "owner": "Dalton Rushing"
+     },
+     {
+      "num": 48,
+      "owner": "Kevin Parada"
+     },
+     {
+      "num": 49,
+      "owner": "Brooks Lee"
+     },
+     {
+      "num": 50,
+      "owner": "Gabe Gonzalez"
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,805 @@
+[
+ {
+  "depth": 0,
+  "cells": [
+   "Make the American League Great Again"
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "1. League Structure"
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "1.1 League Overview"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 There will be 12 teams in 1 division. Teams play head to head in a regular season schedule for 21 weeks. After the regular season there will be a 3 week postseason."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "1.2 Schedule"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 The leagues annual schedule will follow this format:"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "\u2022 Feb 20 \u2013 Voting on rule change submissions from previous year (starts 2024)"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "\u2022 Mar 14 \u2013 Season fees due"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "\u2022 Mar 14 \u2013 Minor League Player Draft"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "\u2022\u00a0Mar 15 \u2013 Rosters unlocked, free agent and waiver wire open (1st Monday after rookie draft)"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "\u2022\u00a0Mar 30 \u2013 Regular season begins"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "\u2022 Aug 6 \u2013 Trade deadline (1 week after MLB trade deadline)"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "\u2022 Sep 4 \u2013 Post-season begins - free agent and waiver wire closed"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "\u2022 Oct 05 \u2013 Post-season ends"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "\u2022 Oct 06 \u2013 Rosters locked, free agent and waiver wire closed"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "\u2022 Oct 06 \u2013 Trading opens"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "\u2022\u00a0Oct 07 \u2013 Payouts allocated"
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "1.3 Rosters"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Rosters will be comprised of 30 possible slots"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 19 starting spots, 11 bench spots and 10 IL spots and unlimited minor league spots"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 C (1), 1B (1), 2B (1), 3B (1), SS (1), OF (3), UTIL (3), SP (3), RP (2), UTIL (3)"
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "1.4 Position Eligibility"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Games needed from previous season for a player to qualify at a specific hitting position : 20"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Games needed from current season for a player to qualify at a specific hitting position: 10"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Starts needed from previous season for a player to qualify as a starter : 5"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022\u00a0Starts needed from current season for a player to qualify as a starter : 3"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Relief appearances needed from previous season for a player to qualify as a reliever : 8"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Relief appearances needed from current season for a player to qualify as a reliever: 5"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Suspended players are not allowed in an IR spot."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "2. Scoring"
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "2.1 Points"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "Hitting",
+   "Pitching"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "1B \u2013 1pt",
+   "IP \u2013 2pts"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "2B \u2013 2pts",
+   "ER \u2013 1pt"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "3B \u2013 3pts",
+   "W \u2013 5pts"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "HR \u2013 4pts",
+   "L \u2013 (-5pts)"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "RBI \u2013 1pt",
+   "K \u2013 1pt"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "Runs \u2013 1pt",
+   "H \u2013 (-0.5pt)"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "HBP \u2013 1pt",
+   "BB \u2013 (-0.5pt)"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "BB \u2013 1pt",
+   "HBP \u2013 (-1pt)"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "SB \u2013 1pt",
+   "SV \u2013 4pts"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "CS: -1 pt",
+   "BS \u2013 (-2pts)"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "K: -1 pt"
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "2.2 Limits"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 There will be a transaction limit of 5 per week."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Pitching starts are limited to 12 per week."
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "\u2022 If pitching starts exceed 12, total points will be adjusted for the matchup based on first pitch start time. For example: if a team comes into Sunday morning with 10 starts for the week, but they have 4 pitchers slated to start that day, the website will credit all four starts. To correct this, the pitchers with the two later start times will have their points removed (or added back in the case of a negative outing)."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Ties are allowable during the regular season."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "2.3 Penalties"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022\u00a0A roster will be deemed illegal if you do not have a player in every starting position. An illegal roster will garner 0 points for each day during a matchup that it remains unfixed. Any starts accrued during these illegal lineups will be forfeited."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Any owner found neglecting their roster (i.e. multiple IL players in the starting lineup for multiple days/weeks) multiple times will be subject to expulsion."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Rosters and Minor Leagues must be in full compliance by midnight the day prior to the start of the league year (Draft Day). Anyone failing to do so will be docked a draft pick per player over the limit."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "3. Drafting"
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "3.1 Initial Draft"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 The initial Dynasty Draft will be conducted on the Fantrax website using an auction set up. A subsequent rookie draft will be conducted, consisting of 5 rounds."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "3.2 Minor League Draft"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Rookie draft consists of 5 rounds."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Players must be signed to a professional MLB contract."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 The prior year's champion receives the 12th overall pick, 2nd place receives 11th overall, and 3rd place receives 10th overall. Picks 5 through 9 are then determined by overall record."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Draft order for the 4 non-playoff teams is determined by their overall season rank (worst record picks highest). However, any team that misses more than 8 starts from the maximum available is ineligible for the 1st overall pick, provided at least one other bottom 4 team is within that threshold \u2014 in which case that team is pushed back accordingly. In the event of a tie in record, it falls to points for \u2014 lesser points for receives the higher pick."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "3.3 Rookie Eligibility"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 A player shall be deemed rookie eligible if they meet the following criteria:"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "\u2022 Pitched 50 innings or less in their career to date."
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "\u2022 Had 130 or fewer at bats in their career to date."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "3.4 Minor League Rosters"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Once drafted, a player retains minor league eligibility for a maximum of 5 seasons."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Each team receives 1 franchise tag per draft class. Once per season, a team may apply their franchise tag to a player at the end of their minor league eligibility, extending their rookie status for 1 additional season. A team may only have one active franchise tag at a time, unless a tagged player is acquired via trade."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022\u00a0Once a player is added to the major league roster, their minor league status and eligibility is forfeited. If cut, they are subject to waivers. A player called up during the regular season may not be returned to the minor league roster."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022\u00a0A minor league player may be called up to the major league roster during the playoffs and returned to the minor leagues before the following regular season. If a player is not returned to the minor league roster by Opening Day, they cannot be returned to the minor leagues."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "4. Transactions"
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "4.1 Trading"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Trading minor league draft picks is allowed. In almost all cases, trades will not be subject to review or veto, though the commissioner reserves the right to intervene in the interest of long-term league ownership stability."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 The trade deadline falls 1 week after the official MLB trade deadline. There will be no voting on trades."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 When trading picks, an owner must specify the exact pick they want. Best/worst provisions are not allowed. Conditions such as innings limits, retirement clauses, and similar may still be attached to picks, however a pick subject to conditions is no longer tradeable."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 When trading for or away picks two or more years into the future, the league fee of $100 must be submitted to the commissioner before the trade will be processed."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 In the event that an owner acquires a franchise-tagged player via trade, they are permitted to retain that player even if they already have an active franchise tag in their minor leagues."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "4.2 Waiver Wire/FAAB"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 All players cut during the regular season are subject to a 2-day waiver period from the day they are dropped. Waivers process daily at 11 AM EST."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Player acquisitions are conducted via a free agent auction budget (FAAB) system. Each team begins the year with $100. Tie bids are broken by current standings. $0 bids are allowed. FAAB budget is available for trade."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Players are eligible the day of their pickup as long as their game has not started."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 There is a transaction limit of 5 per week. During certain weeks, transactions will be prorated based on the days of the matchup."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "5. Roster Eligibility"
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "5.1 Pick Up Availability"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Only players officially on their respective MLB team's 40-man roster at the time of acquisition are eligible to be added to a roster via free agency/waiver wire.  All others may only be acquired via rookie draft."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 The only source that the league will use to prove 40-man eligiblity is the officaial MLB 40-man transaction tracker.  Any other source is invalid for league purposes and detracts from our attempt to, in fact, Make the American League Great Again."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Any situation where a player deemed ineligible to be acquired will result in:  The transaction being un-done (ineligible player dropped from roster and former player returned to the team's roster), the owner will also forfeit any FAAB that they used to acquire that ineligible player.  This is black and white and is not subject to special circumstances, it is advised to make sure prior to placing a claim that someone is eligible."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 This also includes situations in which too many players are picked up and assigned to your minors. In the event you have someone picked up that exceeds your 30 man roster limit such that they are placed into the minors in error - you will forfeit that transaction for the week, any applicable FAAB and that player."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "6. Playoffs"
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "6.1 Format"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 6 teams will make playoffs each year."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 The format will be a 3-week 1-1-1 style."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "6.2 End Of Season Ties"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 The following order will determine a tie breaker."
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "1. Head to head season record"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "2. Head to head points in head to head matchups"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "3. Total points for"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "4. Coin flip"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 In the event of a 3 or more - way tie to determine playoff seeding, total points for will be used"
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "6.3 Roster Moves"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 No teams are permitted to make pick-ups during the postseason. You are allowed to call up players from your minor leagues and then return them to the minors ahead of next season."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "7. Offseason"
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "7.1 Overview"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 The offseason begins when the postseason ends. After the final games are finalized, the trade window opens again. Free Agent acquisition through FAAB will close and will not be re-opened until the first Monday after the Rookie Draft."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "7.2 Rule Changes"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022\u00a0With any league, there\u2019s always room to evolve and change, and this will be the time to bring up any rule discrepancies. All rules will be open for discussion. Rule changes can be proposed with a clear change, a timeline for the change to occur, and purpose."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 For a vote to pass, 8 of 12 votes need to happen."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "8. League Fees & Rewards"
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "8.1 League Fees"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Each year there will be a $100 league fee to participate."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 League dues are due each year the day of the rookie draft."
+  ]
+ },
+ {
+  "depth": 0,
+  "cells": [
+   "8.2 Rewards"
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 The 21 week regular season will crown a regular season champion. First place will be awarded to the best head-to-head record, and in case of tie, most points scored. Payouts are as follows:"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$5 Weekly high points - $105 total"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$75 Regular season head-to head champion"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$195 Playoff Champion"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$100 Playoff runner-up"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$75 Third place in playoffs"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$200 to the dynasty pot."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Effective for the 2027 season the payouts have been updated:"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$210 Weekly high points - $10 each week"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$75 Regular season head-to head champion"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$275 Playoff Champion"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$150 Playoff runner-up"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$90 Third place in playoffs"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$200 to the dynasty pot."
+  ]
+ },
+ {
+  "depth": 1,
+  "cells": [
+   "\u2022 Effective for the 2028 season the payouts have been updated:"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$315 Weekly high points - $15 Each Week"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$100 Regular season head-to head champion"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$335 Playoff Champion"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$150 Playoff runner-up"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$100 Third place in playoffs"
+  ]
+ },
+ {
+  "depth": 2,
+  "cells": [
+   "$200 to the dynasty pot."
+  ]
+ }
+]

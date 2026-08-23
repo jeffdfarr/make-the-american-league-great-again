@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<title>MTALGA · Trades</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚾</text></svg>">
+
+<header class="mast">
+  <div class="wrap" style="padding-bottom:0">
+    <p class="eyebrow">Fantrax Dynasty Baseball · Est. 2020</p>
+    <h1><a href="index.html">Make the AL Great Again</a></h1>
+    <p class="sub" id="tagline">League HQ</p>
+    <nav class="main">
+      <a href="index.html" data-nav="index">Standings</a>
+      <a href="franchises.html" data-nav="franchises">Franchises</a>
+      <a href="seasons.html" data-nav="seasons">Seasons</a>
+      <a href="history.html" data-nav="history">History</a>
+      <a href="rules.html" data-nav="rules">Rules</a>
+      <a href="trades.html" data-nav="trades">Trades</a>
+      <a href="draft.html" data-nav="draft">Draft</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2 style="margin-top:1.6rem">Trade log</h2>
+  <div class="yearpick" id="filters"></div>
+  <div id="log"><p class="loading">Loading…</p></div>
+  <footer></footer>
+</main>
+<style>
+  .trade { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px;
+           padding: .9rem 1.1rem; margin: .7rem 0; }
+  .t-date { font-family: "IBM Plex Mono", monospace; font-size: .7rem; letter-spacing: .08em;
+            color: var(--ink-faint); text-transform: uppercase; display: block; margin-bottom: .5rem; }
+  .t-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: start; }
+  @media (max-width: 640px) { .t-grid { grid-template-columns: 1fr; } .t-arrow { display: none; } }
+  .t-side b { font-family: "Bitter", Georgia, serif; display: block; margin-bottom: .25rem; }
+  .t-side b small { color: var(--ink-faint); font-family: "Public Sans", sans-serif; font-weight: 400; }
+  .t-side ul { margin: 0; padding-left: 1.1rem; font-size: .92rem; }
+  .t-side li { margin: .15rem 0; }
+  .t-side li.pick { color: var(--ink-soft); }
+  .t-side li.pick::marker { content: "▸ "; color: var(--gold); }
+  .t-side li::marker { color: var(--accent); }
+  .t-arrow { align-self: center; color: var(--ink-faint); font-size: 1.2rem; }
+  .count { color: var(--ink-faint); font-size: .85rem; margin: .4rem 0 0; }
+</style>
+<script src="assets/app.js"></script>
+<script>
+document.querySelector('[data-nav="trades"]').classList.add("active");
+(async () => {
+  const { trades, meta } = await MT.data("trades", "meta");
+  document.getElementById("tagline").textContent = "Every deal · synced nightly from the trade log";
+  const esc = t => t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  const year = d => (d.split("/")[2] || "");
+  const owners = [...new Set(trades.flatMap(t => t.sides.map(s => s.owner)))].filter(Boolean).sort();
+  const years = [...new Set(trades.map(t => year(t.date)))].filter(Boolean).sort().reverse();
+
+  const filters = document.getElementById("filters");
+  filters.innerHTML =
+    `<button data-f="all" class="active">All</button>` +
+    years.map(y => `<button data-f="y:${y}">${y}</button>`).join("") +
+    owners.map(o => `<button data-f="o:${esc(o)}">${esc(o)}</button>`).join("");
+
+  const side = s => `<div class="t-side"><b>${esc(s.owner)} <small>sends</small></b><ul>` +
+    s.players.map(p => `<li>${esc(p)}</li>`).join("") +
+    s.picks.map(p => `<li class="pick">${esc(p)}</li>`).join("") + `</ul></div>`;
+
+  function render(f) {
+    const ts = d => { const [m, day, y] = d.split("/").map(Number); return y * 10000 + m * 100 + day; };
+    let list = [...trades].sort((a, b) => ts(b.date) - ts(a.date));   // newest first
+    if (f.startsWith("y:")) list = list.filter(t => year(t.date) === f.slice(2));
+    if (f.startsWith("o:")) list = list.filter(t => t.sides.some(s => s.owner === f.slice(2)));
+    document.getElementById("log").innerHTML =
+      `<p class="count">${list.length} trade${list.length === 1 ? "" : "s"}</p>` +
+      list.map(t => `<div class="trade"><span class="t-date">${esc(t.date)}</span>
+        <div class="t-grid">${side(t.sides[0])}<span class="t-arrow">⇄</span>${side(t.sides[1])}</div></div>`).join("");
+  }
+  filters.addEventListener("click", e => {
+    const f = e.target.dataset.f; if (!f) return;
+    filters.querySelectorAll("button").forEach(b => b.classList.toggle("active", b === e.target));
+    render(f);
+  });
+  render("all");
+  MT.footer(meta);
+})().catch(e => document.querySelector(".loading").textContent = "Could not load trades: " + e.message);
+</script>
+
+</html>
