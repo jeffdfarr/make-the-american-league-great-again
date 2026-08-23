@@ -327,6 +327,9 @@ def _career(conn: sqlite3.Connection) -> None:
             "SELECT year, AVG(raw_opr) AS avg_raw FROM season_stats WHERE raw_opr IS NOT NULL GROUP BY year"
         )
     }
+    # Sheet convention: every career OPR is normalized by the same number —
+    # the flat mean of the yearly league-average raw OPRs (all seasons).
+    league_norm = sum(year_avgs.values()) / len(year_avgs) if year_avgs else None
     for slug in owners:
         seasons = conn.execute(
             "SELECT * FROM season_stats WHERE owner_slug=? ORDER BY year", (slug,)
@@ -349,12 +352,15 @@ def _career(conn: sqlite3.Connection) -> None:
         wp = f.win_pct(w, l)
         rs_wp = f.win_pct(rs_w, rs_l)
 
+        # Career OPR, sheet convention (dominant formula across owner tabs):
+        # the season blend with career PPG standing in for high AND low —
+        # (6·PPG + 2·(PPG+PPG) + 2·(200·overall win%)) / 10 — normalized by
+        # the flat all-years league average.
         career_raw = career_norm = None
-        if best_game is not None:
-            career_raw = f.raw_opr(ppg, best_game, worst_game, rs_wp)
-            avgs = [year_avgs[s["year"]] for s in seasons if s["year"] in year_avgs]
-            if avgs:
-                career_norm = career_raw / (sum(avgs) / len(avgs))
+        if rs_games:
+            career_raw = f.raw_opr(ppg, ppg, ppg, wp)
+            if league_norm:
+                career_norm = career_raw / league_norm
 
         playoff_apps = sum(s["playoff_app"] for s in seasons)
         titles = sum(s["champion"] for s in seasons)
