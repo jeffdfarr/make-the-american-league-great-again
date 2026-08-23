@@ -6,3 +6,7 @@ pages:
   rules:  { tab: "Rules",        mode: outline }
   trades: { tab: "Trades",       mode: trades }
   draft:  { tab: "Rookie Draft", mode: draftboard }
+
+# Misspellings in the sheet -> canonical name (applied to trades and draft boards)
+aliases:
+  Karelton: Karleton

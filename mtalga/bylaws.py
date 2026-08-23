@@ -122,6 +122,26 @@ def parse_draftboard(rows: list[list[str]]) -> list[dict]:
 
 # ---------------------------------------------------------------- driver
 
+def apply_aliases(data, aliases: dict):
+    """Normalize misspelled owner names everywhere (incl. inside pick chains)."""
+    if not aliases:
+        return data
+    pats = [(re.compile(r"\b" + re.escape(k) + r"\b", re.I), v) for k, v in aliases.items()]
+
+    def fix(x):
+        if isinstance(x, str):
+            for pat, repl in pats:
+                x = pat.sub(repl, x)
+            return x
+        if isinstance(x, list):
+            return [fix(v) for v in x]
+        if isinstance(x, dict):
+            return {k: fix(v) for k, v in x.items()}
+        return x
+
+    return fix(data)
+
+
 PARSERS = {"outline": parse_outline, "trades": parse_trades, "draftboard": parse_draftboard}
 
 
@@ -137,6 +157,7 @@ def export_bylaws() -> None:
         rows = _rows(r.text)
         _guard_no_contacts(rows, tab)
         data = PARSERS[mode](rows)
+        data = apply_aliases(data, cfg.get("aliases") or {})
         n = len(data)
         (OUT_DIR / f"{out_name}.json").write_text(json.dumps(data, indent=1))
         print(f"[bylaws] {tab} ({mode}) -> {out_name}.json: {n} items")
