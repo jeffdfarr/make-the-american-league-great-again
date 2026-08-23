@@ -38,6 +38,9 @@
   #board td.num, #board th.num { text-align: right; color: var(--ink-faint); }
   .via { color: var(--ink-faint); font-size: .82em; }
   .traded { color: var(--accent); font-weight: 600; }
+  #board td.own-c { font-weight: 600; }
+  #board td.own-c .via { color: inherit; opacity: .8; font-weight: 400; }
+  #board td.own-c .traded { color: inherit; }
 </style>
 <script src="assets/app.js"></script>
 <script>
@@ -50,6 +53,22 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
   const pick = document.getElementById("years");
   pick.innerHTML = boards.map((b, i) => `<button data-i="${i}">${b.year}</button>`).join("");
 
+  const MGR = {
+    "coirey":  ["#4da6e0", "#fff"],
+    "tessy":   ["#53a857", "#fff"],
+    "jason":   ["#f0b429", "#221600"],
+    "jeff":    ["#f272ce", "#fff"],
+    "ben":     ["#ffff54", "#403c00"],
+    "taylor":  ["#8324e8", "#fff"],
+    "tyler":   ["#e33225", "#fff"],
+    "seth":    ["#76f2ce", "#083b2d"],
+    "nick s":  ["#16294d", "#fff"],
+    "zac":     ["#8c8c8c", "#fff"],
+    "andy":    ["#bdb98a", "#26240e"],
+    "karleton":["#ffffff", "#1f1f1f"],
+    "sorgaard":["#7a871e", "#fff"],
+    "wall":    ["#ff7f50", "#3d1400"]
+  };
   const cell = (p, results) => {
     const m = p.owner.match(/^([^(]+?)\s*\((.+)\)\s*$/);
     if (!m) return esc(p.owner);
@@ -57,7 +76,16 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
       ? `${esc(m[1].trim())} <span class="via">· ${esc(m[2])}</span>`
       : `<span class="traded">${esc(m[1].trim())}</span> <span class="via">via ${esc(m[2])}</span>`;
   };
+  const tdFor = p => {
+    const b = boards[cur], m = p.owner.match(/^([^(]+?)\s*\((.+)\)\s*$/);
+    const name = b.results ? (m ? m[2] : "") : (m ? m[1] : p.owner);
+    const c = MGR[name.split("(")[0].trim().toLowerCase()];
+    const style = c ? ` class="own-c" style="background:${c[0]};color:${c[1]}"` : "";
+    return `<td title="Pick ${p.num}"${style}>${cell(p, b.results)}</td>`;
+  };
+  let cur = 0;
   function render(i) {
+    cur = i;
     pick.querySelectorAll("button").forEach(b => b.classList.toggle("active", +b.dataset.i === i));
     const b = boards[i];
     document.getElementById("board-h").textContent =
@@ -74,7 +102,7 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
     let rows = "";
     for (let s = 0; s < slots; s++) {
       rows += `<tr><td class="num">${s + 1}</td>` +
-        b.rounds.map(r => r.picks[s] ? `<td title="Pick ${r.picks[s].num}">${cell(r.picks[s], b.results)}</td>` : "<td></td>").join("") + `</tr>`;
+        b.rounds.map(r => r.picks[s] ? tdFor(r.picks[s]) : "<td></td>").join("") + `</tr>`;
     }
     table.querySelector("tbody").innerHTML = rows;
   }
