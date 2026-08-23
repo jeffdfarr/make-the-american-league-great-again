@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<title>MTALGA · History</title>
+<title>MTALGA · Records</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,21 +18,30 @@
       <a href="draft.html" data-nav="draft">Draft</a>
       <a href="rules.html" data-nav="rules">Rules</a>
       <a href="franchises.html" data-nav="franchises">Franchises</a>
-      <a href="history.html" data-nav="history">History</a>
+      <a href="history.html" data-nav="history">Records</a>
     </nav>
   </div>
 </header>
 <main class="wrap">
   <h2>Champions</h2>
   <div class="cards" id="champs"><span class="loading">Loading…</span></div>
-  <h2>All-time record book</h2>
-  <div class="cards" id="records"></div>
+  <h2>Record book</h2>
+  <div class="tbl-scroll"><table id="rec-t">
+    <thead></thead>
+    <tbody><tr><td class="loading">Loading…</td></tr></tbody>
+  </table></div>
   <h2 id="hit-h" style="display:none">Hitting records</h2>
-  <div class="cards" id="hit-records"></div>
+  <div class="tbl-scroll"><table id="hit-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="pit-h" style="display:none">Pitching records</h2>
-  <div class="cards" id="pit-records"></div>
+  <div class="tbl-scroll"><table id="pit-t"><thead></thead><tbody></tbody></table></div>
   <footer></footer>
 </main>
+<style>
+  #rec-t td, #rec-t th, #hit-t td, #hit-t th, #pit-t td, #pit-t th { text-align: left; white-space: nowrap; }
+  #rec-t td.num { text-align: right; font-weight: 700; }
+  #rec-t th.num { text-align: right; }
+  .faint { color: var(--ink-faint); }
+</style>
 <script src="assets/app.js"></script>
 <script>
 document.querySelector('[data-nav="history"]').classList.add("active");
@@ -40,6 +49,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
   const { standings, franchises, records, trades, meta } = await MT.data("standings", "franchises", "records", "trades", "meta");
   document.getElementById("tagline").textContent = "Banners and the record book";
   const owners = Object.fromEntries(franchises.map(f => [f.owner_slug, f.owner_name]));
+  const name = s => owners[s] ?? s;
 
   const champs = standings.filter(s => s.champion).sort((a, b) => b.year - a.year);
   const runners = Object.fromEntries(standings.filter(s => s.final_app && !s.champion).map(s => [s.year, s.team_name]));
@@ -47,29 +57,15 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     <div class="card"><span class="c-cat">${c.year}</span><span class="c-val">${c.team_name}</span>
     <span class="c-who">${c.owner_name} · def. ${runners[c.year] ?? "?"}</span></div>`).join("");
 
-  const fmt = r => ["streak", "hitting", "pitching", "hitting-season", "pitching-season"].includes(r.scope) ? r.display
+  // ---- general record book table
+  const CAT_SCOPES = ["hitting", "pitching", "hitting-season", "pitching-season"];
+  const fmt = r => r.scope === "streak" ? r.display
     : r.category.toLowerCase().includes("pct") ? MT.pct(r.value)
     : Math.abs(r.value) < 10 ? r.value.toFixed(3)
     : MT.num(r.value, r.scope === "game" ? 1 : 0);
-  const card = r => `
-    <div class="card"><span class="c-val">${fmt(r)}</span><span class="c-cat">${r.category}</span>
-    <span class="c-who">${owners[r.owner_slug] ?? r.owner_slug} · ${r.detail ?? r.year}</span></div>`;
-
-  const ORDER = ["Most runs scored","Most singles","Most doubles","Most triples","Most home runs",
-    "Most RBI","Most walks taken","Most strikeouts, hitter","Most stolen bases",
-    "Most wins","Most losses","Most quality starts","Most strikeouts, pitcher","Most saves","Most blown saves"]
-    .flatMap(l => [l, l + ", season"]);   // all-time card, then its best-season twin
-  const byOrder = (a, b) => ORDER.indexOf(a.category) - ORDER.indexOf(b.category);
-  const CAT_SCOPES = ["hitting", "pitching", "hitting-season", "pitching-season"];
-  for (const [scope, hid, cid] of [["hitting", "hit-h", "hit-records"], ["pitching", "pit-h", "pit-records"]]) {
-    const group = records.filter(r => r.scope === scope || r.scope === scope + "-season").sort(byOrder);
-    if (group.length) {
-      document.getElementById(hid).style.display = "";
-      document.getElementById(cid).innerHTML = group.map(card).join("");
-    }
-  }
-
-  let cards = records.filter(r => !CAT_SCOPES.includes(r.scope)).map(card);
+  let rows = records.filter(r => !CAT_SCOPES.includes(r.scope)).map(r => `
+    <tr><td>${r.category}</td><td class="num">${fmt(r)}</td>
+    <td>${name(r.owner_slug)}</td><td class="faint">${r.detail ?? r.year}</td></tr>`);
 
   // trade records straight from the trades sheet
   const tc = {}, pairs = {};
@@ -82,15 +78,37 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     }
   });
   const top = o => Object.entries(o).sort((a, b) => b[1] - a[1])[0];
-  const n = c => `${c} trade${c === 1 ? "" : "s"}`;
   const trader = top(tc), pair = top(pairs);
-  if (trader) cards.push(`
-    <div class="card"><span class="c-val">${n(trader[1])}</span><span class="c-cat">Most trades</span>
-    <span class="c-who">${trader[0]} · all-time</span></div>`);
-  if (pair) cards.push(`
-    <div class="card"><span class="c-val">${n(pair[1])}</span><span class="c-cat">Favorite trade partners</span>
-    <span class="c-who">${pair[0]}</span></div>`);
-  document.getElementById("records").innerHTML = cards.join("");
+  if (trader) rows.push(`<tr><td>Most trades</td><td class="num">${trader[1]}</td><td>${trader[0]}</td><td class="faint">all-time</td></tr>`);
+  if (pair) rows.push(`<tr><td>Favorite trade partners</td><td class="num">${pair[1]}</td><td>${pair[0]}</td><td class="faint">all-time</td></tr>`);
+  const recT = document.getElementById("rec-t");
+  recT.querySelector("thead").innerHTML = `<tr><th>Record</th><th class="num">Value</th><th>Holder</th><th>When</th></tr>`;
+  recT.querySelector("tbody").innerHTML = rows.join("");
+
+  // ---- hitting / pitching tables: one row per category, all-time + best season
+  const byCat = Object.fromEntries(records.filter(r => CAT_SCOPES.includes(r.scope)).map(r => [r.scope + "|" + r.category, r]));
+  const catRow = (label, scope) => {
+    const a = byCat[scope + "|" + label], s = byCat[scope + "-season|" + label + ", season"];
+    if (!a && !s) return "";
+    return `<tr><td>${label}</td>
+      <td>${a ? `<strong>${a.display}</strong> · ${name(a.owner_slug)}` : "—"}</td>
+      <td>${s ? `<strong>${s.display}</strong> · ${name(s.owner_slug)} <span class="faint">(${s.year})</span>` : "—"}</td></tr>`;
+  };
+  const GROUPS = [
+    ["hitting", "hit-h", "hit-t", ["Most runs scored", "Most singles", "Most doubles", "Most triples",
+      "Most home runs", "Most RBI", "Most walks taken", "Most strikeouts, hitter", "Most stolen bases"]],
+    ["pitching", "pit-h", "pit-t", ["Most wins", "Most losses", "Most quality starts",
+      "Most strikeouts, pitcher", "Most saves", "Most blown saves"]],
+  ];
+  for (const [scope, hid, tid, labels] of GROUPS) {
+    const body = labels.map(l => catRow(l, scope)).join("");
+    if (body) {
+      document.getElementById(hid).style.display = "";
+      const t = document.getElementById(tid);
+      t.querySelector("thead").innerHTML = `<tr><th>Record</th><th>All-time</th><th>Best season</th></tr>`;
+      t.querySelector("tbody").innerHTML = body;
+    }
+  }
   MT.footer(meta);
 })().catch(e => document.querySelector(".loading").textContent = "Could not load data: " + e.message);
 </script>
