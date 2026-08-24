@@ -98,6 +98,12 @@ def _merge_draft_results(boards: list[dict]) -> list[dict]:
     (managers per slot, with trade chains). Join them by pick number so the
     results board shows "Player (Manager)" — who drafted whom. The manager is
     the name before any parenthetical: the slot's final owner made the pick."""
+    def distinct_ratio(b):
+        """Managers repeat across a board's cells; players are unique.
+        A low ratio of distinct leading names marks the pick-order table."""
+        names = [p["owner"].split("(")[0].strip().lower() for r in b["rounds"] for p in r["picks"]]
+        return (len(set(names)) / len(names)) if names else 1.0
+
     by_year: dict[int, dict] = {}
     for b in boards:
         by_year.setdefault(b["year"], {})[b["results"]] = b
@@ -106,6 +112,11 @@ def _merge_draft_results(boards: list[dict]) -> list[dict]:
         pair = by_year[year]
         if True in pair and False in pair:
             res, own = pair[True], pair[False]
+            # some year blocks list the pick-order table FIRST; orient by
+            # name reuse instead of trusting the order in the sheet
+            if distinct_ratio(res) < distinct_ratio(own):
+                res, own = own, res
+                res["results"] = True
             for r_idx, rnd in enumerate(res["rounds"]):
                 if r_idx >= len(own["rounds"]):
                     continue
