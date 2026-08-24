@@ -490,6 +490,47 @@ def _records(conn: sqlite3.Connection) -> None:
         )
     _wl_records(conn)
     _category_records(conn)
+    _position_records(conn)
+
+
+POSITION_SLOTS = [
+    ("SP", "SP"), ("RP", "Closer (RP)"), ("P", "P (flex)"),
+    ("C", "C"), ("1B", "1B"), ("2B", "2B"), ("3B", "3B"),
+    ("SS", "SS"), ("OF", "OF"), ("UT", "UT"),
+]
+
+
+def _position_records(conn: sqlite3.Connection) -> None:
+    """Best season and best single week of points from each lineup slot."""
+    for slot, label in POSITION_SLOTS:
+        season = conn.execute(
+            """SELECT ts.owner_slug o, SUM(pp.pts) v, pp.year y
+               FROM position_points pp JOIN team_seasons ts ON ts.id = pp.team_season_id
+               WHERE pp.slot=? AND ts.owner_slug IS NOT NULL
+               GROUP BY pp.year, pp.team_season_id ORDER BY v DESC LIMIT 1""",
+            (slot,),
+        ).fetchone()
+        if season and season["v"]:
+            conn.execute(
+                """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
+                   VALUES (?,?,?,?,?,?,?)""",
+                (f"Most points from {label}", "position", season["v"],
+                 f"{season['v']:,.0f} pts", season["o"], season["y"], None),
+            )
+        week = conn.execute(
+            """SELECT ts.owner_slug o, SUM(pp.pts) v, pp.year y, pp.week w
+               FROM position_points pp JOIN team_seasons ts ON ts.id = pp.team_season_id
+               WHERE pp.slot=? AND ts.owner_slug IS NOT NULL
+               GROUP BY pp.year, pp.week, pp.team_season_id ORDER BY v DESC LIMIT 1""",
+            (slot,),
+        ).fetchone()
+        if week and week["v"]:
+            conn.execute(
+                """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
+                   VALUES (?,?,?,?,?,?,?)""",
+                (f"Most points from {label}, week", "position-week", week["v"],
+                 f"{week['v']:,.1f} pts", week["o"], week["y"], f"Wk {week['w']} · {week['y']}"),
+            )
 
 
 CATEGORY_RECORDS = [

@@ -83,6 +83,18 @@ CREATE TABLE IF NOT EXISTS category_stats (
     PRIMARY KEY (year, team_season_id, side, stat)
 );
 
+-- Daily points credited to each lineup slot (from per-day roster fetches);
+-- week = the weekly scoring period the day belongs to. Regular season only.
+CREATE TABLE IF NOT EXISTS position_points (
+    year            INTEGER NOT NULL REFERENCES seasons(year),
+    week            INTEGER NOT NULL,
+    daily           INTEGER NOT NULL,
+    team_season_id  INTEGER NOT NULL REFERENCES team_seasons(id),
+    slot            TEXT NOT NULL,      -- 'SP','RP','P','C','1B',...
+    pts             REAL NOT NULL,
+    PRIMARY KEY (year, daily, team_season_id, slot)
+);
+
 -- Weekly hitting/pitching split (filled by the roster fetch; nullable early on)
 CREATE TABLE IF NOT EXISTS period_splits (
     year            INTEGER NOT NULL,

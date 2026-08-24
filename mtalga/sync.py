@@ -134,6 +134,14 @@ def sync_season(conn: sqlite3.Connection, cfg: Config, season: SeasonCfg, sessio
     except Exception as e:
         log(conn, year, "catstats", False, f"{type(e).__name__}: {e}")
 
+    # --- per-day lineup-slot points (new completed days only)
+    try:
+        from .posstats import sync_position_points
+        n_pp = sync_position_points(conn, year, lg, ts_ids)
+        log(conn, year, "posstats", True, f"{n_pp} new day(s)")
+    except Exception as e:
+        log(conn, year, "posstats", False, f"{type(e).__name__}: {e}")
+
     # --- transactions (moves)
     try:
         txs = lg.transactions(count=1000)

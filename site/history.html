@@ -46,6 +46,9 @@
   <div class="tbl-scroll"><table id="hit-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="pit-h" style="display:none">Pitching records</h2>
   <div class="tbl-scroll"><table id="pit-t"><thead></thead><tbody></tbody></table></div>
+  <h2 id="pos-h" style="display:none">Position records</h2>
+  <div class="tbl-scroll"><table id="pos-t"><thead></thead><tbody></tbody></table></div>
+  <p class="sub" id="pos-note" style="display:none;margin-top:.5rem">Points credited to each lineup slot, day by day — regular season only.</p>
   <footer></footer>
 </main>
 <style>
@@ -180,7 +183,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
   }
 
   // ---- hitting / pitching: one row per category, all-time + best season
-  const CAT_SCOPES = ["hitting", "pitching", "hitting-season", "pitching-season"];
+  const CAT_SCOPES = ["hitting", "pitching", "hitting-season", "pitching-season", "position", "position-week"];
   const byCat = Object.fromEntries(records.filter(r => CAT_SCOPES.includes(r.scope)).map(r => [r.scope + "|" + r.category, r]));
   const catRow = (label, scope) => {
     const a = byCat[scope + "|" + label], s = byCat[scope + "-season|" + label + ", season"];
@@ -203,6 +206,24 @@ document.querySelector('[data-nav="history"]').classList.add("active");
       t.querySelector("thead").innerHTML = `<tr><th>Record</th><th>All-time</th><th>Best season</th></tr>`;
       t.querySelector("tbody").innerHTML = body;
     }
+  }
+
+  // ---- position records: best season + best week per lineup slot
+  const POS_LABELS = ["SP", "Closer (RP)", "P (flex)", "C", "1B", "2B", "3B", "SS", "OF", "UT"];
+  const posRows = POS_LABELS.map(label => {
+    const a = byCat["position|Most points from " + label];
+    const w = byCat["position-week|Most points from " + label + ", week"];
+    if (!a && !w) return "";
+    return `<tr><td>${esc(label)}</td>
+      <td>${a ? `<strong>${a.display}</strong> · ${esc(name(a.owner_slug))} <span class="faint">(${a.year})</span>` : "—"}</td>
+      <td>${w ? `<strong>${w.display}</strong> · ${esc(name(w.owner_slug))} <span class="faint">(${w.detail})</span>` : "—"}</td></tr>`;
+  }).join("");
+  if (posRows) {
+    document.getElementById("pos-h").style.display = "";
+    document.getElementById("pos-note").style.display = "";
+    const t = document.getElementById("pos-t");
+    t.querySelector("thead").innerHTML = `<tr><th>Slot</th><th>Best season</th><th>Best week</th></tr>`;
+    t.querySelector("tbody").innerHTML = posRows;
   }
   MT.footer(meta);
 })().catch(e => document.querySelector(".loading").textContent = "Could not load data: " + e.message);

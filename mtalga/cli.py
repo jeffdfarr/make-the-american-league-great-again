@@ -36,6 +36,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("export", help="write site JSON from derived tables")
     sub.add_parser("bylaws", help="refresh site bylaws from the rulebook Google Sheet")
     sub.add_parser("catstats", help="fetch hitting/pitching category totals for all seasons, then metrics + export")
+    sub.add_parser("posstats", help="fetch per-day lineup-slot points for all seasons (long first run, resumable), then metrics + export")
 
     args = ap.parse_args(argv)
     cfg = cfgm.load()
@@ -70,6 +71,9 @@ def main(argv: list[str] | None = None) -> int:
     elif args.cmd == "catstats":
         from .catstats import backfill_catstats
         backfill_catstats(conn, cfg)
+    elif args.cmd == "posstats":
+        from .posstats import backfill_posstats
+        backfill_posstats(conn, cfg)
 
     # any FAIL rows this run?
     fails = conn.execute(

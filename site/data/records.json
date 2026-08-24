@@ -441,6 +441,186 @@
   "detail": null
  },
  {
+  "category": "Most points from 1B",
+  "scope": "position",
+  "value": 526.0,
+  "display": "526 pts",
+  "owner_slug": "tasin",
+  "year": 2021,
+  "detail": null
+ },
+ {
+  "category": "Most points from 2B",
+  "scope": "position",
+  "value": 431.0,
+  "display": "431 pts",
+  "owner_slug": "sorgaard",
+  "year": 2021,
+  "detail": null
+ },
+ {
+  "category": "Most points from 3B",
+  "scope": "position",
+  "value": 498.0,
+  "display": "498 pts",
+  "owner_slug": "jfarr",
+  "year": 2024,
+  "detail": null
+ },
+ {
+  "category": "Most points from C",
+  "scope": "position",
+  "value": 425.0,
+  "display": "425 pts",
+  "owner_slug": "moellerreed",
+  "year": 2025,
+  "detail": null
+ },
+ {
+  "category": "Most points from Closer (RP)",
+  "scope": "position",
+  "value": 586.16,
+  "display": "586 pts",
+  "owner_slug": "kaufer",
+  "year": 2023,
+  "detail": null
+ },
+ {
+  "category": "Most points from OF",
+  "scope": "position",
+  "value": 1241.0,
+  "display": "1,241 pts",
+  "owner_slug": "bugar",
+  "year": 2022,
+  "detail": null
+ },
+ {
+  "category": "Most points from P (flex)",
+  "scope": "position",
+  "value": 1723.71,
+  "display": "1,724 pts",
+  "owner_slug": "jfarr",
+  "year": 2021,
+  "detail": null
+ },
+ {
+  "category": "Most points from SP",
+  "scope": "position",
+  "value": 3269.15,
+  "display": "3,269 pts",
+  "owner_slug": "bugar",
+  "year": 2024,
+  "detail": null
+ },
+ {
+  "category": "Most points from SS",
+  "scope": "position",
+  "value": 522.0,
+  "display": "522 pts",
+  "owner_slug": "bugar",
+  "year": 2024,
+  "detail": null
+ },
+ {
+  "category": "Most points from UT",
+  "scope": "position",
+  "value": 1228.0,
+  "display": "1,228 pts",
+  "owner_slug": "sorgaard",
+  "year": 2022,
+  "detail": null
+ },
+ {
+  "category": "Most points from 1B, week",
+  "scope": "position-week",
+  "value": 63.0,
+  "display": "63.0 pts",
+  "owner_slug": "bruchu",
+  "year": 2020,
+  "detail": "Wk 4 \u00b7 2020"
+ },
+ {
+  "category": "Most points from 2B, week",
+  "scope": "position-week",
+  "value": 50.0,
+  "display": "50.0 pts",
+  "owner_slug": "sorgaard",
+  "year": 2021,
+  "detail": "Wk 22 \u00b7 2021"
+ },
+ {
+  "category": "Most points from 3B, week",
+  "scope": "position-week",
+  "value": 64.0,
+  "display": "64.0 pts",
+  "owner_slug": "bugar",
+  "year": 2025,
+  "detail": "Wk 1 \u00b7 2025"
+ },
+ {
+  "category": "Most points from C, week",
+  "scope": "position-week",
+  "value": 54.0,
+  "display": "54.0 pts",
+  "owner_slug": "tessman",
+  "year": 2026,
+  "detail": "Wk 16 \u00b7 2026"
+ },
+ {
+  "category": "Most points from Closer (RP), week",
+  "scope": "position-week",
+  "value": 69.67,
+  "display": "69.7 pts",
+  "owner_slug": "jfarr",
+  "year": 2026,
+  "detail": "Wk 19 \u00b7 2026"
+ },
+ {
+  "category": "Most points from OF, week",
+  "scope": "position-week",
+  "value": 136.0,
+  "display": "136.0 pts",
+  "owner_slug": "bugar",
+  "year": 2021,
+  "detail": "Wk 22 \u00b7 2021"
+ },
+ {
+  "category": "Most points from P (flex), week",
+  "scope": "position-week",
+  "value": 154.01,
+  "display": "154.0 pts",
+  "owner_slug": "jfarr",
+  "year": 2021,
+  "detail": "Wk 15 \u00b7 2021"
+ },
+ {
+  "category": "Most points from SP, week",
+  "scope": "position-week",
+  "value": 288.34,
+  "display": "288.3 pts",
+  "owner_slug": "bugar",
+  "year": 2024,
+  "detail": "Wk 16 \u00b7 2024"
+ },
+ {
+  "category": "Most points from SS, week",
+  "scope": "position-week",
+  "value": 64.0,
+  "display": "64.0 pts",
+  "owner_slug": "sorgaard",
+  "year": 2026,
+  "detail": "Wk 16 \u00b7 2026"
+ },
+ {
+  "category": "Most points from UT, week",
+  "scope": "position-week",
+  "value": 115.0,
+  "display": "115.0 pts",
+  "owner_slug": "moellerreed",
+  "year": 2021,
+  "detail": "Wk 1 \u00b7 2021"
+ },
+ {
   "category": "Biggest blowout",
   "scope": "scoring",
   "value": 333.66700000000003,
