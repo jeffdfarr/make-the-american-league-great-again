@@ -25,8 +25,8 @@
 <main class="wrap">
   <h2>Champions</h2>
   <div class="cards" id="champs"><span class="loading">Loading…</span></div>
-  <h2>Record book</h2>
-  <div class="tbl-scroll"><table id="rec-t">
+  <h2>Scoring records</h2>
+  <div class="tbl-scroll"><table id="sc-t">
     <thead></thead>
     <tbody><tr><td class="loading">Loading…</td></tr></tbody>
   </table></div>
@@ -36,6 +36,8 @@
   <div class="tbl-scroll"><table id="loss-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="title-h" style="display:none">Championship records</h2>
   <div class="tbl-scroll"><table id="title-t"><thead></thead><tbody></tbody></table></div>
+  <h2 id="fr-h" style="display:none">Franchise &amp; trade records</h2>
+  <div class="tbl-scroll"><table id="fr-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="hit-h" style="display:none">Hitting records</h2>
   <div class="tbl-scroll"><table id="hit-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="pit-h" style="display:none">Pitching records</h2>
@@ -43,11 +45,13 @@
   <footer></footer>
 </main>
 <style>
-  #rec-t td, #rec-t th, #hit-t td, #hit-t th, #pit-t td, #pit-t th,
-  #win-t td, #win-t th, #loss-t td, #loss-t th, #title-t td, #title-t th { text-align: left; white-space: nowrap; }
-  #rec-t td.num, #win-t td.num, #loss-t td.num, #title-t td.num { text-align: right; font-weight: 700; }
-  #rec-t th.num, #win-t th.num, #loss-t th.num, #title-t th.num { text-align: right; }
+  main table td, main table th { text-align: left; }
+  main table td.num { text-align: right; font-weight: 700; white-space: nowrap; }
+  main table th.num { text-align: right; }
   .faint { color: var(--ink-faint); }
+  .desc { display: block; font-size: .76rem; color: var(--ink-faint); font-weight: 400;
+          white-space: normal; max-width: 26rem; line-height: 1.35; }
+  main table td:first-child b { font-weight: 600; }
 </style>
 <script src="assets/app.js"></script>
 <script>
@@ -55,6 +59,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
 (async () => {
   const { standings, franchises, records, trades, meta } = await MT.data("standings", "franchises", "records", "trades", "meta");
   document.getElementById("tagline").textContent = "Banners and the record book";
+  const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;");
   const owners = Object.fromEntries(franchises.map(f => [f.owner_slug, f.owner_name]));
   const name = s => owners[s] ?? s;
 
@@ -64,19 +69,72 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     <div class="card"><span class="c-cat">${c.year}</span><span class="c-val">${c.team_name}</span>
     <span class="c-who">${c.owner_name} · def. ${runners[c.year] ?? "?"}</span></div>`).join("");
 
-  // ---- general record book table
-  const CAT_SCOPES = ["hitting", "pitching", "hitting-season", "pitching-season"];
-  const WL_SCOPES = ["wins", "losses", "titles"];
-  const fmt = r => ["streak", ...WL_SCOPES].includes(r.scope) ? r.display
-    : r.category.toLowerCase().includes("pct") ? MT.pct(r.value)
-    : Math.abs(r.value) < 10 ? r.value.toFixed(3)
-    : MT.num(r.value, r.scope === "game" ? 1 : 0);
-  const recRow = r => `
-    <tr><td>${r.category}</td><td class="num">${fmt(r)}</td>
-    <td>${name(r.owner_slug)}</td><td class="faint">${r.detail ?? r.year ?? ""}</td></tr>`;
-  let rows = records.filter(r => ![...CAT_SCOPES, ...WL_SCOPES].includes(r.scope)).map(recRow);
+  // short plain-English explanations, shown under the record name
+  const DESC = {
+    "Highest single-week score": "Best score ever put up in one scoring period",
+    "Lowest single-week score": "The all-time stinker",
+    "Biggest blowout": "Largest margin of victory in one week",
+    "Most points in a season": "Regular-season points",
+    "Best single-season OPR": "Overall Power Rating, normalized to the league average",
+    "Best average finish": "Average final standing across a career",
+    "Worst average finish": "Average final standing across a career",
+    "Longest win streak": "Consecutive wins — can carry across seasons",
+    "Longest losing streak": "Consecutive losses — can carry across seasons",
+    "Best start to a season": "Wins before the first loss",
+    "Worst start to a season": "Losses before the first win",
+    "Fastest to 100 wins": "Fewest games needed to reach 100 career wins",
+    "Fastest to 100 losses": "Fewest games needed to reach 100 career losses",
+    "Biggest one-year improvement": "Regular-season record vs the year before",
+    "Biggest one-year collapse": "Regular-season record vs the year before",
+    "Most consecutive wins over one opponent": "Straight head-to-head victories over the same manager",
+    "Most wins by 1 point or less": "Career nail-biters",
+    "Fewest losses in a full season": "Completed seasons only, playoffs included",
+    "Most 15-win regular seasons": "Seasons with 15 or more regular-season wins",
+    "Most consecutive 15-win regular seasons": "Back-to-back seasons of 15+ wins",
+    "Worst season start by a finalist": "Opened the season this badly and still reached the championship game",
+    "Most trades": "Career deals made",
+    "Favorite trade partners": "The pair who have dealt with each other most",
+  };
 
-  // trade records straight from the trades sheet
+  const recRow = r => `
+    <tr><td><b>${esc(r.category)}</b>${DESC[r.category] ? `<span class="desc">${DESC[r.category]}</span>` : ""}</td>
+    <td class="num">${r.display}</td>
+    <td>${esc(name(r.owner_slug))}</td><td class="faint">${r.detail ?? r.year ?? ""}</td></tr>`;
+
+  const SECTIONS = [
+    ["scoring", null, "sc-t", ["Highest single-week score", "Lowest single-week score", "Biggest blowout",
+      "Most points in a season", "Best single-season OPR"]],
+    ["wins", "win-h", "win-t", ["Most career wins", "Best career win pct", "Most winning seasons",
+      "Most consecutive winning seasons", "Most 15-win regular seasons", "Most consecutive 15-win regular seasons",
+      "Most wins in a season (regular season)", "Most wins in a season (with playoffs)",
+      "Best season win pct (regular season)", "Best season win pct (with playoffs)",
+      "Best start to a season", "Longest win streak in one season", "Longest win streak",
+      "Fastest to 100 wins", "Biggest one-year improvement",
+      "Most consecutive wins over one opponent", "Most wins by 1 point or less"]],
+    ["losses", "loss-h", "loss-t", ["Most career losses", "Most losing seasons", "Most consecutive losing seasons",
+      "Most losses in a season", "Fewest losses in a full season",
+      "Worst start to a season", "Longest losing streak in one season", "Longest losing streak",
+      "Fastest to 100 losses", "Biggest one-year collapse"]],
+    ["titles", "title-h", "title-t", ["Most championships", "Most consecutive championships",
+      "Most championship game appearances", "Most consecutive finals appearances",
+      "Most championship game losses", "Worst season start by a finalist"]],
+  ];
+  const HEAD = `<tr><th>Record</th><th class="num">Mark</th><th>Holder</th><th>When</th></tr>`;
+  for (const [scope, hid, tid, order] of SECTIONS) {
+    const group = records.filter(r => r.scope === scope)
+      .sort((a, b) => order.indexOf(a.category) - order.indexOf(b.category));
+    const t = document.getElementById(tid);
+    if (group.length || !hid) {
+      if (hid) document.getElementById(hid).style.display = "";
+      t.querySelector("thead").innerHTML = HEAD;
+      t.querySelector("tbody").innerHTML = group.map(recRow).join("") ||
+        `<tr><td colspan="4" class="faint">Nothing here yet.</td></tr>`;
+    }
+  }
+
+  // ---- franchise & trades (avg finish from the engine + live trade counts from the sheet)
+  let frRows = records.filter(r => r.scope === "franchise")
+    .sort((a, b) => a.category.localeCompare(b.category)).map(recRow);
   const tc = {}, pairs = {};
   (trades || []).forEach(t => {
     const names = (t.sides || []).map(s => s.owner).filter(Boolean);
@@ -88,50 +146,32 @@ document.querySelector('[data-nav="history"]').classList.add("active");
   });
   const top = o => Object.entries(o).sort((a, b) => b[1] - a[1])[0];
   const trader = top(tc), pair = top(pairs);
-  if (trader) rows.push(`<tr><td>Most trades</td><td class="num">${trader[1]}</td><td>${trader[0]}</td><td class="faint">all-time</td></tr>`);
-  if (pair) rows.push(`<tr><td>Favorite trade partners</td><td class="num">${pair[1]}</td><td>${pair[0]}</td><td class="faint">all-time</td></tr>`);
-  const recT = document.getElementById("rec-t");
-  recT.querySelector("thead").innerHTML = `<tr><th>Record</th><th class="num">Value</th><th>Holder</th><th>When</th></tr>`;
-  recT.querySelector("tbody").innerHTML = rows.join("");
-
-  // ---- win / loss record tables
-  const WORDER = ["Most wins, regular season", "Most wins, season (incl. playoffs)", "Most wins, career",
-    "Best win pct, season (regular season)", "Best win pct, season (incl. playoffs)", "Best win pct, career",
-    "Most winning seasons", "Most consecutive winning seasons", "Most 15-win seasons", "Most consecutive 15-win seasons",
-    "Longest win streak to open a season", "Longest win streak, single season", "Longest win streak, overall",
-    "Fastest to 100 wins", "Most improved record", "Most consecutive wins vs one team", "Most wins by 1 point or less"];
-  const LORDER = ["Most losses, season", "Fewest losses, season (incl. playoffs)", "Most losses, career",
-    "Most losing seasons", "Most consecutive losing seasons",
-    "Longest losing streak to open a season", "Longest losing streak, single season", "Longest losing streak, overall",
-    "Fastest to 100 losses", "Worst regression"];
-  const TORDER = ["Most championship wins", "Most consecutive championship wins",
-    "Most championship games", "Most consecutive championship games",
-    "Most championship game losses", "Worst season start by a finalist"];
-  for (const [scope, order, hid, tid] of [["wins", WORDER, "win-h", "win-t"], ["losses", LORDER, "loss-h", "loss-t"], ["titles", TORDER, "title-h", "title-t"]]) {
-    const group = records.filter(r => r.scope === scope)
-      .sort((a, b) => order.indexOf(a.category) - order.indexOf(b.category));
-    if (group.length) {
-      document.getElementById(hid).style.display = "";
-      const t = document.getElementById(tid);
-      t.querySelector("thead").innerHTML = `<tr><th>Record</th><th class="num">Value</th><th>Holder</th><th>When</th></tr>`;
-      t.querySelector("tbody").innerHTML = group.map(recRow).join("");
-    }
+  const tradeRow = (cat, n, who) => recRow({ category: cat, display: `${n} trade${n === 1 ? "" : "s"}`,
+    owner_slug: who, detail: "all-time" });
+  if (trader) frRows.push(tradeRow("Most trades", trader[1], trader[0]));
+  if (pair) frRows.push(tradeRow("Favorite trade partners", pair[1], pair[0]));
+  if (frRows.length) {
+    document.getElementById("fr-h").style.display = "";
+    const t = document.getElementById("fr-t");
+    t.querySelector("thead").innerHTML = HEAD;
+    t.querySelector("tbody").innerHTML = frRows.join("");
   }
 
-  // ---- hitting / pitching tables: one row per category, all-time + best season
+  // ---- hitting / pitching: one row per category, all-time + best season
+  const CAT_SCOPES = ["hitting", "pitching", "hitting-season", "pitching-season"];
   const byCat = Object.fromEntries(records.filter(r => CAT_SCOPES.includes(r.scope)).map(r => [r.scope + "|" + r.category, r]));
   const catRow = (label, scope) => {
     const a = byCat[scope + "|" + label], s = byCat[scope + "-season|" + label + ", season"];
     if (!a && !s) return "";
-    return `<tr><td>${label}</td>
-      <td>${a ? `<strong>${a.display}</strong> · ${name(a.owner_slug)}` : "—"}</td>
-      <td>${s ? `<strong>${s.display}</strong> · ${name(s.owner_slug)} <span class="faint">(${s.year})</span>` : "—"}</td></tr>`;
+    return `<tr><td>${esc(label)}</td>
+      <td>${a ? `<strong>${a.display}</strong> · ${esc(name(a.owner_slug))}` : "—"}</td>
+      <td>${s ? `<strong>${s.display}</strong> · ${esc(name(s.owner_slug))} <span class="faint">(${s.year})</span>` : "—"}</td></tr>`;
   };
   const GROUPS = [
     ["hitting", "hit-h", "hit-t", ["Most runs scored", "Most singles", "Most doubles", "Most triples",
-      "Most home runs", "Most RBI", "Most walks taken", "Most strikeouts, hitter", "Most stolen bases"]],
+      "Most home runs", "Most RBI", "Most walks drawn", "Most strikeouts (batters)", "Most stolen bases"]],
     ["pitching", "pit-h", "pit-t", ["Most wins", "Most losses", "Most quality starts",
-      "Most strikeouts, pitcher", "Most saves", "Most blown saves"]],
+      "Most strikeouts (pitchers)", "Most saves", "Most blown saves"]],
   ];
   for (const [scope, hid, tid, labels] of GROUPS) {
     const body = labels.map(l => catRow(l, scope)).join("");

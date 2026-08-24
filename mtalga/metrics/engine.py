@@ -423,30 +423,28 @@ def _h2h(conn: sqlite3.Connection) -> None:
 
 def _records(conn: sqlite3.Connection) -> None:
     specs = [
-        ("Most points, game", "game",
+        ("Highest single-week score", "scoring", "{:g} pts", None,
          "SELECT ts.owner_slug o, g.pts_for v, g.year y FROM games g JOIN team_seasons ts ON ts.id=g.team_season_id WHERE g.complete=1 AND g.game_type='R' ORDER BY g.pts_for DESC LIMIT 1"),
-        ("Fewest points, game", "game",
+        ("Lowest single-week score", "scoring", "{:g} pts", None,
          "SELECT ts.owner_slug o, g.pts_for v, g.year y FROM games g JOIN team_seasons ts ON ts.id=g.team_season_id WHERE g.complete=1 AND g.game_type='R' ORDER BY g.pts_for ASC LIMIT 1"),
-        ("Biggest blowout", "game",
+        ("Biggest blowout", "scoring", "+{:g} pts", None,
          "SELECT ts.owner_slug o, (g.pts_for-g.pts_against) v, g.year y FROM games g JOIN team_seasons ts ON ts.id=g.team_season_id WHERE g.complete=1 AND g.game_type='R' ORDER BY v DESC LIMIT 1"),
-        ("Most points, season", "season",
+        ("Most points in a season", "scoring", "{:,.0f} pts", None,
          "SELECT owner_slug o, pf v, year y FROM season_stats ORDER BY pf DESC LIMIT 1"),
-        ("Best season OPR", "season",
+        ("Best single-season OPR", "scoring", "{:.3f}", None,
          "SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND rs_games >= 15 ORDER BY opr DESC LIMIT 1"),
-        ("Best average finish", "season",
+        ("Best average finish", "franchise", "{:.2f}", "all-time",
          "SELECT owner_slug o, avg_finish v, NULL y FROM career_stats WHERE seasons >= 2 ORDER BY avg_finish ASC LIMIT 1"),
-        ("Worst average finish", "season",
+        ("Worst average finish", "franchise", "{:.2f}", "all-time",
          "SELECT owner_slug o, avg_finish v, NULL y FROM career_stats WHERE seasons >= 2 ORDER BY avg_finish DESC LIMIT 1"),
     ]
-    for category, scope, sql in specs:
+    for category, scope, disp, when, sql in specs:
         row = conn.execute(sql).fetchone()
         if row and row["v"] is not None:
             conn.execute(
                 """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
                    VALUES (?,?,?,?,?,?,?)""",
-                (category, scope, row["v"],
-                 f"{row['v']:.2f}" if "finish" in category else f"{row['v']:g}",
-                 row["o"], row["y"], "all-time" if "finish" in category else None),
+                (category, scope, row["v"], disp.format(row["v"]), row["o"], row["y"], when),
             )
     _wl_records(conn)
     _category_records(conn)
@@ -459,13 +457,13 @@ CATEGORY_RECORDS = [
     ("Most triples", "hitting", "H", "3B"),
     ("Most home runs", "hitting", "H", "HR"),
     ("Most RBI", "hitting", "H", "RBI"),
-    ("Most walks taken", "hitting", "H", "BB"),
-    ("Most strikeouts, hitter", "hitting", "H", "SO"),
+    ("Most walks drawn", "hitting", "H", "BB"),
+    ("Most strikeouts (batters)", "hitting", "H", "SO"),
     ("Most stolen bases", "hitting", "H", "SB"),
     ("Most wins", "pitching", "P", "W"),
     ("Most losses", "pitching", "P", "L"),
     ("Most quality starts", "pitching", "P", "QS"),
-    ("Most strikeouts, pitcher", "pitching", "P", "K"),
+    ("Most strikeouts (pitchers)", "pitching", "P", "K"),
     ("Most saves", "pitching", "P", "SV"),
     ("Most blown saves", "pitching", "P", "BS"),
 ]
@@ -525,33 +523,33 @@ def _wl_records(conn: sqlite3.Connection) -> None:
         row = conn.execute(sql, params).fetchone()
         if row and row["v"] is not None:
             y = row["y"] if "y" in row.keys() else None
-            out.append((category, scope, row["v"], disp.format(row["v"]),
-                        row["o"], y, when))
+            txt = disp(row["v"]) if callable(disp) else disp.format(row["v"])
+            out.append((category, scope, row["v"], txt, row["o"], y, when))
 
-    pct = "{:.3f}"
+    pct = lambda v: (f"{v:.3f}".lstrip("0") or "0")  # .842 style
     comp_in = ",".join(str(y) for y in completed) or "0"
-    pick("Most wins, regular season", "wins",
-         "SELECT owner_slug o, rs_w v, year y FROM season_stats ORDER BY rs_w DESC LIMIT 1")
-    pick("Most wins, season (incl. playoffs)", "wins",
-         "SELECT owner_slug o, w v, year y FROM season_stats ORDER BY w DESC LIMIT 1")
-    pick("Most wins, career", "wins",
-         "SELECT owner_slug o, w v FROM career_stats ORDER BY w DESC LIMIT 1", when="all-time")
-    pick("Best win pct, season (regular season)", "wins",
+    pick("Most wins in a season (regular season)", "wins",
+         "SELECT owner_slug o, rs_w v, year y FROM season_stats ORDER BY rs_w DESC LIMIT 1", "{:g} wins")
+    pick("Most wins in a season (with playoffs)", "wins",
+         "SELECT owner_slug o, w v, year y FROM season_stats ORDER BY w DESC LIMIT 1", "{:g} wins")
+    pick("Most career wins", "wins",
+         "SELECT owner_slug o, w v FROM career_stats ORDER BY w DESC LIMIT 1", "{:g} wins", when="all-time")
+    pick("Best season win pct (regular season)", "wins",
          "SELECT owner_slug o, rs_win_pct v, year y FROM season_stats WHERE rs_games >= 15 ORDER BY rs_win_pct DESC LIMIT 1", pct)
-    pick("Best win pct, season (incl. playoffs)", "wins",
+    pick("Best season win pct (with playoffs)", "wins",
          "SELECT owner_slug o, win_pct v, year y FROM season_stats WHERE rs_games >= 15 ORDER BY win_pct DESC LIMIT 1", pct)
-    pick("Best win pct, career", "wins",
+    pick("Best career win pct", "wins",
          "SELECT owner_slug o, win_pct v FROM career_stats ORDER BY win_pct DESC LIMIT 1", pct, when="all-time")
     pick("Most winning seasons", "wins",
-         "SELECT owner_slug o, winning_seasons v FROM career_stats ORDER BY winning_seasons DESC LIMIT 1", when="all-time")
+         "SELECT owner_slug o, winning_seasons v FROM career_stats ORDER BY winning_seasons DESC LIMIT 1", "{:g} seasons", when="all-time")
     pick("Most losing seasons", "losses",
-         "SELECT owner_slug o, losing_seasons v FROM career_stats ORDER BY losing_seasons DESC LIMIT 1", when="all-time")
-    pick("Most losses, career", "losses",
-         "SELECT owner_slug o, l v FROM career_stats ORDER BY l DESC LIMIT 1", when="all-time")
-    pick("Most losses, season", "losses",
-         f"SELECT owner_slug o, l v, year y FROM season_stats WHERE year IN ({comp_in}) ORDER BY l DESC LIMIT 1")
-    pick("Fewest losses, season (incl. playoffs)", "losses",
-         f"SELECT owner_slug o, l v, year y FROM season_stats WHERE year IN ({comp_in}) ORDER BY l ASC LIMIT 1")
+         "SELECT owner_slug o, losing_seasons v FROM career_stats ORDER BY losing_seasons DESC LIMIT 1", "{:g} seasons", when="all-time")
+    pick("Most career losses", "losses",
+         "SELECT owner_slug o, l v FROM career_stats ORDER BY l DESC LIMIT 1", "{:g} losses", when="all-time")
+    pick("Most losses in a season", "losses",
+         f"SELECT owner_slug o, l v, year y FROM season_stats WHERE year IN ({comp_in}) ORDER BY l DESC LIMIT 1", "{:g} losses")
+    pick("Fewest losses in a full season", "losses",
+         f"SELECT owner_slug o, l v, year y FROM season_stats WHERE year IN ({comp_in}) ORDER BY l ASC LIMIT 1", "{:g} losses")
 
     # ---------------- season sequences (completed seasons, consecutive years)
     seas = conn.execute(
@@ -592,7 +590,7 @@ def _wl_records(conn: sqlite3.Connection) -> None:
 
     for k, cat, scope in (("win", "Most consecutive winning seasons", "wins"),
                           ("lose", "Most consecutive losing seasons", "losses"),
-                          ("15", "Most consecutive 15-win seasons", "wins")):
+                          ("15", "Most consecutive 15-win regular seasons", "wins")):
         b = seq_best[k]
         if b and b[0] >= 2:
             out.append((cat, scope, b[0], f"{b[0]} seasons", b[1], b[3], span(b[2], b[3])))
@@ -600,11 +598,11 @@ def _wl_records(conn: sqlite3.Connection) -> None:
         f"SELECT owner_slug o, COUNT(*) v FROM season_stats WHERE rs_w >= 15 AND year IN ({comp_in}) "
         "GROUP BY owner_slug ORDER BY v DESC LIMIT 1").fetchone()
     if n15 and n15["v"]:
-        out.append(("Most 15-win seasons", "wins", n15["v"], f"{n15['v']:g}", n15["o"], None, "all-time"))
+        out.append(("Most 15-win regular seasons", "wins", n15["v"], f"{n15['v']:g} seasons", n15["o"], None, "all-time"))
     if imp_best:
-        out.append(("Most improved record", "wins", round(imp_best[0], 3), imp_best[3], imp_best[1], imp_best[2], None))
+        out.append(("Biggest one-year improvement", "wins", round(imp_best[0], 3), imp_best[3], imp_best[1], imp_best[2], None))
     if reg_best:
-        out.append(("Worst regression", "losses", round(reg_best[0], 3), reg_best[3], reg_best[1], reg_best[2], None))
+        out.append(("Biggest one-year collapse", "losses", round(reg_best[0], 3), reg_best[3], reg_best[1], reg_best[2], None))
 
     # ---------------- game-by-game timeline records
     years = [r["year"] for r in conn.execute("SELECT year FROM seasons ORDER BY year")]
@@ -692,20 +690,20 @@ def _wl_records(conn: sqlite3.Connection) -> None:
         onept[slug] = pts1
 
     STREAKS = [
-        (("overall", "W"), "Longest win streak, overall", "wins"),
-        (("season", "W"), "Longest win streak, single season", "wins"),
-        (("begin", "W"), "Longest win streak to open a season", "wins"),
-        (("overall", "L"), "Longest losing streak, overall", "losses"),
-        (("season", "L"), "Longest losing streak, single season", "losses"),
-        (("begin", "L"), "Longest losing streak to open a season", "losses"),
+        (("overall", "W"), "Longest win streak", "wins", "{} games"),
+        (("season", "W"), "Longest win streak in one season", "wins", "{} games"),
+        (("begin", "W"), "Best start to a season", "wins", "{}–0 start"),
+        (("overall", "L"), "Longest losing streak", "losses", "{} games"),
+        (("season", "L"), "Longest losing streak in one season", "losses", "{} games"),
+        (("begin", "L"), "Worst start to a season", "losses", "0–{} start"),
     ]
-    for key, cat, scope in STREAKS:
+    for key, cat, scope, disp in STREAKS:
         b = best.get(key)
         if b:
-            out.append((cat, scope, b[0], f"{b[0]} games", b[1], b[3], span(b[2], b[3])))
+            out.append((cat, scope, b[0], disp.format(b[0]), b[1], b[3], span(b[2], b[3])))
     b = best.get(("pairW",))
     if b:
-        out.append(("Most consecutive wins vs one team", "wins", b[0], f"{b[0]} straight",
+        out.append(("Most consecutive wins over one opponent", "wins", b[0], f"{b[0]} straight",
                     b[1], b[3], f"vs {name_of.get(b[4], b[4])} · {span(b[2], b[3])}"))
     if fast_w:
         slug, (g, y) = min(fast_w.items(), key=lambda kv: kv[1][0])
@@ -716,7 +714,7 @@ def _wl_records(conn: sqlite3.Connection) -> None:
     if onept:
         slug, n = max(onept.items(), key=lambda kv: kv[1])
         if n:
-            out.append(("Most wins by 1 point or less", "wins", n, f"{n:g}", slug, None, "all-time"))
+            out.append(("Most wins by 1 point or less", "wins", n, f"{n:g} wins", slug, None, "all-time"))
 
     # ---------------- championship records
     finals = conn.execute(
@@ -727,15 +725,15 @@ def _wl_records(conn: sqlite3.Connection) -> None:
         for r in finals:
             apps[r["o"]].append((r["y"], r["c"]))
         slug, v = max(apps.items(), key=lambda kv: len(kv[1]))
-        out.append(("Most championship games", "titles", len(v), f"{len(v)}", slug, None, "all-time"))
+        out.append(("Most championship game appearances", "titles", len(v), f"{len(v)} finals", slug, None, "all-time"))
         losses_by = {s: sum(1 for _, c in v if not c) for s, v in apps.items()}
         slug, n = max(losses_by.items(), key=lambda kv: kv[1])
         if n:
-            out.append(("Most championship game losses", "titles", n, f"{n}", slug, None, "all-time"))
+            out.append(("Most championship game losses", "titles", n, f"{n} losses", slug, None, "all-time"))
         wins_by = {s: sum(1 for _, c in v if c) for s, v in apps.items()}
         slug, n = max(wins_by.items(), key=lambda kv: kv[1])
         if n:
-            out.append(("Most championship wins", "titles", n, f"{n}", slug, None, "all-time"))
+            out.append(("Most championships", "titles", n, f"{n} titles", slug, None, "all-time"))
 
         def consec(want_champ):
             bb = None
@@ -752,8 +750,8 @@ def _wl_records(conn: sqlite3.Connection) -> None:
                         bb = (run, s, y0, y)
             return bb
 
-        for want, cat in ((False, "Most consecutive championship games"),
-                          (True, "Most consecutive championship wins")):
+        for want, cat in ((False, "Most consecutive finals appearances"),
+                          (True, "Most consecutive championships")):
             bb = consec(want)
             if bb and bb[0] >= 2:
                 out.append((cat, "titles", bb[0], f"{bb[0]} straight", bb[1], bb[3], span(bb[2], bb[3])))
