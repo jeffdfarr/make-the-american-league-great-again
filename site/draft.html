@@ -24,7 +24,10 @@
 </header>
 <main class="wrap">
   <h2 style="margin-top:1.6rem" id="board-h">Rookie drafts</h2>
-  <div class="yearpick" id="years"></div>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .6rem">
+    <div class="yearpick" id="years" style="margin:0"></div>
+    <select id="mgr" aria-label="Filter by manager"></select>
+  </div>
   <div class="tbl-scroll"><table id="board">
     <thead></thead>
     <tbody><tr><td class="loading">Loading…</td></tr></tbody>
@@ -41,6 +44,10 @@
   #board td.own-c { font-weight: 600; }
   #board td.own-c .via { color: inherit; opacity: .8; font-weight: 400; }
   #board td.own-c .traded { color: inherit; }
+  #mgr { padding: .4rem .7rem; border: 1px solid var(--rule); border-radius: 999px;
+         background: var(--surface); color: var(--ink); font: inherit; font-size: .85rem; }
+  .sw { display: inline-block; width: .75em; height: .75em; border-radius: 3px;
+        border: 1px solid var(--rule); margin-right: .4em; vertical-align: baseline; }
 </style>
 <script src="assets/app.js"></script>
 <script>
@@ -83,9 +90,53 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
     const style = c ? ` class="own-c" style="background:${c[0]};color:${c[1]}"` : "";
     return `<td title="Pick ${p.num}"${style}>${cell(p, b.results)}</td>`;
   };
+  // who a pick belongs to: drafting manager on results boards, current owner on future boards
+  const mgrOf = (p, results) => {
+    const m = p.owner.match(/^([^(]+?)\s*\((.+)\)\s*$/);
+    return (results ? (m ? m[2] : "") : (m ? m[1] : p.owner)).split("(")[0].trim();
+  };
+  const sel = document.getElementById("mgr");
+  {
+    const mgrs = new Set();
+    boards.forEach(b => b.rounds.forEach(r => r.picks.forEach(p => {
+      const n = mgrOf(p, b.results);
+      if (n) mgrs.add(n);
+    })));
+    sel.innerHTML = `<option value="">All managers</option>` +
+      [...mgrs].sort().map(n => `<option>${esc(n)}</option>`).join("");
+  }
+
+  function renderMgr(nm) {
+    pick.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+    const c = MGR[nm.toLowerCase()];
+    document.getElementById("board-h").innerHTML =
+      (c ? `<span class="sw" style="background:${c[0]}"></span>` : "") + esc(nm) + "’s picks";
+    document.getElementById("board-note").textContent =
+      "Future years show the picks " + nm + " currently owns; drafted years show the players " + nm + " took.";
+    const table = document.getElementById("board");
+    table.querySelector("thead").innerHTML =
+      `<tr><th class="num">Year</th><th>Round</th><th class="num">Pick</th><th>Player / origin</th></tr>`;
+    let rows = "";
+    for (const b of boards) {
+      for (const r of b.rounds) {
+        for (const p of r.picks) {
+          if (mgrOf(p, b.results) !== nm) continue;
+          const m = p.owner.match(/^([^(]+?)\s*\((.+)\)\s*$/);
+          const detail = b.results
+            ? esc(m ? m[1].trim() : p.owner)
+            : (m ? `<span class="via">via ${esc(m[2])}</span>` : `<span class="via">own pick</span>`);
+          rows += `<tr><td class="num">${b.year}</td><td>${esc(r.round)}</td><td class="num">${p.num}</td><td>${detail}</td></tr>`;
+        }
+      }
+    }
+    table.querySelector("tbody").innerHTML =
+      rows || `<tr><td colspan="4">No picks found for ${esc(nm)}.</td></tr>`;
+  }
+
   let cur = 0;
   function render(i) {
     cur = i;
+    sel.value = "";
     pick.querySelectorAll("button").forEach(b => b.classList.toggle("active", +b.dataset.i === i));
     const b = boards[i];
     document.getElementById("board-h").textContent =
@@ -107,6 +158,7 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
     table.querySelector("tbody").innerHTML = rows;
   }
   pick.addEventListener("click", e => { if (e.target.dataset.i) render(+e.target.dataset.i); });
+  sel.addEventListener("change", () => { if (sel.value) renderMgr(sel.value); else render(cur); });
   const activeYear = (meta.seasons && meta.seasons.length)
     ? Math.max(...meta.seasons) : new Date().getFullYear();
   let start = boards.findIndex(b => b.year === activeYear);
