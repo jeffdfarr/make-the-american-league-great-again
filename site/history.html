@@ -46,13 +46,18 @@
   <div class="tbl-scroll"><table id="hit-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="pit-h" style="display:none">Pitching records</h2>
   <div class="tbl-scroll"><table id="pit-t"><thead></thead><tbody></tbody></table></div>
-  <h2 id="pos-h" style="display:none">Position records</h2>
+  <h2 id="pos-h" style="display:none">Regular-season position records</h2>
   <div class="tbl-scroll"><table id="pos-t"><thead></thead><tbody></tbody></table></div>
-  <p class="sub" id="pos-note" style="display:none;margin-top:.5rem">Points credited to each lineup slot, day by day — regular season only.</p>
+  <p class="sub" id="pos-note" style="display:none;margin-top:.5rem">A player's full regular-season points count — started, benched, or on IR — but minor-league stash days don't. Position is where he actually played most.</p>
   <footer></footer>
 </main>
 <style>
   main table td, main table th { text-align: left; }
+  /* no frozen first column here — record names are wide and the freeze
+     buries the scrolling stats on phones */
+  main .tbl-scroll th:first-child, main .tbl-scroll td:first-child {
+    position: static; width: auto; min-width: 0;
+  }
   main table td.num { text-align: right; font-weight: 700; white-space: nowrap; }
   main table th.num { text-align: right; }
   .faint { color: var(--ink-faint); }

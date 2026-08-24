@@ -501,40 +501,60 @@ POSITION_SLOTS = [
 
 
 def _position_records(conn: sqlite3.Connection) -> None:
-    """Best player season and best player week at each lineup slot.
-    A player's season = his summed points over the days he sat in that slot
-    for one team; the record shows the player AND the manager who rolled
-    him out."""
+    """Regular-season position records, league convention (2026-08): a
+    player's FULL points count — started, benched, or on IR — but days in a
+    minor-league slot do not. He's classified by the position where he
+    actually scored the most while started (his primary slot)."""
+    slot_keys = {s for s, _ in POSITION_SLOTS}
+    owner_of = {r["id"]: r["owner_slug"] for r in conn.execute(
+        "SELECT id, owner_slug FROM team_seasons WHERE owner_slug IS NOT NULL")}
+    seasons: dict[tuple, dict] = {}   # (y, ts, pid) -> {tot, act{slot: v}, weeks{wk: v}, player}
+    for r in conn.execute(
+        """SELECT year y, team_season_id ts, player_id pid, player p, slot, status st, week w, SUM(pts) v
+           FROM position_points GROUP BY year, team_season_id, player_id, slot, status, week"""):
+        if (r["st"] or "").lower().startswith("min"):
+            continue  # minors stash days don't count
+        if r["ts"] not in owner_of:
+            continue
+        e = seasons.setdefault((r["y"], r["ts"], r["pid"]),
+                               {"tot": 0.0, "act": defaultdict(float), "weeks": defaultdict(float), "player": r["p"]})
+        e["tot"] += r["v"]
+        e["weeks"][r["w"]] += r["v"]
+        if (r["st"] or "").lower() == "active" and r["slot"] in slot_keys:
+            e["act"][r["slot"]] += r["v"]
+        if r["p"]:
+            e["player"] = r["p"]
+
+    best_season: dict[str, tuple] = {}   # slot -> (v, player, owner, year)
+    best_week: dict[str, tuple] = {}     # slot -> (v, player, owner, year, wk)
+    for (y, ts, _pid), e in seasons.items():
+        if not e["act"]:
+            continue  # never started — no position to claim
+        primary = max(e["act"].items(), key=lambda kv: kv[1])[0]
+        o = owner_of[ts]
+        cur = best_season.get(primary)
+        if cur is None or e["tot"] > cur[0]:
+            best_season[primary] = (e["tot"], e["player"], o, y)
+        for wk, v in e["weeks"].items():
+            cur = best_week.get(primary)
+            if cur is None or v > cur[0]:
+                best_week[primary] = (v, e["player"], o, y, wk)
+
     for slot, label in POSITION_SLOTS:
-        season = conn.execute(
-            """SELECT ts.owner_slug o, pp.player p, SUM(pp.pts) v, pp.year y
-               FROM position_points pp JOIN team_seasons ts ON ts.id = pp.team_season_id
-               WHERE pp.slot=? AND ts.owner_slug IS NOT NULL
-               GROUP BY pp.year, pp.team_season_id, pp.player_id
-               ORDER BY v DESC LIMIT 1""",
-            (slot,),
-        ).fetchone()
-        if season and season["v"]:
+        b = best_season.get(slot)
+        if b and b[0]:
             conn.execute(
                 """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
                    VALUES (?,?,?,?,?,?,?)""",
-                (f"Most points from {label}", "position", season["v"],
-                 f"{season['v']:,.0f} pts", season["o"], season["y"], season["p"]),
+                (f"Most points from {label}", "position", b[0], f"{b[0]:,.0f} pts", b[2], b[3], b[1]),
             )
-        week = conn.execute(
-            """SELECT ts.owner_slug o, pp.player p, SUM(pp.pts) v, pp.year y, pp.week w
-               FROM position_points pp JOIN team_seasons ts ON ts.id = pp.team_season_id
-               WHERE pp.slot=? AND ts.owner_slug IS NOT NULL
-               GROUP BY pp.year, pp.week, pp.team_season_id, pp.player_id
-               ORDER BY v DESC LIMIT 1""",
-            (slot,),
-        ).fetchone()
-        if week and week["v"]:
+        b = best_week.get(slot)
+        if b and b[0]:
             conn.execute(
                 """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
                    VALUES (?,?,?,?,?,?,?)""",
-                (f"Most points from {label}, week", "position-week", week["v"],
-                 f"{week['v']:,.1f} pts", week["o"], week["y"], f"{week['p']} · Wk {week['w']}"),
+                (f"Most points from {label}, week", "position-week", b[0], f"{b[0]:,.1f} pts",
+                 b[2], b[3], f"{b[1]} · Wk {b[4]}"),
             )
 
 
