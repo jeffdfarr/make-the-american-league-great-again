@@ -270,6 +270,69 @@
   "detail": "2021"
  },
  {
+  "category": "Best career OPR",
+  "scope": "opr",
+  "value": 1.044777645495585,
+  "display": "1.045",
+  "owner_slug": "tfarr",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Best single-season OPR",
+  "scope": "opr",
+  "value": 1.1851047823481078,
+  "display": "1.185",
+  "owner_slug": "bugar",
+  "year": 2025,
+  "detail": null
+ },
+ {
+  "category": "Highest OPR to miss the playoffs",
+  "scope": "opr",
+  "value": 1.0542594495361628,
+  "display": "1.054",
+  "owner_slug": "tessman",
+  "year": 2023,
+  "detail": null
+ },
+ {
+  "category": "Lowest OPR to make the playoffs",
+  "scope": "opr",
+  "value": 0.9082527707873151,
+  "display": "0.908",
+  "owner_slug": "krech",
+  "year": 2020,
+  "detail": null
+ },
+ {
+  "category": "Most 1.000+ OPR seasons",
+  "scope": "opr",
+  "value": 5.0,
+  "display": "5 seasons",
+  "owner_slug": "moellerreed",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Worst career OPR",
+  "scope": "opr",
+  "value": 0.683292435420931,
+  "display": "0.683",
+  "owner_slug": "bruchu",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Worst single-season OPR",
+  "scope": "opr",
+  "value": 0.7078856255595597,
+  "display": "0.708",
+  "owner_slug": "tasin",
+  "year": 2022,
+  "detail": null
+ },
+ {
   "category": "Most blown saves",
   "scope": "pitching",
   "value": 135.0,
@@ -375,15 +438,6 @@
   "display": "151",
   "owner_slug": "bugar",
   "year": 2024,
-  "detail": null
- },
- {
-  "category": "Best single-season OPR",
-  "scope": "scoring",
-  "value": 1.1851047823481078,
-  "display": "1.185",
-  "owner_slug": "bugar",
-  "year": 2025,
   "detail": null
  },
  {

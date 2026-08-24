@@ -30,6 +30,8 @@
     <thead></thead>
     <tbody><tr><td class="loading">Loading…</td></tr></tbody>
   </table></div>
+  <h2 id="opr-h" style="display:none">OPR records</h2>
+  <div class="tbl-scroll"><table id="opr-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="win-h" style="display:none">Win records</h2>
   <div class="tbl-scroll"><table id="win-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="loss-h" style="display:none">Loss records</h2>
@@ -75,7 +77,10 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     "Lowest single-week score": "The all-time stinker",
     "Biggest blowout": "Largest margin of victory in one week",
     "Most points in a season": "Regular-season points",
-    "Best single-season OPR": "Overall Power Rating, normalized to the league average",
+    "Best career OPR": "Overall Power Rating, normalized to the league average — 1.000 is average",
+    "Lowest OPR to make the playoffs": "The weakest team ever to sneak into the postseason",
+    "Highest OPR to miss the playoffs": "The best team ever left out",
+    "Most 1.000+ OPR seasons": "Seasons finishing above league average",
     "Best average finish": "Average final standing across a career",
     "Worst average finish": "Average final standing across a career",
     "Longest win streak": "Consecutive wins — can carry across seasons",
@@ -103,7 +108,10 @@ document.querySelector('[data-nav="history"]').classList.add("active");
 
   const SECTIONS = [
     ["scoring", null, "sc-t", ["Highest single-week score", "Lowest single-week score", "Biggest blowout",
-      "Most points in a season", "Best single-season OPR"]],
+      "Most points in a season"]],
+    ["opr", "opr-h", "opr-t", ["Best career OPR", "Worst career OPR",
+      "Best single-season OPR", "Worst single-season OPR",
+      "Lowest OPR to make the playoffs", "Highest OPR to miss the playoffs", "Most 1.000+ OPR seasons"]],
     ["wins", "win-h", "win-t", ["Most career wins", "Best career win pct", "Most winning seasons",
       "Most consecutive winning seasons", "Most 15-win regular seasons", "Most consecutive 15-win regular seasons",
       "Most wins in a season (regular season)", "Most wins in a season (with playoffs)",

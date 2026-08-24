@@ -431,12 +431,28 @@ def _records(conn: sqlite3.Connection) -> None:
          "SELECT ts.owner_slug o, (g.pts_for-g.pts_against) v, g.year y FROM games g JOIN team_seasons ts ON ts.id=g.team_season_id WHERE g.complete=1 AND g.game_type='R' ORDER BY v DESC LIMIT 1"),
         ("Most points in a season", "scoring", "{:,.0f} pts", None,
          "SELECT owner_slug o, pf v, year y FROM season_stats ORDER BY pf DESC LIMIT 1"),
-        ("Best single-season OPR", "scoring", "{:.3f}", None,
-         "SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND rs_games >= 15 ORDER BY opr DESC LIMIT 1"),
         ("Best average finish", "franchise", "{:.2f}", "all-time",
          "SELECT owner_slug o, avg_finish v, NULL y FROM career_stats WHERE seasons >= 2 ORDER BY avg_finish ASC LIMIT 1"),
         ("Worst average finish", "franchise", "{:.2f}", "all-time",
          "SELECT owner_slug o, avg_finish v, NULL y FROM career_stats WHERE seasons >= 2 ORDER BY avg_finish DESC LIMIT 1"),
+    ]
+    # OPR records — minimum-side and count records use completed seasons only,
+    # so a half-played year can't sneak in; maxima break only when exceeded.
+    comp = [r["year"] for r in conn.execute("SELECT DISTINCT year FROM season_stats WHERE champion=1")]
+    comp_in = ",".join(str(y) for y in comp) or "0"
+    specs += [
+        ("Best career OPR", "opr", "{:.3f}", "all-time",
+         "SELECT owner_slug o, career_opr v, NULL y FROM career_stats WHERE career_opr IS NOT NULL ORDER BY career_opr DESC LIMIT 1"),
+        ("Worst career OPR", "opr", "{:.3f}", "all-time",
+         "SELECT owner_slug o, career_opr v, NULL y FROM career_stats WHERE career_opr IS NOT NULL ORDER BY career_opr ASC LIMIT 1"),
+        ("Best single-season OPR", "opr", "{:.3f}", None,
+         "SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND rs_games >= 15 ORDER BY opr DESC LIMIT 1"),
+        ("Worst single-season OPR", "opr", "{:.3f}", None,
+         f"SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND year IN ({comp_in}) ORDER BY opr ASC LIMIT 1"),
+        ("Lowest OPR to make the playoffs", "opr", "{:.3f}", None,
+         f"SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND playoff_app=1 AND year IN ({comp_in}) ORDER BY opr ASC LIMIT 1"),
+        ("Highest OPR to miss the playoffs", "opr", "{:.3f}", None,
+         f"SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND playoff_app=0 AND year IN ({comp_in}) ORDER BY opr DESC LIMIT 1"),
     ]
     for category, scope, disp, when, sql in specs:
         row = conn.execute(sql).fetchone()
@@ -446,6 +462,15 @@ def _records(conn: sqlite3.Connection) -> None:
                    VALUES (?,?,?,?,?,?,?)""",
                 (category, scope, row["v"], disp.format(row["v"]), row["o"], row["y"], when),
             )
+    row = conn.execute(
+        f"SELECT owner_slug o, COUNT(*) v FROM season_stats WHERE opr > 1.0 AND year IN ({comp_in}) "
+        "AND owner_slug IS NOT NULL GROUP BY owner_slug ORDER BY v DESC LIMIT 1").fetchone()
+    if row and row["v"]:
+        conn.execute(
+            """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
+               VALUES (?,?,?,?,?,?,?)""",
+            ("Most 1.000+ OPR seasons", "opr", row["v"], f"{row['v']:g} seasons", row["o"], None, "all-time"),
+        )
     _wl_records(conn)
     _category_records(conn)
 
