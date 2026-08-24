@@ -52,8 +52,11 @@ def main(argv: list[str] | None = None) -> int:
         year = args.year or cfg.current_season
         sync_season(conn, cfg, cfg.seasons[year])
         if not args.no_metrics:
+            from .alerts import diff_messages, send_all, snapshot
+            before = snapshot(conn)
             rebuild(conn, cfg)
             export_all(conn)
+            send_all(diff_messages(conn, before))
     elif args.cmd == "backfill":
         from .fantrax_client import build_session
         session = build_session()

@@ -25,6 +25,7 @@ jobs:
       - name: Sync current season + rebuild metrics + export JSON
         env:
           FANTRAX_COOKIES: ${{ secrets.FANTRAX_COOKIES }}
+          GROUPME_BOT_ID: ${{ secrets.GROUPME_BOT_ID }}
         run: python -m mtalga.cli sync
 
       - name: Refresh bylaws from the rulebook sheet
