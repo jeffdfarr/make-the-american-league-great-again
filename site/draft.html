@@ -46,6 +46,9 @@
   #board td.own-c .traded { color: inherit; }
   #mgr { padding: .4rem .7rem; border: 1px solid var(--rule); border-radius: 999px;
          background: var(--surface); color: var(--ink); font: inherit; font-size: .85rem; }
+  #board tr.own-r td { background: var(--rc); color: var(--rt); font-weight: 600; }
+  #board tr.own-r td.num { color: var(--rt); opacity: .8; }
+  #board tr.own-r .via { color: inherit; opacity: .85; font-weight: 400; }
   .sw { display: inline-block; width: .75em; height: .75em; border-radius: 3px;
         border: 1px solid var(--rule); margin-right: .4em; vertical-align: baseline; }
 </style>
@@ -98,7 +101,7 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
   const sel = document.getElementById("mgr");
   {
     const mgrs = new Set();
-    boards.forEach(b => b.rounds.forEach(r => r.picks.forEach(p => {
+    boards.filter(b => !b.results).forEach(b => b.rounds.forEach(r => r.picks.forEach(p => {
       const n = mgrOf(p, b.results);
       if (n) mgrs.add(n);
     })));
@@ -112,25 +115,25 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
     document.getElementById("board-h").innerHTML =
       (c ? `<span class="sw" style="background:${c[0]}"></span>` : "") + esc(nm) + "’s picks";
     document.getElementById("board-note").textContent =
-      "Future years show the picks " + nm + " currently owns; drafted years show the players " + nm + " took.";
+      "Every pick " + nm + " has available, soonest draft first.";
     const table = document.getElementById("board");
     table.querySelector("thead").innerHTML =
-      `<tr><th class="num">Year</th><th>Round</th><th class="num">Pick</th><th>Player / origin</th></tr>`;
+      `<tr><th class="num">Year</th><th>Round</th><th class="num">Pick</th><th>Origin</th></tr>`;
+    const rowStyle = c ? ` class="own-r" style="--rc:${c[0]};--rt:${c[1]}"` : "";
     let rows = "";
-    for (const b of boards) {
+    const future = boards.filter(b => !b.results).sort((a, b) => a.year - b.year);
+    for (const b of future) {
       for (const r of b.rounds) {
         for (const p of r.picks) {
           if (mgrOf(p, b.results) !== nm) continue;
           const m = p.owner.match(/^([^(]+?)\s*\((.+)\)\s*$/);
-          const detail = b.results
-            ? esc(m ? m[1].trim() : p.owner)
-            : (m ? `<span class="via">via ${esc(m[2])}</span>` : `<span class="via">own pick</span>`);
-          rows += `<tr><td class="num">${b.year}</td><td>${esc(r.round)}</td><td class="num">${p.num}</td><td>${detail}</td></tr>`;
+          const detail = m ? `<span class="via">via ${esc(m[2])}</span>` : `<span class="via">own pick</span>`;
+          rows += `<tr${rowStyle}><td class="num">${b.year}</td><td>${esc(r.round)}</td><td class="num">${p.num}</td><td>${detail}</td></tr>`;
         }
       }
     }
     table.querySelector("tbody").innerHTML =
-      rows || `<tr><td colspan="4">No picks found for ${esc(nm)}.</td></tr>`;
+      rows || `<tr><td colspan="4">No upcoming picks found for ${esc(nm)}.</td></tr>`;
   }
 
   let cur = 0;
