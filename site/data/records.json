@@ -189,6 +189,96 @@
   "detail": null
  },
  {
+  "category": "Fastest to 100 losses",
+  "scope": "losses",
+  "value": 131.0,
+  "display": "131 games",
+  "owner_slug": "tasin",
+  "year": 2026,
+  "detail": null
+ },
+ {
+  "category": "Fewest losses, season (incl. playoffs)",
+  "scope": "losses",
+  "value": 1.0,
+  "display": "1",
+  "owner_slug": "sorgaard",
+  "year": 2020,
+  "detail": null
+ },
+ {
+  "category": "Longest losing streak to open a season",
+  "scope": "losses",
+  "value": 6.0,
+  "display": "6 games",
+  "owner_slug": "drwall",
+  "year": 2021,
+  "detail": "2021"
+ },
+ {
+  "category": "Longest losing streak, overall",
+  "scope": "losses",
+  "value": 16.0,
+  "display": "16 games",
+  "owner_slug": "tasin",
+  "year": 2023,
+  "detail": "2023"
+ },
+ {
+  "category": "Longest losing streak, single season",
+  "scope": "losses",
+  "value": 16.0,
+  "display": "16 games",
+  "owner_slug": "tasin",
+  "year": 2023,
+  "detail": "2023"
+ },
+ {
+  "category": "Most consecutive losing seasons",
+  "scope": "losses",
+  "value": 6.0,
+  "display": "6 seasons",
+  "owner_slug": "tasin",
+  "year": 2025,
+  "detail": "2020\u20132025"
+ },
+ {
+  "category": "Most losing seasons",
+  "scope": "losses",
+  "value": 7.0,
+  "display": "7",
+  "owner_slug": "tasin",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most losses, career",
+  "scope": "losses",
+  "value": 100.0,
+  "display": "100",
+  "owner_slug": "tasin",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most losses, season",
+  "scope": "losses",
+  "value": 18.0,
+  "display": "18",
+  "owner_slug": "tasin",
+  "year": 2022,
+  "detail": null
+ },
+ {
+  "category": "Worst regression",
+  "scope": "losses",
+  "value": -0.481,
+  "display": "20\u20132 \u2192 9\u201312",
+  "owner_slug": "tessman",
+  "year": 2022,
+  "detail": null
+ },
+ {
   "category": "Most blown saves",
   "scope": "pitching",
   "value": 135.0,
@@ -297,21 +387,21 @@
   "detail": null
  },
  {
+  "category": "Best average finish",
+  "scope": "season",
+  "value": 3.2857142857142856,
+  "display": "3.29",
+  "owner_slug": "tfarr",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
   "category": "Best season OPR",
   "scope": "season",
   "value": 1.1851047823481078,
   "display": "1.1851",
   "owner_slug": "bugar",
   "year": 2025,
-  "detail": null
- },
- {
-  "category": "Best win pct, season",
-  "scope": "season",
-  "value": 0.9166666666666666,
-  "display": "0.916667",
-  "owner_slug": "tessman",
-  "year": 2021,
   "detail": null
  },
  {
@@ -324,21 +414,156 @@
   "detail": null
  },
  {
-  "category": "Longest losing streak",
-  "scope": "streak",
-  "value": 16.0,
-  "display": "16 games",
+  "category": "Worst average finish",
+  "scope": "season",
+  "value": 9.142857142857142,
+  "display": "9.14",
   "owner_slug": "tasin",
-  "year": 2023,
-  "detail": "2023"
+  "year": null,
+  "detail": "all-time"
  },
  {
-  "category": "Longest win streak",
-  "scope": "streak",
+  "category": "Best win pct, career",
+  "scope": "wins",
+  "value": 0.6617647058823529,
+  "display": "0.662",
+  "owner_slug": "moellerreed",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Best win pct, season (incl. playoffs)",
+  "scope": "wins",
+  "value": 0.9166666666666666,
+  "display": "0.917",
+  "owner_slug": "tessman",
+  "year": 2021,
+  "detail": null
+ },
+ {
+  "category": "Best win pct, season (regular season)",
+  "scope": "wins",
+  "value": 0.9090909090909091,
+  "display": "0.909",
+  "owner_slug": "tessman",
+  "year": 2021,
+  "detail": null
+ },
+ {
+  "category": "Longest win streak to open a season",
+  "scope": "wins",
+  "value": 11.0,
+  "display": "11 games",
+  "owner_slug": "bugar",
+  "year": 2025,
+  "detail": "2025"
+ },
+ {
+  "category": "Longest win streak, overall",
+  "scope": "wins",
   "value": 17.0,
   "display": "17 games",
   "owner_slug": "bugar",
   "year": 2025,
   "detail": "2024\u20132025"
+ },
+ {
+  "category": "Longest win streak, single season",
+  "scope": "wins",
+  "value": 16.0,
+  "display": "16 games",
+  "owner_slug": "tessman",
+  "year": 2021,
+  "detail": "2021"
+ },
+ {
+  "category": "Most 15-win seasons",
+  "scope": "wins",
+  "value": 2.0,
+  "display": "2",
+  "owner_slug": "tfarr",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most consecutive 15-win seasons",
+  "scope": "wins",
+  "value": 2.0,
+  "display": "2 seasons",
+  "owner_slug": "tfarr",
+  "year": 2025,
+  "detail": "2024\u20132025"
+ },
+ {
+  "category": "Most consecutive winning seasons",
+  "scope": "wins",
+  "value": 5.0,
+  "display": "5 seasons",
+  "owner_slug": "moellerreed",
+  "year": 2025,
+  "detail": "2021\u20132025"
+ },
+ {
+  "category": "Most consecutive wins vs one team",
+  "scope": "wins",
+  "value": 12.0,
+  "display": "12 straight",
+  "owner_slug": "kaufer",
+  "year": 2026,
+  "detail": "vs Coirey Tasin \u00b7 2021\u20132026"
+ },
+ {
+  "category": "Most improved record",
+  "scope": "wins",
+  "value": 0.333,
+  "display": "12\u20139 \u2192 19\u20132",
+  "owner_slug": "bugar",
+  "year": 2025,
+  "detail": null
+ },
+ {
+  "category": "Most winning seasons",
+  "scope": "wins",
+  "value": 6.0,
+  "display": "6",
+  "owner_slug": "moellerreed",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most wins by 1 point or less",
+  "scope": "wins",
+  "value": 4.0,
+  "display": "4",
+  "owner_slug": "bugar",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most wins, career",
+  "scope": "wins",
+  "value": 90.0,
+  "display": "90",
+  "owner_slug": "moellerreed",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most wins, regular season",
+  "scope": "wins",
+  "value": 20.0,
+  "display": "20",
+  "owner_slug": "tessman",
+  "year": 2021,
+  "detail": null
+ },
+ {
+  "category": "Most wins, season (incl. playoffs)",
+  "scope": "wins",
+  "value": 22.0,
+  "display": "22",
+  "owner_slug": "tessman",
+  "year": 2021,
+  "detail": null
  }
 ]

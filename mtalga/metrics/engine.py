@@ -433,8 +433,10 @@ def _records(conn: sqlite3.Connection) -> None:
          "SELECT owner_slug o, pf v, year y FROM season_stats ORDER BY pf DESC LIMIT 1"),
         ("Best season OPR", "season",
          "SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND rs_games >= 15 ORDER BY opr DESC LIMIT 1"),
-        ("Best win pct, season", "season",
-         "SELECT owner_slug o, win_pct v, year y FROM season_stats WHERE rs_games >= 15 ORDER BY win_pct DESC LIMIT 1"),
+        ("Best average finish", "season",
+         "SELECT owner_slug o, avg_finish v, NULL y FROM career_stats WHERE seasons >= 2 ORDER BY avg_finish ASC LIMIT 1"),
+        ("Worst average finish", "season",
+         "SELECT owner_slug o, avg_finish v, NULL y FROM career_stats WHERE seasons >= 2 ORDER BY avg_finish DESC LIMIT 1"),
     ]
     for category, scope, sql in specs:
         row = conn.execute(sql).fetchone()
@@ -442,9 +444,11 @@ def _records(conn: sqlite3.Connection) -> None:
             conn.execute(
                 """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
                    VALUES (?,?,?,?,?,?,?)""",
-                (category, scope, row["v"], f"{row['v']:g}", row["o"], row["y"], None),
+                (category, scope, row["v"],
+                 f"{row['v']:.2f}" if "finish" in category else f"{row['v']:g}",
+                 row["o"], row["y"], "all-time" if "finish" in category else None),
             )
-    _streak_records(conn)
+    _wl_records(conn)
     _category_records(conn)
 
 
@@ -501,19 +505,118 @@ def _category_records(conn: sqlite3.Connection) -> None:
             )
 
 
-def _streak_records(conn: sqlite3.Connection) -> None:
-    """Longest win / losing streaks across the games that count for W-L
-    (regular season + championship bracket + 3rd-place game; consolation
-    never counts — same convention as season records). Streaks may span
-    seasons. Ties break both kinds of streak."""
+def _wl_records(conn: sqlite3.Connection) -> None:
+    """Win/loss record book. Counted games = regular season + championship
+    bracket + 3rd-place game (consolation never counts — league convention).
+    Season-count records (winning seasons, improvement, fewest losses, ...)
+    look only at COMPLETED seasons; single-season maxima may include the
+    current season once it actually exceeds the old record."""
+    name_of = {r["slug"]: r["name"] for r in conn.execute("SELECT slug, name FROM owners")}
+    completed = sorted(r["year"] for r in conn.execute(
+        "SELECT DISTINCT year FROM season_stats WHERE champion=1"))
+    comp_set = set(completed)
+    out: list[tuple] = []  # (category, scope, value, display, owner, year, detail)
+
+    def span(y0, y1):
+        return str(y0) if y0 == y1 else f"{y0}–{y1}"
+
+    # ---------------- season_stats / career_stats one-liners
+    def pick(category, scope, sql, disp="{:g}", when=None, params=()):
+        row = conn.execute(sql, params).fetchone()
+        if row and row["v"] is not None:
+            y = row["y"] if "y" in row.keys() else None
+            out.append((category, scope, row["v"], disp.format(row["v"]),
+                        row["o"], y, when))
+
+    pct = "{:.3f}"
+    comp_in = ",".join(str(y) for y in completed) or "0"
+    pick("Most wins, regular season", "wins",
+         "SELECT owner_slug o, rs_w v, year y FROM season_stats ORDER BY rs_w DESC LIMIT 1")
+    pick("Most wins, season (incl. playoffs)", "wins",
+         "SELECT owner_slug o, w v, year y FROM season_stats ORDER BY w DESC LIMIT 1")
+    pick("Most wins, career", "wins",
+         "SELECT owner_slug o, w v FROM career_stats ORDER BY w DESC LIMIT 1", when="all-time")
+    pick("Best win pct, season (regular season)", "wins",
+         "SELECT owner_slug o, rs_win_pct v, year y FROM season_stats WHERE rs_games >= 15 ORDER BY rs_win_pct DESC LIMIT 1", pct)
+    pick("Best win pct, season (incl. playoffs)", "wins",
+         "SELECT owner_slug o, win_pct v, year y FROM season_stats WHERE rs_games >= 15 ORDER BY win_pct DESC LIMIT 1", pct)
+    pick("Best win pct, career", "wins",
+         "SELECT owner_slug o, win_pct v FROM career_stats ORDER BY win_pct DESC LIMIT 1", pct, when="all-time")
+    pick("Most winning seasons", "wins",
+         "SELECT owner_slug o, winning_seasons v FROM career_stats ORDER BY winning_seasons DESC LIMIT 1", when="all-time")
+    pick("Most losing seasons", "losses",
+         "SELECT owner_slug o, losing_seasons v FROM career_stats ORDER BY losing_seasons DESC LIMIT 1", when="all-time")
+    pick("Most losses, career", "losses",
+         "SELECT owner_slug o, l v FROM career_stats ORDER BY l DESC LIMIT 1", when="all-time")
+    pick("Most losses, season", "losses",
+         f"SELECT owner_slug o, l v, year y FROM season_stats WHERE year IN ({comp_in}) ORDER BY l DESC LIMIT 1")
+    pick("Fewest losses, season (incl. playoffs)", "losses",
+         f"SELECT owner_slug o, l v, year y FROM season_stats WHERE year IN ({comp_in}) ORDER BY l ASC LIMIT 1")
+
+    # ---------------- season sequences (completed seasons, consecutive years)
+    seas = conn.execute(
+        "SELECT owner_slug, year, w, l, rs_w, rs_l, rs_win_pct FROM season_stats "
+        "WHERE owner_slug IS NOT NULL ORDER BY owner_slug, year").fetchall()
+    by_owner: dict[str, list] = defaultdict(list)
+    for r in seas:
+        by_owner[r["owner_slug"]].append(r)
+
+    seq_best: dict[str, tuple | None] = {"win": None, "lose": None, "15": None}
+    imp_best = reg_best = None  # (pct_diff, slug, year, display)
+    for slug, rows in by_owner.items():
+        crows = [r for r in rows if r["year"] in comp_set]
+        runs = {"win": (0, None), "lose": (0, None), "15": (0, None)}  # len, start
+        prev_year = None
+        for r in crows:
+            fresh = prev_year is None or r["year"] != prev_year + 1
+            flags = {"win": r["w"] > r["l"], "lose": r["l"] > r["w"], "15": r["rs_w"] >= 15}
+            for k, on in flags.items():
+                ln, y0 = runs[k]
+                if on:
+                    runs[k] = (1, r["year"]) if (fresh or ln == 0) else (ln + 1, y0)
+                    ln, y0 = runs[k]
+                    if seq_best[k] is None or ln > seq_best[k][0]:
+                        seq_best[k] = (ln, slug, y0, r["year"])
+                else:
+                    runs[k] = (0, None)
+            prev_year = r["year"]
+        for prev, cur in zip(crows, crows[1:]):
+            if cur["year"] != prev["year"] + 1:
+                continue
+            diff = (cur["rs_win_pct"] or 0) - (prev["rs_win_pct"] or 0)
+            disp = f"{prev['rs_w']}–{prev['rs_l']} → {cur['rs_w']}–{cur['rs_l']}"
+            if imp_best is None or diff > imp_best[0]:
+                imp_best = (diff, slug, cur["year"], disp)
+            if reg_best is None or diff < reg_best[0]:
+                reg_best = (diff, slug, cur["year"], disp)
+
+    for k, cat, scope in (("win", "Most consecutive winning seasons", "wins"),
+                          ("lose", "Most consecutive losing seasons", "losses"),
+                          ("15", "Most consecutive 15-win seasons", "wins")):
+        b = seq_best[k]
+        if b and b[0] >= 2:
+            out.append((cat, scope, b[0], f"{b[0]} seasons", b[1], b[3], span(b[2], b[3])))
+    n15 = conn.execute(
+        f"SELECT owner_slug o, COUNT(*) v FROM season_stats WHERE rs_w >= 15 AND year IN ({comp_in}) "
+        "GROUP BY owner_slug ORDER BY v DESC LIMIT 1").fetchone()
+    if n15 and n15["v"]:
+        out.append(("Most 15-win seasons", "wins", n15["v"], f"{n15['v']:g}", n15["o"], None, "all-time"))
+    if imp_best:
+        out.append(("Most improved record", "wins", round(imp_best[0], 3), imp_best[3], imp_best[1], imp_best[2], None))
+    if reg_best:
+        out.append(("Worst regression", "losses", round(reg_best[0], 3), reg_best[3], reg_best[1], reg_best[2], None))
+
+    # ---------------- game-by-game timeline records
     years = [r["year"] for r in conn.execute("SELECT year FROM seasons ORDER BY year")]
-    timeline: dict[str, list] = defaultdict(list)  # owner -> [(year, period, 'W'/'L'/'T')]
+    timeline: dict[str, list] = defaultdict(list)  # owner -> (year, period, res, margin, opp)
     for year in years:
         post = _classify_postseason(conn, year)
         rows = conn.execute(
-            """SELECT ts.owner_slug slug, g.game_type, g.matchup_uid, g.period,
-                      g.pts_for pf, g.pts_against pa
-               FROM games g JOIN team_seasons ts ON ts.id = g.team_season_id
+            """SELECT ts.owner_slug slug, opp.owner_slug opp, g.game_type, g.matchup_uid,
+                      g.period, g.pts_for pf, g.pts_against pa
+               FROM games g
+               JOIN team_seasons ts ON ts.id = g.team_season_id
+               JOIN team_seasons opp ON opp.id = g.opp_season_id
                WHERE g.year=? AND g.complete=1 AND ts.owner_slug IS NOT NULL
                ORDER BY g.period""",
             (year,),
@@ -522,27 +625,101 @@ def _streak_records(conn: sqlite3.Connection) -> None:
             if r["game_type"] != "R" and post.get(r["matchup_uid"]) not in ("TREE", "THIRD"):
                 continue
             res = "W" if r["pf"] > r["pa"] else ("L" if r["pf"] < r["pa"] else "T")
-            timeline[r["slug"]].append((year, r["period"], res))
-    best = {"W": None, "L": None}  # (length, slug, start_year, end_year)
+            timeline[r["slug"]].append((year, r["period"], res, r["pf"] - r["pa"], r["opp"]))
+
+    best: dict[tuple, tuple | None] = {}
+    def upd(key, ln, slug, y0, y1, extra=None):
+        cur = best.get(key)
+        if cur is None or ln > cur[0]:
+            best[key] = (ln, slug, y0, y1, extra)
+
+    fast_w, fast_l, onept = {}, {}, {}
     for slug, games in timeline.items():
-        run_kind, run_len, run_start = None, 0, None
-        for year, _period, res in games:
-            if res == run_kind:
-                run_len += 1
+        kind, ln, y0 = None, 0, None
+        s_kind, s_len = None, 0
+        b_kind, b_len, b_open = None, 0, False
+        prev_year = None
+        wins = losses = played = pts1 = 0
+        pair: dict[str, int] = defaultdict(int)
+        pair_start: dict[str, int] = {}
+        for (year, _p, res, margin, opp) in games:
+            if res == kind:
+                ln += 1
             else:
-                run_kind, run_len, run_start = res, 1, year
-            if res in best and (best[res] is None or run_len > best[res][0]):
-                best[res] = (run_len, slug, run_start, year)
-    for kind, category in (("W", "Longest win streak"), ("L", "Longest losing streak")):
-        b = best[kind]
-        if b is None:
-            continue
-        length, slug, y0, y1 = b
-        span = str(y0) if y0 == y1 else f"{y0}–{y1}"
+                kind, ln, y0 = res, 1, year
+            if kind in "WL":
+                upd(("overall", kind), ln, slug, y0, year)
+            if year != prev_year:
+                s_kind, s_len = None, 0
+                b_kind, b_len, b_open = None, 0, True
+                prev_year = year
+            if res == s_kind:
+                s_len += 1
+            else:
+                s_kind, s_len = res, 1
+            if s_kind in "WL":
+                upd(("season", s_kind), s_len, slug, year, year)
+            if b_open:
+                if b_kind is None:
+                    b_kind = res
+                if res == b_kind and res in "WL":
+                    b_len += 1
+                    upd(("begin", b_kind), b_len, slug, year, year)
+                else:
+                    b_open = False
+            played += 1
+            if res == "W":
+                wins += 1
+                if wins == 100 and slug not in fast_w:
+                    fast_w[slug] = (played, year)
+                if 0 < margin <= 1:
+                    pts1 += 1
+                if opp:
+                    if pair[opp] == 0:
+                        pair_start[opp] = year
+                    pair[opp] += 1
+                    upd(("pairW",), pair[opp], slug, pair_start[opp], year, opp)
+            else:
+                if opp:
+                    pair[opp] = 0
+                if res == "L":
+                    losses += 1
+                    if losses == 100 and slug not in fast_l:
+                        fast_l[slug] = (played, year)
+        onept[slug] = pts1
+
+    STREAKS = [
+        (("overall", "W"), "Longest win streak, overall", "wins"),
+        (("season", "W"), "Longest win streak, single season", "wins"),
+        (("begin", "W"), "Longest win streak to open a season", "wins"),
+        (("overall", "L"), "Longest losing streak, overall", "losses"),
+        (("season", "L"), "Longest losing streak, single season", "losses"),
+        (("begin", "L"), "Longest losing streak to open a season", "losses"),
+    ]
+    for key, cat, scope in STREAKS:
+        b = best.get(key)
+        if b:
+            out.append((cat, scope, b[0], f"{b[0]} games", b[1], b[3], span(b[2], b[3])))
+    b = best.get(("pairW",))
+    if b:
+        out.append(("Most consecutive wins vs one team", "wins", b[0], f"{b[0]} straight",
+                    b[1], b[3], f"vs {name_of.get(b[4], b[4])} · {span(b[2], b[3])}"))
+    if fast_w:
+        slug, (g, y) = min(fast_w.items(), key=lambda kv: kv[1][0])
+        out.append(("Fastest to 100 wins", "wins", g, f"{g} games", slug, y, None))
+    if fast_l:
+        slug, (g, y) = min(fast_l.items(), key=lambda kv: kv[1][0])
+        out.append(("Fastest to 100 losses", "losses", g, f"{g} games", slug, y, None))
+    if onept:
+        slug, n = max(onept.items(), key=lambda kv: kv[1])
+        if n:
+            out.append(("Most wins by 1 point or less", "wins", n, f"{n:g}", slug, None, "all-time"))
+
+    for row in out:
         conn.execute(
             """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
                VALUES (?,?,?,?,?,?,?)""",
-            (category, "streak", length, f"{length} games", slug, y1, span),
+            row,
         )
 
 
