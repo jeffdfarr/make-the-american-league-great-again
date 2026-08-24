@@ -24,8 +24,8 @@
 </header>
 <main class="wrap">
   <h2 style="margin-top:1.6rem" id="board-h">Rookie drafts</h2>
-  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .6rem">
-    <div class="yearpick" id="years" style="margin:0"></div>
+  <div id="controls">
+    <select id="yearsel" aria-label="Choose a draft year"></select>
     <select id="mgr" aria-label="Filter by manager"></select>
   </div>
   <div class="tbl-scroll"><table id="board">
@@ -45,8 +45,9 @@
   #board td.own-c { font-weight: 600; }
   #board td.own-c .via { color: inherit; opacity: .8; font-weight: 400; }
   #board td.own-c .traded { color: inherit; }
-  #mgr { padding: .4rem .7rem; border: 1px solid var(--rule); border-radius: 999px;
-         background: var(--surface); color: var(--ink); font: inherit; font-size: .85rem; }
+  #controls { display: flex; flex-wrap: wrap; gap: .6rem; margin: .9rem 0 1.2rem; }
+  #controls select { padding: .45rem .8rem; border: 1px solid var(--rule); border-radius: 999px;
+         background: var(--surface); color: var(--ink); font: inherit; font-size: .9rem; }
   .mgr-year { font-weight: 700; font-size: 1.05rem; padding: 1rem 0 .45rem;
               border-bottom: 2px solid var(--rule); }
   .mgr-picks { display: flex; flex-wrap: wrap; gap: 3px; margin: .7rem 0 .4rem; }
@@ -64,8 +65,9 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
   document.getElementById("tagline").textContent = "Who owns whose picks · synced nightly";
   const esc = t => t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
   const boards = draft.sort((a, b) => b.year - a.year);
-  const pick = document.getElementById("years");
-  pick.innerHTML = boards.map((b, i) => `<button data-i="${i}">${b.year}</button>`).join("");
+  const yearsel = document.getElementById("yearsel");
+  yearsel.innerHTML = `<option value="" disabled hidden>Year…</option>` +
+    boards.map((b, i) => `<option value="${i}">${b.year}</option>`).join("");
 
   const MGR = {
     "coirey":  ["#4da6e0", "#fff"],
@@ -114,7 +116,7 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
   }
 
   function renderMgr(nm) {
-    pick.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+    yearsel.value = "";
     const c = MGR[nm.toLowerCase()];
     document.getElementById("board-h").innerHTML =
       (c ? `<span class="sw" style="background:${c[0]}"></span>` : "") + esc(nm) + "’s picks";
@@ -147,7 +149,7 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
     sel.value = "";
     document.querySelector(".tbl-scroll").style.display = "";
     document.getElementById("mgr-view").style.display = "none";
-    pick.querySelectorAll("button").forEach(b => b.classList.toggle("active", +b.dataset.i === i));
+    yearsel.value = String(i);
     const b = boards[i];
     document.getElementById("board-h").textContent =
       b.results ? b.year + " draft results" : b.year + " pick ownership";
@@ -167,7 +169,7 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
     }
     table.querySelector("tbody").innerHTML = rows;
   }
-  pick.addEventListener("click", e => { if (e.target.dataset.i) render(+e.target.dataset.i); });
+  yearsel.addEventListener("change", () => { if (yearsel.value !== "") render(+yearsel.value); });
   sel.addEventListener("change", () => { if (sel.value) renderMgr(sel.value); else render(cur); });
   const activeYear = (meta.seasons && meta.seasons.length)
     ? Math.max(...meta.seasons) : new Date().getFullYear();
