@@ -423,6 +423,51 @@
   "detail": "all-time"
  },
  {
+  "category": "Most championship game losses",
+  "scope": "titles",
+  "value": 2.0,
+  "display": "2",
+  "owner_slug": "sorgaard",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most championship games",
+  "scope": "titles",
+  "value": 3.0,
+  "display": "3",
+  "owner_slug": "sorgaard",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most championship wins",
+  "scope": "titles",
+  "value": 1.0,
+  "display": "1",
+  "owner_slug": "bugar",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most consecutive championship games",
+  "scope": "titles",
+  "value": 3.0,
+  "display": "3 straight",
+  "owner_slug": "sorgaard",
+  "year": 2022,
+  "detail": "2020\u20132022"
+ },
+ {
+  "category": "Worst season start by a finalist",
+  "scope": "titles",
+  "value": 4.0,
+  "display": "0\u20134 start",
+  "owner_slug": "sorgaard",
+  "year": 2022,
+  "detail": null
+ },
+ {
   "category": "Best win pct, career",
   "scope": "wins",
   "value": 0.6617647058823529,

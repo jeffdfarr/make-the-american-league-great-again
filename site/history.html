@@ -34,6 +34,8 @@
   <div class="tbl-scroll"><table id="win-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="loss-h" style="display:none">Loss records</h2>
   <div class="tbl-scroll"><table id="loss-t"><thead></thead><tbody></tbody></table></div>
+  <h2 id="title-h" style="display:none">Championship records</h2>
+  <div class="tbl-scroll"><table id="title-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="hit-h" style="display:none">Hitting records</h2>
   <div class="tbl-scroll"><table id="hit-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="pit-h" style="display:none">Pitching records</h2>
@@ -42,9 +44,9 @@
 </main>
 <style>
   #rec-t td, #rec-t th, #hit-t td, #hit-t th, #pit-t td, #pit-t th,
-  #win-t td, #win-t th, #loss-t td, #loss-t th { text-align: left; white-space: nowrap; }
-  #rec-t td.num, #win-t td.num, #loss-t td.num { text-align: right; font-weight: 700; }
-  #rec-t th.num, #win-t th.num, #loss-t th.num { text-align: right; }
+  #win-t td, #win-t th, #loss-t td, #loss-t th, #title-t td, #title-t th { text-align: left; white-space: nowrap; }
+  #rec-t td.num, #win-t td.num, #loss-t td.num, #title-t td.num { text-align: right; font-weight: 700; }
+  #rec-t th.num, #win-t th.num, #loss-t th.num, #title-t th.num { text-align: right; }
   .faint { color: var(--ink-faint); }
 </style>
 <script src="assets/app.js"></script>
@@ -64,7 +66,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
 
   // ---- general record book table
   const CAT_SCOPES = ["hitting", "pitching", "hitting-season", "pitching-season"];
-  const WL_SCOPES = ["wins", "losses"];
+  const WL_SCOPES = ["wins", "losses", "titles"];
   const fmt = r => ["streak", ...WL_SCOPES].includes(r.scope) ? r.display
     : r.category.toLowerCase().includes("pct") ? MT.pct(r.value)
     : Math.abs(r.value) < 10 ? r.value.toFixed(3)
@@ -102,7 +104,10 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     "Most losing seasons", "Most consecutive losing seasons",
     "Longest losing streak to open a season", "Longest losing streak, single season", "Longest losing streak, overall",
     "Fastest to 100 losses", "Worst regression"];
-  for (const [scope, order, hid, tid] of [["wins", WORDER, "win-h", "win-t"], ["losses", LORDER, "loss-h", "loss-t"]]) {
+  const TORDER = ["Most championship wins", "Most consecutive championship wins",
+    "Most championship games", "Most consecutive championship games",
+    "Most championship game losses", "Worst season start by a finalist"];
+  for (const [scope, order, hid, tid] of [["wins", WORDER, "win-h", "win-t"], ["losses", LORDER, "loss-h", "loss-t"], ["titles", TORDER, "title-h", "title-t"]]) {
     const group = records.filter(r => r.scope === scope)
       .sort((a, b) => order.indexOf(a.category) - order.indexOf(b.category));
     if (group.length) {

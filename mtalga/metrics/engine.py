@@ -634,6 +634,7 @@ def _wl_records(conn: sqlite3.Connection) -> None:
             best[key] = (ln, slug, y0, y1, extra)
 
     fast_w, fast_l, onept = {}, {}, {}
+    begin_l: dict[tuple, int] = {}  # (owner, year) -> season-opening losing streak
     for slug, games in timeline.items():
         kind, ln, y0 = None, 0, None
         s_kind, s_len = None, 0
@@ -665,6 +666,8 @@ def _wl_records(conn: sqlite3.Connection) -> None:
                 if res == b_kind and res in "WL":
                     b_len += 1
                     upd(("begin", b_kind), b_len, slug, year, year)
+                    if b_kind == "L":
+                        begin_l[(slug, year)] = b_len
                 else:
                     b_open = False
             played += 1
@@ -714,6 +717,52 @@ def _wl_records(conn: sqlite3.Connection) -> None:
         slug, n = max(onept.items(), key=lambda kv: kv[1])
         if n:
             out.append(("Most wins by 1 point or less", "wins", n, f"{n:g}", slug, None, "all-time"))
+
+    # ---------------- championship records
+    finals = conn.execute(
+        "SELECT owner_slug o, year y, champion c FROM season_stats "
+        "WHERE final_app=1 AND owner_slug IS NOT NULL ORDER BY owner_slug, year").fetchall()
+    if finals:
+        apps: dict[str, list] = defaultdict(list)
+        for r in finals:
+            apps[r["o"]].append((r["y"], r["c"]))
+        slug, v = max(apps.items(), key=lambda kv: len(kv[1]))
+        out.append(("Most championship games", "titles", len(v), f"{len(v)}", slug, None, "all-time"))
+        losses_by = {s: sum(1 for _, c in v if not c) for s, v in apps.items()}
+        slug, n = max(losses_by.items(), key=lambda kv: kv[1])
+        if n:
+            out.append(("Most championship game losses", "titles", n, f"{n}", slug, None, "all-time"))
+        wins_by = {s: sum(1 for _, c in v if c) for s, v in apps.items()}
+        slug, n = max(wins_by.items(), key=lambda kv: kv[1])
+        if n:
+            out.append(("Most championship wins", "titles", n, f"{n}", slug, None, "all-time"))
+
+        def consec(want_champ):
+            bb = None
+            for s, v in apps.items():
+                years = [y for y, c in v if (c or not want_champ)]
+                run, y0, prev = 0, None, None
+                for y in years:
+                    if prev is not None and y == prev + 1:
+                        run += 1
+                    else:
+                        run, y0 = 1, y
+                    prev = y
+                    if bb is None or run > bb[0]:
+                        bb = (run, s, y0, y)
+            return bb
+
+        for want, cat in ((False, "Most consecutive championship games"),
+                          (True, "Most consecutive championship wins")):
+            bb = consec(want)
+            if bb and bb[0] >= 2:
+                out.append((cat, "titles", bb[0], f"{bb[0]} straight", bb[1], bb[3], span(bb[2], bb[3])))
+        fin_set = {(r["o"], r["y"]) for r in finals}
+        cands = [(ln, s, y) for (s, y), ln in begin_l.items() if (s, y) in fin_set]
+        if cands:
+            ln, s, y = max(cands)
+            out.append(("Worst season start by a finalist", "titles", ln,
+                        f"0–{ln} start", s, y, None))
 
     for row in out:
         conn.execute(
