@@ -501,13 +501,17 @@ POSITION_SLOTS = [
 
 
 def _position_records(conn: sqlite3.Connection) -> None:
-    """Best season and best single week of points from each lineup slot."""
+    """Best player season and best player week at each lineup slot.
+    A player's season = his summed points over the days he sat in that slot
+    for one team; the record shows the player AND the manager who rolled
+    him out."""
     for slot, label in POSITION_SLOTS:
         season = conn.execute(
-            """SELECT ts.owner_slug o, SUM(pp.pts) v, pp.year y
+            """SELECT ts.owner_slug o, pp.player p, SUM(pp.pts) v, pp.year y
                FROM position_points pp JOIN team_seasons ts ON ts.id = pp.team_season_id
                WHERE pp.slot=? AND ts.owner_slug IS NOT NULL
-               GROUP BY pp.year, pp.team_season_id ORDER BY v DESC LIMIT 1""",
+               GROUP BY pp.year, pp.team_season_id, pp.player_id
+               ORDER BY v DESC LIMIT 1""",
             (slot,),
         ).fetchone()
         if season and season["v"]:
@@ -515,13 +519,14 @@ def _position_records(conn: sqlite3.Connection) -> None:
                 """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
                    VALUES (?,?,?,?,?,?,?)""",
                 (f"Most points from {label}", "position", season["v"],
-                 f"{season['v']:,.0f} pts", season["o"], season["y"], None),
+                 f"{season['v']:,.0f} pts", season["o"], season["y"], season["p"]),
             )
         week = conn.execute(
-            """SELECT ts.owner_slug o, SUM(pp.pts) v, pp.year y, pp.week w
+            """SELECT ts.owner_slug o, pp.player p, SUM(pp.pts) v, pp.year y, pp.week w
                FROM position_points pp JOIN team_seasons ts ON ts.id = pp.team_season_id
                WHERE pp.slot=? AND ts.owner_slug IS NOT NULL
-               GROUP BY pp.year, pp.week, pp.team_season_id ORDER BY v DESC LIMIT 1""",
+               GROUP BY pp.year, pp.week, pp.team_season_id, pp.player_id
+               ORDER BY v DESC LIMIT 1""",
             (slot,),
         ).fetchone()
         if week and week["v"]:
@@ -529,7 +534,7 @@ def _position_records(conn: sqlite3.Connection) -> None:
                 """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
                    VALUES (?,?,?,?,?,?,?)""",
                 (f"Most points from {label}, week", "position-week", week["v"],
-                 f"{week['v']:,.1f} pts", week["o"], week["y"], f"Wk {week['w']} · {week['y']}"),
+                 f"{week['v']:,.1f} pts", week["o"], week["y"], f"{week['p']} · Wk {week['w']}"),
             )
 
 

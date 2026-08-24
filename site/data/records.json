@@ -447,88 +447,88 @@
   "display": "526 pts",
   "owner_slug": "tasin",
   "year": 2021,
-  "detail": null
+  "detail": "Vladimir Guerrero Jr."
  },
  {
   "category": "Most points from 2B",
   "scope": "position",
-  "value": 431.0,
-  "display": "431 pts",
-  "owner_slug": "sorgaard",
-  "year": 2021,
-  "detail": null
+  "value": 426.0,
+  "display": "426 pts",
+  "owner_slug": "moellerreed",
+  "year": 2023,
+  "detail": "Marcus Semien"
  },
  {
   "category": "Most points from 3B",
   "scope": "position",
-  "value": 498.0,
-  "display": "498 pts",
+  "value": 484.0,
+  "display": "484 pts",
   "owner_slug": "jfarr",
   "year": 2024,
-  "detail": null
+  "detail": "Jose Ramirez"
  },
  {
   "category": "Most points from C",
   "scope": "position",
-  "value": 425.0,
-  "display": "425 pts",
+  "value": 423.0,
+  "display": "423 pts",
   "owner_slug": "moellerreed",
   "year": 2025,
-  "detail": null
+  "detail": "Cal Raleigh"
  },
  {
   "category": "Most points from Closer (RP)",
   "scope": "position",
-  "value": 586.16,
-  "display": "586 pts",
-  "owner_slug": "kaufer",
-  "year": 2023,
-  "detail": null
+  "value": 321.17,
+  "display": "321 pts",
+  "owner_slug": "tfarr",
+  "year": 2026,
+  "detail": "Mason Miller"
  },
  {
   "category": "Most points from OF",
   "scope": "position",
-  "value": 1241.0,
-  "display": "1,241 pts",
-  "owner_slug": "bugar",
-  "year": 2022,
-  "detail": null
+  "value": 577.0,
+  "display": "577 pts",
+  "owner_slug": "tasin",
+  "year": 2023,
+  "detail": "Ronald Acuna Jr."
  },
  {
   "category": "Most points from P (flex)",
   "scope": "position",
-  "value": 1723.71,
-  "display": "1,724 pts",
-  "owner_slug": "jfarr",
-  "year": 2021,
-  "detail": null
+  "value": 287.99,
+  "display": "288 pts",
+  "owner_slug": "moellerreed",
+  "year": 2022,
+  "detail": "Edwin Diaz"
  },
  {
   "category": "Most points from SP",
   "scope": "position",
-  "value": 3269.15,
-  "display": "3,269 pts",
-  "owner_slug": "bugar",
-  "year": 2024,
-  "detail": null
+  "value": 511.0,
+  "display": "511 pts",
+  "owner_slug": "jfarr",
+  "year": 2021,
+  "detail": "Walker Buehler"
  },
  {
   "category": "Most points from SS",
   "scope": "position",
-  "value": 522.0,
-  "display": "522 pts",
+  "value": 520.0,
+  "display": "520 pts",
   "owner_slug": "bugar",
   "year": 2024,
-  "detail": null
+  "detail": "Bobby Witt Jr."
  },
  {
   "category": "Most points from UT",
   "scope": "position",
-  "value": 1228.0,
-  "display": "1,228 pts",
-  "owner_slug": "sorgaard",
-  "year": 2022,
-  "detail": null
+  "value": 502.0,
+  "display": "502 pts",
+  "owner_slug": "tessman",
+  "year": 2024,
+  "detail": "Shohei Ohtani"
  },
  {
   "category": "Most points from 1B, week",
@@ -537,7 +537,7 @@
   "display": "63.0 pts",
   "owner_slug": "bruchu",
   "year": 2020,
-  "detail": "Wk 4 \u00b7 2020"
+  "detail": "Jose Abreu \u00b7 Wk 4"
  },
  {
   "category": "Most points from 2B, week",
@@ -546,16 +546,16 @@
   "display": "50.0 pts",
   "owner_slug": "sorgaard",
   "year": 2021,
-  "detail": "Wk 22 \u00b7 2021"
+  "detail": "Marcus Semien \u00b7 Wk 22"
  },
  {
   "category": "Most points from 3B, week",
   "scope": "position-week",
-  "value": 64.0,
-  "display": "64.0 pts",
-  "owner_slug": "bugar",
-  "year": 2025,
-  "detail": "Wk 1 \u00b7 2025"
+  "value": 55.0,
+  "display": "55.0 pts",
+  "owner_slug": "kaufer",
+  "year": 2026,
+  "detail": "Junior Caminero \u00b7 Wk 13"
  },
  {
   "category": "Most points from C, week",
@@ -564,43 +564,43 @@
   "display": "54.0 pts",
   "owner_slug": "tessman",
   "year": 2026,
-  "detail": "Wk 16 \u00b7 2026"
+  "detail": "Drake Baldwin \u00b7 Wk 16"
  },
  {
   "category": "Most points from Closer (RP), week",
   "scope": "position-week",
-  "value": 69.67,
-  "display": "69.7 pts",
-  "owner_slug": "jfarr",
-  "year": 2026,
-  "detail": "Wk 19 \u00b7 2026"
+  "value": 51.33,
+  "display": "51.3 pts",
+  "owner_slug": "kaufer",
+  "year": 2023,
+  "detail": "Spencer Strider \u00b7 Wk 13"
  },
  {
   "category": "Most points from OF, week",
   "scope": "position-week",
-  "value": 136.0,
-  "display": "136.0 pts",
+  "value": 78.0,
+  "display": "78.0 pts",
   "owner_slug": "bugar",
-  "year": 2021,
-  "detail": "Wk 22 \u00b7 2021"
+  "year": 2022,
+  "detail": "Aaron Judge \u00b7 Wk 15"
  },
  {
   "category": "Most points from P (flex), week",
   "scope": "position-week",
-  "value": 154.01,
-  "display": "154.0 pts",
+  "value": 57.0,
+  "display": "57.0 pts",
   "owner_slug": "jfarr",
-  "year": 2021,
-  "detail": "Wk 15 \u00b7 2021"
+  "year": 2020,
+  "detail": "Aaron Nola \u00b7 Wk 3"
  },
  {
   "category": "Most points from SP, week",
   "scope": "position-week",
-  "value": 288.34,
-  "display": "288.3 pts",
-  "owner_slug": "bugar",
-  "year": 2024,
-  "detail": "Wk 16 \u00b7 2024"
+  "value": 65.0,
+  "display": "65.0 pts",
+  "owner_slug": "sorgaard",
+  "year": 2020,
+  "detail": "Shane Bieber \u00b7 Wk 1"
  },
  {
   "category": "Most points from SS, week",
@@ -609,16 +609,16 @@
   "display": "64.0 pts",
   "owner_slug": "sorgaard",
   "year": 2026,
-  "detail": "Wk 16 \u00b7 2026"
+  "detail": "CJ Abrams \u00b7 Wk 16"
  },
  {
   "category": "Most points from UT, week",
   "scope": "position-week",
-  "value": 115.0,
-  "display": "115.0 pts",
-  "owner_slug": "moellerreed",
+  "value": 59.0,
+  "display": "59.0 pts",
+  "owner_slug": "krech",
   "year": 2021,
-  "detail": "Wk 1 \u00b7 2021"
+  "detail": "J.D. Martinez \u00b7 Wk 1"
  },
  {
   "category": "Biggest blowout",

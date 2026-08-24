@@ -83,16 +83,18 @@ CREATE TABLE IF NOT EXISTS category_stats (
     PRIMARY KEY (year, team_season_id, side, stat)
 );
 
--- Daily points credited to each lineup slot (from per-day roster fetches);
--- week = the weekly scoring period the day belongs to. Regular season only.
+-- Daily points credited to each player in each lineup slot (per-day roster
+-- fetches); week = the weekly scoring period the day belongs to. RS only.
 CREATE TABLE IF NOT EXISTS position_points (
     year            INTEGER NOT NULL REFERENCES seasons(year),
     week            INTEGER NOT NULL,
     daily           INTEGER NOT NULL,
     team_season_id  INTEGER NOT NULL REFERENCES team_seasons(id),
     slot            TEXT NOT NULL,      -- 'SP','RP','P','C','1B',...
+    player_id       TEXT NOT NULL,
+    player          TEXT,
     pts             REAL NOT NULL,
-    PRIMARY KEY (year, daily, team_season_id, slot)
+    PRIMARY KEY (year, daily, team_season_id, slot, player_id)
 );
 
 -- Weekly hitting/pitching split (filled by the roster fetch; nullable early on)
@@ -202,6 +204,12 @@ def _migrate(conn: sqlite3.Connection) -> None:
     cols = {r[1] for r in conn.execute("PRAGMA table_info(games)")}
     if "period_days" not in cols:
         conn.execute("ALTER TABLE games ADD COLUMN period_days INTEGER")
+    # position_points v2 stores per-player rows; the v1 slot-total data has no
+    # player names, so it must be dropped and refetched (posstats re-run).
+    pcols = {r[1] for r in conn.execute("PRAGMA table_info(position_points)")}
+    if pcols and "player_id" not in pcols:
+        conn.execute("DROP TABLE position_points")
+        conn.executescript(SCHEMA)
 
 
 def reset_derived(conn: sqlite3.Connection) -> None:

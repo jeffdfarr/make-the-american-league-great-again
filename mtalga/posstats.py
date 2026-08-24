@@ -32,22 +32,28 @@ def _day_rosters(lg, team_ids: list[str], daily: int) -> list[dict]:
     return datas if isinstance(datas, list) else [datas]
 
 
-def _slot_points(lg, resp: dict) -> dict[str, float]:
-    acc: dict[str, float] = defaultdict(float)
+def _slot_points(lg, resp: dict) -> list[tuple]:
+    """-> [(slot, player_id, player_name, pts)] for active slots."""
+    out = []
     for t in resp.get("tables", []):
         hdr = (t.get("header") or {}).get("cells", [])
         for row in t.get("rows", []):
             if row.get("statusId") != "1":  # active slots only
                 continue
+            sc = row.get("scorer") or {}
+            pid = sc.get("scorerId") or sc.get("id")
+            if not pid:
+                continue  # empty slot
             pos = lg.league.positions.get(row.get("posId"))
             slot = pos.short_name if pos else str(row.get("posId"))
             for h, c in zip(hdr, row.get("cells", [])):
                 if isinstance(h, dict) and h.get("sortKey") == "SCORE" and isinstance(c, dict):
                     try:
-                        acc[slot] += float(str(c.get("content", "")).replace(",", "") or 0)
+                        pts = float(str(c.get("content", "")).replace(",", "") or 0)
                     except ValueError:
-                        pass
-    return acc
+                        continue
+                    out.append((slot, str(pid), sc.get("name"), pts))
+    return out
 
 
 def sync_position_points(conn: sqlite3.Connection, year: int, lg, ts_ids: dict[str, int],
@@ -84,13 +90,13 @@ def sync_position_points(conn: sqlite3.Connection, year: int, lg, ts_ids: dict[s
     for i, (daily, wk) in enumerate(todo):
         datas = _day_rosters(lg, team_ids, daily)
         for tid, resp in zip(team_ids, datas):
-            for slot, pts in _slot_points(lg, resp).items():
+            for slot, pid, pname, pts in _slot_points(lg, resp):
                 conn.execute(
-                    """INSERT INTO position_points (year, week, daily, team_season_id, slot, pts)
-                       VALUES (?,?,?,?,?,?)
-                       ON CONFLICT(year, daily, team_season_id, slot)
-                       DO UPDATE SET pts=excluded.pts, week=excluded.week""",
-                    (year, wk, daily, ts_ids[tid], slot, pts),
+                    """INSERT INTO position_points (year, week, daily, team_season_id, slot, player_id, player, pts)
+                       VALUES (?,?,?,?,?,?,?,?)
+                       ON CONFLICT(year, daily, team_season_id, slot, player_id)
+                       DO UPDATE SET pts=excluded.pts, week=excluded.week, player=excluded.player""",
+                    (year, wk, daily, ts_ids[tid], slot, pid, pname, pts),
                 )
         conn.commit()
         if verbose and (i % 10 == 0 or i == len(todo) - 1):
