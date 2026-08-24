@@ -1378,5 +1378,608 @@
    }
   ],
   "results": true
+ },
+ {
+  "year": 2024,
+  "rounds": [
+   {
+    "round": "1st",
+    "picks": [
+     {
+      "num": 1,
+      "owner": "Yoshinobu Yamamoto (Coirey)"
+     },
+     {
+      "num": 2,
+      "owner": "Wyatt Langford (Andy)"
+     },
+     {
+      "num": 3,
+      "owner": "Dylan Crews (Jason)"
+     },
+     {
+      "num": 4,
+      "owner": "Samuel Basallo (Jeff)"
+     },
+     {
+      "num": 5,
+      "owner": "Coby Mayo (Jeff)"
+     },
+     {
+      "num": 6,
+      "owner": "Paul Skenes (Seth)"
+     },
+     {
+      "num": 7,
+      "owner": "Walker Jenkins (Andy)"
+     },
+     {
+      "num": 8,
+      "owner": "Max Clark (Andy)"
+     },
+     {
+      "num": 9,
+      "owner": "Colt Keith (Tyler)"
+     },
+     {
+      "num": 10,
+      "owner": "Chase Delauter (Jeff)"
+     }
+    ]
+   },
+   {
+    "round": "2nd",
+    "picks": [
+     {
+      "num": 11,
+      "owner": "Roman Anthony (Coirey)"
+     },
+     {
+      "num": 12,
+      "owner": "Jackson Jobe (Andy)"
+     },
+     {
+      "num": 13,
+      "owner": "Cade Horton (Sorgaard)"
+     },
+     {
+      "num": 14,
+      "owner": "Ethan Salas (Seth)"
+     },
+     {
+      "num": 15,
+      "owner": "Matt Shaw (Tyler)"
+     },
+     {
+      "num": 16,
+      "owner": "Brock Wilken (Tyler)"
+     },
+     {
+      "num": 17,
+      "owner": "Oihwen Cassie (Coirey)"
+     },
+     {
+      "num": 18,
+      "owner": "Robby Snelling (Seth)"
+     },
+     {
+      "num": 19,
+      "owner": "Jacob Misiorowski (Sorgaard)"
+     },
+     {
+      "num": 20,
+      "owner": "Parker Meadows (Ben)"
+     }
+    ]
+   },
+   {
+    "round": "3rd",
+    "picks": [
+     {
+      "num": 21,
+      "owner": "Colt Emerson (Tyler)"
+     },
+     {
+      "num": 22,
+      "owner": "Jung Hoo Lee (Tessy)"
+     },
+     {
+      "num": 23,
+      "owner": "Shota Imanaga (Tessy)"
+     },
+     {
+      "num": 24,
+      "owner": "Hurston Waldrep (Karleton)"
+     },
+     {
+      "num": 25,
+      "owner": "Rhett Lowder (Tessy)"
+     },
+     {
+      "num": 26,
+      "owner": "Noble Meyer (Coirey)"
+     },
+     {
+      "num": 27,
+      "owner": "Bryce Eldridge (Andy)"
+     },
+     {
+      "num": 28,
+      "owner": "Cole Young (Sorgaard)"
+     },
+     {
+      "num": 29,
+      "owner": "Drew Gilbert (Sorgaard)"
+     },
+     {
+      "num": 30,
+      "owner": "Jace Jung (Sorgaard)"
+     }
+    ]
+   },
+   {
+    "round": "4th",
+    "picks": [
+     {
+      "num": 31,
+      "owner": "Brady House (Seth)"
+     },
+     {
+      "num": 32,
+      "owner": "Sabastian Walcott (Seth)"
+     },
+     {
+      "num": 33,
+      "owner": "Leodalis De Vries (Jeff)"
+     },
+     {
+      "num": 34,
+      "owner": "Tyler Black (Nick S)"
+     },
+     {
+      "num": 35,
+      "owner": "Carson Williams (Jeff)"
+     },
+     {
+      "num": 36,
+      "owner": "Christian Scott (Seth)"
+     },
+     {
+      "num": 37,
+      "owner": "Drew Thorpe (Sorgaard)"
+     },
+     {
+      "num": 38,
+      "owner": "Chase Hampton (Tyler)"
+     },
+     {
+      "num": 39,
+      "owner": "Graham Pauley (Jeff)"
+     },
+     {
+      "num": 40,
+      "owner": "Justyn-Henry Malloy (Tyler)"
+     }
+    ]
+   },
+   {
+    "round": "5th",
+    "picks": [
+     {
+      "num": 41,
+      "owner": "Bubba Chandler (Andy)"
+     },
+     {
+      "num": 42,
+      "owner": "Josue De Paula (Ben)"
+     },
+     {
+      "num": 43,
+      "owner": "Lazaro Montes (Ben)"
+     },
+     {
+      "num": 44,
+      "owner": "Sal Stewart (Tessy)"
+     },
+     {
+      "num": 45,
+      "owner": "Xavier Isaac (Tessy)"
+     },
+     {
+      "num": 46,
+      "owner": "Noah Schultz (Seth)"
+     },
+     {
+      "num": 47,
+      "owner": "David Festa (Seth)"
+     },
+     {
+      "num": 48,
+      "owner": "Kevin McGonigle (Tessy)"
+     },
+     {
+      "num": 49,
+      "owner": "Dylan Beavers (Andy)"
+     },
+     {
+      "num": 50,
+      "owner": "Jaison Chourio (Ben)"
+     }
+    ]
+   }
+  ],
+  "results": true
+ },
+ {
+  "year": 2023,
+  "rounds": [
+   {
+    "round": "1st",
+    "picks": [
+     {
+      "num": 1,
+      "owner": "Andrew Painter (Coirey)"
+     },
+     {
+      "num": 2,
+      "owner": "Elly De La Cruz (Andy)"
+     },
+     {
+      "num": 3,
+      "owner": "James Wood (Jason)"
+     },
+     {
+      "num": 4,
+      "owner": "Jackson Chourrio (Seth)"
+     },
+     {
+      "num": 5,
+      "owner": "Ricky Tiedemann (Coirey)"
+     },
+     {
+      "num": 6,
+      "owner": "Kyle Manzardo (Tyler)"
+     },
+     {
+      "num": 7,
+      "owner": "Druw Jones (Andy)"
+     },
+     {
+      "num": 8,
+      "owner": "Jackson Holliday (Jason)"
+     },
+     {
+      "num": 9,
+      "owner": "Kyle Harrison (Andy)"
+     },
+     {
+      "num": 10,
+      "owner": "Gavin Stone (Tyler)"
+     }
+    ]
+   },
+   {
+    "round": "2nd",
+    "picks": [
+     {
+      "num": 11,
+      "owner": "Taj Bradley (Andy)"
+     },
+     {
+      "num": 12,
+      "owner": "Elijah Geen (Andy)"
+     },
+     {
+      "num": 13,
+      "owner": "Kodai Senga (Karleton)"
+     },
+     {
+      "num": 14,
+      "owner": "Gavin Williams (Seth)"
+     },
+     {
+      "num": 15,
+      "owner": "Bobby Miller (Nick S)"
+     },
+     {
+      "num": 16,
+      "owner": "Brandon Pfaadt (Jeff)"
+     },
+     {
+      "num": 17,
+      "owner": "Cam Collier (Nick S)"
+     },
+     {
+      "num": 18,
+      "owner": "Matt Mervis (Ben)"
+     },
+     {
+      "num": 19,
+      "owner": "Peter Crow-Armstrong (Andy)"
+     },
+     {
+      "num": 20,
+      "owner": "Endy Rodriguez (Nick S)"
+     }
+    ]
+   },
+   {
+    "round": "3rd",
+    "picks": [
+     {
+      "num": 21,
+      "owner": "Jackson Merril (Coirey)"
+     },
+     {
+      "num": 22,
+      "owner": "Tanner Bibee (Nick S)"
+     },
+     {
+      "num": 23,
+      "owner": "Curtis Mead (Tessy)"
+     },
+     {
+      "num": 24,
+      "owner": "Termarr Johnson (Seth)"
+     },
+     {
+      "num": 25,
+      "owner": "Masataka Yoshida (Tessy)"
+     },
+     {
+      "num": 26,
+      "owner": "Kevin Alcantara (Coirey)"
+     },
+     {
+      "num": 27,
+      "owner": "Diego Cartaya (Jeff)"
+     },
+     {
+      "num": 28,
+      "owner": "Tink Hence (Ben)"
+     },
+     {
+      "num": 29,
+      "owner": "Evan Carter (Seth)"
+     },
+     {
+      "num": 30,
+      "owner": "Emmanuel Rodriguez (Ben)"
+     }
+    ]
+   },
+   {
+    "round": "4th",
+    "picks": [
+     {
+      "num": 31,
+      "owner": "Brett Baty (Coirey)"
+     },
+     {
+      "num": 32,
+      "owner": "Junior Caminero (Andy)"
+     },
+     {
+      "num": 33,
+      "owner": "Connor Norby (Karleton)"
+     },
+     {
+      "num": 34,
+      "owner": "Sal Frelick (Tessy)"
+     },
+     {
+      "num": 35,
+      "owner": "Spencer Jones (Tessy)"
+     },
+     {
+      "num": 36,
+      "owner": "Jake Eder (Jeff)"
+     },
+     {
+      "num": 37,
+      "owner": "Christian Encarnacion-Strand (Jeff)"
+     },
+     {
+      "num": 38,
+      "owner": "Edouard Joulien (Ben)"
+     },
+     {
+      "num": 39,
+      "owner": "Oscar Colas (Ben)"
+     },
+     {
+      "num": 40,
+      "owner": "Harry Ford (Karleton)"
+     }
+    ]
+   },
+   {
+    "round": "5th",
+    "picks": [
+     {
+      "num": 41,
+      "owner": "Bryce Miller (Jeff)"
+     },
+     {
+      "num": 42,
+      "owner": "Kyle Mueller (Nick S)"
+     },
+     {
+      "num": 43,
+      "owner": "Colson Montgomery (Tessy)"
+     },
+     {
+      "num": 44,
+      "owner": "Miguel Bleis (Tessy)"
+     },
+     {
+      "num": 45,
+      "owner": "Luis Angel-Acuna (Andy)"
+     },
+     {
+      "num": 46,
+      "owner": "Adell Amador (Tessy)"
+     },
+     {
+      "num": 47,
+      "owner": "Dalton Rushing (Jeff)"
+     },
+     {
+      "num": 48,
+      "owner": "Kevin Parada (Ben)"
+     },
+     {
+      "num": 49,
+      "owner": "Brooks Lee (Nick S)"
+     },
+     {
+      "num": 50,
+      "owner": "Gabe Gonzalez (Karleton)"
+     }
+    ]
+   }
+  ],
+  "results": true
+ },
+ {
+  "year": 2022,
+  "rounds": [
+   {
+    "round": "1st",
+    "picks": [
+     {
+      "num": 1,
+      "owner": "Anthony Volpe (Ben)"
+     },
+     {
+      "num": 2,
+      "owner": "Jack Leiter (Andy)"
+     },
+     {
+      "num": 3,
+      "owner": "Oneil Cruz (Seth)"
+     },
+     {
+      "num": 4,
+      "owner": "Robert Hassell III (Coirey)"
+     },
+     {
+      "num": 5,
+      "owner": "Daniel Espino (Jason)"
+     },
+     {
+      "num": 6,
+      "owner": "Luis Matos (Nick S)"
+     },
+     {
+      "num": 7,
+      "owner": "Jordan Walker (Jeff)"
+     },
+     {
+      "num": 8,
+      "owner": "Alek Thomas (Jason)"
+     },
+     {
+      "num": 9,
+      "owner": "Kahlil Watson (Tyler)"
+     },
+     {
+      "num": 10,
+      "owner": "Francisco Alvarez (Jason)"
+     }
+    ]
+   },
+   {
+    "round": "2nd",
+    "picks": [
+     {
+      "num": 11,
+      "owner": "M. Mayer (Karleton)"
+     },
+     {
+      "num": 12,
+      "owner": "Jordan Lawler (Andy)"
+     },
+     {
+      "num": 13,
+      "owner": "Henry Davis (Tessy)"
+     },
+     {
+      "num": 14,
+      "owner": "Tyler Soderstrom (Coirey)"
+     },
+     {
+      "num": 15,
+      "owner": "MJ Melendez (Tyler)"
+     },
+     {
+      "num": 16,
+      "owner": "George Valera (Karleton)"
+     },
+     {
+      "num": 17,
+      "owner": "Miguel Vargas (Jeff)"
+     },
+     {
+      "num": 18,
+      "owner": "Matt Brash (Tessy)"
+     },
+     {
+      "num": 19,
+      "owner": "Jose Miranda (Ben)"
+     },
+     {
+      "num": 20,
+      "owner": "Colton Cowser (Tessy)"
+     }
+    ]
+   },
+   {
+    "round": "3rd",
+    "picks": [
+     {
+      "num": 21,
+      "owner": "Eury Perez (Ben)"
+     },
+     {
+      "num": 22,
+      "owner": "Cristian Hernandez (Andy)"
+     },
+     {
+      "num": 23,
+      "owner": "Nick Yorke (Nick S)"
+     },
+     {
+      "num": 24,
+      "owner": "Nick Pratto (Coirey)"
+     },
+     {
+      "num": 25,
+      "owner": "Bryson Stott (Tyler)"
+     },
+     {
+      "num": 26,
+      "owner": "Cade Cavalli (Nick S)"
+     },
+     {
+      "num": 27,
+      "owner": "Vinnie Pasquantino (Jeff)"
+     },
+     {
+      "num": 28,
+      "owner": "Hedbert Perez (Tessy)"
+     },
+     {
+      "num": 29,
+      "owner": "Gabriel Moreno (Tyler)"
+     },
+     {
+      "num": 30,
+      "owner": "Oswald Peraza (Nick S)"
+     }
+    ]
+   }
+  ],
+  "results": true
  }
 ]
