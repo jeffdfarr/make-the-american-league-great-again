@@ -453,6 +453,23 @@ def _records(conn: sqlite3.Connection) -> None:
          f"SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND playoff_app=1 AND year IN ({comp_in}) ORDER BY opr ASC LIMIT 1"),
         ("Highest OPR to miss the playoffs", "opr", "{:.3f}", None,
          f"SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND playoff_app=0 AND year IN ({comp_in}) ORDER BY opr DESC LIMIT 1"),
+        # strength of schedule / points against (minimum-side: completed seasons only)
+        ("Toughest schedule, season", "sos", "{:.3f}", None,
+         "SELECT owner_slug o, sos_opr v, year y FROM season_stats WHERE sos_opr IS NOT NULL ORDER BY sos_opr DESC LIMIT 1"),
+        ("Softest schedule, season", "sos", "{:.3f}", None,
+         f"SELECT owner_slug o, sos_opr v, year y FROM season_stats WHERE sos_opr IS NOT NULL AND year IN ({comp_in}) ORDER BY sos_opr ASC LIMIT 1"),
+        ("Most points against, season", "sos", "{:,.0f} pts", None,
+         "SELECT owner_slug o, pa v, year y FROM season_stats ORDER BY pa DESC LIMIT 1"),
+        ("Fewest points against, season", "sos", "{:,.0f} pts", None,
+         f"SELECT owner_slug o, pa v, year y FROM season_stats WHERE year IN ({comp_in}) ORDER BY pa ASC LIMIT 1"),
+        ("Most points against per game, career", "sos", "{:.1f} pts/gm", "all-time",
+         "SELECT owner_slug o, SUM(pa)/SUM(rs_games) v, NULL y FROM season_stats WHERE owner_slug IS NOT NULL AND rs_games > 0 GROUP BY owner_slug ORDER BY v DESC LIMIT 1"),
+        ("Fewest points against per game, career", "sos", "{:.1f} pts/gm", "all-time",
+         "SELECT owner_slug o, SUM(pa)/SUM(rs_games) v, NULL y FROM season_stats WHERE owner_slug IS NOT NULL AND rs_games > 0 GROUP BY owner_slug ORDER BY v ASC LIMIT 1"),
+        ("Best point differential, season", "sos", "{:+,.0f} pts", None,
+         "SELECT owner_slug o, margin v, year y FROM season_stats WHERE margin IS NOT NULL ORDER BY margin DESC LIMIT 1"),
+        ("Worst point differential, season", "sos", "{:+,.0f} pts", None,
+         f"SELECT owner_slug o, margin v, year y FROM season_stats WHERE margin IS NOT NULL AND year IN ({comp_in}) ORDER BY margin ASC LIMIT 1"),
     ]
     for category, scope, disp, when, sql in specs:
         row = conn.execute(sql).fetchone()

@@ -32,6 +32,8 @@
   </table></div>
   <h2 id="opr-h" style="display:none">OPR records</h2>
   <div class="tbl-scroll"><table id="opr-t"><thead></thead><tbody></tbody></table></div>
+  <h2 id="sos-h" style="display:none">Strength of schedule</h2>
+  <div class="tbl-scroll"><table id="sos-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="win-h" style="display:none">Win records</h2>
   <div class="tbl-scroll"><table id="win-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="loss-h" style="display:none">Loss records</h2>
@@ -81,6 +83,14 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     "Lowest OPR to make the playoffs": "The weakest team ever to sneak into the postseason",
     "Highest OPR to miss the playoffs": "The best team ever left out",
     "Most 1.000+ OPR seasons": "Seasons finishing above league average",
+    "Toughest schedule, season": "Highest average opponent OPR ever faced",
+    "Softest schedule, season": "Lowest average opponent OPR ever faced",
+    "Most points against, season": "Regular-season points allowed",
+    "Fewest points against, season": "Regular-season points allowed, completed seasons only",
+    "Most points against per game, career": "Career average faced, regular season",
+    "Fewest points against per game, career": "Career average faced, regular season",
+    "Best point differential, season": "Points for minus points against, regular season",
+    "Worst point differential, season": "Points for minus points against, regular season",
     "Best average finish": "Average final standing across a career",
     "Worst average finish": "Average final standing across a career",
     "Longest win streak": "Consecutive wins — can carry across seasons",
@@ -112,6 +122,10 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     ["opr", "opr-h", "opr-t", ["Best career OPR", "Worst career OPR",
       "Best single-season OPR", "Worst single-season OPR",
       "Lowest OPR to make the playoffs", "Highest OPR to miss the playoffs", "Most 1.000+ OPR seasons"]],
+    ["sos", "sos-h", "sos-t", ["Toughest schedule, season", "Softest schedule, season",
+      "Most points against, season", "Fewest points against, season",
+      "Most points against per game, career", "Fewest points against per game, career",
+      "Best point differential, season", "Worst point differential, season"]],
     ["wins", "win-h", "win-t", ["Most career wins", "Best career win pct", "Most winning seasons",
       "Most consecutive winning seasons", "Most 15-win regular seasons", "Most consecutive 15-win regular seasons",
       "Most wins in a season (regular season)", "Most wins in a season (with playoffs)",

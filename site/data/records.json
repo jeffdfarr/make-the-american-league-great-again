@@ -477,6 +477,78 @@
   "detail": null
  },
  {
+  "category": "Best point differential, season",
+  "scope": "sos",
+  "value": 1419.3329999999978,
+  "display": "+1,419 pts",
+  "owner_slug": "bugar",
+  "year": 2025,
+  "detail": null
+ },
+ {
+  "category": "Fewest points against per game, career",
+  "scope": "sos",
+  "value": 323.25,
+  "display": "323.2 pts/gm",
+  "owner_slug": "bruchu",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Fewest points against, season",
+  "scope": "sos",
+  "value": 1587.832,
+  "display": "1,588 pts",
+  "owner_slug": "drwall",
+  "year": 2020,
+  "detail": null
+ },
+ {
+  "category": "Most points against per game, career",
+  "scope": "sos",
+  "value": 338.0661603053435,
+  "display": "338.1 pts/gm",
+  "owner_slug": "tessman",
+  "year": null,
+  "detail": "all-time"
+ },
+ {
+  "category": "Most points against, season",
+  "scope": "sos",
+  "value": 7932.501,
+  "display": "7,933 pts",
+  "owner_slug": "jfarr",
+  "year": 2025,
+  "detail": null
+ },
+ {
+  "category": "Softest schedule, season",
+  "scope": "sos",
+  "value": 0.9309511398527611,
+  "display": "0.931",
+  "owner_slug": "tessman",
+  "year": 2020,
+  "detail": null
+ },
+ {
+  "category": "Toughest schedule, season",
+  "scope": "sos",
+  "value": 1.079602057725815,
+  "display": "1.080",
+  "owner_slug": "bugar",
+  "year": 2020,
+  "detail": null
+ },
+ {
+  "category": "Worst point differential, season",
+  "scope": "sos",
+  "value": -1865.493999999997,
+  "display": "-1,865 pts",
+  "owner_slug": "tasin",
+  "year": 2022,
+  "detail": null
+ },
+ {
   "category": "Most championship game appearances",
   "scope": "titles",
   "value": 3.0,
