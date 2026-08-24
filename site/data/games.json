@@ -14378,5 +14378,125 @@
   "opponent": "sorgaard",
   "pts_for": 243.333,
   "pts_against": 215.333
+ },
+ {
+  "year": 2026,
+  "period": 20,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "bugar",
+  "pts_for": 321.333,
+  "pts_against": 286.5
+ },
+ {
+  "year": 2026,
+  "period": 20,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "kaufer",
+  "pts_for": 286.5,
+  "pts_against": 321.333
+ },
+ {
+  "year": 2026,
+  "period": 20,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "tfarr",
+  "pts_for": 371.167,
+  "pts_against": 384.833
+ },
+ {
+  "year": 2026,
+  "period": 20,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "tessman",
+  "pts_for": 384.833,
+  "pts_against": 371.167
+ },
+ {
+  "year": 2026,
+  "period": 20,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "moellerreed",
+  "pts_for": 319.167,
+  "pts_against": 296.5
+ },
+ {
+  "year": 2026,
+  "period": 20,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "drwall",
+  "pts_for": 296.5,
+  "pts_against": 319.167
+ },
+ {
+  "year": 2026,
+  "period": 20,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "norman",
+  "pts_for": 231.167,
+  "pts_against": 218.167
+ },
+ {
+  "year": 2026,
+  "period": 20,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "tasin",
+  "pts_for": 218.167,
+  "pts_against": 231.167
+ },
+ {
+  "year": 2026,
+  "period": 20,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "hegna",
+  "pts_for": 394.5,
+  "pts_against": 240.333
+ },
+ {
+  "year": 2026,
+  "period": 20,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "jfarr",
+  "pts_for": 240.333,
+  "pts_against": 394.5
+ },
+ {
+  "year": 2026,
+  "period": 20,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "sorgaard",
+  "pts_for": 350.833,
+  "pts_against": 192.167
+ },
+ {
+  "year": 2026,
+  "period": 20,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "krech",
+  "pts_for": 192.167,
+  "pts_against": 350.833
  }
 ]

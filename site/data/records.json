@@ -272,8 +272,8 @@
  {
   "category": "Best career OPR",
   "scope": "opr",
-  "value": 1.044777645495585,
-  "display": "1.045",
+  "value": 1.04591353446999,
+  "display": "1.046",
   "owner_slug": "tfarr",
   "year": null,
   "detail": "all-time"
@@ -317,7 +317,7 @@
  {
   "category": "Worst career OPR",
   "scope": "opr",
-  "value": 0.683292435420931,
+  "value": 0.6834895101375865,
   "display": "0.683",
   "owner_slug": "bruchu",
   "year": null,
@@ -686,9 +686,9 @@
  {
   "category": "Most points against per game, career",
   "scope": "sos",
-  "value": 338.0661603053435,
-  "display": "338.1 pts/gm",
-  "owner_slug": "tessman",
+  "value": 340.11659999999995,
+  "display": "340.1 pts/gm",
+  "owner_slug": "hegna",
   "year": null,
   "detail": "all-time"
  },
@@ -776,8 +776,8 @@
  {
   "category": "Best career win pct",
   "scope": "wins",
-  "value": 0.6617647058823529,
-  "display": ".662",
+  "value": 0.656934306569343,
+  "display": ".657",
   "owner_slug": "moellerreed",
   "year": null,
   "detail": "all-time"
@@ -848,9 +848,9 @@
  {
   "category": "Most career wins",
   "scope": "wins",
-  "value": 90.0,
-  "display": "90 wins",
-  "owner_slug": "moellerreed",
+  "value": 91.0,
+  "display": "91 wins",
+  "owner_slug": "tfarr",
   "year": null,
   "detail": "all-time"
  },

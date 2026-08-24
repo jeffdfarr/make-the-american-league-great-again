@@ -92,6 +92,14 @@ def sync_season(conn: sqlite3.Connection, cfg: Config, season: SeasonCfg, sessio
     for _, spr in sorted(results.items()):
         if getattr(spr, "future", False):
             continue
+        # Count a period once its scheduled end date has passed, even before
+        # Fantrax stamps it official — every sync re-upserts the scores, so a
+        # later stat correction overwrites automatically.
+        ended = bool(spr.complete)
+        if not ended:
+            per_end = getattr(getattr(spr, "period", None), "end", None)
+            if per_end is not None and per_end < dt.date.today():
+                ended = True
         period = spr.period.number
         period_days = getattr(spr, "days", None)
         buckets: list[tuple[str | None, list]] = [(None, spr.matchups)]
@@ -104,7 +112,7 @@ def sync_season(conn: sqlite3.Connection, cfg: Config, season: SeasonCfg, sessio
                 # Placeholder rows ("TBD" strings before a bracket is set)
                 if not hasattr(away, "id") or not hasattr(home, "id"):
                     continue
-                if m.away_score == 0 and m.home_score == 0 and not spr.complete:
+                if m.away_score == 0 and m.home_score == 0 and not ended:
                     continue
                 uid = f"{year}:{period}:" + ":".join(sorted([away.id, home.id]))
                 for me, opp, pf, pa, is_home in (
@@ -121,7 +129,7 @@ def sync_season(conn: sqlite3.Connection, cfg: Config, season: SeasonCfg, sessio
                              period_name=excluded.period_name, period_days=excluded.period_days,
                              complete=excluded.complete""",
                         (year, period, spr.name, period_days, bracket, gtype, uid,
-                         ts_ids[me.id], ts_ids[opp.id], pf, pa, is_home, int(spr.complete)),
+                         ts_ids[me.id], ts_ids[opp.id], pf, pa, is_home, int(ended)),
                     )
                 n_games += 1
     log(conn, year, "games", True, f"{n_games} team-games upserted")
