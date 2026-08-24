@@ -1981,5 +1981,146 @@
    }
   ],
   "results": true
+ },
+ {
+  "year": 2021,
+  "rounds": [
+   {
+    "round": "1st",
+    "picks": [
+     {
+      "num": 1,
+      "owner": "Spencer Torkelson (Coirey)"
+     },
+     {
+      "num": 2,
+      "owner": "Tristan Casas (Karleton)"
+     },
+     {
+      "num": 3,
+      "owner": "Austin Martin (Jason)"
+     },
+     {
+      "num": 4,
+      "owner": "Nick Gonzales (Tyler)"
+     },
+     {
+      "num": 5,
+      "owner": "Ass Lacy (Jeff)"
+     },
+     {
+      "num": 6,
+      "owner": "Corbin Carrol (Ben)"
+     },
+     {
+      "num": 7,
+      "owner": "Emerson Hancock (Andy)"
+     },
+     {
+      "num": 8,
+      "owner": "Heston Kjerstad (Tessy)"
+     },
+     {
+      "num": 9,
+      "owner": "Max Meyer (Seth)"
+     },
+     {
+      "num": 10,
+      "owner": "George Kirby (Karleton)"
+     }
+    ]
+   },
+   {
+    "round": "2nd",
+    "picks": [
+     {
+      "num": 11,
+      "owner": "Nick Lodolo (Coirey)"
+     },
+     {
+      "num": 12,
+      "owner": "Zac Veen (Tyler)"
+     },
+     {
+      "num": 13,
+      "owner": "DL Hall (Jason)"
+     },
+     {
+      "num": 14,
+      "owner": "Quinn Priester (Tyler)"
+     },
+     {
+      "num": 15,
+      "owner": "Brennen Davis (Jason)"
+     },
+     {
+      "num": 16,
+      "owner": "Jordan Groshans (Karleton)"
+     },
+     {
+      "num": 17,
+      "owner": "Jarren Duran (Andy)"
+     },
+     {
+      "num": 18,
+      "owner": "Reid Detmers (Tyler)"
+     },
+     {
+      "num": 19,
+      "owner": "Garrett Mitchell (Seth)"
+     },
+     {
+      "num": 20,
+      "owner": "Aaron Bracho (Andy)"
+     }
+    ]
+   },
+   {
+    "round": "3rd",
+    "picks": [
+     {
+      "num": 21,
+      "owner": "Matt Allan (Tyler)"
+     },
+     {
+      "num": 22,
+      "owner": "Erick Pena (Tessy)"
+     },
+     {
+      "num": 23,
+      "owner": "Austin Hendrick (Karleton)"
+     },
+     {
+      "num": 24,
+      "owner": "Michael Buscheeha (Jeff)"
+     },
+     {
+      "num": 25,
+      "owner": "Mick Abel (Jeff)"
+     },
+     {
+      "num": 26,
+      "owner": "Daniel Lynch (Ben)"
+     },
+     {
+      "num": 27,
+      "owner": "Josh Jung (Ben)"
+     },
+     {
+      "num": 28,
+      "owner": "Hunter Bishop (Tessy)"
+     },
+     {
+      "num": 29,
+      "owner": "Shane Baz (Seth)"
+     },
+     {
+      "num": 30,
+      "owner": "Brailyn Marquez (Coirey)"
+     }
+    ]
+   }
+  ],
+  "results": true
  }
 ]
