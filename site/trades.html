@@ -24,21 +24,23 @@
 </header>
 <main class="wrap">
   <h2 style="margin-top:1.6rem">Trade log</h2>
-  <div class="frow"><span class="flabel">Season</span><div class="yearpick" id="f-year"></div></div>
-  <div class="frow"><span class="flabel">Manager</span><div class="yearpick" id="f-owner"></div></div>
+  <div id="controls">
+    <select id="f-year" aria-label="Filter by season"></select>
+    <select id="f-owner" aria-label="Filter by manager"></select>
+  </div>
   <div id="log"><p class="loading">Loading…</p></div>
   <footer></footer>
 </main>
 <style>
-  .frow { display: flex; align-items: baseline; gap: .8rem; margin: .5rem 0; }
-  .frow .yearpick { margin: 0; }
-  .flabel { flex: none; width: 4.6rem; font-family: "IBM Plex Mono", monospace; font-size: .64rem;
-            letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; }
+  #controls { display: flex; flex-wrap: wrap; gap: .6rem; margin: .9rem 0 1.2rem; }
+  #controls select { padding: .45rem .8rem; border: 1px solid var(--rule); border-radius: 999px;
+         background: var(--surface); color: var(--ink); font: inherit; font-size: .9rem; }
   .trade { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px;
-           padding: .9rem 1.1rem; margin: .7rem 0; }
+           padding: .9rem 1.1rem; margin: .7rem 0; max-width: 52rem; }
   .t-date { font-family: "IBM Plex Mono", monospace; font-size: .7rem; letter-spacing: .08em;
             color: var(--ink-faint); text-transform: uppercase; display: block; margin-bottom: .5rem; }
-  .t-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: start; }
+  .t-grid { display: grid; grid-template-columns: minmax(0, 23rem) auto minmax(0, 23rem);
+            gap: .6rem 1.4rem; justify-content: start; align-items: start; }
   @media (max-width: 640px) { .t-grid { grid-template-columns: 1fr; } .t-arrow { display: none; } }
   .t-side b { font-family: "Bitter", Georgia, serif; display: block; margin-bottom: .25rem; }
   .t-side b small { color: var(--ink-faint); font-family: "Public Sans", sans-serif; font-weight: 400; }
@@ -47,7 +49,7 @@
   .t-side li.pick { color: var(--ink-soft); }
   .t-side li.pick::marker { content: "▸ "; color: var(--gold); }
   .t-side li::marker { color: var(--accent); }
-  .t-arrow { align-self: center; color: var(--ink-faint); font-size: 1.2rem; }
+  .t-arrow { align-self: start; margin-top: .05rem; color: var(--ink-faint); font-size: 1.15rem; }
   .count { color: var(--ink-faint); font-size: .85rem; margin: .4rem 0 0; }
 </style>
 <script src="assets/app.js"></script>
@@ -63,10 +65,10 @@ document.querySelector('[data-nav="trades"]').classList.add("active");
 
   const fYear = document.getElementById("f-year");
   const fOwner = document.getElementById("f-owner");
-  fYear.innerHTML = `<button data-v="" class="active">All</button>` +
-    years.map(y => `<button data-v="${y}">${y}</button>`).join("");
-  fOwner.innerHTML = `<button data-v="" class="active">All</button>` +
-    owners.map(o => `<button data-v="${esc(o)}">${esc(o)}</button>`).join("");
+  fYear.innerHTML = `<option value="">All seasons</option>` +
+    years.map(y => `<option value="${y}">${y}</option>`).join("");
+  fOwner.innerHTML = `<option value="">All managers</option>` +
+    owners.map(o => `<option value="${esc(o)}">${esc(o)}</option>`).join("");
 
   const side = s => `<div class="t-side"><b>${esc(s.owner)} <small>sends</small></b><ul>` +
     s.players.map(p => `<li>${esc(p)}</li>`).join("") +
@@ -84,16 +86,8 @@ document.querySelector('[data-nav="trades"]').classList.add("active");
       list.map(t => `<div class="trade"><span class="t-date">${esc(t.date)}</span>
         <div class="t-grid">${side(t.sides[0])}<span class="t-arrow">⇄</span>${side(t.sides[1])}</div></div>`).join("");
   }
-  function wire(container, key) {
-    container.addEventListener("click", e => {
-      if (e.target.dataset.v === undefined) return;
-      sel[key] = e.target.dataset.v;
-      container.querySelectorAll("button").forEach(b => b.classList.toggle("active", b === e.target));
-      render();
-    });
-  }
-  wire(fYear, "year");
-  wire(fOwner, "owner");
+  fYear.addEventListener("change", () => { sel.year = fYear.value; render(); });
+  fOwner.addEventListener("change", () => { sel.owner = fOwner.value; render(); });
   render();
   MT.footer(meta);
 })().catch(e => document.querySelector(".loading").textContent = "Could not load trades: " + e.message);
