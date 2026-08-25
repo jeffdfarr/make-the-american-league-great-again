@@ -60,6 +60,12 @@ document.querySelector('[data-nav="index"]').classList.add("active");
   const table = document.getElementById("standings");
   const note = document.getElementById("tbl-note");
 
+  // each owner's most recent team logo, for the all-time view
+  const logoOf = {};
+  for (const s of [...standings].sort((a, b) => a.year - b.year)) {
+    if (s.logo_url) logoOf[s.owner_name] = s.logo_url;
+  }
+
   function renderAllTime() {
     pastsel.value = "";
     pick.querySelectorAll("button").forEach(b => b.classList.toggle("active", b.dataset.y === "all"));
@@ -78,7 +84,8 @@ document.querySelector('[data-nav="index"]').classList.add("active");
           data-avgf="${c.avg_finish ?? 99}" data-po="${c.playoff_apps}" data-fin="${c.final_apps}"
           data-ti="${c.titles}" data-odds="${c.title_odds}" data-opr="${c.career_opr ?? -99}">
         <td class="num rank"></td>
-        <td class="teamcell"><span class="mono-chip">${MT.initials(c.owner_name)}</span><span class="tstack"><b>${c.owner_name}</b><small>${c.seasons} season${c.seasons > 1 ? "s" : ""}${c.byes ? ` · ${c.byes} bye${c.byes > 1 ? "s" : ""}` : ""}</small></span></td>
+        ${MT.teamCell({ logo_url: logoOf[c.owner_name], team_name: c.owner_name,
+          owner_name: `${c.seasons} season${c.seasons > 1 ? "s" : ""}${c.byes ? ` · ${c.byes} bye${c.byes > 1 ? "s" : ""}` : ""}` })}
         <td class="num strong">${c.w}-${c.l}</td>
         <td class="num">${MT.pct(c.win_pct)}</td>
         <td class="num">${MT.num(c.ppg, 1)}</td>
