@@ -23,7 +23,10 @@
 </header>
 <main class="wrap">
   <h2 id="season-h" style="margin-top:1.6rem">Standings</h2>
-  <div class="yearpick" id="years"></div>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .6rem;margin-bottom:.9rem">
+    <div class="yearpick" id="years" style="margin:0"></div>
+    <select id="pastsel" aria-label="Past seasons"></select>
+  </div>
   <div class="tbl-scroll">
     <table id="standings">
       <thead></thead>
@@ -33,6 +36,10 @@
   <p class="sub" style="margin-top:.5rem" id="tbl-note"></p>
   <footer></footer>
 </main>
+<style>
+  #pastsel { padding: .45rem .8rem; border: 1px solid var(--rule); border-radius: 999px;
+             background: var(--surface); color: var(--ink); font: inherit; font-size: .9rem; }
+</style>
 <script src="assets/app.js"></script>
 <script>
 document.querySelector('[data-nav="index"]').classList.add("active");
@@ -46,12 +53,15 @@ document.querySelector('[data-nav="index"]').classList.add("active");
     `${curYear} season · through ${games} games · updated nightly`;
 
   const pick = document.getElementById("years");
-  pick.innerHTML = `<button data-y="all">All Time</button>` +
-    years.map(y => `<button data-y="${y}">${y}</button>`).join("");
+  pick.innerHTML = `<button data-y="all">All Time</button><button data-y="${curYear}">${curYear}</button>`;
+  const pastsel = document.getElementById("pastsel");
+  pastsel.innerHTML = `<option value="" disabled selected hidden>Past seasons…</option>` +
+    years.filter(y => y !== curYear).map(y => `<option value="${y}">${y}</option>`).join("");
   const table = document.getElementById("standings");
   const note = document.getElementById("tbl-note");
 
   function renderAllTime() {
+    pastsel.value = "";
     pick.querySelectorAll("button").forEach(b => b.classList.toggle("active", b.dataset.y === "all"));
     document.getElementById("season-h").textContent = "All-time franchise table";
     const fr = [...franchises].sort((a, b) => (b.career_opr ?? 0) - (a.career_opr ?? 0));
@@ -87,6 +97,7 @@ document.querySelector('[data-nav="index"]').classList.add("active");
 
   function render(year) {
     if (year === "all") return renderAllTime();
+    pastsel.value = year === curYear ? "" : String(year);
     pick.querySelectorAll("button").forEach(b => b.classList.toggle("active", +b.dataset.y === year));
     const rows = standings.filter(s => s.year === year).sort((a, b) => a.finish - b.finish);
     const oprs = rows.map(s => s.opr).filter(v => v != null);
@@ -143,6 +154,7 @@ document.querySelector('[data-nav="index"]').classList.add("active");
     const v = e.target.dataset.y;
     if (v) render(v === "all" ? "all" : +v);
   });
+  pastsel.addEventListener("change", () => { if (pastsel.value) render(+pastsel.value); });
   render("all");
   MT.footer(meta);
 })().catch(e => document.querySelector(".loading").textContent = "Could not load data: " + e.message);
