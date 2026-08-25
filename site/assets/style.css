@@ -174,3 +174,8 @@ tbody tr:hover td:first-child, tbody tr:hover td.teamcell { background: var(--su
   .tbl-scroll td.teamcell .logo, .tbl-scroll td.teamcell .mono-chip { margin-right: 0; }
   .tbl-scroll td.teamcell { width: 3rem; min-width: 3rem; }
 }
+
+/* ---- mast logo ---- */
+.mast-row { display: flex; align-items: center; gap: 1.1rem; }
+.mast-logo { width: 72px; height: 72px; flex: none; display: block; }
+@media (max-width: 640px) { .mast-logo { width: 52px; height: 52px; } .mast-row { gap: .8rem; } }
