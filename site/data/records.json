@@ -6,7 +6,8 @@
   "display": "3.29",
   "owner_slug": "tfarr",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Worst average finish",
@@ -15,7 +16,8 @@
   "display": "9.14",
   "owner_slug": "tasin",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most RBI",
@@ -24,7 +26,8 @@
   "display": "5,876",
   "owner_slug": "bugar",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most doubles",
@@ -33,7 +36,8 @@
   "display": "2,144",
   "owner_slug": "sorgaard",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most home runs",
@@ -42,7 +46,8 @@
   "display": "1,827",
   "owner_slug": "bugar",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most runs scored",
@@ -51,7 +56,8 @@
   "display": "6,063",
   "owner_slug": "drwall",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most singles",
@@ -60,7 +66,8 @@
   "display": "6,816",
   "owner_slug": "drwall",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most stolen bases",
@@ -69,7 +76,8 @@
   "display": "1,061",
   "owner_slug": "kaufer",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most strikeouts (batters)",
@@ -78,7 +86,8 @@
   "display": "9,948",
   "owner_slug": "bugar",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most triples",
@@ -87,7 +96,8 @@
   "display": "217",
   "owner_slug": "kaufer",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most walks drawn",
@@ -96,7 +106,8 @@
   "display": "4,441",
   "owner_slug": "bugar",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most RBI, season",
@@ -105,7 +116,8 @@
   "display": "1,085",
   "owner_slug": "moellerreed",
   "year": 2025,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most doubles, season",
@@ -114,7 +126,8 @@
   "display": "407",
   "owner_slug": "tasin",
   "year": 2023,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most home runs, season",
@@ -123,7 +136,8 @@
   "display": "339",
   "owner_slug": "moellerreed",
   "year": 2025,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most runs scored, season",
@@ -132,7 +146,8 @@
   "display": "1,067",
   "owner_slug": "drwall",
   "year": 2023,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most singles, season",
@@ -141,7 +156,8 @@
   "display": "1,175",
   "owner_slug": "drwall",
   "year": 2024,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most stolen bases, season",
@@ -150,7 +166,8 @@
   "display": "239",
   "owner_slug": "kaufer",
   "year": 2025,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most strikeouts (batters), season",
@@ -159,7 +176,8 @@
   "display": "1,845",
   "owner_slug": "moellerreed",
   "year": 2024,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most triples, season",
@@ -168,7 +186,8 @@
   "display": "43",
   "owner_slug": "drwall",
   "year": 2023,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most walks drawn, season",
@@ -177,7 +196,8 @@
   "display": "819",
   "owner_slug": "bugar",
   "year": 2025,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Biggest one-year collapse",
@@ -186,7 +206,8 @@
   "display": "20\u20132 \u2192 9\u201312",
   "owner_slug": "tessman",
   "year": 2022,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Fastest to 100 losses",
@@ -195,7 +216,8 @@
   "display": "131 games",
   "owner_slug": "tasin",
   "year": 2026,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Fewest losses in a full season",
@@ -204,7 +226,8 @@
   "display": "1 losses",
   "owner_slug": "sorgaard",
   "year": 2020,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Longest losing streak",
@@ -213,7 +236,8 @@
   "display": "16 games",
   "owner_slug": "tasin",
   "year": 2023,
-  "detail": "2023"
+  "detail": "2023",
+  "note": null
  },
  {
   "category": "Longest losing streak in one season",
@@ -222,7 +246,8 @@
   "display": "16 games",
   "owner_slug": "tasin",
   "year": 2023,
-  "detail": "2023"
+  "detail": "2023",
+  "note": null
  },
  {
   "category": "Most career losses",
@@ -231,7 +256,8 @@
   "display": "100 losses",
   "owner_slug": "tasin",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most consecutive losing seasons",
@@ -240,7 +266,8 @@
   "display": "6 seasons",
   "owner_slug": "tasin",
   "year": 2025,
-  "detail": "2020\u20132025"
+  "detail": "2020\u20132025",
+  "note": null
  },
  {
   "category": "Most losing seasons",
@@ -249,7 +276,8 @@
   "display": "7 seasons",
   "owner_slug": "tasin",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most losses in a season",
@@ -258,7 +286,8 @@
   "display": "18 losses",
   "owner_slug": "tasin",
   "year": 2022,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Worst start to a season",
@@ -267,7 +296,8 @@
   "display": "0\u20136 start",
   "owner_slug": "drwall",
   "year": 2021,
-  "detail": "2021"
+  "detail": "2021",
+  "note": null
  },
  {
   "category": "Best career OPR",
@@ -276,7 +306,8 @@
   "display": "1.046",
   "owner_slug": "tfarr",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Best single-season OPR",
@@ -285,7 +316,8 @@
   "display": "1.185",
   "owner_slug": "bugar",
   "year": 2025,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Highest OPR to miss the playoffs",
@@ -294,7 +326,8 @@
   "display": "1.054",
   "owner_slug": "tessman",
   "year": 2023,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Lowest OPR to make the playoffs",
@@ -303,7 +336,8 @@
   "display": "0.908",
   "owner_slug": "krech",
   "year": 2020,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most 1.000+ OPR seasons",
@@ -312,7 +346,8 @@
   "display": "5 seasons",
   "owner_slug": "moellerreed",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Worst career OPR",
@@ -321,7 +356,8 @@
   "display": "0.683",
   "owner_slug": "bruchu",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Worst single-season OPR",
@@ -330,7 +366,8 @@
   "display": "0.708",
   "owner_slug": "tasin",
   "year": 2022,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most blown saves",
@@ -339,7 +376,8 @@
   "display": "135",
   "owner_slug": "tfarr",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most losses",
@@ -348,7 +386,8 @@
   "display": "737",
   "owner_slug": "tessman",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most quality starts",
@@ -357,7 +396,8 @@
   "display": "796",
   "owner_slug": "sorgaard",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most saves",
@@ -366,7 +406,8 @@
   "display": "762",
   "owner_slug": "tessman",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most strikeouts (pitchers)",
@@ -375,7 +416,8 @@
   "display": "12,424",
   "owner_slug": "tfarr",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most wins",
@@ -384,7 +426,8 @@
   "display": "745",
   "owner_slug": "tfarr",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most blown saves, season",
@@ -393,7 +436,8 @@
   "display": "36",
   "owner_slug": "tessman",
   "year": 2025,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most losses, season",
@@ -402,7 +446,8 @@
   "display": "136",
   "owner_slug": "moellerreed",
   "year": 2025,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most quality starts, season",
@@ -411,7 +456,8 @@
   "display": "163",
   "owner_slug": "jfarr",
   "year": 2022,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most saves, season",
@@ -420,7 +466,8 @@
   "display": "149",
   "owner_slug": "drwall",
   "year": 2024,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most strikeouts (pitchers), season",
@@ -429,7 +476,8 @@
   "display": "2,229",
   "owner_slug": "tfarr",
   "year": 2024,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most wins, season",
@@ -438,7 +486,8 @@
   "display": "151",
   "owner_slug": "bugar",
   "year": 2024,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most points from 1B",
@@ -447,7 +496,8 @@
   "display": "526 pts",
   "owner_slug": "tasin",
   "year": 2021,
-  "detail": "Vladimir Guerrero Jr."
+  "detail": "Vladimir Guerrero Jr.",
+  "note": null
  },
  {
   "category": "Most points from 2B",
@@ -456,7 +506,8 @@
   "display": "426 pts",
   "owner_slug": "moellerreed",
   "year": 2023,
-  "detail": "Marcus Semien"
+  "detail": "Marcus Semien",
+  "note": null
  },
  {
   "category": "Most points from 3B",
@@ -465,7 +516,8 @@
   "display": "490 pts",
   "owner_slug": "jfarr",
   "year": 2024,
-  "detail": "Jose Ramirez"
+  "detail": "Jose Ramirez",
+  "note": null
  },
  {
   "category": "Most points from C",
@@ -474,16 +526,18 @@
   "display": "423 pts",
   "owner_slug": "moellerreed",
   "year": 2025,
-  "detail": "Cal Raleigh"
+  "detail": "Cal Raleigh",
+  "note": null
  },
  {
   "category": "Most points from Closer (RP)",
   "scope": "position",
-  "value": 365.30999999999995,
-  "display": "365 pts",
-  "owner_slug": "kaufer",
-  "year": 2022,
-  "detail": "Spencer Strider"
+  "value": 321.17,
+  "display": "321 pts",
+  "owner_slug": "tfarr",
+  "year": 2026,
+  "detail": "Mason Miller",
+  "note": null
  },
  {
   "category": "Most points from OF",
@@ -492,43 +546,38 @@
   "display": "592 pts",
   "owner_slug": "tasin",
   "year": 2023,
-  "detail": "Ronald Acuna Jr."
- },
- {
-  "category": "Most points from P (flex)",
-  "scope": "position",
-  "value": 447.34000000000003,
-  "display": "447 pts",
-  "owner_slug": "sorgaard",
-  "year": 2022,
-  "detail": "Carlos Rodon"
+  "detail": "Ronald Acuna Jr.",
+  "note": null
  },
  {
   "category": "Most points from SP",
   "scope": "position",
-  "value": 727.49,
-  "display": "727 pts",
-  "owner_slug": "tessman",
-  "year": 2022,
-  "detail": "Shohei Ohtani"
+  "value": 527.0,
+  "display": "527 pts",
+  "owner_slug": "jfarr",
+  "year": 2021,
+  "detail": "Walker Buehler",
+  "note": null
  },
  {
   "category": "Most points from SS",
   "scope": "position",
-  "value": 526.0,
-  "display": "526 pts",
-  "owner_slug": "bugar",
-  "year": 2024,
-  "detail": "Bobby Witt Jr."
+  "value": 529.0,
+  "display": "529 pts",
+  "owner_slug": "tfarr",
+  "year": 2023,
+  "detail": "Mookie Betts",
+  "note": "Counted at SS (scarcest eligible position); mostly filled OF slots."
  },
  {
   "category": "Most points from UT",
   "scope": "position",
-  "value": 743.51,
-  "display": "744 pts",
+  "value": 502.0,
+  "display": "502 pts",
   "owner_slug": "tessman",
-  "year": 2023,
-  "detail": "Shohei Ohtani"
+  "year": 2024,
+  "detail": "Shohei Ohtani",
+  "note": null
  },
  {
   "category": "Most points from 1B, week",
@@ -537,25 +586,28 @@
   "display": "63.0 pts",
   "owner_slug": "bruchu",
   "year": 2020,
-  "detail": "Jose Abreu \u00b7 Wk 4"
+  "detail": "Jose Abreu \u00b7 Wk 4",
+  "note": null
  },
  {
   "category": "Most points from 2B, week",
   "scope": "position-week",
-  "value": 49.0,
-  "display": "49.0 pts",
-  "owner_slug": "norman",
+  "value": 53.0,
+  "display": "53.0 pts",
+  "owner_slug": "tfarr",
   "year": 2026,
-  "detail": "Luis Garcia Jr. \u00b7 Wk 13"
+  "detail": "Ketel Marte \u00b7 Wk 8",
+  "note": "Counted at 2B (scarcest eligible position); mostly filled UT slots."
  },
  {
   "category": "Most points from 3B, week",
   "scope": "position-week",
-  "value": 55.0,
-  "display": "55.0 pts",
-  "owner_slug": "kaufer",
-  "year": 2026,
-  "detail": "Junior Caminero \u00b7 Wk 13"
+  "value": 56.0,
+  "display": "56.0 pts",
+  "owner_slug": "tasin",
+  "year": 2024,
+  "detail": "Vladimir Guerrero Jr. \u00b7 Wk 13",
+  "note": "Counted at 3B (scarcest eligible position); mostly filled 1B slots."
  },
  {
   "category": "Most points from C, week",
@@ -564,16 +616,18 @@
   "display": "54.0 pts",
   "owner_slug": "tessman",
   "year": 2026,
-  "detail": "Drake Baldwin \u00b7 Wk 16"
+  "detail": "Drake Baldwin \u00b7 Wk 16",
+  "note": null
  },
  {
   "category": "Most points from Closer (RP), week",
   "scope": "position-week",
-  "value": 50.17,
-  "display": "50.2 pts",
-  "owner_slug": "sorgaard",
-  "year": 2026,
-  "detail": "Foster Griffin \u00b7 Wk 13"
+  "value": 49.0,
+  "display": "49.0 pts",
+  "owner_slug": "tfarr",
+  "year": 2023,
+  "detail": "Felix Bautista \u00b7 Wk 15",
+  "note": null
  },
  {
   "category": "Most points from OF, week",
@@ -582,25 +636,18 @@
   "display": "78.0 pts",
   "owner_slug": "bugar",
   "year": 2022,
-  "detail": "Aaron Judge \u00b7 Wk 15"
- },
- {
-  "category": "Most points from P (flex), week",
-  "scope": "position-week",
-  "value": 57.0,
-  "display": "57.0 pts",
-  "owner_slug": "jfarr",
-  "year": 2020,
-  "detail": "Aaron Nola \u00b7 Wk 3"
+  "detail": "Aaron Judge \u00b7 Wk 15",
+  "note": null
  },
  {
   "category": "Most points from SP, week",
   "scope": "position-week",
-  "value": 66.5,
-  "display": "66.5 pts",
-  "owner_slug": "tessman",
-  "year": 2022,
-  "detail": "Shohei Ohtani \u00b7 Wk 11"
+  "value": 65.0,
+  "display": "65.0 pts",
+  "owner_slug": "sorgaard",
+  "year": 2020,
+  "detail": "Shane Bieber \u00b7 Wk 1",
+  "note": null
  },
  {
   "category": "Most points from SS, week",
@@ -609,16 +656,18 @@
   "display": "64.0 pts",
   "owner_slug": "sorgaard",
   "year": 2026,
-  "detail": "CJ Abrams \u00b7 Wk 16"
+  "detail": "CJ Abrams \u00b7 Wk 16",
+  "note": null
  },
  {
   "category": "Most points from UT, week",
   "scope": "position-week",
-  "value": 72.0,
-  "display": "72.0 pts",
+  "value": 49.0,
+  "display": "49.0 pts",
   "owner_slug": "tessman",
-  "year": 2023,
-  "detail": "Shohei Ohtani \u00b7 Wk 1"
+  "year": 2024,
+  "detail": "Shohei Ohtani \u00b7 Wk 12",
+  "note": null
  },
  {
   "category": "Biggest blowout",
@@ -627,7 +676,8 @@
   "display": "+333.667 pts",
   "owner_slug": "tessman",
   "year": 2026,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Highest single-week score",
@@ -636,7 +686,8 @@
   "display": "676.833 pts",
   "owner_slug": "bugar",
   "year": 2024,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Lowest single-week score",
@@ -645,7 +696,8 @@
   "display": "132 pts",
   "owner_slug": "tasin",
   "year": 2022,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most points in a season",
@@ -654,7 +706,8 @@
   "display": "8,534 pts",
   "owner_slug": "bugar",
   "year": 2025,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Best point differential, season",
@@ -663,7 +716,8 @@
   "display": "+1,419 pts",
   "owner_slug": "bugar",
   "year": 2025,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Fewest points against per game, career",
@@ -672,7 +726,8 @@
   "display": "323.2 pts/gm",
   "owner_slug": "bruchu",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Fewest points against, season",
@@ -681,7 +736,8 @@
   "display": "1,588 pts",
   "owner_slug": "drwall",
   "year": 2020,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most points against per game, career",
@@ -690,7 +746,8 @@
   "display": "340.1 pts/gm",
   "owner_slug": "hegna",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most points against, season",
@@ -699,7 +756,8 @@
   "display": "7,933 pts",
   "owner_slug": "jfarr",
   "year": 2025,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Softest schedule, season",
@@ -708,7 +766,8 @@
   "display": "0.931",
   "owner_slug": "tessman",
   "year": 2020,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Toughest schedule, season",
@@ -717,7 +776,8 @@
   "display": "1.080",
   "owner_slug": "bugar",
   "year": 2020,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Worst point differential, season",
@@ -726,7 +786,8 @@
   "display": "-1,865 pts",
   "owner_slug": "tasin",
   "year": 2022,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most championship game appearances",
@@ -735,7 +796,8 @@
   "display": "3 finals",
   "owner_slug": "sorgaard",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most championship game losses",
@@ -744,7 +806,8 @@
   "display": "2 losses",
   "owner_slug": "sorgaard",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most championships",
@@ -753,7 +816,8 @@
   "display": "1 titles",
   "owner_slug": "bugar",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most consecutive finals appearances",
@@ -762,7 +826,8 @@
   "display": "3 straight",
   "owner_slug": "sorgaard",
   "year": 2022,
-  "detail": "2020\u20132022"
+  "detail": "2020\u20132022",
+  "note": null
  },
  {
   "category": "Worst season start by a finalist",
@@ -771,7 +836,8 @@
   "display": "0\u20134 start",
   "owner_slug": "sorgaard",
   "year": 2022,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Best career win pct",
@@ -780,7 +846,8 @@
   "display": ".657",
   "owner_slug": "moellerreed",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Best season win pct (regular season)",
@@ -789,7 +856,8 @@
   "display": ".909",
   "owner_slug": "tessman",
   "year": 2021,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Best season win pct (with playoffs)",
@@ -798,7 +866,8 @@
   "display": ".917",
   "owner_slug": "tessman",
   "year": 2021,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Best start to a season",
@@ -807,7 +876,8 @@
   "display": "11\u20130 start",
   "owner_slug": "bugar",
   "year": 2025,
-  "detail": "2025"
+  "detail": "2025",
+  "note": null
  },
  {
   "category": "Biggest one-year improvement",
@@ -816,7 +886,8 @@
   "display": "12\u20139 \u2192 19\u20132",
   "owner_slug": "bugar",
   "year": 2025,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Longest win streak",
@@ -825,7 +896,8 @@
   "display": "17 games",
   "owner_slug": "bugar",
   "year": 2025,
-  "detail": "2024\u20132025"
+  "detail": "2024\u20132025",
+  "note": null
  },
  {
   "category": "Longest win streak in one season",
@@ -834,7 +906,8 @@
   "display": "16 games",
   "owner_slug": "tessman",
   "year": 2021,
-  "detail": "2021"
+  "detail": "2021",
+  "note": null
  },
  {
   "category": "Most 15-win regular seasons",
@@ -843,7 +916,8 @@
   "display": "2 seasons",
   "owner_slug": "tfarr",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most career wins",
@@ -852,7 +926,8 @@
   "display": "91 wins",
   "owner_slug": "tfarr",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most consecutive 15-win regular seasons",
@@ -861,7 +936,8 @@
   "display": "2 seasons",
   "owner_slug": "tfarr",
   "year": 2025,
-  "detail": "2024\u20132025"
+  "detail": "2024\u20132025",
+  "note": null
  },
  {
   "category": "Most consecutive winning seasons",
@@ -870,7 +946,8 @@
   "display": "5 seasons",
   "owner_slug": "moellerreed",
   "year": 2025,
-  "detail": "2021\u20132025"
+  "detail": "2021\u20132025",
+  "note": null
  },
  {
   "category": "Most consecutive wins over one opponent",
@@ -879,7 +956,8 @@
   "display": "12 straight",
   "owner_slug": "kaufer",
   "year": 2026,
-  "detail": "vs Coirey Tasin \u00b7 2021\u20132026"
+  "detail": "vs Coirey Tasin \u00b7 2021\u20132026",
+  "note": null
  },
  {
   "category": "Most winning seasons",
@@ -888,7 +966,8 @@
   "display": "6 seasons",
   "owner_slug": "moellerreed",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most wins by 1 point or less",
@@ -897,7 +976,8 @@
   "display": "4 wins",
   "owner_slug": "bugar",
   "year": null,
-  "detail": "all-time"
+  "detail": "all-time",
+  "note": null
  },
  {
   "category": "Most wins in a season (regular season)",
@@ -906,7 +986,8 @@
   "display": "20 wins",
   "owner_slug": "tessman",
   "year": 2021,
-  "detail": null
+  "detail": null,
+  "note": null
  },
  {
   "category": "Most wins in a season (with playoffs)",
@@ -915,6 +996,7 @@
   "display": "22 wins",
   "owner_slug": "tessman",
   "year": 2021,
-  "detail": null
+  "detail": null,
+  "note": null
  }
 ]

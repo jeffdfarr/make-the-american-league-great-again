@@ -47,7 +47,7 @@
   <div class="tbl-scroll"><table id="pit-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="pos-h" style="display:none">Regular-season position records</h2>
   <div class="tbl-scroll"><table id="pos-t"><thead></thead><tbody></tbody></table></div>
-  <p class="sub" id="pos-note" style="display:none;margin-top:.5rem">A player's full regular-season points count — started, benched, or on IR — but minor-league stash days don't. Position is where he actually played most.</p>
+  <p class="sub" id="pos-note" style="display:none;margin-top:.5rem">A player's full regular-season points count — started, benched, or on IR — but minor-league stash days don't. Pitchers are SPs unless relief-only (Closers); hitters count at their scarcest eligible position. The ⓘ marks classification footnotes.</p>
   <footer></footer>
 </main>
 <style>
@@ -62,6 +62,13 @@
   .faint { color: var(--ink-faint); }
   .desc { display: block; font-size: .76rem; color: var(--ink-faint); font-weight: 400;
           white-space: normal; max-width: 26rem; line-height: 1.35; }
+  .tip { position: relative; display: inline-block; cursor: help; color: var(--accent);
+         font-weight: 700; margin-left: .3em; font-size: .85em; }
+  .tip .tipbox { display: none; position: absolute; bottom: 140%; left: 50%; transform: translateX(-50%);
+                 background: var(--ink); color: var(--paper); padding: .5rem .7rem; border-radius: 6px;
+                 font-size: .78rem; font-weight: 400; width: 15rem; white-space: normal;
+                 line-height: 1.4; z-index: 5; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+  .tip:hover .tipbox, .tip.open .tipbox { display: block; }
   main table td:first-child b { font-weight: 600; }
 </style>
 <script src="assets/app.js"></script>
@@ -212,15 +219,16 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     }
   }
 
-  // ---- position records: best season + best week per lineup slot
-  const POS_LABELS = ["SP", "Closer (RP)", "P (flex)", "C", "1B", "2B", "3B", "SS", "OF", "UT"];
+  // ---- position records: best season + best week per position
+  const tip = r => r && r.note ? `<span class="tip" tabindex="0">ⓘ<span class="tipbox">${esc(r.note)}</span></span>` : "";
+  const POS_LABELS = ["SP", "Closer (RP)", "C", "1B", "2B", "3B", "SS", "OF", "UT"];
   const posRows = POS_LABELS.map(label => {
     const a = byCat["position|Most points from " + label];
     const w = byCat["position-week|Most points from " + label + ", week"];
     if (!a && !w) return "";
     return `<tr><td>${esc(label)}</td>
-      <td>${a ? `<strong>${a.display}</strong> · ${esc(a.detail ?? "")} <span class="faint">— ${esc(name(a.owner_slug))} (${a.year})</span>` : "—"}</td>
-      <td>${w ? `<strong>${w.display}</strong> · ${esc(w.detail ?? "")} <span class="faint">— ${esc(name(w.owner_slug))} (${w.year})</span>` : "—"}</td></tr>`;
+      <td>${a ? `<strong>${a.display}</strong> · ${esc(a.detail ?? "")}${tip(a)} <span class="faint">— ${esc(name(a.owner_slug))} (${a.year})</span>` : "—"}</td>
+      <td>${w ? `<strong>${w.display}</strong> · ${esc(w.detail ?? "")}${tip(w)} <span class="faint">— ${esc(name(w.owner_slug))} (${w.year})</span>` : "—"}</td></tr>`;
   }).join("");
   if (posRows) {
     document.getElementById("pos-h").style.display = "";
@@ -229,6 +237,12 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     t.querySelector("thead").innerHTML = `<tr><th>Slot</th><th>Best season</th><th>Best week</th></tr>`;
     t.querySelector("tbody").innerHTML = posRows;
   }
+  // tap-to-toggle tooltips (hover covers desktop)
+  document.addEventListener("click", e => {
+    const t = e.target.closest(".tip");
+    document.querySelectorAll(".tip.open").forEach(x => { if (x !== t) x.classList.remove("open"); });
+    if (t) t.classList.toggle("open");
+  });
   MT.footer(meta);
 })().catch(e => document.querySelector(".loading").textContent = "Could not load data: " + e.message);
 </script>

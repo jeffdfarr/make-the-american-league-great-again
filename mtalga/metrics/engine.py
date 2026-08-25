@@ -494,67 +494,177 @@ def _records(conn: sqlite3.Connection) -> None:
 
 
 POSITION_SLOTS = [
-    ("SP", "SP"), ("RP", "Closer (RP)"), ("P", "P (flex)"),
+    ("SP", "SP"), ("RP", "Closer (RP)"),
     ("C", "C"), ("1B", "1B"), ("2B", "2B"), ("3B", "3B"),
     ("SS", "SS"), ("OF", "OF"), ("UT", "UT"),
 ]
+HITTER_LADDER = ["C", "SS", "2B", "3B", "OF", "1B", "UT"]  # scarcest first; UT = DH-only
+PITCH_SLOT_KEYS = {"SP", "RP", "P"}
+HIT_SLOT_KEYS = {"C", "1B", "2B", "3B", "SS", "OF", "UT"}
+TWO_WAY_MIN = 50.0  # active pts on BOTH sides to count as a two-way season
+
+
+def _position_overrides() -> dict:
+    """Optional config/position_overrides.yaml: {"Player Name": "SP", ...} —
+    commissioner power over classification when the rules get one wrong."""
+    try:
+        import yaml
+        from pathlib import Path
+        p = Path(__file__).resolve().parent.parent.parent / "config" / "position_overrides.yaml"
+        if p.exists():
+            return {str(k).lower(): str(v).upper() for k, v in (yaml.safe_load(p.read_text()) or {}).items()}
+    except Exception as e:
+        print(f"[records] position_overrides.yaml skipped: {e}")
+    return {}
 
 
 def _position_records(conn: sqlite3.Connection) -> None:
-    """Regular-season position records, league convention (2026-08): a
-    player's FULL points count — started, benched, or on IR — but days in a
-    minor-league slot do not. He's classified by the position where he
-    actually scored the most while started (his primary slot)."""
-    slot_keys = {s for s, _ in POSITION_SLOTS}
+    """Regular-season position records, league convention (2026-08):
+    a player's FULL RS points count — started, benched, or on IR — but
+    minor-league slot days don't. Classification: pitchers are SP unless
+    their eligibility is relief-only (that's a Closer); hitters count at
+    their SCARCEST eligible position (C > SS > 2B > 3B > OF > 1B > UT);
+    two-way seasons split into a pitching half and a hitting half by the
+    slots actually used. Falls back to actual-slot classification when a
+    player's eligibility wasn't harvested."""
+    labels = dict(POSITION_SLOTS)
     owner_of = {r["id"]: r["owner_slug"] for r in conn.execute(
         "SELECT id, owner_slug FROM team_seasons WHERE owner_slug IS NOT NULL")}
-    seasons: dict[tuple, dict] = {}   # (y, ts, pid) -> {tot, act{slot: v}, weeks{wk: v}, player}
+    elig: dict[tuple, set] = {}
+    try:
+        for r in conn.execute("SELECT year, player_id, positions FROM player_eligibility"):
+            elig[(r["year"], r["player_id"])] = {
+                p.strip().upper() for p in (r["positions"] or "").replace("/", ",").split(",") if p.strip()}
+    except sqlite3.OperationalError:
+        pass
+    overrides = _position_overrides()
+
+    P: dict[tuple, dict] = {}  # (y, ts, pid) -> aggregates
     for r in conn.execute(
         """SELECT year y, team_season_id ts, player_id pid, player p, slot, status st, week w, SUM(pts) v
            FROM position_points GROUP BY year, team_season_id, player_id, slot, status, week"""):
-        if (r["st"] or "").lower().startswith("min"):
-            continue  # minors stash days don't count
+        st = (r["st"] or "").lower()
+        if st.startswith("min"):
+            continue
         if r["ts"] not in owner_of:
             continue
-        e = seasons.setdefault((r["y"], r["ts"], r["pid"]),
-                               {"tot": 0.0, "act": defaultdict(float), "weeks": defaultdict(float), "player": r["p"]})
-        e["tot"] += r["v"]
-        e["weeks"][r["w"]] += r["v"]
-        if (r["st"] or "").lower() == "active" and r["slot"] in slot_keys:
-            e["act"][r["slot"]] += r["v"]
+        e = P.setdefault((r["y"], r["ts"], r["pid"]),
+                         {"player": r["p"], "act": defaultdict(float),
+                          "actw": defaultdict(float), "bench": 0.0, "benchw": defaultdict(float)})
         if r["p"]:
             e["player"] = r["p"]
+        if st == "active":
+            e["act"][r["slot"]] += r["v"]
+            side = "P" if r["slot"] in PITCH_SLOT_KEYS else "H"
+            e["actw"][(side, r["w"])] += r["v"]
+        else:
+            e["bench"] += r["v"]
+            e["benchw"][r["w"]] += r["v"]
 
-    best_season: dict[str, tuple] = {}   # slot -> (v, player, owner, year)
-    best_week: dict[str, tuple] = {}     # slot -> (v, player, owner, year, wk)
-    for (y, ts, _pid), e in seasons.items():
-        if not e["act"]:
-            continue  # never started — no position to claim
-        primary = max(e["act"].items(), key=lambda kv: kv[1])[0]
+    best_season: dict[str, tuple] = {}   # pos -> (v, player, owner, year, note)
+    best_week: dict[str, tuple] = {}     # pos -> (v, player, owner, year, wk, note)
+
+    def consider(pos, v, player, o, y, note):
+        if pos and v and (pos not in best_season or v > best_season[pos][0]):
+            best_season[pos] = (v, player, o, y, note)
+
+    def consider_week(pos, v, player, o, y, wk, note):
+        if pos and v and (pos not in best_week or v > best_week[pos][0]):
+            best_week[pos] = (v, player, o, y, wk, note)
+
+    for (y, ts, pid), e in P.items():
+        act_p = sum(v for s, v in e["act"].items() if s in PITCH_SLOT_KEYS)
+        act_h = sum(v for s, v in e["act"].items() if s in HIT_SLOT_KEYS)
+        if act_p <= 0 and act_h <= 0:
+            continue
         o = owner_of[ts]
-        cur = best_season.get(primary)
-        if cur is None or e["tot"] > cur[0]:
-            best_season[primary] = (e["tot"], e["player"], o, y)
-        for wk, v in e["weeks"].items():
-            cur = best_week.get(primary)
-            if cur is None or v > cur[0]:
-                best_week[primary] = (v, e["player"], o, y, wk)
+        eset = elig.get((y, pid), set())
+        ov = overrides.get((e["player"] or "").lower())
+        two_way = act_p >= TWO_WAY_MIN and act_h >= TWO_WAY_MIN
+        act_tot = act_p + act_h
+
+        def top_slot(keys):
+            d = {s: v for s, v in e["act"].items() if s in keys and v > 0}
+            return max(d.items(), key=lambda kv: kv[1])[0] if d else None
+
+        def pitch_pos():
+            if ov in ("SP", "RP"):
+                return ov, "Commissioner override."
+            note = None
+            if eset & {"SP", "RP"}:
+                pos = "SP" if "SP" in eset else "RP"
+            else:
+                pos = "SP" if e["act"].get("SP", 0) > 0 else "RP"
+                if not eset:
+                    note = None  # slot fallback, nothing to explain
+            ts_ = top_slot(PITCH_SLOT_KEYS)
+            if ts_ and ts_ != pos and pos == "SP":
+                note = f"SP-eligible; mostly filled {ts_} slots that season."
+            return pos, note
+
+        def hit_pos():
+            if ov in HIT_SLOT_KEYS:
+                return ov, "Commissioner override."
+            note = None
+            pos = None
+            hset = {("UT" if p == "DH" else p) for p in eset} & set(HITTER_LADDER)
+            if hset:
+                for cand in HITTER_LADDER:
+                    if cand in hset:
+                        pos = cand
+                        break
+            if pos is None:
+                pos = top_slot(HIT_SLOT_KEYS)
+            ts_ = top_slot(HIT_SLOT_KEYS)
+            if ts_ and pos and ts_ != pos:
+                note = f"Counted at {pos} (scarcest eligible position); mostly filled {ts_} slots."
+            return pos, note
+
+        if two_way:
+            share_p = act_p / act_tot
+            tw = "Two-way season — pitching and hitting days counted separately. "
+            pos, note = pitch_pos()
+            consider(pos, act_p + e["bench"] * share_p, e["player"], o, y, tw + (note or ""))
+            hpos, hnote = hit_pos()
+            consider(hpos, act_h + e["bench"] * (1 - share_p), e["player"], o, y, tw + (hnote or ""))
+            dom = "P" if act_p >= act_h else "H"
+            for (side, wk), v in e["actw"].items():
+                wv = v + (e["benchw"].get(wk, 0.0) if side == dom else 0.0)
+                if side == "P":
+                    consider_week(pos, wv, e["player"], o, y, wk, tw.strip())
+                else:
+                    consider_week(hpos, wv, e["player"], o, y, wk, tw.strip())
+        else:
+            if act_p >= act_h:
+                pos, note = pitch_pos()
+            else:
+                pos, note = hit_pos()
+            total = act_tot + e["bench"]
+            consider(pos, total, e["player"], o, y, note)
+            wktot: dict[int, float] = defaultdict(float)
+            for (_side, wk), v in e["actw"].items():
+                wktot[wk] += v
+            for wk, v in e["benchw"].items():
+                wktot[wk] += v
+            for wk, v in wktot.items():
+                consider_week(pos, v, e["player"], o, y, wk, note)
 
     for slot, label in POSITION_SLOTS:
         b = best_season.get(slot)
         if b and b[0]:
             conn.execute(
-                """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
-                   VALUES (?,?,?,?,?,?,?)""",
-                (f"Most points from {label}", "position", b[0], f"{b[0]:,.0f} pts", b[2], b[3], b[1]),
+                """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail, note)
+                   VALUES (?,?,?,?,?,?,?,?)""",
+                (f"Most points from {label}", "position", b[0], f"{b[0]:,.0f} pts",
+                 b[2], b[3], b[1], (b[4] or "").strip() or None),
             )
         b = best_week.get(slot)
         if b and b[0]:
             conn.execute(
-                """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail)
-                   VALUES (?,?,?,?,?,?,?)""",
+                """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail, note)
+                   VALUES (?,?,?,?,?,?,?,?)""",
                 (f"Most points from {label}, week", "position-week", b[0], f"{b[0]:,.1f} pts",
-                 b[2], b[3], f"{b[1]} · Wk {b[4]}"),
+                 b[2], b[3], f"{b[1]} · Wk {b[4]}", (b[5] or "").strip() or None),
             )
 
 

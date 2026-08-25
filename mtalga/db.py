@@ -99,6 +99,16 @@ CREATE TABLE IF NOT EXISTS position_points (
     PRIMARY KEY (year, daily, team_season_id, player_id)
 );
 
+-- Per-season Fantrax position eligibility per player (harvested from sampled
+-- roster days); positions is a comma list like "SP,RP" or "2B,OF".
+CREATE TABLE IF NOT EXISTS player_eligibility (
+    year      INTEGER NOT NULL,
+    player_id TEXT NOT NULL,
+    player    TEXT,
+    positions TEXT,
+    PRIMARY KEY (year, player_id)
+);
+
 -- Weekly hitting/pitching split (filled by the roster fetch; nullable early on)
 CREATE TABLE IF NOT EXISTS period_splits (
     year            INTEGER NOT NULL,
@@ -173,6 +183,7 @@ CREATE TABLE IF NOT EXISTS records_book (
     owner_slug TEXT,
     year     INTEGER,
     detail   TEXT,
+    note     TEXT,                        -- tooltip: classification caveats etc.
     PRIMARY KEY (category, scope)
 );
 
