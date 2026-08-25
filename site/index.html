@@ -15,9 +15,9 @@
     <nav class="main">
       <a href="index.html" data-nav="index">Franchises</a>
       <a href="trades.html" data-nav="trades">Trades</a>
-      <a href="draft.html" data-nav="draft">Draft</a>
-      <a href="rules.html" data-nav="rules">Rules</a>
       <a href="history.html" data-nav="history">Records</a>
+      <a href="rules.html" data-nav="rules">Rules</a>
+      <a href="draft.html" data-nav="draft">Draft</a>
     </nav>
   </div>
 </header>
@@ -143,7 +143,7 @@ document.querySelector('[data-nav="index"]').classList.add("active");
     const v = e.target.dataset.y;
     if (v) render(v === "all" ? "all" : +v);
   });
-  render(curYear);
+  render("all");
   MT.footer(meta);
 })().catch(e => document.querySelector(".loading").textContent = "Could not load data: " + e.message);
 </script>
