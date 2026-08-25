@@ -45,9 +45,14 @@
   <div class="tbl-scroll"><table id="hit-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="pit-h" style="display:none">Pitching records</h2>
   <div class="tbl-scroll"><table id="pit-t"><thead></thead><tbody></tbody></table></div>
+  <h2 id="roster-h" style="display:none">Roster records</h2>
+  <div class="tbl-scroll"><table id="roster-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="pos-h" style="display:none">Regular-season position records</h2>
   <div class="tbl-scroll"><table id="pos-t"><thead></thead><tbody></tbody></table></div>
   <p class="sub" id="pos-note" style="display:none;margin-top:.5rem">A player's full regular-season points count — started, benched, or on IR — but minor-league stash days don't. Pitchers are SPs unless relief-only (Closers); hitters count at their scarcest eligible position. The ⓘ marks classification footnotes.</p>
+  <h2 id="leg-h" style="display:none">Franchise legends</h2>
+  <div class="tbl-scroll"><table id="leg-t"><thead></thead><tbody></tbody></table></div>
+  <p class="sub" id="leg-note" style="display:none;margin-top:.5rem">Each franchise's all-time leading scorer — every regular-season point a player put up while on that roster.</p>
   <footer></footer>
 </main>
 <style>
@@ -123,12 +128,17 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     "Worst season start by a finalist": "Opened the season this badly and still reached the championship game",
     "Most trades": "Career deals made",
     "Favorite trade partners": "The pair who have dealt with each other most",
+    "Most points left on the bench, week": "Points scored by players sitting in Reserve slots (IR doesn't count — they couldn't start)",
+    "Most points left on the bench, season": "Season total scored from the bench",
+    "Most players used in a season": "Distinct players who appeared in the active lineup",
+    "Fewest players used in a season": "Full, completed seasons only",
   };
 
   const recRow = r => `
-    <tr><td><b>${esc(r.category)}</b>${DESC[r.category] ? `<span class="desc">${DESC[r.category]}</span>` : ""}</td>
+    <tr><td><b>${esc(r.category)}</b>${DESC[r.category] ? `<span class="desc">${DESC[r.category]}</span>` : ""}${r.note ? `<span class="desc">${esc(r.note)}</span>` : ""}</td>
     <td class="num">${r.display}</td>
-    <td>${esc(name(r.owner_slug))}</td><td class="faint">${r.detail ?? r.year ?? ""}</td></tr>`;
+    <td>${r.owner_slug ? esc(name(r.owner_slug)) : `<span class="faint">—</span>`}</td>
+    <td class="faint">${[r.detail, r.year].filter(x => x != null && x !== "").join(" · ") || ""}</td></tr>`;
 
   const SECTIONS = [
     ["scoring", null, "sc-t", ["Highest single-week score", "Lowest single-week score", "Biggest blowout",
@@ -217,6 +227,31 @@ document.querySelector('[data-nav="history"]').classList.add("active");
       t.querySelector("thead").innerHTML = `<tr><th>Record</th><th>All-time</th><th>Best season</th></tr>`;
       t.querySelector("tbody").innerHTML = body;
     }
+  }
+
+  // ---- roster records (bench crimes, comebacks, churn)
+  const RORDER = ["Most points left on the bench, week", "Most points left on the bench, season",
+    "Biggest final-day comeback", "Most players used in a season", "Fewest players used in a season",
+    "Most-traveled player"];
+  const rosterGroup = records.filter(r => r.scope === "roster")
+    .sort((a, b) => RORDER.indexOf(a.category) - RORDER.indexOf(b.category));
+  if (rosterGroup.length) {
+    document.getElementById("roster-h").style.display = "";
+    const t = document.getElementById("roster-t");
+    t.querySelector("thead").innerHTML = `<tr><th>Record</th><th class="num">Mark</th><th>Holder</th><th>Detail</th></tr>`;
+    t.querySelector("tbody").innerHTML = rosterGroup.map(recRow).join("");
+  }
+
+  // ---- franchise legends: each team's all-time leading scorer
+  const legends = records.filter(r => r.scope === "legend").sort((a, b) => b.value - a.value);
+  if (legends.length) {
+    document.getElementById("leg-h").style.display = "";
+    document.getElementById("leg-note").style.display = "";
+    const t = document.getElementById("leg-t");
+    t.querySelector("thead").innerHTML = `<tr><th>Franchise</th><th>All-time leading scorer</th><th class="num">Points</th></tr>`;
+    t.querySelector("tbody").innerHTML = legends.map(r => `
+      <tr><td>${esc(name(r.owner_slug))}</td><td><b>${esc(r.detail ?? "?")}</b></td>
+      <td class="num">${r.display}</td></tr>`).join("");
   }
 
   // ---- position records: best season + best week per position

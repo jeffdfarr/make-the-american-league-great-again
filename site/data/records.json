@@ -200,6 +200,136 @@
   "note": null
  },
  {
+  "category": "legend:bruchu",
+  "scope": "legend",
+  "value": 149.0,
+  "display": "149 pts",
+  "owner_slug": "bruchu",
+  "year": null,
+  "detail": "Jose Abreu",
+  "note": null
+ },
+ {
+  "category": "legend:bugar",
+  "scope": "legend",
+  "value": 2412.0,
+  "display": "2,412 pts",
+  "owner_slug": "bugar",
+  "year": null,
+  "detail": "Aaron Judge",
+  "note": null
+ },
+ {
+  "category": "legend:drwall",
+  "scope": "legend",
+  "value": 1690.0,
+  "display": "1,690 pts",
+  "owner_slug": "drwall",
+  "year": null,
+  "detail": "Corey Seager",
+  "note": null
+ },
+ {
+  "category": "legend:hegna",
+  "scope": "legend",
+  "value": 331.8,
+  "display": "332 pts",
+  "owner_slug": "hegna",
+  "year": null,
+  "detail": "Parker Messick",
+  "note": null
+ },
+ {
+  "category": "legend:jfarr",
+  "scope": "legend",
+  "value": 2506.0,
+  "display": "2,506 pts",
+  "owner_slug": "jfarr",
+  "year": null,
+  "detail": "Jose Ramirez",
+  "note": null
+ },
+ {
+  "category": "legend:kaufer",
+  "scope": "legend",
+  "value": 2617.0,
+  "display": "2,617 pts",
+  "owner_slug": "kaufer",
+  "year": null,
+  "detail": "Juan Soto",
+  "note": null
+ },
+ {
+  "category": "legend:krech",
+  "scope": "legend",
+  "value": 1355.6299999999999,
+  "display": "1,356 pts",
+  "owner_slug": "krech",
+  "year": null,
+  "detail": "Logan Webb",
+  "note": null
+ },
+ {
+  "category": "legend:moellerreed",
+  "scope": "legend",
+  "value": 1720.0,
+  "display": "1,720 pts",
+  "owner_slug": "moellerreed",
+  "year": null,
+  "detail": "Kyle Schwarber",
+  "note": null
+ },
+ {
+  "category": "legend:norman",
+  "scope": "legend",
+  "value": 345.0,
+  "display": "345 pts",
+  "owner_slug": "norman",
+  "year": null,
+  "detail": "Otto Lopez",
+  "note": null
+ },
+ {
+  "category": "legend:sorgaard",
+  "scope": "legend",
+  "value": 1537.14,
+  "display": "1,537 pts",
+  "owner_slug": "sorgaard",
+  "year": null,
+  "detail": "Framber Valdez",
+  "note": null
+ },
+ {
+  "category": "legend:tasin",
+  "scope": "legend",
+  "value": 2456.0,
+  "display": "2,456 pts",
+  "owner_slug": "tasin",
+  "year": null,
+  "detail": "Vladimir Guerrero Jr.",
+  "note": null
+ },
+ {
+  "category": "legend:tessman",
+  "scope": "legend",
+  "value": 3771.49,
+  "display": "3,771 pts",
+  "owner_slug": "tessman",
+  "year": null,
+  "detail": "Shohei Ohtani",
+  "note": null
+ },
+ {
+  "category": "legend:tfarr",
+  "scope": "legend",
+  "value": 2084.0,
+  "display": "2,084 pts",
+  "owner_slug": "tfarr",
+  "year": null,
+  "detail": "Mookie Betts",
+  "note": null
+ },
+ {
   "category": "Biggest one-year collapse",
   "scope": "losses",
   "value": -0.481,
@@ -668,6 +798,66 @@
   "year": 2024,
   "detail": "Shohei Ohtani \u00b7 Wk 12",
   "note": null
+ },
+ {
+  "category": "Biggest final-day comeback",
+  "scope": "roster",
+  "value": 62.49000000000001,
+  "display": "down 62.5 pts",
+  "owner_slug": "bugar",
+  "year": 2025,
+  "detail": "vs Nick Tessman \u00b7 Wk 7",
+  "note": "Trailed by this much entering the last day of the scoring week \u2014 and won."
+ },
+ {
+  "category": "Fewest players used in a season",
+  "scope": "roster",
+  "value": 36.0,
+  "display": "36 players",
+  "owner_slug": "bugar",
+  "year": 2021,
+  "detail": null,
+  "note": null
+ },
+ {
+  "category": "Most players used in a season",
+  "scope": "roster",
+  "value": 148.0,
+  "display": "148 players",
+  "owner_slug": "tfarr",
+  "year": 2021,
+  "detail": null,
+  "note": null
+ },
+ {
+  "category": "Most points left on the bench, season",
+  "scope": "roster",
+  "value": 1255.17,
+  "display": "1,255 pts",
+  "owner_slug": "sorgaard",
+  "year": 2026,
+  "detail": "Evan Carter (118 of it)",
+  "note": null
+ },
+ {
+  "category": "Most points left on the bench, week",
+  "scope": "roster",
+  "value": 134.66,
+  "display": "134.7 pts",
+  "owner_slug": "sorgaard",
+  "year": 2025,
+  "detail": "Wk 11 \u00b7 Emerson Hancock (30 of it)",
+  "note": null
+ },
+ {
+  "category": "Most-traveled player",
+  "scope": "roster",
+  "value": 11.0,
+  "display": "11 franchises",
+  "owner_slug": null,
+  "year": null,
+  "detail": "Kyle Freeland",
+  "note": "Rostered by the most different franchises all-time."
  },
  {
   "category": "Biggest blowout",

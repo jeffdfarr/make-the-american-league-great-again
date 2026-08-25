@@ -491,6 +491,116 @@ def _records(conn: sqlite3.Connection) -> None:
     _wl_records(conn)
     _category_records(conn)
     _position_records(conn)
+    _roster_records(conn)
+    _legend_records(conn)
+
+
+def _roster_records(conn: sqlite3.Connection) -> None:
+    """Bench crimes, Sunday comebacks, and roster-churn records — all from
+    the per-day roster data. Bench = Reserve slots only (IR players could
+    not legally start, so their points aren't 'left on the bench')."""
+    owner_of = {r["id"]: r["owner_slug"] for r in conn.execute(
+        "SELECT id, owner_slug FROM team_seasons WHERE owner_slug IS NOT NULL")}
+    names = {r["slug"]: r["name"] for r in conn.execute("SELECT slug, name FROM owners")}
+
+    def put(category, value, display, owner, year, detail, note=None):
+        conn.execute(
+            """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail, note)
+               VALUES (?, 'roster', ?,?,?,?,?,?)""",
+            (category, value, display, owner, year, detail, note))
+
+    # ---- bench points, week and season
+    wk = conn.execute(
+        """SELECT year y, week w, team_season_id ts, SUM(pts) v FROM position_points
+           WHERE lower(status)='reserve' GROUP BY year, week, team_season_id
+           ORDER BY v DESC LIMIT 1""").fetchone()
+    if wk and wk["v"] and wk["ts"] in owner_of:
+        lead = conn.execute(
+            """SELECT player p, SUM(pts) v FROM position_points
+               WHERE lower(status)='reserve' AND year=? AND week=? AND team_season_id=?
+               GROUP BY player_id ORDER BY v DESC LIMIT 1""", (wk["y"], wk["w"], wk["ts"])).fetchone()
+        put("Most points left on the bench, week", wk["v"], f"{wk['v']:,.1f} pts",
+            owner_of[wk["ts"]], wk["y"], f"Wk {wk['w']} · {lead['p']} ({lead['v']:,.0f} of it)" if lead else f"Wk {wk['w']}")
+    sn = conn.execute(
+        """SELECT year y, team_season_id ts, SUM(pts) v FROM position_points
+           WHERE lower(status)='reserve' GROUP BY year, team_season_id
+           ORDER BY v DESC LIMIT 1""").fetchone()
+    if sn and sn["v"] and sn["ts"] in owner_of:
+        lead = conn.execute(
+            """SELECT player p, SUM(pts) v FROM position_points
+               WHERE lower(status)='reserve' AND year=? AND team_season_id=?
+               GROUP BY player_id ORDER BY v DESC LIMIT 1""", (sn["y"], sn["ts"])).fetchone()
+        put("Most points left on the bench, season", sn["v"], f"{sn['v']:,.0f} pts",
+            owner_of[sn["ts"]], sn["y"], f"{lead['p']} ({lead['v']:,.0f} of it)" if lead else None)
+
+    # ---- biggest final-day comeback
+    day: dict[tuple, dict] = defaultdict(dict)
+    for r in conn.execute(
+        """SELECT year y, week w, team_season_id ts, daily d, SUM(pts) v FROM position_points
+           WHERE lower(status)='active' GROUP BY year, week, team_season_id, daily"""):
+        day[(r["y"], r["w"], r["ts"])][r["d"]] = r["v"]
+    best = None
+    for g in conn.execute(
+        """SELECT year y, period w, team_season_id ts, opp_season_id opp, pts_for pf, pts_against pa
+           FROM games WHERE complete=1 AND game_type='R'"""):
+        if g["pf"] <= g["pa"] or g["ts"] not in owner_of:
+            continue  # only winners can have come back
+        mine, theirs = day.get((g["y"], g["w"], g["ts"]), {}), day.get((g["y"], g["w"], g["opp"]), {})
+        days = sorted(set(mine) | set(theirs))
+        if len(days) < 2:
+            continue
+        last = days[-1]
+        deficit = sum(v for d, v in theirs.items() if d < last) - sum(v for d, v in mine.items() if d < last)
+        if deficit > 0 and (best is None or deficit > best[0]):
+            best = (deficit, owner_of[g["ts"]], g["y"], g["w"], owner_of.get(g["opp"]))
+    if best:
+        put("Biggest final-day comeback", best[0], f"down {best[0]:,.1f} pts", best[1], best[2],
+            f"vs {names.get(best[4], best[4] or '?')} · Wk {best[3]}",
+            "Trailed by this much entering the last day of the scoring week — and won.")
+
+    # ---- roster churn
+    comp = {r["year"] for r in conn.execute("SELECT DISTINCT year FROM season_stats WHERE champion=1")}
+    full = {r["year"] for r in conn.execute("SELECT DISTINCT year FROM season_stats WHERE rs_games >= 15")}
+    mostp = conn.execute(
+        """SELECT year y, team_season_id ts, COUNT(DISTINCT player_id) v FROM position_points
+           WHERE lower(status)='active' GROUP BY year, team_season_id ORDER BY v DESC LIMIT 1""").fetchone()
+    if mostp and mostp["ts"] in owner_of:
+        put("Most players used in a season", mostp["v"], f"{mostp['v']} players", owner_of[mostp["ts"]], mostp["y"], None)
+    for r in conn.execute(
+        """SELECT year y, team_season_id ts, COUNT(DISTINCT player_id) v FROM position_points
+           WHERE lower(status)='active' GROUP BY year, team_season_id ORDER BY v ASC"""):
+        if r["y"] in comp and r["y"] in full and r["ts"] in owner_of:
+            put("Fewest players used in a season", r["v"], f"{r['v']} players", owner_of[r["ts"]], r["y"], None)
+            break
+
+    # ---- most-traveled player
+    tv = conn.execute(
+        """SELECT pp.player p, COUNT(DISTINCT ts.owner_slug) n, SUM(pp.pts) v
+           FROM position_points pp JOIN team_seasons ts ON ts.id = pp.team_season_id
+           WHERE ts.owner_slug IS NOT NULL AND lower(pp.status) NOT LIKE 'min%'
+           GROUP BY pp.player_id ORDER BY n DESC, v DESC LIMIT 1""").fetchone()
+    if tv and tv["n"] and tv["n"] >= 2:
+        put("Most-traveled player", tv["n"], f"{tv['n']} franchises", None, None, tv["p"],
+            "Rostered by the most different franchises all-time.")
+
+
+def _legend_records(conn: sqlite3.Connection) -> None:
+    """All-time leading scorer for each franchise (points while rostered,
+    minors excluded — same convention as position records)."""
+    rows = conn.execute(
+        """SELECT ts.owner_slug o, pp.player p, SUM(pp.pts) v
+           FROM position_points pp JOIN team_seasons ts ON ts.id = pp.team_season_id
+           WHERE ts.owner_slug IS NOT NULL AND lower(pp.status) NOT LIKE 'min%'
+           GROUP BY ts.owner_slug, pp.player_id""").fetchall()
+    best: dict[str, tuple] = {}
+    for r in rows:
+        if r["o"] not in best or r["v"] > best[r["o"]][0]:
+            best[r["o"]] = (r["v"], r["p"])
+    for slug, (v, player) in best.items():
+        conn.execute(
+            """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail, note)
+               VALUES (?, 'legend', ?,?,?,?,?,?)""",
+            (f"legend:{slug}", v, f"{v:,.0f} pts", slug, None, player, None))
 
 
 POSITION_SLOTS = [
