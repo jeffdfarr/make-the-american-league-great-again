@@ -179,3 +179,18 @@ tbody tr:hover td:first-child, tbody tr:hover td.teamcell { background: var(--su
 .mast-row { display: flex; align-items: center; gap: 1.1rem; }
 .mast-logo { width: 72px; height: 72px; flex: none; display: block; }
 @media (max-width: 640px) { .mast-logo { width: 52px; height: 52px; } .mast-row { gap: .8rem; } }
+
+/* smaller mast text on phones so the title doesn't squish beside the logo */
+@media (max-width: 640px) {
+  .mast-row h1 { font-size: 1.35rem; }
+  .mast-row .eyebrow { font-size: .58rem; letter-spacing: .1em; margin-bottom: .35rem; }
+  .mast-row .sub { font-size: .85rem; }
+}
+
+/* white keyline around the eagle in dark mode so it reads on dark paper */
+@media (prefers-color-scheme: dark) {
+  .mast-logo {
+    filter: drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff)
+            drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff);
+  }
+}
