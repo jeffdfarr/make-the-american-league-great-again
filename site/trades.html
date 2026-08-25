@@ -61,7 +61,7 @@
 document.querySelector('[data-nav="trades"]').classList.add("active");
 (async () => {
   const { trades, meta } = await MT.data("trades", "meta");
-  document.getElementById("tagline").textContent = "Every deal · synced nightly from the trade log";
+  document.getElementById("tagline").textContent = "Every deal · updates within minutes of the trade log";
   const esc = t => t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
   const year = d => (d.split("/")[2] || "");
   const owners = [...new Set(trades.flatMap(t => t.sides.map(s => s.owner)))].filter(Boolean).sort();

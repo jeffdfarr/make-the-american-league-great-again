@@ -72,7 +72,7 @@
 document.querySelector('[data-nav="rules"]').classList.add("active");
 (async () => {
   const { rules, meta } = await MT.data("rules", "meta");
-  document.getElementById("tagline").textContent = "The rulebook · edited in Google Sheets, synced nightly";
+  document.getElementById("tagline").textContent = "The rulebook · updates within minutes of an edit";
   const esc = t => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/^•\s*/, "");
   const numbered = t => {
     const m = t.match(/^(\d+(?:\.\d+)*)\.?\s+(.*)$/);
