@@ -850,16 +850,6 @@
   "note": null
  },
  {
-  "category": "Most-traveled player",
-  "scope": "roster",
-  "value": 11.0,
-  "display": "11 franchises",
-  "owner_slug": null,
-  "year": null,
-  "detail": "Kyle Freeland",
-  "note": "Rostered by the most different franchises all-time."
- },
- {
   "category": "Biggest blowout",
   "scope": "scoring",
   "value": 333.66700000000003,

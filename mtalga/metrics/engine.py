@@ -573,15 +573,6 @@ def _roster_records(conn: sqlite3.Connection) -> None:
             put("Fewest players used in a season", r["v"], f"{r['v']} players", owner_of[r["ts"]], r["y"], None)
             break
 
-    # ---- most-traveled player
-    tv = conn.execute(
-        """SELECT pp.player p, COUNT(DISTINCT ts.owner_slug) n, SUM(pp.pts) v
-           FROM position_points pp JOIN team_seasons ts ON ts.id = pp.team_season_id
-           WHERE ts.owner_slug IS NOT NULL AND lower(pp.status) NOT LIKE 'min%'
-           GROUP BY pp.player_id ORDER BY n DESC, v DESC LIMIT 1""").fetchone()
-    if tv and tv["n"] and tv["n"] >= 2:
-        put("Most-traveled player", tv["n"], f"{tv['n']} franchises", None, None, tv["p"],
-            "Rostered by the most different franchises all-time.")
 
 
 def _legend_records(conn: sqlite3.Connection) -> None:

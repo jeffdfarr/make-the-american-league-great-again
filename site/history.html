@@ -231,8 +231,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
 
   // ---- roster records (bench crimes, comebacks, churn)
   const RORDER = ["Most points left on the bench, week", "Most points left on the bench, season",
-    "Biggest final-day comeback", "Most players used in a season", "Fewest players used in a season",
-    "Most-traveled player"];
+    "Biggest final-day comeback", "Most players used in a season", "Fewest players used in a season"];
   const rosterGroup = records.filter(r => r.scope === "roster")
     .sort((a, b) => RORDER.indexOf(a.category) - RORDER.indexOf(b.category));
   if (rosterGroup.length) {
