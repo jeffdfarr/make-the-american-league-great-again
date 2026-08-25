@@ -70,6 +70,23 @@ def diff_messages(conn: sqlite3.Connection, before: dict) -> list[str]:
     return msgs
 
 
+def _quiet_hours() -> bool:
+    """True between 10pm and 9am Central — no record pings while the league sleeps."""
+    try:
+        from datetime import datetime
+        from zoneinfo import ZoneInfo
+        hour = datetime.now(ZoneInfo("America/Chicago")).hour
+    except Exception:
+        from datetime import datetime, timezone
+        hour = (datetime.now(timezone.utc).hour - 5) % 24  # rough CT fallback
+    return hour >= 22 or hour < 9
+
+
+def _pending(conn: sqlite3.Connection) -> list[str]:
+    conn.execute("CREATE TABLE IF NOT EXISTS pending_alerts (msg TEXT)")
+    return [r[0] for r in conn.execute("SELECT msg FROM pending_alerts")]
+
+
 def post(text: str) -> bool:
     bot_id = os.environ.get("GROUPME_BOT_ID")
     if not bot_id:
@@ -80,12 +97,26 @@ def post(text: str) -> bool:
     return r.status_code < 300
 
 
-def send_all(msgs: list[str]) -> None:
+def send_all(conn: sqlite3.Connection, msgs: list[str]) -> None:
+    """Send now, or park in the DB during quiet hours — the next daytime run
+    delivers whatever's waiting."""
+    queue = _pending(conn)
+    msgs = queue + [m for m in msgs if m not in queue]
+    if not msgs:
+        return
+    if _quiet_hours():
+        conn.execute("DELETE FROM pending_alerts")
+        conn.executemany("INSERT INTO pending_alerts (msg) VALUES (?)", [(m,) for m in msgs])
+        conn.commit()
+        print(f"[alerts] quiet hours — {len(msgs)} message(s) held for the morning run")
+        return
     for m in msgs[:MAX_PER_RUN]:
         post(m)
         time.sleep(1)
     if len(msgs) > MAX_PER_RUN:
         post(f"…and {len(msgs) - MAX_PER_RUN} more record changes today. Full book: {SITE}")
+    conn.execute("DELETE FROM pending_alerts")
+    conn.commit()
 
 
 if __name__ == "__main__":

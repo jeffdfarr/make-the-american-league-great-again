@@ -57,7 +57,7 @@ def main(argv: list[str] | None = None) -> int:
             before = snapshot(conn)
             rebuild(conn, cfg)
             export_all(conn)
-            send_all(diff_messages(conn, before))
+            send_all(conn, diff_messages(conn, before))
     elif args.cmd == "backfill":
         from .fantrax_client import build_session
         session = build_session()
