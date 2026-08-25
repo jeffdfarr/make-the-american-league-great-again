@@ -493,6 +493,94 @@ def _records(conn: sqlite3.Connection) -> None:
     _position_records(conn)
     _roster_records(conn)
     _legend_records(conn)
+    _rivalry_records(conn)
+
+
+def _rivalry_records(conn: sqlite3.Connection) -> None:
+    """Head-to-head rivalry records over counted games (regular season +
+    championship bracket + 3rd-place game — consolation counts nothing)."""
+    names = {r["slug"]: r["name"] for r in conn.execute("SELECT slug, name FROM owners")}
+    who = lambda s: names.get(s, s or "?")
+    years = [r["year"] for r in conn.execute("SELECT year FROM seasons ORDER BY year")]
+    pair: dict[tuple, dict] = {}
+    for year in years:
+        post = _classify_postseason(conn, year)
+        for r in conn.execute(
+            """SELECT ts.owner_slug me, opp.owner_slug them, g.game_type, g.matchup_uid,
+                      g.period, g.pts_for pf, g.pts_against pa
+               FROM games g
+               JOIN team_seasons ts ON ts.id = g.team_season_id
+               JOIN team_seasons opp ON opp.id = g.opp_season_id
+               WHERE g.year=? AND g.complete=1
+                 AND ts.owner_slug IS NOT NULL AND opp.owner_slug IS NOT NULL
+               ORDER BY g.period""", (year,)):
+            if r["game_type"] != "R" and post.get(r["matchup_uid"]) not in ("TREE", "THIRD"):
+                continue
+            d = pair.setdefault((r["me"], r["them"]),
+                                {"w": 0, "l": 0, "t": 0, "pf": 0.0, "pa": 0.0, "seq": []})
+            res = "W" if r["pf"] > r["pa"] else ("L" if r["pf"] < r["pa"] else "T")
+            d[res.lower()] += 1
+            d["pf"] += r["pf"]
+            d["pa"] += r["pa"]
+            d["seq"].append((year, res))
+
+    def put(category, value, display, owner, detail, note=None, year=None):
+        conn.execute(
+            """INSERT OR REPLACE INTO records_book (category, scope, value, display, owner_slug, year, detail, note)
+               VALUES (?, 'rivalry', ?,?,?,?,?,?)""",
+            (category, value, display, owner, year, detail, note))
+
+    # most lopsided rivalry (min 10 meetings, best win pct, then most wins)
+    best = None
+    for (me, them), d in pair.items():
+        g = d["w"] + d["l"]
+        if d["w"] + d["l"] + d["t"] < 10 or g == 0:
+            continue
+        k = (d["w"] / g, d["w"])
+        if best is None or k > best[0]:
+            best = (k, me, them, d)
+    if best:
+        _, me, them, d = best
+        put("Most lopsided rivalry", d["w"] / (d["w"] + d["l"]), f"{d['w']}–{d['l']}", me,
+            f"vs {who(them)}", None)
+
+    # never beaten him (min 6 meetings, zero wins, most losses)
+    worst = None
+    for (me, them), d in pair.items():
+        if d["w"] == 0 and d["l"] >= 6 and (worst is None or d["l"] > worst[2]["l"]):
+            worst = (me, them, d)
+    if worst:
+        me, them, d = worst
+        put("Never beaten him", d["l"], f"0–{d['l']}", me, f"vs {who(them)}",
+            "Most career meetings without a single win.")
+
+    # the curse: longest ACTIVE run of consecutive losses to one manager
+    curse = None
+    for (me, them), d in pair.items():
+        n = 0
+        y0 = None
+        for y, res in reversed(d["seq"]):
+            if res == "L":
+                n += 1
+                y0 = y
+            else:
+                break
+        if n >= 3 and (curse is None or n > curse[0]):
+            curse = (n, me, them, y0)
+    if curse:
+        n, me, them, y0 = curse
+        put("The Curse", n, f"{n} straight losses", me, f"to {who(them)} · since {y0}",
+            "Still active — the streak lives until he finally wins one.")
+
+    # career points scored against / allowed to one opponent
+    mx = max(pair.items(), key=lambda kv: kv[1]["pf"], default=None)
+    if mx:
+        (me, them), d = mx
+        put("Most career points vs one opponent", d["pf"], f"{d['pf']:,.0f} pts", me, f"vs {who(them)}")
+    mx = max(pair.items(), key=lambda kv: kv[1]["pa"], default=None)
+    if mx:
+        (me, them), d = mx
+        put("Most career points allowed to one opponent", d["pa"], f"{d['pa']:,.0f} pts", me, f"to {who(them)}")
 
 
 def _roster_records(conn: sqlite3.Connection) -> None:

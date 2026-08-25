@@ -39,6 +39,8 @@
   <div class="tbl-scroll"><table id="loss-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="title-h" style="display:none">Championship records</h2>
   <div class="tbl-scroll"><table id="title-t"><thead></thead><tbody></tbody></table></div>
+  <h2 id="riv-h" style="display:none">Rivalry records</h2>
+  <div class="tbl-scroll"><table id="riv-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="fr-h" style="display:none">Franchise &amp; trade records</h2>
   <div class="tbl-scroll"><table id="fr-t"><thead></thead><tbody></tbody></table></div>
   <h2 id="hit-h" style="display:none">Hitting records</h2>
@@ -128,6 +130,11 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     "Worst season start by a finalist": "Opened the season this badly and still reached the championship game",
     "Most trades": "Career deals made",
     "Favorite trade partners": "The pair who have dealt with each other most",
+    "Most lopsided rivalry": "Best career record against one opponent (minimum 10 meetings; consolation games never count)",
+    "Never beaten him": "Most career meetings without a single win (minimum 6)",
+    "The Curse": "Consecutive losses to the same manager — still active today",
+    "Most career points vs one opponent": "All-time scoring output against a single rival",
+    "Most career points allowed to one opponent": "No one has suffered more at one manager's hands",
     "Most points left on the bench, week": "Points scored by players sitting in Reserve slots (IR doesn't count — they couldn't start)",
     "Most points left on the bench, season": "Season total scored from the bench",
     "Most players used in a season": "Distinct players who appeared in the active lineup",
@@ -164,6 +171,8 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     ["titles", "title-h", "title-t", ["Most championships", "Most consecutive championships",
       "Most championship game appearances", "Most consecutive finals appearances",
       "Most championship game losses", "Worst season start by a finalist"]],
+    ["rivalry", "riv-h", "riv-t", ["Most lopsided rivalry", "Never beaten him", "The Curse",
+      "Most career points vs one opponent", "Most career points allowed to one opponent"]],
   ];
   const HEAD = `<tr><th>Record</th><th class="num">Mark</th><th>Holder</th><th>When</th></tr>`;
   for (const [scope, hid, tid, order] of SECTIONS) {

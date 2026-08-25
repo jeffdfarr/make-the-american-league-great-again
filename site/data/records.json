@@ -800,6 +800,46 @@
   "note": null
  },
  {
+  "category": "Most career points allowed to one opponent",
+  "scope": "rivalry",
+  "value": 6575.497000000001,
+  "display": "6,575 pts",
+  "owner_slug": "bugar",
+  "year": null,
+  "detail": "to Tyler Farr",
+  "note": null
+ },
+ {
+  "category": "Most career points vs one opponent",
+  "scope": "rivalry",
+  "value": 6575.497000000001,
+  "display": "6,575 pts",
+  "owner_slug": "tfarr",
+  "year": null,
+  "detail": "vs Seth Bugar",
+  "note": null
+ },
+ {
+  "category": "Most lopsided rivalry",
+  "scope": "rivalry",
+  "value": 0.9285714285714286,
+  "display": "13\u20131",
+  "owner_slug": "kaufer",
+  "year": null,
+  "detail": "vs Coirey Tasin",
+  "note": null
+ },
+ {
+  "category": "The Curse",
+  "scope": "rivalry",
+  "value": 12.0,
+  "display": "12 straight losses",
+  "owner_slug": "tasin",
+  "year": null,
+  "detail": "to Andy Kaufer \u00b7 since 2021",
+  "note": "Still active \u2014 the streak lives until he finally wins one."
+ },
+ {
   "category": "Biggest final-day comeback",
   "scope": "roster",
   "value": 62.49000000000001,
