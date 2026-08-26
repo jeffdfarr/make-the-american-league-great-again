@@ -366,6 +366,13 @@ def _career(conn: sqlite3.Connection, cfg: Config) -> None:
             career_raw = (6 * (sum(ppgs) / len(ppgs)) + 2 * (max(ppgs) + min(ppgs)) + 400 * wp) / 10
             if league_norm:
                 career_norm = career_raw / league_norm
+        # A one-season career IS that season: use the season OPR directly.
+        # The blend above needs best/worst SEASON PPGs, which collapse to the
+        # same number for a first-year manager and drop the high/low-game
+        # spread the season formula keeps (sheet shows the season OPR here).
+        if n == 1 and seasons[0]["opr"] is not None:
+            career_raw = seasons[0]["raw_opr"]
+            career_norm = seasons[0]["opr"]
 
         playoff_apps = sum(s["playoff_app"] for s in seasons)
         titles = sum(s["champion"] for s in seasons)
