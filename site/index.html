@@ -125,11 +125,12 @@ document.querySelector('[data-nav="index"]').classList.add("active");
       const maxLuck = Math.max(...rows.map(s => Math.abs(s.luck ?? 0)), 0.1);
       table.querySelector("tbody").innerHTML = rows.map(s => {
         const exp = s.expected_wins != null ? `${s.expected_wins.toFixed(1)}–${(s.rs_games - s.expected_wins).toFixed(1)}` : "—";
-        return `<tr data-w="${s.w}" data-pf="${s.pf}" data-pa="${s.pa}" data-high="${s.high_game}"
+        const pf = s.pf + (s.live_pf || 0), pa = s.pa + (s.live_pa || 0);
+        return `<tr data-w="${s.w}" data-pf="${pf}" data-pa="${pa}" data-high="${s.high_game}"
                     data-exp="${s.expected_wins ?? -99}" data-luck="${s.luck ?? -99}" data-opr="${s.opr ?? -99}">
           <td class="num rank">${s.finish}</td>${MT.teamCell(s)}
           <td class="num strong">${MT.rec(s)}</td>
-          <td class="num">${MT.num(s.pf)}</td><td class="num">${MT.num(s.pa)}</td>
+          <td class="num">${MT.num(pf)}</td><td class="num">${MT.num(pa)}</td>
           <td class="num">${MT.num(s.high_game)}</td><td class="num">${exp}</td>
           ${MT.divergeCell(s.luck, maxLuck)}${MT.oprCell(s.opr, mn, mx)}
         </tr>`;

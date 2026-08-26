@@ -10,10 +10,14 @@ OUT_DIR = Path(__file__).resolve().parent.parent / "site" / "data"
 
 EXPORTS = {
     "standings": """
-        SELECT ss.*, ts.team_name, ts.logo_url, o.name AS owner_name
+        SELECT ss.*, ts.team_name, ts.logo_url, o.name AS owner_name,
+               COALESCE(lv.live_pf, 0) AS live_pf, COALESCE(lv.live_pa, 0) AS live_pa
         FROM season_stats ss
         JOIN team_seasons ts ON ts.id = ss.team_season_id
         LEFT JOIN owners o ON o.slug = ss.owner_slug
+        LEFT JOIN (SELECT team_season_id, SUM(pts_for) AS live_pf, SUM(pts_against) AS live_pa
+                   FROM games WHERE complete = 0 AND game_type = 'R'
+                   GROUP BY team_season_id) lv ON lv.team_season_id = ss.team_season_id
         ORDER BY ss.year DESC, ss.finish ASC""",
     "franchises": """
         SELECT cs.*, o.name AS owner_name
