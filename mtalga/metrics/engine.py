@@ -363,7 +363,16 @@ def _career(conn: sqlite3.Connection, cfg: Config) -> None:
         if not ppgs:  # owner played only excluded seasons (e.g. 2020-only)
             ppgs = [se["ppg"] for se in seasons if se["rs_games"]]
         if ppgs:
-            career_raw = (6 * (sum(ppgs) / len(ppgs)) + 2 * (max(ppgs) + min(ppgs)) + 400 * wp) / 10
+            def _blend(pp: list[float]) -> float:
+                return (6 * (sum(pp) / len(pp)) + 2 * (max(pp) + min(pp)) + 400 * wp) / 10
+
+            career_raw = _blend(ppgs)
+            # League ruling: an excluded short season (2020) still counts toward a
+            # manager's career blend when it HELPS them — nobody is punished for
+            # the weird year, but production at modern standards isn't erased.
+            all_ppgs = [se["ppg"] for se in seasons if se["rs_games"]]
+            if all_ppgs != ppgs:
+                career_raw = max(career_raw, _blend(all_ppgs))
             if league_norm:
                 career_norm = career_raw / league_norm
         # A one-season career IS that season: use the season OPR directly.
