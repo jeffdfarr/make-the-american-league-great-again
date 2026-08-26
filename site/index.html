@@ -43,7 +43,8 @@
 </main>
 <style>
   #pastsel { padding: .45rem .8rem; border: 1px solid var(--rule); border-radius: 999px;
-             background: var(--surface); color: var(--ink); font: inherit; font-size: .9rem; }
+             background: var(--surface); color: var(--ink); font: inherit; font-size: .9rem;
+             margin-left: auto; }
 </style>
 <script src="assets/app.js"></script>
 <script>
@@ -55,9 +56,9 @@ document.querySelector('[data-nav="index"]').classList.add("active");
   document.getElementById("tagline").textContent = "Updated nightly";
 
   const pick = document.getElementById("years");
-  pick.innerHTML = `<button data-y="all">All Time</button><button data-y="${curYear}">${curYear}</button>`;
+  pick.innerHTML = `<button data-y="all">All Time</button><button data-y="${curYear}">Current Season</button>`;
   const pastsel = document.getElementById("pastsel");
-  pastsel.innerHTML = `<option value="" disabled selected hidden>Past seasons…</option>` +
+  pastsel.innerHTML = `<option value="" disabled selected hidden>Past</option>` +
     years.filter(y => y !== curYear).map(y => `<option value="${y}">${y}</option>`).join("");
   const table = document.getElementById("standings");
   const note = document.getElementById("tbl-note");
