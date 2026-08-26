@@ -14386,8 +14386,8 @@
   "bracket": null,
   "owner": "kaufer",
   "opponent": "bugar",
-  "pts_for": 321.333,
-  "pts_against": 286.5
+  "pts_for": 320.333,
+  "pts_against": 287.5
  },
  {
   "year": 2026,
@@ -14396,8 +14396,8 @@
   "bracket": null,
   "owner": "bugar",
   "opponent": "kaufer",
-  "pts_for": 286.5,
-  "pts_against": 321.333
+  "pts_for": 287.5,
+  "pts_against": 320.333
  },
  {
   "year": 2026,
@@ -14447,7 +14447,7 @@
   "owner": "tasin",
   "opponent": "norman",
   "pts_for": 231.167,
-  "pts_against": 218.167
+  "pts_against": 217.167
  },
  {
   "year": 2026,
@@ -14456,7 +14456,7 @@
   "bracket": null,
   "owner": "norman",
   "opponent": "tasin",
-  "pts_for": 218.167,
+  "pts_for": 217.167,
   "pts_against": 231.167
  },
  {
@@ -14466,7 +14466,7 @@
   "bracket": null,
   "owner": "jfarr",
   "opponent": "hegna",
-  "pts_for": 394.5,
+  "pts_for": 397.0,
   "pts_against": 240.333
  },
  {
@@ -14477,7 +14477,7 @@
   "owner": "hegna",
   "opponent": "jfarr",
   "pts_for": 240.333,
-  "pts_against": 394.5
+  "pts_against": 397.0
  },
  {
   "year": 2026,
