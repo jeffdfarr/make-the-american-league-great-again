@@ -462,7 +462,7 @@
  {
   "category": "Lowest OPR to make the playoffs",
   "scope": "opr",
-  "value": 0.908252770787315,
+  "value": 0.9082527707873151,
   "display": "0.908",
   "owner_slug": "krech",
   "year": 2020,
@@ -482,7 +482,7 @@
  {
   "category": "Worst career OPR",
   "scope": "opr",
-  "value": 0.8020213020435815,
+  "value": 0.8020213020435816,
   "display": "0.802",
   "owner_slug": "norman",
   "year": null,
@@ -982,7 +982,7 @@
  {
   "category": "Softest schedule, season",
   "scope": "sos",
-  "value": 0.9309511398527608,
+  "value": 0.9309511398527611,
   "display": "0.931",
   "owner_slug": "tessman",
   "year": 2020,
@@ -992,7 +992,7 @@
  {
   "category": "Toughest schedule, season",
   "scope": "sos",
-  "value": 1.0796020577258145,
+  "value": 1.079602057725815,
   "display": "1.080",
   "owner_slug": "bugar",
   "year": 2020,
