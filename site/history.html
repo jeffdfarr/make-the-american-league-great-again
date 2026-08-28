@@ -150,8 +150,14 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     "Fewest players used in a season": "Full, completed seasons only",
   };
 
+  const TIPS = {
+    "Luckiest season": "How it's computed: a best-fit line through every completed season since 2021 relates a team's OPR to its regular-season wins. Expected wins = where your OPR lands on that line; luck = actual wins minus expected. Across the whole league, luck always sums to zero.",
+    "Most cursed season": "How it's computed: a best-fit line through every completed season since 2021 relates a team's OPR to its regular-season wins. Expected wins = where your OPR lands on that line; luck = actual wins minus expected. Across the whole league, luck always sums to zero.",
+    "Luckiest career": "A manager's season luck (actual wins minus the wins the league's historical OPR-to-wins line expected) added up across completed seasons since 2021.",
+    "Most cursed career": "A manager's season luck (actual wins minus the wins the league's historical OPR-to-wins line expected) added up across completed seasons since 2021."
+  };
   const recRow = r => `
-    <tr><td><b>${esc(r.category)}</b>${DESC[r.category] ? `<span class="desc">${DESC[r.category]}</span>` : ""}${r.note ? `<span class="desc">${esc(r.note)}</span>` : ""}</td>
+    <tr><td><b>${esc(r.category)}</b>${TIPS[r.category] ? `<span class="tip" tabindex="0">ⓘ<span class="tipbox">${TIPS[r.category]}</span></span>` : ""}${DESC[r.category] ? `<span class="desc">${DESC[r.category]}</span>` : ""}${r.note ? `<span class="desc">${esc(r.note)}</span>` : ""}</td>
     <td class="num">${r.display}</td>
     <td>${r.owner_slug ? esc(name(r.owner_slug)) : `<span class="faint">—</span>`}</td>
     <td class="faint">${[r.detail, r.year].filter(x => x != null && x !== "").join(" · ") || ""}</td></tr>`;
