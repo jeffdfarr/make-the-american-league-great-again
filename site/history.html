@@ -27,7 +27,10 @@
 </header>
 
 <main class="wrap">
-  <h2>Champions</h2>
+  <div id="controls" style="margin-top:1.4rem">
+    <select id="f-own" aria-label="Filter records by manager"></select>
+  </div>
+  <h2 id="champ-h">Champions</h2>
   <div class="cards" id="champs"><span class="loading">Loading…</span></div>
   <h2>Scoring records</h2>
   <div class="tbl-scroll"><table id="sc-t">
@@ -82,6 +85,8 @@
                  line-height: 1.4; z-index: 5; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
   .tip:hover .tipbox, .tip.open .tipbox { display: block; }
   main table td:first-child b { font-weight: 600; }
+  #controls select { padding: .45rem .8rem; border: 1px solid var(--rule); border-radius: 999px;
+         background: var(--surface); color: var(--ink); font: inherit; font-size: .9rem; }
 </style>
 <script src="assets/app.js"></script>
 <script>
@@ -96,7 +101,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
   const champs = standings.filter(s => s.champion).sort((a, b) => b.year - a.year);
   const runners = Object.fromEntries(standings.filter(s => s.final_app && !s.champion).map(s => [s.year, s.team_name]));
   document.getElementById("champs").innerHTML = champs.map(c => `
-    <div class="card"><span class="c-cat">${c.year}</span><span class="c-val">${c.team_name}</span>
+    <div class="card" data-own="${c.owner_slug}"><span class="c-cat">${c.year}</span><span class="c-val">${c.team_name}</span>
     <span class="c-who">${c.owner_name} · def. ${runners[c.year] ?? "?"}</span></div>`).join("");
 
   // short plain-English explanations, shown under the record name
@@ -157,7 +162,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     "Most cursed career": "A manager's season luck (actual wins minus the wins the league's historical OPR-to-wins line expected) added up across completed seasons since 2021."
   };
   const recRow = r => `
-    <tr><td><b>${esc(r.category)}</b>${TIPS[r.category] ? `<span class="tip" tabindex="0">ⓘ<span class="tipbox">${TIPS[r.category]}</span></span>` : ""}${DESC[r.category] ? `<span class="desc">${DESC[r.category]}</span>` : ""}${r.note ? `<span class="desc">${esc(r.note)}</span>` : ""}</td>
+    <tr data-own="${esc((r.owner_slug || "").split(" & ").join("|"))}"><td><b>${esc(r.category)}</b>${TIPS[r.category] ? `<span class="tip" tabindex="0">ⓘ<span class="tipbox">${TIPS[r.category]}</span></span>` : ""}${DESC[r.category] ? `<span class="desc">${DESC[r.category]}</span>` : ""}${r.note ? `<span class="desc">${esc(r.note)}</span>` : ""}</td>
     <td class="num">${r.display}</td>
     <td>${r.owner_slug ? esc(name(r.owner_slug)) : `<span class="faint">—</span>`}</td>
     <td class="faint">${[r.detail, r.year].filter(x => x != null && x !== "").join(" · ") || ""}</td></tr>`;
@@ -234,7 +239,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
   const catRow = (label, scope) => {
     const a = byCat[scope + "|" + label], s = byCat[scope + "-season|" + label + ", season"];
     if (!a && !s) return "";
-    return `<tr><td>${esc(label)}</td>
+    return `<tr data-own="${[a && a.owner_slug, s && s.owner_slug].filter(Boolean).join("|")}"><td>${esc(label)}</td>
       <td>${a ? `<strong>${a.display}</strong> · ${esc(name(a.owner_slug))}` : "—"}</td>
       <td>${s ? `<strong>${s.display}</strong> · ${esc(name(s.owner_slug))} <span class="faint">(${s.year})</span>` : "—"}</td></tr>`;
   };
@@ -274,7 +279,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     const t = document.getElementById("leg-t");
     t.querySelector("thead").innerHTML = `<tr><th>Franchise</th><th>All-time leading scorer</th><th class="num">Points</th></tr>`;
     t.querySelector("tbody").innerHTML = legends.map(r => `
-      <tr><td>${esc(name(r.owner_slug))}</td><td><b>${esc(r.detail ?? "?")}</b></td>
+      <tr data-own="${esc(r.owner_slug)}"><td>${esc(name(r.owner_slug))}</td><td><b>${esc(r.detail ?? "?")}</b></td>
       <td class="num">${r.display}</td></tr>`).join("");
   }
 
@@ -285,7 +290,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     const a = byCat["position|Most points from " + label];
     const w = byCat["position-week|Most points from " + label + ", week"];
     if (!a && !w) return "";
-    return `<tr><td>${esc(label)}</td>
+    return `<tr data-own="${[a && a.owner_slug, w && w.owner_slug].filter(Boolean).join("|")}"><td>${esc(label)}</td>
       <td>${a ? `<strong>${a.display}</strong> · ${esc(a.detail ?? "")}${tip(a)} <span class="faint">— ${esc(name(a.owner_slug))} (${a.year})</span>` : "—"}</td>
       <td>${w ? `<strong>${w.display}</strong> · ${esc(w.detail ?? "")}${tip(w)} <span class="faint">— ${esc(name(w.owner_slug))} (${w.year})</span>` : "—"}</td></tr>`;
   }).join("");
@@ -296,6 +301,36 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     t.querySelector("thead").innerHTML = `<tr><th>Slot</th><th>Best season</th><th>Best week</th></tr>`;
     t.querySelector("tbody").innerHTML = posRows;
   }
+  // ---- filter every record by the manager who holds it
+  const fsel = document.getElementById("f-own");
+  fsel.innerHTML = `<option value="">All managers</option>` +
+    [...franchises].sort((a, b) => a.owner_name.localeCompare(b.owner_name))
+      .map(f => `<option value="${f.owner_slug}">${esc(f.owner_name)}</option>`).join("");
+  // sheet nicknames that word-matching against the owner's full name can't catch
+  const ALIAS = { tessman: ["tessmonster", "tessy"], moellerreed: ["karleton", "ktown"] };
+  const accepted = slug => new Set([slug,
+    ...(owners[slug] || "").toLowerCase().split(/\s+/),
+    ...(ALIAS[slug] || [])]);
+  // remember which sections actually rendered, so the filter never reveals empty ones
+  const live = [...document.querySelectorAll("main h2")].filter(h => h.style.display !== "none");
+  function applyFilter() {
+    const sel = fsel.value, acc = sel ? accepted(sel) : null;
+    const ok = own => !acc || own.split("|").some(w => acc.has(w.toLowerCase()));
+    document.querySelectorAll("[data-own]").forEach(el => {
+      el.style.display = ok(el.dataset.own || "") ? "" : "none";
+    });
+    for (const h of live) {
+      const box = h.nextElementSibling;          // .tbl-scroll or #champs
+      const items = box.querySelectorAll("tbody tr[data-own], .card[data-own]");
+      const any = !items.length || [...items].some(el => el.style.display !== "none");
+      h.style.display = any ? "" : "none";
+      box.style.display = any ? "" : "none";
+      let note = box.nextElementSibling;         // section footnotes follow the table
+      if (note && note.classList.contains("sub")) note.style.display = any ? "" : "none";
+    }
+  }
+  fsel.addEventListener("change", applyFilter);
+
   // tap-to-toggle tooltips (hover covers desktop)
   document.addEventListener("click", e => {
     const t = e.target.closest(".tip");
