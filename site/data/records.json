@@ -22,8 +22,8 @@
  {
   "category": "Most RBI",
   "scope": "hitting",
-  "value": 5891.0,
-  "display": "5,891",
+  "value": 5883.0,
+  "display": "5,883",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -42,8 +42,8 @@
  {
   "category": "Most home runs",
   "scope": "hitting",
-  "value": 1832.0,
-  "display": "1,832",
+  "value": 1829.0,
+  "display": "1,829",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -52,8 +52,8 @@
  {
   "category": "Most runs scored",
   "scope": "hitting",
-  "value": 6074.0,
-  "display": "6,074",
+  "value": 6067.0,
+  "display": "6,067",
   "owner_slug": "drwall",
   "year": null,
   "detail": "all-time",
@@ -62,8 +62,8 @@
  {
   "category": "Most singles",
   "scope": "hitting",
-  "value": 6835.0,
-  "display": "6,835",
+  "value": 6827.0,
+  "display": "6,827",
   "owner_slug": "drwall",
   "year": null,
   "detail": "all-time",
@@ -72,8 +72,8 @@
  {
   "category": "Most stolen bases",
   "scope": "hitting",
-  "value": 1063.0,
-  "display": "1,063",
+  "value": 1062.0,
+  "display": "1,062",
   "owner_slug": "kaufer",
   "year": null,
   "detail": "all-time",
@@ -82,8 +82,8 @@
  {
   "category": "Most strikeouts (batters)",
   "scope": "hitting",
-  "value": 9979.0,
-  "display": "9,979",
+  "value": 9967.0,
+  "display": "9,967",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -102,8 +102,8 @@
  {
   "category": "Most walks drawn",
   "scope": "hitting",
-  "value": 4464.0,
-  "display": "4,464",
+  "value": 4452.0,
+  "display": "4,452",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -242,8 +242,8 @@
  {
   "category": "legend:jfarr",
   "scope": "legend",
-  "value": 2517.0,
-  "display": "2,517 pts",
+  "value": 2515.0,
+  "display": "2,515 pts",
   "owner_slug": "jfarr",
   "year": null,
   "detail": "Jose Ramirez",
@@ -272,8 +272,8 @@
  {
   "category": "legend:moellerreed",
   "scope": "legend",
-  "value": 1728.0,
-  "display": "1,728 pts",
+  "value": 1719.0,
+  "display": "1,719 pts",
   "owner_slug": "moellerreed",
   "year": null,
   "detail": "Kyle Schwarber",
@@ -282,8 +282,8 @@
  {
   "category": "legend:norman",
   "scope": "legend",
-  "value": 357.0,
-  "display": "357 pts",
+  "value": 351.0,
+  "display": "351 pts",
   "owner_slug": "norman",
   "year": null,
   "detail": "Otto Lopez",
@@ -302,8 +302,8 @@
  {
   "category": "legend:tasin",
   "scope": "legend",
-  "value": 2459.0,
-  "display": "2,459 pts",
+  "value": 2458.0,
+  "display": "2,458 pts",
   "owner_slug": "tasin",
   "year": null,
   "detail": "Vladimir Guerrero Jr.",
@@ -312,8 +312,8 @@
  {
   "category": "legend:tessman",
   "scope": "legend",
-  "value": 3776.49,
-  "display": "3,776 pts",
+  "value": 3773.49,
+  "display": "3,773 pts",
   "owner_slug": "tessman",
   "year": null,
   "detail": "Shohei Ohtani",
@@ -462,7 +462,7 @@
  {
   "category": "Lowest OPR to make the playoffs",
   "scope": "opr",
-  "value": 0.9082527707873151,
+  "value": 0.908252770787315,
   "display": "0.908",
   "owner_slug": "krech",
   "year": 2020,
@@ -482,7 +482,7 @@
  {
   "category": "Worst career OPR",
   "scope": "opr",
-  "value": 0.8020213020435816,
+  "value": 0.8020213020435815,
   "display": "0.802",
   "owner_slug": "norman",
   "year": null,
@@ -512,8 +512,8 @@
  {
   "category": "Most losses",
   "scope": "pitching",
-  "value": 739.0,
-  "display": "739",
+  "value": 738.0,
+  "display": "738",
   "owner_slug": "tessman",
   "year": null,
   "detail": "all-time",
@@ -522,8 +522,8 @@
  {
   "category": "Most quality starts",
   "scope": "pitching",
-  "value": 799.0,
-  "display": "799",
+  "value": 798.0,
+  "display": "798",
   "owner_slug": "sorgaard",
   "year": null,
   "detail": "all-time",
@@ -532,8 +532,8 @@
  {
   "category": "Most saves",
   "scope": "pitching",
-  "value": 764.0,
-  "display": "764",
+  "value": 763.0,
+  "display": "763",
   "owner_slug": "tessman",
   "year": null,
   "detail": "all-time",
@@ -542,8 +542,8 @@
  {
   "category": "Most strikeouts (pitchers)",
   "scope": "pitching",
-  "value": 12475.0,
-  "display": "12,475",
+  "value": 12459.0,
+  "display": "12,459",
   "owner_slug": "tfarr",
   "year": null,
   "detail": "all-time",
@@ -872,11 +872,11 @@
  {
   "category": "Most points left on the bench, season",
   "scope": "roster",
-  "value": 1272.84,
-  "display": "1,273 pts",
+  "value": 1270.84,
+  "display": "1,271 pts",
   "owner_slug": "sorgaard",
   "year": 2026,
-  "detail": "Jarren Duran (126 of it)",
+  "detail": "Jarren Duran (125 of it)",
   "note": null
  },
  {
@@ -960,6 +960,46 @@
   "note": null
  },
  {
+  "category": "Luckiest career",
+  "scope": "sos",
+  "value": 6.563958492809945,
+  "display": "+6.6 wins",
+  "owner_slug": "moellerreed",
+  "year": null,
+  "detail": "all-time",
+  "note": null
+ },
+ {
+  "category": "Luckiest season",
+  "scope": "sos",
+  "value": 3.8367058050842218,
+  "display": "+3.8 wins",
+  "owner_slug": "tessman",
+  "year": 2021,
+  "detail": null,
+  "note": null
+ },
+ {
+  "category": "Most cursed career",
+  "scope": "sos",
+  "value": -5.155707746673485,
+  "display": "-5.2 wins",
+  "owner_slug": "jfarr",
+  "year": null,
+  "detail": "all-time",
+  "note": null
+ },
+ {
+  "category": "Most cursed season",
+  "scope": "sos",
+  "value": -3.882948550027674,
+  "display": "-3.9 wins",
+  "owner_slug": "jfarr",
+  "year": 2025,
+  "detail": null,
+  "note": null
+ },
+ {
   "category": "Most points against per game, career",
   "scope": "sos",
   "value": 340.24159999999995,
@@ -982,7 +1022,7 @@
  {
   "category": "Softest schedule, season",
   "scope": "sos",
-  "value": 0.9309511398527611,
+  "value": 0.9309511398527608,
   "display": "0.931",
   "owner_slug": "tessman",
   "year": 2020,
@@ -992,7 +1032,7 @@
  {
   "category": "Toughest schedule, season",
   "scope": "sos",
-  "value": 1.079602057725815,
+  "value": 1.0796020577258145,
   "display": "1.080",
   "owner_slug": "bugar",
   "year": 2020,

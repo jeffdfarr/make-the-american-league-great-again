@@ -272,8 +272,12 @@ def _apply_expected_wins(per_season: dict[int, list[dict]], cfg: Config) -> None
         for s in stats if s["opr"] is not None and s["rs_games"]
     ]
     for year, stats in per_season.items():
+        # Excluded short seasons (2020) get no expectation: the regression
+        # predicts full-length win totals, which makes a 6-game year look
+        # like a -10-win catastrophe for everyone.
+        skip = year in excluded
         for s in stats:
-            if s["opr"] is not None and len(history) >= 2:
+            if not skip and s["opr"] is not None and len(history) >= 2:
                 s["expected_wins"] = f.expected_wins(s["opr"], history)
                 s["luck"] = s["rs_w"] - s["expected_wins"]
             else:
@@ -486,6 +490,16 @@ def _records(conn: sqlite3.Connection) -> None:
          "SELECT owner_slug o, margin v, year y FROM season_stats WHERE margin IS NOT NULL ORDER BY margin DESC LIMIT 1"),
         ("Worst point differential, season", "sos", "{:+,.0f} pts", None,
          f"SELECT owner_slug o, margin v, year y FROM season_stats WHERE margin IS NOT NULL AND year IN ({comp_in}) ORDER BY margin ASC LIMIT 1"),
+        # Luck ledger — luck = actual RS wins minus wins the OPR regression
+        # expected. Completed full seasons only (2020 has no luck value).
+        ("Luckiest season", "sos", "{:+.1f} wins", None,
+         f"SELECT owner_slug o, luck v, year y FROM season_stats WHERE luck IS NOT NULL AND year IN ({comp_in}) ORDER BY luck DESC LIMIT 1"),
+        ("Most cursed season", "sos", "{:+.1f} wins", None,
+         f"SELECT owner_slug o, luck v, year y FROM season_stats WHERE luck IS NOT NULL AND year IN ({comp_in}) ORDER BY luck ASC LIMIT 1"),
+        ("Luckiest career", "sos", "{:+.1f} wins", "all-time",
+         f"SELECT owner_slug o, SUM(luck) v, NULL y FROM season_stats WHERE luck IS NOT NULL AND year IN ({comp_in}) GROUP BY owner_slug ORDER BY v DESC LIMIT 1"),
+        ("Most cursed career", "sos", "{:+.1f} wins", "all-time",
+         f"SELECT owner_slug o, SUM(luck) v, NULL y FROM season_stats WHERE luck IS NOT NULL AND year IN ({comp_in}) GROUP BY owner_slug ORDER BY v ASC LIMIT 1"),
     ]
     for category, scope, disp, when, sql in specs:
         row = conn.execute(sql).fetchone()
