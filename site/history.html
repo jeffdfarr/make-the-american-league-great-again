@@ -87,6 +87,21 @@
   main table td:first-child b { font-weight: 600; }
   #controls select { padding: .45rem .8rem; border: 1px solid var(--rule); border-radius: 999px;
          background: var(--surface); color: var(--ink); font: inherit; font-size: .9rem; }
+  /* championship banners — flat logo colors (#1D4885 / #ED1C50 / #fff), swallowtail cut */
+  #champs { display: grid; grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+            gap: 1rem; align-items: start; border-top: 6px solid #1D4885; padding-top: 0; }
+  .champ { background: #1D4885; color: #fff; text-align: center;
+           padding: 1.15rem .7rem 3.4rem; display: flex; flex-direction: column; gap: .28rem;
+           clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
+           border-top: 5px solid #fff; filter: drop-shadow(0 4px 8px rgba(0,0,0,.25)); }
+  .champ.red { background: #ED1C50; }
+  .ch-yr { font-family: "Bitter", Georgia, serif; font-size: 1.85rem; font-weight: 700; line-height: 1.1; }
+  .ch-star { font-size: .8rem; letter-spacing: .25em; opacity: .9; }
+  .champ.red .ch-star { color: #fff; }
+  .champ:not(.red) .ch-star { color: #ED1C50; }
+  .ch-team { font-weight: 700; font-size: .95rem; line-height: 1.25; }
+  .ch-own { font-size: .76rem; opacity: .88; }
+  .ch-def { font-size: .68rem; opacity: .65; }
 </style>
 <script src="assets/app.js"></script>
 <script>
@@ -100,9 +115,14 @@ document.querySelector('[data-nav="history"]').classList.add("active");
 
   const champs = standings.filter(s => s.champion).sort((a, b) => b.year - a.year);
   const runners = Object.fromEntries(standings.filter(s => s.final_app && !s.champion).map(s => [s.year, s.team_name]));
-  document.getElementById("champs").innerHTML = champs.map(c => `
-    <div class="card" data-own="${c.owner_slug}"><span class="c-cat">${c.year}</span><span class="c-val">${c.team_name}</span>
-    <span class="c-who">${c.owner_name} · def. ${runners[c.year] ?? "?"}</span></div>`).join("");
+  document.getElementById("champs").innerHTML = champs.map((c, i) => `
+    <div class="champ${i % 2 ? " red" : ""}" data-own="${c.owner_slug}">
+      <span class="ch-yr">${c.year}</span>
+      <span class="ch-star">★ ★ ★</span>
+      <span class="ch-team">${esc(c.team_name)}</span>
+      <span class="ch-own">${esc(c.owner_name)}</span>
+      <span class="ch-def">def. ${esc(runners[c.year] ?? "?")}</span>
+    </div>`).join("");
 
   // short plain-English explanations, shown under the record name
   const DESC = {
@@ -321,7 +341,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     });
     for (const h of live) {
       const box = h.nextElementSibling;          // .tbl-scroll or #champs
-      const items = box.querySelectorAll("tbody tr[data-own], .card[data-own]");
+      const items = box.querySelectorAll("tbody tr[data-own], .champ[data-own]");
       const any = !items.length || [...items].some(el => el.style.display !== "none");
       h.style.display = any ? "" : "none";
       box.style.display = any ? "" : "none";
