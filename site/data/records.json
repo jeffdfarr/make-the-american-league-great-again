@@ -22,8 +22,8 @@
  {
   "category": "Most RBI",
   "scope": "hitting",
-  "value": 5898.0,
-  "display": "5,898",
+  "value": 5899.0,
+  "display": "5,899",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -82,8 +82,8 @@
  {
   "category": "Most strikeouts (batters)",
   "scope": "hitting",
-  "value": 9991.0,
-  "display": "9,991",
+  "value": 9994.0,
+  "display": "9,994",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -102,8 +102,8 @@
  {
   "category": "Most walks drawn",
   "scope": "hitting",
-  "value": 4468.0,
-  "display": "4,468",
+  "value": 4469.0,
+  "display": "4,469",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -542,8 +542,8 @@
  {
   "category": "Most strikeouts (pitchers)",
   "scope": "pitching",
-  "value": 12478.0,
-  "display": "12,478",
+  "value": 12486.0,
+  "display": "12,486",
   "owner_slug": "tfarr",
   "year": null,
   "detail": "all-time",

@@ -43,8 +43,8 @@
   "team_name": "Backyard Melonheads",
   "logo_url": "https://fantraximg.com/logos/htn/tmLogo_htnnb0bok7aqt4vd_256.jpg",
   "owner_name": "Andy Kaufer",
-  "live_pf": 245.0,
-  "live_pa": 161.0
+  "live_pf": 252.0,
+  "live_pa": 174.0
  },
  {
   "team_season_id": 8,
@@ -90,8 +90,8 @@
   "team_name": "Some Lady Named Ruth",
   "logo_url": "https://fantraximg.com/logos/gnq/tmLogo_gnqmobl8krgh8pe0_256.jpg",
   "owner_name": "Tyler Farr",
-  "live_pf": 161.0,
-  "live_pa": 245.0
+  "live_pf": 174.0,
+  "live_pa": 252.0
  },
  {
   "team_season_id": 10,
@@ -137,7 +137,7 @@
   "team_name": "Uncle Tom's Glavine",
   "logo_url": "https://fantraximg.com/logos/9l8/tmLogo_9l8au4ypk74s5ix5_256.jpg",
   "owner_name": "Nick Tessman",
-  "live_pf": 165.5,
+  "live_pf": 178.667,
   "live_pa": 113.833
  },
  {
@@ -184,8 +184,8 @@
   "team_name": "Myrtle Beach Mermen",
   "logo_url": "https://fantraximg.com/logos/tic/tmLogo_ticmvxdpmjuvsdir_256.webp",
   "owner_name": "Seth Bugar",
-  "live_pf": 300.667,
-  "live_pa": 190.0
+  "live_pf": 301.667,
+  "live_pa": 196.0
  },
  {
   "team_season_id": 4,
@@ -231,8 +231,8 @@
   "team_name": "Forced Happy Endings",
   "logo_url": "https://fantraximg.com/logos/ozg/tmLogo_ozge7sskm68ps8xo_256.jpeg",
   "owner_name": "KTown Moeller-Reed",
-  "live_pf": 190.0,
-  "live_pa": 300.667
+  "live_pf": 196.0,
+  "live_pa": 301.667
  },
  {
   "team_season_id": 3,
@@ -278,7 +278,7 @@
   "team_name": "Bomba Squad",
   "logo_url": "https://fantraximg.com/logos/3ww/tmLogo_3wwow3mik7l23fsl_256.jpg",
   "owner_name": "Jason Krech",
-  "live_pf": 193.833,
+  "live_pf": 202.0,
   "live_pa": 263.833
  },
  {
@@ -326,7 +326,7 @@
   "logo_url": "https://fantraximg.com/logos/7fq/tmLogo_7fq4rlgcma7b1uun_256.webp",
   "owner_name": "Jeff Farr",
   "live_pf": 263.833,
-  "live_pa": 193.833
+  "live_pa": 202.0
  },
  {
   "team_season_id": 2,
@@ -561,7 +561,7 @@
   "logo_url": "https://fantraximg.com/logos/ol9/tmLogo_ol9r458smk4keoki_256.webp",
   "owner_name": "Zac Norman",
   "live_pf": 113.833,
-  "live_pa": 165.5
+  "live_pa": 178.667
  },
  {
   "team_season_id": 87,
