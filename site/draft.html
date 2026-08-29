@@ -31,12 +31,14 @@
   <div id="controls">
     <select id="yearsel" aria-label="Choose a draft year"></select>
     <select id="mgr" aria-label="Filter by manager"></select>
+    <button id="tend-btn" type="button">Tendencies</button>
   </div>
   <div class="tbl-scroll"><table id="board">
     <thead></thead>
     <tbody><tr><td class="loading">Loading…</td></tr></tbody>
   </table></div>
   <div id="mgr-view" style="display:none"></div>
+  <div class="tbl-scroll" id="tend-wrap" style="display:none"><table id="tend-t"><thead></thead><tbody></tbody></table></div>
   <p class="sub" style="margin-top:.5rem" id="board-note"></p>
   <footer></footer>
 </main>
@@ -50,8 +52,11 @@
   #board td.own-c .via { color: inherit; opacity: .8; font-weight: 400; }
   #board td.own-c .traded { color: inherit; }
   #controls { display: flex; flex-wrap: wrap; gap: .6rem; margin: .9rem 0 1.2rem; }
-  #controls select { padding: .45rem .8rem; border: 1px solid var(--rule); border-radius: 999px;
-         background: var(--surface); color: var(--ink); font: inherit; font-size: .9rem; }
+  #controls select, #controls button { padding: .45rem .8rem; border: 1px solid var(--rule); border-radius: 999px;
+         background: var(--surface); color: var(--ink); font: inherit; font-size: .9rem; cursor: pointer; }
+  #tend-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  #tend-t td.num, #tend-t th.num { text-align: right; }
+  #tend-t td.fav { font-weight: 600; }
   .mgr-year { font-weight: 700; font-size: 1.05rem; padding: 1rem 0 .45rem;
               border-bottom: 2px solid var(--rule); }
   .mgr-picks { display: flex; flex-wrap: wrap; gap: 3px; margin: .7rem 0 .4rem; }
@@ -65,7 +70,7 @@
 <script>
 document.querySelector('[data-nav="draft"]').classList.add("active");
 (async () => {
-  const { draft, meta } = await MT.data("draft", "meta");
+  const { draft, draft_positions, meta } = await MT.data("draft", "draft_positions", "meta");
   document.getElementById("tagline").textContent = "Updates within minutes of the draft sheet";
   const esc = t => t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
   const boards = draft.sort((a, b) => b.year - a.year);
@@ -121,6 +126,8 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
 
   function renderMgr(nm) {
     yearsel.value = "";
+    tendBtn.classList.remove("active");
+    document.getElementById("tend-wrap").style.display = "none";
     const c = MGR[nm.toLowerCase()];
     document.getElementById("board-h").innerHTML =
       (c ? `<span class="sw" style="background:${c[0]}"></span>` : "") + esc(nm) + "’s picks";
@@ -157,10 +164,54 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
     view.innerHTML = html || `<p class="sub">No upcoming picks found for ${esc(nm)}.</p>`;
   }
 
+  // ---- draft tendencies: who drafts what, by position at draft time
+  const POS_COLS = ["P", "C", "SS", "2B", "3B", "OF", "1B"];
+  function renderTendencies() {
+    yearsel.value = ""; sel.value = "";
+    tendBtn.classList.add("active");
+    document.querySelector(".tbl-scroll").style.display = "none";
+    document.getElementById("mgr-view").style.display = "none";
+    document.getElementById("tend-wrap").style.display = "";
+    document.getElementById("board-h").textContent = "Draft tendencies";
+    document.getElementById("board-note").textContent =
+      "Every rookie-draft pick since 2021, counted at the position Fantrax listed the player at in his draft year. Pitchers are all P — no SP/RP split.";
+    const tally = {};
+    for (const b of boards) {
+      if (!b.results) continue;
+      for (const r of b.rounds) for (const p of r.picks) {
+        const m = p.owner.match(/^([^(]+?)\s*\((.+)\)\s*$/);
+        if (!m) continue;
+        const mgr = m[2].trim(), pos = draft_positions[`${b.year}|${m[1].trim()}`] || "?";
+        const t = tally[mgr] ??= { total: 0, ...Object.fromEntries(POS_COLS.map(c => [c, 0])) };
+        t.total++;
+        if (pos in t) t[pos]++;
+      }
+    }
+    const rows = Object.entries(tally).sort((a, b) => b[1].total - a[1].total);
+    const t = document.getElementById("tend-t");
+    t.querySelector("thead").innerHTML =
+      `<tr><th>Manager</th><th class="num">Picks</th>` +
+      POS_COLS.map(c => `<th class="num">${c}</th>`).join("") + `<th>Favorite</th></tr>`;
+    t.querySelector("tbody").innerHTML = rows.map(([mgr, s]) => {
+      const c = MGR[mgr.toLowerCase()];
+      const swatch = c ? `<span class="sw" style="background:${c[0]}"></span>` : "";
+      const best = Math.max(...POS_COLS.map(p => s[p]));
+      const fav = POS_COLS.filter(p => s[p] === best && best > 0).join(" / ");
+      return `<tr><td style="white-space:nowrap">${swatch}${esc(mgr)}</td>
+        <td class="num"><b>${s.total}</b></td>` +
+        POS_COLS.map(p => `<td class="num">${s[p] || '<span style="opacity:.35">·</span>'}</td>`).join("") +
+        `<td class="fav">${fav}</td></tr>`;
+    }).join("");
+  }
+  const tendBtn = document.getElementById("tend-btn");
+  tendBtn.addEventListener("click", renderTendencies);
+
   let cur = 0;
   function render(i) {
     cur = i;
     sel.value = "";
+    tendBtn.classList.remove("active");
+    document.getElementById("tend-wrap").style.display = "none";
     document.querySelector(".tbl-scroll").style.display = "";
     document.getElementById("mgr-view").style.display = "none";
     yearsel.value = String(i);

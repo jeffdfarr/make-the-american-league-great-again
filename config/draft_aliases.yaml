@@ -1,0 +1,5 @@
+# Sheet name -> Fantrax name, for drafted players the fuzzy matcher can't
+# resolve on its own. Keys are the names exactly as they appear in the
+# draft sheet; values are the player's name in Fantrax.
+"M. Mayer": "Marcelo Mayer"
+"Leodalis De Vries": "Leo De Vries"

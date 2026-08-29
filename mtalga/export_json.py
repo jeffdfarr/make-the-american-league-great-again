@@ -37,6 +37,73 @@ EXPORTS = {
 }
 
 
+HIT_LADDER = ["C", "SS", "2B", "3B", "OF", "1B", "UT"]  # scarcest first
+
+
+def _draft_positions(conn: sqlite3.Connection, out: Path) -> None:
+    """Map every drafted player (verbatim sheet spelling) to the position
+    Fantrax listed him at in his draft year. Pitchers are just 'P' (no SP/RP
+    split — league convention for the draft-tendencies view). Sheet typos are
+    resolved by fuzzy match against the eligibility harvest, with manual
+    overrides in config/draft_aliases.yaml."""
+    import re
+    import unicodedata
+    from difflib import get_close_matches
+
+    draft_path = out / "draft.json"
+    if not draft_path.exists():
+        return
+    boards = json.loads(draft_path.read_text())
+
+    def norm(s: str) -> str:
+        s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
+        return re.sub(r"[^a-z]", "", s.lower())
+
+    elig: dict[str, dict[int, set[str]]] = {}
+    for r in conn.execute("SELECT year, player, positions FROM player_eligibility"):
+        elig.setdefault(norm(r["player"]), {}).setdefault(r["year"], set()).update(
+            r["positions"].split(","))
+    pool = list(elig)
+
+    aliases = {}
+    alias_path = Path(__file__).resolve().parent.parent / "config" / "draft_aliases.yaml"
+    if alias_path.exists():
+        import yaml
+        aliases = {norm(k): norm(v) for k, v in (yaml.safe_load(alias_path.read_text()) or {}).items()}
+
+    def bucket(ps: set[str]) -> str:
+        for h in HIT_LADDER:
+            if h in ps:
+                return h
+        return "P" if ps & {"SP", "RP", "P"} else "?"
+
+    result = {}
+    for b in boards:
+        if not b.get("results"):
+            continue
+        for rd in b["rounds"]:
+            for p in rd["picks"]:
+                m = re.match(r"^([^(]+?)\s*\(", p["owner"])
+                if not m:
+                    continue
+                sheet_name = m.group(1).strip()
+                key = aliases.get(norm(sheet_name), norm(sheet_name))
+                if key not in elig:
+                    close = get_close_matches(key, pool, n=1, cutoff=0.82)
+                    key = close[0] if close else None
+                pos = "?"
+                if key and key in elig:
+                    yrs = elig[key]
+                    yr = b["year"] if b["year"] in yrs else min(
+                        (y for y in yrs if y >= b["year"]), default=None)
+                    if yr:
+                        pos = bucket(yrs[yr])
+                result[f"{b['year']}|{sheet_name}"] = pos
+    (out / "draft_positions.json").write_text(json.dumps(result, indent=1))
+    known = sum(1 for v in result.values() if v != "?")
+    print(f"[export] draft_positions.json ({known}/{len(result)} classified)")
+
+
 def export_all(conn: sqlite3.Connection, out_dir: Path | None = None) -> None:
     out = out_dir or OUT_DIR
     out.mkdir(parents=True, exist_ok=True)
@@ -44,6 +111,7 @@ def export_all(conn: sqlite3.Connection, out_dir: Path | None = None) -> None:
         rows = [dict(r) for r in conn.execute(sql).fetchall()]
         (out / f"{name}.json").write_text(json.dumps(rows, indent=1))
         print(f"[export] {name}.json ({len(rows)} rows)")
+    _draft_positions(conn, out)
 
     last = conn.execute("SELECT MAX(ran_at) AS t FROM sync_log").fetchone()
     meta = {
