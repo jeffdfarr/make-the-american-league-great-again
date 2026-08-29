@@ -32,6 +32,9 @@
   </div>
   <h2 id="champ-h">Champions</h2>
   <div class="cards" id="champs"><span class="loading">Loading…</span></div>
+  <h2 id="h2h-h" style="display:none">Head-to-head</h2>
+  <div class="tbl-scroll" id="h2h-wrap" style="display:none"><table id="h2h-t"><thead></thead><tbody></tbody></table></div>
+  <p class="sub" id="h2h-note" style="display:none;margin-top:.5rem">Counted games — regular season plus the championship bracket and 3rd-place game. Matchups with fewer than 6 meetings sort to the bottom.</p>
   <h2>Scoring records</h2>
   <div class="tbl-scroll"><table id="sc-t">
     <thead></thead>
@@ -87,6 +90,13 @@
   main table td:first-child b { font-weight: 600; }
   #controls select { padding: .45rem .8rem; border: 1px solid var(--rule); border-radius: 999px;
          background: var(--surface); color: var(--ink); font: inherit; font-size: .9rem; }
+  /* head-to-head (filtered view) */
+  .h2h-team { display: inline-flex; align-items: center; gap: .55em; font-weight: 600; white-space: nowrap; }
+  .h2h-logo { width: 1.6em; height: 1.6em; border-radius: 50%; object-fit: cover;
+              border: 1px solid var(--rule); background: #fff; flex: none; }
+  .h2h-bar { display: inline-block; height: .55em; border-radius: 3px; vertical-align: middle; }
+  .h2h-up { color: #2e7d43; font-weight: 600; }
+  .h2h-dn { color: #c04a40; font-weight: 600; }
   /* championship banners — flat logo colors (#1D4885 / #ED1C50 / #fff), swallowtail cut */
   #champs { display: grid; grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
             gap: 1rem; align-items: start; border-top: 6px solid #1D4885; padding-top: 0; }
@@ -104,7 +114,7 @@
 <script>
 document.querySelector('[data-nav="history"]').classList.add("active");
 (async () => {
-  const { standings, franchises, records, trades, meta } = await MT.data("standings", "franchises", "records", "trades", "meta");
+  const { standings, franchises, records, trades, h2h, meta } = await MT.data("standings", "franchises", "records", "trades", "h2h", "meta");
   document.getElementById("tagline").textContent = "Banners and the record book";
   const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;");
   const owners = Object.fromEntries(franchises.map(f => [f.owner_slug, f.owner_name]));
@@ -329,6 +339,44 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     ...(ALIAS[slug] || [])]);
   // remember which sections actually rendered, so the filter never reveals empty ones
   const live = [...document.querySelectorAll("main h2")].filter(h => h.style.display !== "none");
+
+  // ---- head-to-head table, shown only in the filtered view
+  const logoOf = {};
+  for (const s of [...standings].sort((a, b) => a.year - b.year)) {
+    if (s.logo_url) logoOf[s.owner_slug] = s.logo_url;
+  }
+  function renderH2H(sel) {
+    const on = v => { for (const id of ["h2h-h", "h2h-wrap", "h2h-note"])
+      document.getElementById(id).style.display = v ? "" : "none"; };
+    if (!sel) return on(false);
+    const rows = h2h.filter(r => r.owner_a === sel && r.game_type === "ALL" && (r.w + r.l) > 0)
+      .sort((a, b) => {
+        const big = x => (x.w + x.l >= 6 ? 1 : 0), pct = x => x.w / (x.w + x.l);
+        return big(b) - big(a) || pct(b) - pct(a) || (b.w + b.l) - (a.w + a.l);
+      });
+    if (!rows.length) return on(false);
+    const t = document.getElementById("h2h-t");
+    t.querySelector("thead").innerHTML =
+      `<tr><th class="left">Opponent</th><th class="num">Record</th><th class="num">Pct</th><th></th>
+       <th class="num">PF</th><th class="num">PA</th><th class="num">Diff</th></tr>`;
+    t.querySelector("tbody").innerHTML = rows.map(r => {
+      const g = r.w + r.l, pct = r.w / g, diff = r.pf - r.pa;
+      const barColor = pct > .55 ? "#2e7d43" : pct < .45 ? "#c04a40" : "#9a9488";
+      const logo = logoOf[r.owner_b];
+      return `<tr>
+        <td><span class="h2h-team">${logo ? `<img class="h2h-logo" src="${logo}" alt="" loading="lazy" onerror="this.style.display='none'">` : ""}${esc(name(r.owner_b))}</span></td>
+        <td class="num"><b>${r.w}–${r.l}</b>${r.t ? `<span class="faint">–${r.t}</span>` : ""}</td>
+        <td class="num">${pct.toFixed(3).replace(/^0/, "")}</td>
+        <td><span class="h2h-bar" style="width:${Math.round(pct * 60)}px;background:${barColor}"></span></td>
+        <td class="num faint">${Math.round(r.pf).toLocaleString()}</td>
+        <td class="num faint">${Math.round(r.pa).toLocaleString()}</td>
+        <td class="num ${diff >= 0 ? "h2h-up" : "h2h-dn"}">${diff >= 0 ? "+" : "−"}${Math.abs(Math.round(diff)).toLocaleString()}</td>
+      </tr>`;
+    }).join("");
+    document.getElementById("h2h-h").textContent = name(sel) + " head-to-head";
+    on(true);
+  }
+
   function applyFilter() {
     const sel = fsel.value, acc = sel ? accepted(sel) : null;
     const ok = own => !acc || own.split("|").some(w => acc.has(w.toLowerCase()));
@@ -344,6 +392,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
       let note = box.nextElementSibling;         // section footnotes follow the table
       if (note && note.classList.contains("sub")) note.style.display = any ? "" : "none";
     }
+    renderH2H(sel);
   }
   fsel.addEventListener("change", applyFilter);
 
