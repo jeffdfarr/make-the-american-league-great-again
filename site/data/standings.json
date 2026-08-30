@@ -43,8 +43,8 @@
   "team_name": "Backyard Melonheads",
   "logo_url": "https://fantraximg.com/logos/htn/tmLogo_htnnb0bok7aqt4vd_256.jpg",
   "owner_name": "Andy Kaufer",
-  "live_pf": 302.167,
-  "live_pa": 239.0
+  "live_pf": 300.667,
+  "live_pa": 236.5
  },
  {
   "team_season_id": 8,
@@ -90,8 +90,8 @@
   "team_name": "Some Lady Named Ruth",
   "logo_url": "https://fantraximg.com/logos/gnq/tmLogo_gnqmobl8krgh8pe0_256.jpg",
   "owner_name": "Tyler Farr",
-  "live_pf": 239.0,
-  "live_pa": 302.167
+  "live_pf": 236.5,
+  "live_pa": 300.667
  },
  {
   "team_season_id": 10,
@@ -137,7 +137,7 @@
   "team_name": "Uncle Tom's Glavine",
   "logo_url": "https://fantraximg.com/logos/9l8/tmLogo_9l8au4ypk74s5ix5_256.jpg",
   "owner_name": "Nick Tessman",
-  "live_pf": 231.0,
+  "live_pf": 234.167,
   "live_pa": 129.5
  },
  {
@@ -184,8 +184,8 @@
   "team_name": "Myrtle Beach Mermen",
   "logo_url": "https://fantraximg.com/logos/tic/tmLogo_ticmvxdpmjuvsdir_256.webp",
   "owner_name": "Seth Bugar",
-  "live_pf": 331.333,
-  "live_pa": 278.667
+  "live_pf": 339.667,
+  "live_pa": 291.0
  },
  {
   "team_season_id": 4,
@@ -231,8 +231,8 @@
   "team_name": "Forced Happy Endings",
   "logo_url": "https://fantraximg.com/logos/ozg/tmLogo_ozge7sskm68ps8xo_256.jpeg",
   "owner_name": "KTown Moeller-Reed",
-  "live_pf": 278.667,
-  "live_pa": 331.333
+  "live_pf": 291.0,
+  "live_pa": 339.667
  },
  {
   "team_season_id": 3,
@@ -278,8 +278,8 @@
   "team_name": "Bomba Squad",
   "logo_url": "https://fantraximg.com/logos/3ww/tmLogo_3wwow3mik7l23fsl_256.jpg",
   "owner_name": "Jason Krech",
-  "live_pf": 275.0,
-  "live_pa": 315.833
+  "live_pf": 281.5,
+  "live_pa": 324.5
  },
  {
   "team_season_id": 5,
@@ -325,8 +325,8 @@
   "team_name": "Moonlight Graham Crackers",
   "logo_url": "https://fantraximg.com/logos/7fq/tmLogo_7fq4rlgcma7b1uun_256.webp",
   "owner_name": "Jeff Farr",
-  "live_pf": 315.833,
-  "live_pa": 275.0
+  "live_pf": 324.5,
+  "live_pa": 281.5
  },
  {
   "team_season_id": 2,
@@ -372,8 +372,8 @@
   "team_name": "Ben's Champions Chair",
   "logo_url": "https://fantraximg.com/logos/anm/tmLogo_anmqvslqmmtc5xg8_256.webp",
   "owner_name": "Ben Drwall",
-  "live_pf": 163.167,
-  "live_pa": 169.833
+  "live_pf": 178.167,
+  "live_pa": 171.333
  },
  {
   "team_season_id": 12,
@@ -419,8 +419,8 @@
   "team_name": "Wiener Winners",
   "logo_url": "https://fantraximg.com/logos/99x/tmLogo_99xhpk53mk374uu8_256.webp",
   "owner_name": "Taylor Hegna",
-  "live_pf": 169.833,
-  "live_pa": 163.167
+  "live_pf": 171.333,
+  "live_pa": 178.167
  },
  {
   "team_season_id": 9,
@@ -466,8 +466,8 @@
   "team_name": "Tommy John's",
   "logo_url": "https://fantraximg.com/logos/ir4/tmLogo_ir4ryxjwk73x0zck_256.jpg",
   "owner_name": "Coirey Tasin",
-  "live_pf": 200.833,
-  "live_pa": 235.0
+  "live_pf": 206.833,
+  "live_pa": 246.5
  },
  {
   "team_season_id": 7,
@@ -513,8 +513,8 @@
   "team_name": "Random Hero",
   "logo_url": "https://fantraximg.com/logos/mr2/tmLogo_mr2ux3l0ksapp1sl_256.jpg",
   "owner_name": "Nick Sorgaard",
-  "live_pf": 235.0,
-  "live_pa": 200.833
+  "live_pf": 246.5,
+  "live_pa": 206.833
  },
  {
   "team_season_id": 11,
@@ -561,7 +561,7 @@
   "logo_url": "https://fantraximg.com/logos/ol9/tmLogo_ol9r458smk4keoki_256.webp",
   "owner_name": "Zac Norman",
   "live_pf": 129.5,
-  "live_pa": 231.0
+  "live_pa": 234.167
  },
  {
   "team_season_id": 87,
