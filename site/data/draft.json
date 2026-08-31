@@ -549,50 +549,14 @@
     "picks": [
      {
       "num": 1,
-      "owner": "Coirey"
-     },
-     {
-      "num": 2,
-      "owner": "Taylor (Nick S (Karleton)"
-     },
-     {
-      "num": 3,
-      "owner": "Jason"
-     },
-     {
-      "num": 4,
-      "owner": "Jason (Jeff)"
-     },
-     {
-      "num": 5,
-      "owner": "Jeff (Tessy)"
-     },
-     {
-      "num": 6,
-      "owner": "Coirey (Ben)"
-     },
-     {
-      "num": 7,
-      "owner": "Ben (Andy)"
-     },
-     {
-      "num": 8,
-      "owner": "Nick S (Ben (Tyler)"
-     },
-     {
-      "num": 9,
-      "owner": "Zac (Tyler (Ben (Seth))"
-     },
-     {
-      "num": 10,
-      "owner": "Zac (Tessy (Nick S))"
-     },
-     {
-      "num": 11,
       "owner": "Zac"
      },
      {
-      "num": 12,
+      "num": 2,
+      "owner": "Zac (Tessy (Nick S))"
+     },
+     {
+      "num": 3,
       "owner": "Taylor"
      }
     ]
