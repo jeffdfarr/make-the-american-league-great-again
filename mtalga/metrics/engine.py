@@ -464,8 +464,14 @@ def _records(conn: sqlite3.Connection) -> None:
     ]
     # OPR records — minimum-side and count records use completed seasons only,
     # so a half-played year can't sneak in; maxima break only when exceeded.
+    # comp_in unlocks when the REGULAR season ends; playoff-dependent records
+    # (made/missed the playoffs) wait for full_in — the bracket must be played,
+    # or every current-season team briefly looks like a playoff misser.
     comp = [r["year"] for r in conn.execute(COMP_YEARS_SQL)]
     comp_in = ",".join(str(y) for y in comp) or "0"
+    full = [r["year"] for r in conn.execute(
+        "SELECT DISTINCT year FROM season_stats WHERE champion=1")]
+    full_in = ",".join(str(y) for y in full) or "0"
     specs += [
         ("Best career OPR", "opr", "{:.3f}", "all-time",
          "SELECT owner_slug o, career_opr v, NULL y FROM career_stats WHERE career_opr IS NOT NULL ORDER BY career_opr DESC LIMIT 1"),
@@ -476,9 +482,9 @@ def _records(conn: sqlite3.Connection) -> None:
         ("Worst single-season OPR", "opr", "{:.3f}", None,
          f"SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND year IN ({comp_in}) ORDER BY opr ASC LIMIT 1"),
         ("Lowest OPR to make the playoffs", "opr", "{:.3f}", None,
-         f"SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND playoff_app=1 AND year IN ({comp_in}) ORDER BY opr ASC LIMIT 1"),
+         f"SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND playoff_app=1 AND year IN ({full_in}) ORDER BY opr ASC LIMIT 1"),
         ("Highest OPR to miss the playoffs", "opr", "{:.3f}", None,
-         f"SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND playoff_app=0 AND year IN ({comp_in}) ORDER BY opr DESC LIMIT 1"),
+         f"SELECT owner_slug o, opr v, year y FROM season_stats WHERE opr IS NOT NULL AND playoff_app=0 AND year IN ({full_in}) ORDER BY opr DESC LIMIT 1"),
         # strength of schedule / points against (minimum-side: completed seasons only)
         ("Toughest schedule, season", "sos", "{:.3f}", None,
          "SELECT owner_slug o, sos_opr v, year y FROM season_stats WHERE sos_opr IS NOT NULL ORDER BY sos_opr DESC LIMIT 1"),
@@ -955,6 +961,9 @@ def _wl_records(conn: sqlite3.Connection) -> None:
     name_of = {r["slug"]: r["name"] for r in conn.execute("SELECT slug, name FROM owners")}
     completed = sorted(r["year"] for r in conn.execute(COMP_YEARS_SQL))
     comp_set = set(completed)
+    # Playoff-inclusive minima wait for the whole season (playoffs played):
+    full_in = ",".join(str(r["year"]) for r in conn.execute(
+        "SELECT DISTINCT year FROM season_stats WHERE champion=1")) or "0"
     out: list[tuple] = []  # (category, scope, value, display, owner, year, detail)
 
     def span(y0, y1):
@@ -991,7 +1000,7 @@ def _wl_records(conn: sqlite3.Connection) -> None:
     pick("Most losses in a season", "losses",
          f"SELECT owner_slug o, l v, year y FROM season_stats WHERE year IN ({comp_in}) ORDER BY l DESC LIMIT 1", "{:g} losses")
     pick("Fewest losses in a full season", "losses",
-         f"SELECT owner_slug o, l v, year y FROM season_stats WHERE year IN ({comp_in}) ORDER BY l ASC LIMIT 1", "{:g} losses")
+         f"SELECT owner_slug o, l v, year y FROM season_stats WHERE year IN ({full_in}) ORDER BY l ASC LIMIT 1", "{:g} losses")
 
     # ---------------- season sequences (completed seasons, consecutive years)
     seas = conn.execute(

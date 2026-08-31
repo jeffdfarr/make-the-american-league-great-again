@@ -452,17 +452,17 @@
  {
   "category": "Highest OPR to miss the playoffs",
   "scope": "opr",
-  "value": 1.164844721380063,
-  "display": "1.165",
-  "owner_slug": "kaufer",
-  "year": 2026,
+  "value": 1.0542594495361628,
+  "display": "1.054",
+  "owner_slug": "tessman",
+  "year": 2023,
   "detail": null,
   "note": null
  },
  {
   "category": "Lowest OPR to make the playoffs",
   "scope": "opr",
-  "value": 0.9082527707873151,
+  "value": 0.908252770787315,
   "display": "0.908",
   "owner_slug": "krech",
   "year": 2020,
@@ -962,7 +962,7 @@
  {
   "category": "Luckiest career",
   "scope": "sos",
-  "value": 7.231042112243493,
+  "value": 7.231042112243486,
   "display": "+7.2 wins",
   "owner_slug": "moellerreed",
   "year": null,
@@ -982,7 +982,7 @@
  {
   "category": "Most cursed career",
   "scope": "sos",
-  "value": -8.089202086163986,
+  "value": -8.089202086164,
   "display": "-8.1 wins",
   "owner_slug": "jfarr",
   "year": null,
@@ -1022,7 +1022,7 @@
  {
   "category": "Softest schedule, season",
   "scope": "sos",
-  "value": 0.9309511398527611,
+  "value": 0.9309511398527608,
   "display": "0.931",
   "owner_slug": "tessman",
   "year": 2020,
@@ -1032,7 +1032,7 @@
  {
   "category": "Toughest schedule, season",
   "scope": "sos",
-  "value": 1.079602057725815,
+  "value": 1.0796020577258145,
   "display": "1.080",
   "owner_slug": "bugar",
   "year": 2020,
