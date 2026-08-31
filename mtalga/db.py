@@ -217,6 +217,15 @@ def _migrate(conn: sqlite3.Connection) -> None:
     cols = {r[1] for r in conn.execute("PRAGMA table_info(games)")}
     if "period_days" not in cols:
         conn.execute("ALTER TABLE games ADD COLUMN period_days INTEGER")
+    # rs_complete: every regular-season period has ended (calendar-based, same
+    # convention as weekly counting) — unlocks season-aggregate records without
+    # waiting for the playoffs to crown a champion. Backfill title years.
+    scols = {r[1] for r in conn.execute("PRAGMA table_info(seasons)")}
+    if "rs_complete" not in scols:
+        conn.execute("ALTER TABLE seasons ADD COLUMN rs_complete INTEGER NOT NULL DEFAULT 0")
+        conn.execute("""UPDATE seasons SET rs_complete=1 WHERE year IN
+                        (SELECT DISTINCT year FROM season_stats WHERE champion=1)""")
+        conn.commit()  # the ALTER auto-commits; make sure the backfill lands with it
     # position_points v3 stores every rostered player incl. bench/IR/minors
     # status; older shapes lack the data, so drop and refetch (posstats re-run).
     pcols = {r[1] for r in conn.execute("PRAGMA table_info(position_points)")}

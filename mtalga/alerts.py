@@ -34,8 +34,6 @@ def diff_messages(conn: sqlite3.Connection, before: dict) -> list[str]:
         return []  # first ever run — nothing to compare against
     names = {r["slug"]: r["name"] for r in conn.execute("SELECT slug, name FROM owners")}
     who = lambda s: names.get(s, s or "?")
-    row = conn.execute("SELECT MAX(year) y FROM seasons").fetchone()
-    cur_year = row["y"] if row else None
     msgs = []
     for key, new in snapshot(conn).items():
         old = before.get(key)
@@ -43,30 +41,15 @@ def diff_messages(conn: sqlite3.Connection, before: dict) -> list[str]:
             continue  # newly added record category — not a broken record
         if new["scope"] == "legend":
             continue  # franchise-legend leaderboard, not a record — never alert
-        try:
-            rel = abs((new["value"] or 0) - (old["value"] or 0)) / max(abs(old["value"] or 1.0), 1.0)
-        except (TypeError, ZeroDivisionError):
-            rel = 1.0
         det = f" ({new['detail']})" if new.get("detail") and new["detail"] != "all-time" else ""
         if new["owner_slug"] != old["owner_slug"]:
             msgs.append(
                 f"🚨 RECORD BROKEN — {new['category']}: {who(new['owner_slug'])} now holds it "
                 f"at {new['display']}{det}. Previous: {who(old['owner_slug'])}, {old['display']}."
             )
-        elif new["display"] != old["display"] and rel >= 0.01:
-            # An in-progress record fattening itself weekly (same holder, same
-            # current season) is accumulation, not news — the BREAK already
-            # alerted. Streak records are the exception: each extension is an
-            # event worth announcing.
-            same_current = (new["owner_slug"] == old["owner_slug"]
-                            and new["year"] is not None and new["year"] == old["year"]
-                            and new["year"] == cur_year)
-            if same_current and "streak" not in new["category"].lower():
-                continue
-            msgs.append(
-                f"📈 RECORD EXTENDED — {new['category']}: {who(new['owner_slug'])} pushes their "
-                f"own record to {new['display']}{det} (was {old['display']})."
-            )
+        # Same holder improving their own mark is never announced (league
+        # preference, Aug 2026): only a change of hands — RECORD BROKEN —
+        # is news. The book itself still updates nightly either way.
     return msgs
 
 

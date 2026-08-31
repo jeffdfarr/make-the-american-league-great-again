@@ -88,18 +88,23 @@ def sync_season(conn: sqlite3.Connection, cfg: Config, season: SeasonCfg, sessio
 
     # --- games from scoring period results (regular season + playoffs + brackets)
     results = lg.scoring_period_results(season=True, playoffs=True)
+
+    def _period_ended(spr) -> bool:
+        # Count a period once its scheduled end date has passed, even before
+        # Fantrax stamps it official — every sync re-upserts the scores, so a
+        # later stat correction overwrites automatically.
+        if getattr(spr, "future", False):
+            return False
+        if bool(spr.complete):
+            return True
+        per_end = getattr(getattr(spr, "period", None), "end", None)
+        return per_end is not None and per_end < dt.date.today()
+
     n_games = 0
     for _, spr in sorted(results.items()):
         if getattr(spr, "future", False):
             continue
-        # Count a period once its scheduled end date has passed, even before
-        # Fantrax stamps it official — every sync re-upserts the scores, so a
-        # later stat correction overwrites automatically.
-        ended = bool(spr.complete)
-        if not ended:
-            per_end = getattr(getattr(spr, "period", None), "end", None)
-            if per_end is not None and per_end < dt.date.today():
-                ended = True
+        ended = _period_ended(spr)
         period = spr.period.number
         period_days = getattr(spr, "days", None)
         buckets: list[tuple[str | None, list]] = [(None, spr.matchups)]
@@ -133,6 +138,14 @@ def sync_season(conn: sqlite3.Connection, cfg: Config, season: SeasonCfg, sessio
                     )
                 n_games += 1
     log(conn, year, "games", True, f"{n_games} team-games upserted")
+
+    # --- regular season complete? (the day after the final RS week ends —
+    # same calendar convention as weekly counting). Unlocks season-aggregate
+    # records without waiting for the playoffs.
+    rs_periods = [spr for _, spr in results.items() if not getattr(spr, "playoffs", False)]
+    rs_done = bool(rs_periods) and all(_period_ended(s) for s in rs_periods)
+    conn.execute("UPDATE seasons SET rs_complete=? WHERE year=?", (int(rs_done), year))
+    log(conn, year, "rs-complete", True, f"regular season {'complete' if rs_done else 'in progress'}")
 
     # --- hitting/pitching category totals (season-to-date snapshot)
     try:

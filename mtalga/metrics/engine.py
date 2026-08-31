@@ -19,6 +19,12 @@ from .. import db as dbm
 from ..config import Config
 from . import formulas as f
 
+# A season's aggregate stats enter the record book once its REGULAR SEASON has
+# ended (rs_complete, set by the sync the day after the final RS week) — no
+# waiting on the playoffs. Champion years double as a backfill for old DBs.
+COMP_YEARS_SQL = """SELECT year FROM seasons WHERE rs_complete=1
+                    UNION SELECT DISTINCT year FROM season_stats WHERE champion=1"""
+
 
 def rebuild(conn: sqlite3.Connection, cfg: Config) -> None:
     dbm.reset_derived(conn)
@@ -458,7 +464,7 @@ def _records(conn: sqlite3.Connection) -> None:
     ]
     # OPR records — minimum-side and count records use completed seasons only,
     # so a half-played year can't sneak in; maxima break only when exceeded.
-    comp = [r["year"] for r in conn.execute("SELECT DISTINCT year FROM season_stats WHERE champion=1")]
+    comp = [r["year"] for r in conn.execute(COMP_YEARS_SQL)]
     comp_in = ",".join(str(y) for y in comp) or "0"
     specs += [
         ("Best career OPR", "opr", "{:.3f}", "all-time",
@@ -677,7 +683,7 @@ def _roster_records(conn: sqlite3.Connection) -> None:
             "Trailed by this much entering the last day of the scoring week — and won.")
 
     # ---- roster churn
-    comp = {r["year"] for r in conn.execute("SELECT DISTINCT year FROM season_stats WHERE champion=1")}
+    comp = {r["year"] for r in conn.execute(COMP_YEARS_SQL)}
     full = {r["year"] for r in conn.execute("SELECT DISTINCT year FROM season_stats WHERE rs_games >= 15")}
     mostp = conn.execute(
         """SELECT year y, team_season_id ts, COUNT(DISTINCT player_id) v FROM position_points
@@ -947,8 +953,7 @@ def _wl_records(conn: sqlite3.Connection) -> None:
     look only at COMPLETED seasons; single-season maxima may include the
     current season once it actually exceeds the old record."""
     name_of = {r["slug"]: r["name"] for r in conn.execute("SELECT slug, name FROM owners")}
-    completed = sorted(r["year"] for r in conn.execute(
-        "SELECT DISTINCT year FROM season_stats WHERE champion=1"))
+    completed = sorted(r["year"] for r in conn.execute(COMP_YEARS_SQL))
     comp_set = set(completed)
     out: list[tuple] = []  # (category, scope, value, display, owner, year, detail)
 
