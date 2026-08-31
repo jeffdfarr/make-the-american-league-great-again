@@ -32,6 +32,9 @@
   </div>
   <h2 id="champ-h">Champions</h2>
   <div class="cards" id="champs"><span class="loading">Loading…</span></div>
+  <h2 id="best-h" style="display:none">Franchise bests</h2>
+  <div class="tbl-scroll" id="best-wrap" style="display:none"><table id="best-t"><thead></thead><tbody></tbody></table></div>
+  <p class="sub" id="best-note" style="display:none;margin-top:.5rem">Weeks, blowouts and season points are regular-season; streaks count the regular season plus the championship bracket and 3rd-place game. Best season uses completed seasons only.</p>
   <h2 id="h2h-h" style="display:none">Head-to-head</h2>
   <div class="tbl-scroll" id="h2h-wrap" style="display:none"><table id="h2h-t"><thead></thead><tbody></tbody></table></div>
   <p class="sub" id="h2h-note" style="display:none;margin-top:.5rem">Counted games — regular season plus the championship bracket and 3rd-place game. Matchups with fewer than 6 meetings sort to the bottom.</p>
@@ -114,7 +117,7 @@
 <script>
 document.querySelector('[data-nav="history"]').classList.add("active");
 (async () => {
-  const { standings, franchises, records, trades, h2h, meta } = await MT.data("standings", "franchises", "records", "trades", "h2h", "meta");
+  const { standings, franchises, records, trades, h2h, games, meta } = await MT.data("standings", "franchises", "records", "trades", "h2h", "games", "meta");
   document.getElementById("tagline").textContent = "Banners and the record book";
   const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;");
   const owners = Object.fromEntries(franchises.map(f => [f.owner_slug, f.owner_name]));
@@ -179,6 +182,8 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     "Most points left on the bench, season": "Season total scored from the bench",
     "Most players used in a season": "Distinct players who appeared in the active lineup",
     "Fewest players used in a season": "Full, completed seasons only",
+    "Most weekly high scores, career": "Times finishing as the week's top scorer in the whole league, regular season",
+    "Most weekly high scores, season": "Weeks as the league's top scorer in a single regular season",
   };
 
   const TIPS = {
@@ -188,7 +193,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
     "Most cursed career": "A manager's season luck (actual wins minus the wins the league's historical OPR-to-wins line expected) added up across completed seasons since 2021."
   };
   const recRow = r => `
-    <tr data-own="${esc((r.owner_slug || "").split(" & ").join("|"))}"><td><b>${esc(r.category)}</b>${TIPS[r.category] ? `<span class="tip" tabindex="0">ⓘ<span class="tipbox">${TIPS[r.category]}</span></span>` : ""}${DESC[r.category] ? `<span class="desc">${DESC[r.category]}</span>` : ""}${r.note ? `<span class="desc">${esc(r.note)}</span>` : ""}</td>
+    <tr data-own="${esc((r.own ?? r.owner_slug ?? "").split(" & ").join("|"))}"><td><b>${esc(r.category)}</b>${TIPS[r.category] ? `<span class="tip" tabindex="0">ⓘ<span class="tipbox">${TIPS[r.category]}</span></span>` : ""}${DESC[r.category] ? `<span class="desc">${DESC[r.category]}</span>` : ""}${r.note ? `<span class="desc">${esc(r.note)}</span>` : ""}</td>
     <td class="num">${r.display}</td>
     <td>${r.owner_slug ? esc(name(r.owner_slug)) : `<span class="faint">—</span>`}</td>
     <td class="faint">${[r.detail, r.year].filter(x => x != null && x !== "").join(" · ") || ""}</td></tr>`;
@@ -232,6 +237,36 @@ document.querySelector('[data-nav="history"]').classList.add("active");
       t.querySelector("tbody").innerHTML = group.map(recRow).join("") ||
         `<tr><td colspan="4" class="faint">Nothing here yet.</td></tr>`;
     }
+  }
+
+  // ---- weekly high scores (client-computed from the game log, like the trade records)
+  const wkHigh = { career: {}, season: {}, weeks: 0 };
+  {
+    const byWeek = {};
+    for (const g of games) if (g.game_type === "R")
+      (byWeek[g.year + "|" + g.period] ??= []).push(g);
+    wkHigh.weeks = Object.keys(byWeek).length;
+    for (const lst of Object.values(byWeek)) {
+      const hi = Math.max(...lst.map(g => g.pts_for));
+      for (const g of lst) if (g.pts_for === hi) {
+        wkHigh.career[g.owner] = (wkHigh.career[g.owner] || 0) + 1;
+        const k = g.owner + "|" + g.year;
+        wkHigh.season[k] = (wkHigh.season[k] || 0) + 1;
+      }
+    }
+  }
+  {
+    const [top, n] = Object.entries(wkHigh.career).sort((a, b) => b[1] - a[1])[0];
+    const sBest = Math.max(...Object.values(wkHigh.season));
+    const sHolders = Object.entries(wkHigh.season).filter(([, v]) => v === sBest)
+      .map(([k]) => k.split("|"));
+    document.querySelector("#sc-t tbody").insertAdjacentHTML("beforeend",
+      recRow({ category: "Most weekly high scores, career", display: `${n} weeks`,
+               owner_slug: top, detail: "all-time" }) +
+      recRow({ category: "Most weekly high scores, season", display: `${sBest} weeks`,
+               own: sHolders.map(([o]) => o).join(" & "),
+               owner_slug: sHolders.map(([o, y]) => `${name(o)} (${y})`).join(" · "),
+               detail: "" }));
   }
 
   // ---- franchise & trades (avg finish from the engine + live trade counts from the sheet)
@@ -345,6 +380,75 @@ document.querySelector('[data-nav="history"]').classList.add("active");
   for (const s of [...standings].sort((a, b) => a.year - b.year)) {
     if (s.logo_url) logoOf[s.owner_slug] = s.logo_url;
   }
+  // ---- franchise bests: the manager's own record book, next to the league marks
+  const recBy = Object.fromEntries(records.map(r => [r.scope + "|" + r.category, r]));
+  const completedYears = new Set(standings.filter(s => s.champion).map(s => s.year));
+  function renderBests(sel) {
+    const on = v => { for (const id of ["best-h", "best-wrap", "best-note"])
+      document.getElementById(id).style.display = v ? "" : "none"; };
+    if (!sel) return on(false);
+    const mine = games.filter(g => g.owner === sel);
+    const rs = mine.filter(g => g.game_type === "R");
+    if (!rs.length) return on(false);
+    const fmt = v => (Math.round(v * 10) / 10).toLocaleString(undefined, { maximumFractionDigits: 1 });
+    const when = g => `Wk ${g.period} · ${g.year}`;
+
+    const bestWk = rs.reduce((a, b) => b.pts_for > a.pts_for ? b : a);
+    const worstWk = rs.reduce((a, b) => b.pts_for < a.pts_for ? b : a);
+    const bigWin = rs.reduce((a, b) => (b.pts_for - b.pts_against) > (a.pts_for - a.pts_against) ? b : a);
+    const bigLoss = rs.reduce((a, b) => (b.pts_against - b.pts_for) > (a.pts_against - a.pts_for) ? b : a);
+
+    // streaks over counted games in schedule order
+    const counted = mine.filter(g => g.counted).sort((a, b) => a.year - b.year || a.period - b.period);
+    let w = 0, l = 0, bw = [0, null, null], bl = [0, null, null], ws = null, ls = null;
+    for (const g of counted) {
+      if (g.pts_for > g.pts_against) {
+        ws = ws ?? g.year; w++; if (w > bw[0]) bw = [w, ws, g.year];
+        l = 0; ls = null;
+      } else if (g.pts_for < g.pts_against) {
+        ls = ls ?? g.year; l++; if (l > bl[0]) bl = [l, ls, g.year];
+        w = 0; ws = null;
+      } else { w = l = 0; ws = ls = null; }
+    }
+    const span = s => s[1] === s[2] ? String(s[1]) : `${s[1]}–${s[2]}`;
+
+    const byYear = {};
+    for (const g of rs) if (completedYears.has(g.year)) byYear[g.year] = (byYear[g.year] || 0) + g.pts_for;
+    const bestSeason = Object.entries(byYear).sort((a, b) => b[1] - a[1])[0];
+
+    const league = key => {
+      const r = recBy[key];
+      if (!r) return "—";
+      const own = r.owner_slug === sel ? ` <b>(you)</b>` : ` — ${esc(name(r.owner_slug))}`;
+      return `${r.display}${own}`;
+    };
+    const [hiTop, hiN] = Object.entries(wkHigh.career).sort((a, b) => b[1] - a[1])[0];
+    const myHigh = wkHigh.career[sel] || 0;
+    const hiLeague = hiTop === sel ? `${hiN} weeks <b>(you)</b>` : `${hiN} weeks — ${esc(name(hiTop))}`;
+    const rows = [
+      ["Best week", fmt(bestWk.pts_for) + " pts", when(bestWk), league("scoring|Highest single-week score")],
+      ["Weekly high scores", myHigh + (myHigh === 1 ? " week" : " weeks"),
+       `of ${wkHigh.weeks} league weeks`, hiLeague],
+      ["Worst week", fmt(worstWk.pts_for) + " pts", when(worstWk), league("scoring|Lowest single-week score")],
+      ["Biggest win", "+" + fmt(bigWin.pts_for - bigWin.pts_against) + " pts", `vs ${esc(name(bigWin.opponent))} · ${when(bigWin)}`, league("scoring|Biggest blowout")],
+      ["Worst loss", "−" + fmt(bigLoss.pts_against - bigLoss.pts_for) + " pts", `vs ${esc(name(bigLoss.opponent))} · ${when(bigLoss)}`, "—"],
+      ["Longest win streak", bw[0] + " games", bw[0] ? span(bw) : "", league("wins|Longest win streak")],
+      ["Longest losing streak", bl[0] + " games", bl[0] ? span(bl) : "", league("losses|Longest losing streak")],
+    ];
+    if (bestSeason) rows.push(["Best season, points",
+      Math.round(bestSeason[1]).toLocaleString() + " pts", bestSeason[0],
+      league("scoring|Most points in a season")]);
+
+    const t = document.getElementById("best-t");
+    t.querySelector("thead").innerHTML =
+      `<tr><th>Stat</th><th class="num">Yours</th><th>When</th><th>League record</th></tr>`;
+    t.querySelector("tbody").innerHTML = rows.map(([label, val, wh, lg]) => `
+      <tr><td><b>${label}</b></td><td class="num">${val}</td>
+      <td class="faint">${wh}</td><td class="faint">${lg}</td></tr>`).join("");
+    document.getElementById("best-h").textContent = name(sel) + " franchise bests";
+    on(true);
+  }
+
   function renderH2H(sel) {
     const on = v => { for (const id of ["h2h-h", "h2h-wrap", "h2h-note"])
       document.getElementById(id).style.display = v ? "" : "none"; };
@@ -392,6 +496,7 @@ document.querySelector('[data-nav="history"]').classList.add("active");
       let note = box.nextElementSibling;         // section footnotes follow the table
       if (note && note.classList.contains("sub")) note.style.display = any ? "" : "none";
     }
+    renderBests(sel);
     renderH2H(sel);
   }
   fsel.addEventListener("change", applyFilter);

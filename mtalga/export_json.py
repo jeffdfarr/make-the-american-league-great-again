@@ -26,7 +26,7 @@ EXPORTS = {
     "h2h": "SELECT * FROM h2h ORDER BY owner_a, owner_b, game_type",
     "records": "SELECT * FROM records_book ORDER BY scope, category",
     "games": """
-        SELECT g.year, g.period, g.game_type, g.bracket,
+        SELECT g.year, g.period, g.game_type, g.bracket, g.matchup_uid,
                a.owner_slug AS owner, b.owner_slug AS opponent,
                g.pts_for, g.pts_against
         FROM games g
@@ -109,6 +109,16 @@ def export_all(conn: sqlite3.Connection, out_dir: Path | None = None) -> None:
     out.mkdir(parents=True, exist_ok=True)
     for name, sql in EXPORTS.items():
         rows = [dict(r) for r in conn.execute(sql).fetchall()]
+        if name == "games":
+            # counted = league W/L convention: regular season + championship
+            # bracket + 3rd-place game (engine's bracket walker decides).
+            from mtalga.metrics.engine import _classify_postseason
+            cls = {y: _classify_postseason(conn, y)
+                   for y in {r["year"] for r in rows}}
+            for r in rows:
+                r["counted"] = 1 if r["game_type"] == "R" else (
+                    1 if cls[r["year"]].get(r["matchup_uid"]) in ("TREE", "THIRD") else 0)
+                del r["matchup_uid"]
         (out / f"{name}.json").write_text(json.dumps(rows, indent=1))
         print(f"[export] {name}.json ({len(rows)} rows)")
     _draft_positions(conn, out)
