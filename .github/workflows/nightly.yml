@@ -2,8 +2,10 @@ name: Nightly Fantrax sync
 
 on:
   schedule:
-    - cron: "0 7 * * *"    # 2:00am CT during DST — after West Coast games settle
-    - cron: "0 15 * * *"   # 10:00am CT — catches Sunday week-enders Fantrax finalizes overnight
+    # Off-hour minutes on purpose: GitHub's scheduler is heavily congested at
+    # :00, and exact-hour crons get delayed for hours or silently dropped.
+    - cron: "23 7 * * *"   # ~2:23am CT during DST — after West Coast games settle
+    - cron: "23 15 * * *"  # ~10:23am CT — catches Sunday week-enders Fantrax finalizes overnight
   workflow_dispatch: {}    # manual runs from the Actions tab
 
 permissions:
