@@ -15948,5 +15948,137 @@
   "pts_for": 192.167,
   "pts_against": 350.833,
   "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 21,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "tfarr",
+  "pts_for": 365.667,
+  "pts_against": 314.0,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 21,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "kaufer",
+  "pts_for": 314.0,
+  "pts_against": 365.667,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 21,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "moellerreed",
+  "pts_for": 365.5,
+  "pts_against": 318.333,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 21,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "bugar",
+  "pts_for": 318.333,
+  "pts_against": 365.5,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 21,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "norman",
+  "pts_for": 267.5,
+  "pts_against": 153.833,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 21,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "norman",
+  "opponent": "tessman",
+  "pts_for": 153.833,
+  "pts_against": 267.5,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 21,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "drwall",
+  "opponent": "hegna",
+  "pts_for": 281.167,
+  "pts_against": 197.667,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 21,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "hegna",
+  "opponent": "drwall",
+  "pts_for": 197.667,
+  "pts_against": 281.167,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 21,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "tasin",
+  "opponent": "sorgaard",
+  "pts_for": 215.167,
+  "pts_against": 281.5,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 21,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "sorgaard",
+  "opponent": "tasin",
+  "pts_for": 281.5,
+  "pts_against": 215.167,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 21,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "jfarr",
+  "opponent": "krech",
+  "pts_for": 363.5,
+  "pts_against": 301.5,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 21,
+  "game_type": "R",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "jfarr",
+  "pts_for": 301.5,
+  "pts_against": 363.5,
+  "counted": 1
  }
 ]
