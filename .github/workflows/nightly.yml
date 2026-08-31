@@ -5,7 +5,8 @@ on:
     # Off-hour minutes on purpose: GitHub's scheduler is heavily congested at
     # :00, and exact-hour crons get delayed for hours or silently dropped.
     - cron: "23 7 * * *"   # ~2:23am CT during DST — after West Coast games settle
-    - cron: "23 15 * * *"  # ~10:23am CT — catches Sunday week-enders Fantrax finalizes overnight
+    - cron: "7 14 * * *"   # ~9:07am CT in summer — right as quiet hours end, so bot alerts land at 9
+                           # (in winter this is ~8:07am CST and alerts would stay queued — fine, no baseball then)
   workflow_dispatch: {}    # manual runs from the Actions tab
 
 permissions:
