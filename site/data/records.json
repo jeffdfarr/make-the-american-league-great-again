@@ -392,11 +392,11 @@
  {
   "category": "Most consecutive losing seasons",
   "scope": "losses",
-  "value": 6.0,
-  "display": "6 seasons",
+  "value": 7.0,
+  "display": "7 seasons",
   "owner_slug": "tasin",
-  "year": 2025,
-  "detail": "2020\u20132025",
+  "year": 2026,
+  "detail": "2020\u20132026",
   "note": null
  },
  {
@@ -412,10 +412,10 @@
  {
   "category": "Most losses in a season",
   "scope": "losses",
-  "value": 18.0,
-  "display": "18 losses",
-  "owner_slug": "tasin",
-  "year": 2022,
+  "value": 19.0,
+  "display": "19 losses",
+  "owner_slug": "norman",
+  "year": 2026,
   "detail": null,
   "note": null
  },
@@ -452,10 +452,10 @@
  {
   "category": "Highest OPR to miss the playoffs",
   "scope": "opr",
-  "value": 1.0542594495361628,
-  "display": "1.054",
-  "owner_slug": "tessman",
-  "year": 2023,
+  "value": 1.164844721380063,
+  "display": "1.165",
+  "owner_slug": "kaufer",
+  "year": 2026,
   "detail": null,
   "note": null
  },
@@ -472,8 +472,8 @@
  {
   "category": "Most 1.000+ OPR seasons",
   "scope": "opr",
-  "value": 5.0,
-  "display": "5 seasons",
+  "value": 6.0,
+  "display": "6 seasons",
   "owner_slug": "moellerreed",
   "year": null,
   "detail": "all-time",
@@ -962,8 +962,8 @@
  {
   "category": "Luckiest career",
   "scope": "sos",
-  "value": 6.563958492809952,
-  "display": "+6.6 wins",
+  "value": 7.231042112243493,
+  "display": "+7.2 wins",
   "owner_slug": "moellerreed",
   "year": null,
   "detail": "all-time",
@@ -982,8 +982,8 @@
  {
   "category": "Most cursed career",
   "scope": "sos",
-  "value": -5.155707746673478,
-  "display": "-5.2 wins",
+  "value": -8.089202086163986,
+  "display": "-8.1 wins",
   "owner_slug": "jfarr",
   "year": null,
   "detail": "all-time",
@@ -1142,10 +1142,10 @@
  {
   "category": "Biggest one-year improvement",
   "scope": "wins",
-  "value": 0.333,
-  "display": "12\u20139 \u2192 19\u20132",
-  "owner_slug": "bugar",
-  "year": 2025,
+  "value": 0.381,
+  "display": "3\u201318 \u2192 11\u201310",
+  "owner_slug": "jfarr",
+  "year": 2026,
   "detail": null,
   "note": null
  },
@@ -1172,8 +1172,8 @@
  {
   "category": "Most 15-win regular seasons",
   "scope": "wins",
-  "value": 2.0,
-  "display": "2 seasons",
+  "value": 3.0,
+  "display": "3 seasons",
   "owner_slug": "tfarr",
   "year": null,
   "detail": "all-time",
@@ -1192,21 +1192,21 @@
  {
   "category": "Most consecutive 15-win regular seasons",
   "scope": "wins",
-  "value": 2.0,
-  "display": "2 seasons",
+  "value": 3.0,
+  "display": "3 seasons",
   "owner_slug": "tfarr",
-  "year": 2025,
-  "detail": "2024\u20132025",
+  "year": 2026,
+  "detail": "2024\u20132026",
   "note": null
  },
  {
   "category": "Most consecutive winning seasons",
   "scope": "wins",
-  "value": 5.0,
-  "display": "5 seasons",
+  "value": 6.0,
+  "display": "6 seasons",
   "owner_slug": "moellerreed",
-  "year": 2025,
-  "detail": "2021\u20132025",
+  "year": 2026,
+  "detail": "2021\u20132026",
   "note": null
  },
  {
