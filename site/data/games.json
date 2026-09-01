@@ -16023,7 +16023,7 @@
   "owner": "drwall",
   "opponent": "hegna",
   "pts_for": 281.167,
-  "pts_against": 197.667,
+  "pts_against": 197.167,
   "counted": 1
  },
  {
@@ -16033,7 +16033,7 @@
   "bracket": null,
   "owner": "hegna",
   "opponent": "drwall",
-  "pts_for": 197.667,
+  "pts_for": 197.167,
   "pts_against": 281.167,
   "counted": 1
  },
@@ -16044,7 +16044,7 @@
   "bracket": null,
   "owner": "tasin",
   "opponent": "sorgaard",
-  "pts_for": 215.167,
+  "pts_for": 214.167,
   "pts_against": 281.5,
   "counted": 1
  },
@@ -16056,7 +16056,7 @@
   "owner": "sorgaard",
   "opponent": "tasin",
   "pts_for": 281.5,
-  "pts_against": 215.167,
+  "pts_against": 214.167,
   "counted": 1
  },
  {
@@ -16067,7 +16067,7 @@
   "owner": "jfarr",
   "opponent": "krech",
   "pts_for": 363.5,
-  "pts_against": 301.5,
+  "pts_against": 302.5,
   "counted": 1
  },
  {
@@ -16077,7 +16077,7 @@
   "bracket": null,
   "owner": "krech",
   "opponent": "jfarr",
-  "pts_for": 301.5,
+  "pts_for": 302.5,
   "pts_against": 363.5,
   "counted": 1
  }

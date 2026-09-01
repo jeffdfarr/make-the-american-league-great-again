@@ -22,8 +22,8 @@
  {
   "category": "Most RBI",
   "scope": "hitting",
-  "value": 5908.0,
-  "display": "5,908",
+  "value": 5917.0,
+  "display": "5,917",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -32,8 +32,8 @@
  {
   "category": "Most doubles",
   "scope": "hitting",
-  "value": 2154.0,
-  "display": "2,154",
+  "value": 2155.0,
+  "display": "2,155",
   "owner_slug": "sorgaard",
   "year": null,
   "detail": "all-time",
@@ -42,8 +42,8 @@
  {
   "category": "Most home runs",
   "scope": "hitting",
-  "value": 1836.0,
-  "display": "1,836",
+  "value": 1837.0,
+  "display": "1,837",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -52,8 +52,8 @@
  {
   "category": "Most runs scored",
   "scope": "hitting",
-  "value": 6095.0,
-  "display": "6,095",
+  "value": 6099.0,
+  "display": "6,099",
   "owner_slug": "drwall",
   "year": null,
   "detail": "all-time",
@@ -62,8 +62,8 @@
  {
   "category": "Most singles",
   "scope": "hitting",
-  "value": 6856.0,
-  "display": "6,856",
+  "value": 6864.0,
+  "display": "6,864",
   "owner_slug": "drwall",
   "year": null,
   "detail": "all-time",
@@ -82,8 +82,8 @@
  {
   "category": "Most strikeouts (batters)",
   "scope": "hitting",
-  "value": 10016.0,
-  "display": "10,016",
+  "value": 10022.0,
+  "display": "10,022",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -92,8 +92,8 @@
  {
   "category": "Most triples",
   "scope": "hitting",
-  "value": 218.0,
-  "display": "218",
+  "value": 219.0,
+  "display": "219",
   "owner_slug": "kaufer",
   "year": null,
   "detail": "all-time",
@@ -102,8 +102,8 @@
  {
   "category": "Most walks drawn",
   "scope": "hitting",
-  "value": 4474.0,
-  "display": "4,474",
+  "value": 4479.0,
+  "display": "4,479",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -432,7 +432,7 @@
  {
   "category": "Best career OPR",
   "scope": "opr",
-  "value": 1.0460271975607298,
+  "value": 1.0460311258814958,
   "display": "1.046",
   "owner_slug": "tfarr",
   "year": null,
@@ -482,7 +482,7 @@
  {
   "category": "Worst career OPR",
   "scope": "opr",
-  "value": 0.7722385294242915,
+  "value": 0.7722590542150236,
   "display": "0.772",
   "owner_slug": "norman",
   "year": null,
@@ -962,7 +962,7 @@
  {
   "category": "Luckiest career",
   "scope": "sos",
-  "value": 7.231042112243493,
+  "value": 7.23009877334772,
   "display": "+7.2 wins",
   "owner_slug": "moellerreed",
   "year": null,
@@ -982,7 +982,7 @@
  {
   "category": "Most cursed career",
   "scope": "sos",
-  "value": -8.089202086163986,
+  "value": -8.090214544012461,
   "display": "-8.1 wins",
   "owner_slug": "jfarr",
   "year": null,
