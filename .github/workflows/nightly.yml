@@ -8,6 +8,8 @@ on:
     - cron: "7 14 * * *"   # ~9:07am CT in summer — right as quiet hours end, so bot alerts land at 9
                            # (in winter this is ~8:07am CST and alerts would stay queued — fine, no baseball then)
   workflow_dispatch: {}    # manual runs from the Actions tab
+  repository_dispatch:     # punctual daily ping from the Google Apps Script
+    types: [nightly-ping]  # (GitHub's own scheduler runs hours late; this doesn't)
 
 permissions:
   contents: write
