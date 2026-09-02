@@ -168,7 +168,7 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
           if (mgrOf(p, b.results) !== nm) continue;
           const m = p.owner.match(/^([^(]+?)\s*\((.+)\)\s*$/);
           const player = (m ? m[1] : p.owner).trim();
-          chips += `<span class="pickchip"${chipStyle}>${esc(r.round)} Rd <span class="via">· ${esc(player)}</span></span>`;
+          chips += `<span class="pickchip"${chipStyle}>${esc(player)} <span class="via">· ${esc(r.round)} Rd</span></span>`;
         }
       }
       if (chips) html += `<div class="mgr-year">${b.year} draft class</div><div class="mgr-picks">${chips}</div>`;
