@@ -160,9 +160,23 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
       }
       if (chips) html += `<div class="mgr-year">${b.year}</div><div class="mgr-picks">${chips}</div>`;
     }
-    if (hidAny) document.getElementById("board-note").textContent =
-      "Every pick " + nm + " has available, soonest draft first. Pick numbers appear once the draft order is set in January.";
-    view.innerHTML = html || `<p class="sub">No upcoming picks found for ${esc(nm)}.</p>`;
+    // then the manager's draft history: every player they picked, newest class first
+    for (const b of boards.filter(b => b.results).sort((a, b) => b.year - a.year)) {
+      let chips = "";
+      for (const r of b.rounds) {
+        for (const p of r.picks) {
+          if (mgrOf(p, b.results) !== nm) continue;
+          const m = p.owner.match(/^([^(]+?)\s*\((.+)\)\s*$/);
+          const player = (m ? m[1] : p.owner).trim();
+          chips += `<span class="pickchip"${chipStyle}>${esc(r.round)} Rd <span class="via">· ${esc(player)}</span></span>`;
+        }
+      }
+      if (chips) html += `<div class="mgr-year">${b.year} draft class</div><div class="mgr-picks">${chips}</div>`;
+    }
+    document.getElementById("board-note").textContent =
+      "Every pick " + nm + " has available (soonest draft first), then every player they drafted." +
+      (hidAny ? " Pick numbers appear once the draft order is set in January." : "");
+    view.innerHTML = html || `<p class="sub">No picks found for ${esc(nm)}.</p>`;
   }
 
   // ---- draft tendencies: who drafts what, by position at draft time
