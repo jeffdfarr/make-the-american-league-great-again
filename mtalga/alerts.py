@@ -54,7 +54,8 @@ def diff_messages(conn: sqlite3.Connection, before: dict) -> list[str]:
 
 
 def _quiet_hours() -> bool:
-    """True between 10pm and 9am Central — no record pings while the league sleeps."""
+    """True between 10pm and 8am Central — no record pings while the league
+    sleeps. Ends at 8 so the Apps Script's 8-9am sync ping can post alerts."""
     try:
         from datetime import datetime
         from zoneinfo import ZoneInfo
@@ -62,7 +63,7 @@ def _quiet_hours() -> bool:
     except Exception:
         from datetime import datetime, timezone
         hour = (datetime.now(timezone.utc).hour - 5) % 24  # rough CT fallback
-    return hour >= 22 or hour < 9
+    return hour >= 22 or hour < 8
 
 
 def _pending(conn: sqlite3.Connection) -> list[str]:
