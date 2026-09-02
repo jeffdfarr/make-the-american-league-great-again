@@ -60,6 +60,11 @@
   #tend-t td.fav { font-weight: 600; }
   .mgr-year { font-weight: 700; font-size: 1.05rem; padding: 1rem 0 .45rem;
               border-bottom: 2px solid var(--rule); }
+  .mgr-sec { font-family: "IBM Plex Mono", monospace; font-size: .72rem; letter-spacing: .14em;
+             text-transform: uppercase; color: #fff; background: var(--accent);
+             display: inline-block; padding: .3rem .85rem; border-radius: 999px;
+             margin: 2.2rem 0 -.2rem; }
+  .mgr-sec:first-child { margin-top: 1.2rem; }
   .mgr-picks { display: flex; flex-wrap: wrap; gap: 3px; margin: .7rem 0 .4rem; }
   .pickchip { padding: .5rem .7rem; font-size: .9rem; font-weight: 600;
               background: var(--surface-2); color: var(--ink); white-space: nowrap; }
@@ -138,7 +143,7 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
     const view = document.getElementById("mgr-view");
     view.style.display = "";
     const chipStyle = c ? ` style="background:${c[0]};color:${c[1]}"` : "";
-    let html = "";
+    let html = `<div class="mgr-sec">Picks to come</div>`;
     const future = boards.filter(b => !b.results).sort((a, b) => a.year - b.year);
     // Pick numbers come from the standings-based draft order, which the sheet
     // locks in by Jan 1 of the draft year. Until then — and for every draft
@@ -161,6 +166,7 @@ document.querySelector('[data-nav="draft"]').classList.add("active");
       if (chips) html += `<div class="mgr-year">${b.year}</div><div class="mgr-picks">${chips}</div>`;
     }
     // then the manager's draft history: every player they picked, newest class first
+    html += `<div class="mgr-sec">Draft history</div>`;
     for (const b of boards.filter(b => b.results).sort((a, b) => b.year - a.year)) {
       let chips = "";
       for (const r of b.rounds) {
