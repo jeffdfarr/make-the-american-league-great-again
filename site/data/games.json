@@ -15956,7 +15956,7 @@
   "bracket": null,
   "owner": "kaufer",
   "opponent": "tfarr",
-  "pts_for": 365.667,
+  "pts_for": 364.667,
   "pts_against": 314.0,
   "counted": 1
  },
@@ -15968,7 +15968,7 @@
   "owner": "tfarr",
   "opponent": "kaufer",
   "pts_for": 314.0,
-  "pts_against": 365.667,
+  "pts_against": 364.667,
   "counted": 1
  },
  {
@@ -15979,7 +15979,7 @@
   "owner": "bugar",
   "opponent": "moellerreed",
   "pts_for": 365.5,
-  "pts_against": 318.333,
+  "pts_against": 319.333,
   "counted": 1
  },
  {
@@ -15989,7 +15989,7 @@
   "bracket": null,
   "owner": "moellerreed",
   "opponent": "bugar",
-  "pts_for": 318.333,
+  "pts_for": 319.333,
   "pts_against": 365.5,
   "counted": 1
  },
