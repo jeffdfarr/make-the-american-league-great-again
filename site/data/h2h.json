@@ -278,23 +278,23 @@
   "owner_a": "bugar",
   "owner_b": "moellerreed",
   "game_type": "ALL",
-  "games": 16,
+  "games": 17,
   "w": 5,
-  "l": 11,
+  "l": 12,
   "t": 0,
-  "pf": 5280.0,
-  "pa": 5693.832999999999
+  "pf": 5641.333,
+  "pa": 6083.332999999999
  },
  {
   "owner_a": "bugar",
   "owner_b": "moellerreed",
   "game_type": "P",
-  "games": 1,
+  "games": 2,
   "w": 0,
-  "l": 1,
+  "l": 2,
   "t": 0,
-  "pf": 306.167,
-  "pa": 387.333
+  "pf": 667.5,
+  "pa": 776.8330000000001
  },
  {
   "owner_a": "bugar",
@@ -1884,12 +1884,12 @@
   "owner_a": "krech",
   "owner_b": "tessman",
   "game_type": "ALL",
-  "games": 18,
-  "w": 6,
+  "games": 19,
+  "w": 7,
   "l": 12,
   "t": 0,
-  "pf": 5679.332,
-  "pa": 6107.834
+  "pf": 5986.999000000001,
+  "pa": 6407.001
  },
  {
   "owner_a": "krech",
@@ -1906,12 +1906,12 @@
   "owner_a": "krech",
   "owner_b": "tessman",
   "game_type": "P",
-  "games": 1,
-  "w": 0,
+  "games": 2,
+  "w": 1,
   "l": 1,
   "t": 0,
-  "pf": 365.333,
-  "pa": 418.0
+  "pf": 673.0,
+  "pa": 717.1669999999999
  },
  {
   "owner_a": "krech",
@@ -1950,23 +1950,23 @@
   "owner_a": "moellerreed",
   "owner_b": "bugar",
   "game_type": "ALL",
-  "games": 16,
-  "w": 11,
+  "games": 17,
+  "w": 12,
   "l": 5,
   "t": 0,
-  "pf": 5693.832999999999,
-  "pa": 5280.0
+  "pf": 6083.332999999999,
+  "pa": 5641.333
  },
  {
   "owner_a": "moellerreed",
   "owner_b": "bugar",
   "game_type": "P",
-  "games": 1,
-  "w": 1,
+  "games": 2,
+  "w": 2,
   "l": 0,
   "t": 0,
-  "pf": 387.333,
-  "pa": 306.167
+  "pf": 776.8330000000001,
+  "pa": 667.5
  },
  {
   "owner_a": "moellerreed",
@@ -3303,12 +3303,12 @@
   "owner_a": "tessman",
   "owner_b": "krech",
   "game_type": "ALL",
-  "games": 18,
+  "games": 19,
   "w": 12,
-  "l": 6,
+  "l": 7,
   "t": 0,
-  "pf": 6107.834,
-  "pa": 5679.332
+  "pf": 6407.001,
+  "pa": 5986.999000000001
  },
  {
   "owner_a": "tessman",
@@ -3325,12 +3325,12 @@
   "owner_a": "tessman",
   "owner_b": "krech",
   "game_type": "P",
-  "games": 1,
+  "games": 2,
   "w": 1,
-  "l": 0,
+  "l": 1,
   "t": 0,
-  "pf": 418.0,
-  "pa": 365.333
+  "pf": 717.1669999999999,
+  "pa": 673.0
  },
  {
   "owner_a": "tessman",

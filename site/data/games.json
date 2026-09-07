@@ -16080,5 +16080,49 @@
   "pts_for": 302.5,
   "pts_against": 363.5,
   "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 22,
+  "game_type": "P",
+  "bracket": null,
+  "owner": "tessman",
+  "opponent": "krech",
+  "pts_for": 299.167,
+  "pts_against": 307.667,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 22,
+  "game_type": "P",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "tessman",
+  "pts_for": 307.667,
+  "pts_against": 299.167,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 22,
+  "game_type": "P",
+  "bracket": null,
+  "owner": "bugar",
+  "opponent": "moellerreed",
+  "pts_for": 361.333,
+  "pts_against": 389.5,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 22,
+  "game_type": "P",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "bugar",
+  "pts_for": 389.5,
+  "pts_against": 361.333,
+  "counted": 1
  }
 ]
