@@ -1466,23 +1466,23 @@
   "owner_a": "kaufer",
   "owner_b": "moellerreed",
   "game_type": "ALL",
-  "games": 14,
+  "games": 15,
   "w": 4,
-  "l": 10,
+  "l": 11,
   "t": 0,
-  "pf": 4369.17,
-  "pa": 5061.495
+  "pf": 4643.003,
+  "pa": 5384.162
  },
  {
   "owner_a": "kaufer",
   "owner_b": "moellerreed",
   "game_type": "P",
-  "games": 2,
+  "games": 3,
   "w": 1,
-  "l": 1,
+  "l": 2,
   "t": 0,
-  "pf": 536.167,
-  "pa": 723.6669999999999
+  "pf": 810.0,
+  "pa": 1046.3339999999998
  },
  {
   "owner_a": "kaufer",
@@ -1928,12 +1928,23 @@
   "owner_a": "krech",
   "owner_b": "tfarr",
   "game_type": "ALL",
-  "games": 15,
+  "games": 16,
   "w": 3,
-  "l": 12,
+  "l": 13,
   "t": 0,
-  "pf": 4649.0019999999995,
-  "pa": 5094.5019999999995
+  "pf": 4852.5019999999995,
+  "pa": 5469.169
+ },
+ {
+  "owner_a": "krech",
+  "owner_b": "tfarr",
+  "game_type": "P",
+  "games": 1,
+  "w": 0,
+  "l": 1,
+  "t": 0,
+  "pf": 203.5,
+  "pa": 374.667
  },
  {
   "owner_a": "krech",
@@ -2060,23 +2071,23 @@
   "owner_a": "moellerreed",
   "owner_b": "kaufer",
   "game_type": "ALL",
-  "games": 14,
-  "w": 10,
+  "games": 15,
+  "w": 11,
   "l": 4,
   "t": 0,
-  "pf": 5061.495,
-  "pa": 4369.17
+  "pf": 5384.162,
+  "pa": 4643.003
  },
  {
   "owner_a": "moellerreed",
   "owner_b": "kaufer",
   "game_type": "P",
-  "games": 2,
-  "w": 1,
+  "games": 3,
+  "w": 2,
   "l": 1,
   "t": 0,
-  "pf": 723.6669999999999,
-  "pa": 536.167
+  "pf": 1046.3339999999998,
+  "pa": 810.0
  },
  {
   "owner_a": "moellerreed",
@@ -3644,12 +3655,23 @@
   "owner_a": "tfarr",
   "owner_b": "krech",
   "game_type": "ALL",
-  "games": 15,
-  "w": 12,
+  "games": 16,
+  "w": 13,
   "l": 3,
   "t": 0,
-  "pf": 5094.5019999999995,
-  "pa": 4649.0019999999995
+  "pf": 5469.169,
+  "pa": 4852.5019999999995
+ },
+ {
+  "owner_a": "tfarr",
+  "owner_b": "krech",
+  "game_type": "P",
+  "games": 1,
+  "w": 1,
+  "l": 0,
+  "t": 0,
+  "pf": 374.667,
+  "pa": 203.5
  },
  {
   "owner_a": "tfarr",

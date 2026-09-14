@@ -16124,5 +16124,49 @@
   "pts_for": 389.5,
   "pts_against": 361.333,
   "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 23,
+  "game_type": "P",
+  "bracket": null,
+  "owner": "krech",
+  "opponent": "tfarr",
+  "pts_for": 203.5,
+  "pts_against": 374.667,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 23,
+  "game_type": "P",
+  "bracket": null,
+  "owner": "tfarr",
+  "opponent": "krech",
+  "pts_for": 374.667,
+  "pts_against": 203.5,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 23,
+  "game_type": "P",
+  "bracket": null,
+  "owner": "moellerreed",
+  "opponent": "kaufer",
+  "pts_for": 322.667,
+  "pts_against": 273.833,
+  "counted": 1
+ },
+ {
+  "year": 2026,
+  "period": 23,
+  "game_type": "P",
+  "bracket": null,
+  "owner": "kaufer",
+  "opponent": "moellerreed",
+  "pts_for": 273.833,
+  "pts_against": 322.667,
+  "counted": 1
  }
 ]
