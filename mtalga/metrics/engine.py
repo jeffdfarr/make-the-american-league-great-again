@@ -27,6 +27,12 @@ COMP_YEARS_SQL = """SELECT year FROM seasons WHERE rs_complete=1
 
 
 def rebuild(conn: sqlite3.Connection, cfg: Config) -> None:
+    # remember when each record last changed hands (survives the table drop)
+    try:
+        prev_records = {(r["category"], r["scope"]): dict(r)
+                        for r in conn.execute("SELECT * FROM records_book")}
+    except sqlite3.OperationalError:
+        prev_records = {}
     dbm.reset_derived(conn)
     seasons = [r["year"] for r in conn.execute("SELECT year FROM seasons ORDER BY year")]
 
@@ -42,7 +48,27 @@ def rebuild(conn: sqlite3.Connection, cfg: Config) -> None:
     _h2h(conn)
     _records(conn)
     _adjustments(conn, cfg)
+    _stamp_set_at(conn, prev_records)
     conn.commit()
+
+
+def _stamp_set_at(conn: sqlite3.Connection, prev: dict) -> None:
+    """set_at = the date a record last CHANGED HANDS. Same-holder value
+    accumulation (September category races, legends fattening weekly) does
+    NOT refresh it — mirrors the bot's holder-change-only alert rule.
+    Records that predate tracking keep set_at NULL (no false 'new' flood)."""
+    import datetime as _dt
+    today = _dt.date.today().isoformat()
+    for r in conn.execute("SELECT category, scope, owner_slug FROM records_book").fetchall():
+        old = prev.get((r["category"], r["scope"]))
+        if old is None:
+            stamp = today if prev else None      # brand-new category (skip on very first build)
+        elif old.get("owner_slug") != r["owner_slug"]:
+            stamp = today                        # changed hands — this is news
+        else:
+            stamp = old.get("set_at")            # same holder — carry history (may be NULL)
+        conn.execute("UPDATE records_book SET set_at=? WHERE category=? AND scope=?",
+                     (stamp, r["category"], r["scope"]))
 
 
 # ------------------------------------------------------------- bracket walker

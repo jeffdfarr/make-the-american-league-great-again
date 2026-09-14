@@ -184,6 +184,7 @@ CREATE TABLE IF NOT EXISTS records_book (
     year     INTEGER,
     detail   TEXT,
     note     TEXT,                        -- tooltip: classification caveats etc.
+    set_at   TEXT,                        -- date the record last CHANGED HANDS (holder change only)
     PRIMARY KEY (category, scope)
 );
 
