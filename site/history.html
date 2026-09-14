@@ -106,7 +106,26 @@
   .champ { background: #1D4885; color: #fff; text-align: center;
            padding: 1.15rem .7rem 4.6rem; display: flex; flex-direction: column; gap: .28rem;
            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
-           border-top: 5px solid #fff; filter: drop-shadow(0 4px 8px rgba(0,0,0,.25)); }
+           border-top: 5px solid #fff; filter: drop-shadow(0 4px 8px rgba(0,0,0,.25));
+           transform-origin: 50% 0;                       /* hangs from the rod */
+           animation: banner-sway 6.2s ease-in-out infinite,
+                      banner-flutter 4.7s ease-in-out infinite; }
+  /* stagger rhythms so the rafter doesn't wave in unison */
+  .champ:nth-child(2n)   { animation-duration: 7.4s, 5.6s; animation-delay: -2.3s, -1.1s; }
+  .champ:nth-child(3n)   { animation-duration: 5.5s, 6.3s; animation-delay: -3.8s, -2.7s; }
+  .champ:nth-child(3n+1) { animation-delay: -1.6s, -3.4s; }
+  @keyframes banner-sway {                                /* whole banner rocks gently */
+    0%, 100% { transform: rotate(0deg) skewX(0deg); }
+    30%      { transform: rotate(.7deg) skewX(.5deg); }
+    55%      { transform: rotate(-.5deg) skewX(-.4deg); }
+    80%      { transform: rotate(.35deg) skewX(.25deg); }
+  }
+  @keyframes banner-flutter {                             /* the tails ripple like cloth */
+    0%, 100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%); }
+    33%      { clip-path: polygon(0 0, 100% 0, 100% 98%, 49.2% 75.6%, 0 99.2%); }
+    66%      { clip-path: polygon(0 0, 100% 0, 100% 99.3%, 50.8% 73%, 0 98%); }
+  }
+  @media (prefers-reduced-motion: reduce) { .champ { animation: none; } }
   .champ.red { background: #ED1C50; }
   .ch-yr { font-family: "Bitter", Georgia, serif; font-size: 1.85rem; font-weight: 700; line-height: 1.1; }
   .ch-team { font-weight: 700; font-size: .95rem; line-height: 1.25; }
