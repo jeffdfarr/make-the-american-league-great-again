@@ -35,8 +35,8 @@
  {
   "category": "Most doubles",
   "scope": "hitting",
-  "value": 2180.0,
-  "display": "2,180",
+  "value": 2181.0,
+  "display": "2,181",
   "owner_slug": "sorgaard",
   "year": null,
   "detail": "all-time",
@@ -90,8 +90,8 @@
  {
   "category": "Most strikeouts (batters)",
   "scope": "hitting",
-  "value": 10179.0,
-  "display": "10,179",
+  "value": 10180.0,
+  "display": "10,180",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -112,8 +112,8 @@
  {
   "category": "Most walks drawn",
   "scope": "hitting",
-  "value": 4549.0,
-  "display": "4,549",
+  "value": 4550.0,
+  "display": "4,550",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -596,8 +596,8 @@
  {
   "category": "Most strikeouts (pitchers)",
   "scope": "pitching",
-  "value": 12661.0,
-  "display": "12,661",
+  "value": 12664.0,
+  "display": "12,664",
   "owner_slug": "tfarr",
   "year": null,
   "detail": "all-time",
