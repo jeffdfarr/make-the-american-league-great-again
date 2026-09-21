@@ -2,13 +2,13 @@
  {
   "category": "Best average finish",
   "scope": "franchise",
-  "value": 3.2857142857142856,
-  "display": "3.29",
-  "owner_slug": "tfarr",
+  "value": 2.8333333333333335,
+  "display": "2.83",
+  "owner_slug": "moellerreed",
   "year": null,
   "detail": "all-time",
   "note": null,
-  "set_at": null
+  "set_at": "2026-09-21"
  },
  {
   "category": "Worst average finish",
@@ -24,8 +24,8 @@
  {
   "category": "Most RBI",
   "scope": "hitting",
-  "value": 6016.0,
-  "display": "6,016",
+  "value": 6017.0,
+  "display": "6,017",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -57,8 +57,8 @@
  {
   "category": "Most runs scored",
   "scope": "hitting",
-  "value": 6212.0,
-  "display": "6,212",
+  "value": 6215.0,
+  "display": "6,215",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -68,8 +68,8 @@
  {
   "category": "Most singles",
   "scope": "hitting",
-  "value": 6983.0,
-  "display": "6,983",
+  "value": 6986.0,
+  "display": "6,986",
   "owner_slug": "drwall",
   "year": null,
   "detail": "all-time",
@@ -79,8 +79,8 @@
  {
   "category": "Most stolen bases",
   "scope": "hitting",
-  "value": 1080.0,
-  "display": "1,080",
+  "value": 1081.0,
+  "display": "1,081",
   "owner_slug": "kaufer",
   "year": null,
   "detail": "all-time",
@@ -90,8 +90,8 @@
  {
   "category": "Most strikeouts (batters)",
   "scope": "hitting",
-  "value": 10203.0,
-  "display": "10,203",
+  "value": 10214.0,
+  "display": "10,214",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -101,8 +101,8 @@
  {
   "category": "Most triples",
   "scope": "hitting",
-  "value": 223.0,
-  "display": "223",
+  "value": 224.0,
+  "display": "224",
   "owner_slug": "kaufer",
   "year": null,
   "detail": "all-time",
@@ -112,8 +112,8 @@
  {
   "category": "Most walks drawn",
   "scope": "hitting",
-  "value": 4559.0,
-  "display": "4,559",
+  "value": 4567.0,
+  "display": "4,567",
   "owner_slug": "bugar",
   "year": null,
   "detail": "all-time",
@@ -475,8 +475,8 @@
  {
   "category": "Best career OPR",
   "scope": "opr",
-  "value": 1.0463127593074866,
-  "display": "1.046",
+  "value": 1.0465905609861852,
+  "display": "1.047",
   "owner_slug": "tfarr",
   "year": null,
   "detail": "all-time",
@@ -497,13 +497,13 @@
  {
   "category": "Highest OPR to miss the playoffs",
   "scope": "opr",
-  "value": 1.0542594495361628,
-  "display": "1.054",
-  "owner_slug": "tessman",
-  "year": 2023,
+  "value": 1.0959296987900693,
+  "display": "1.096",
+  "owner_slug": "jfarr",
+  "year": 2026,
   "detail": null,
   "note": null,
-  "set_at": null
+  "set_at": "2026-09-21"
  },
  {
   "category": "Lowest OPR to make the playoffs",
@@ -574,8 +574,8 @@
  {
   "category": "Most quality starts",
   "scope": "pitching",
-  "value": 809.0,
-  "display": "809",
+  "value": 810.0,
+  "display": "810",
   "owner_slug": "sorgaard",
   "year": null,
   "detail": "all-time",
@@ -596,8 +596,8 @@
  {
   "category": "Most strikeouts (pitchers)",
   "scope": "pitching",
-  "value": 12722.0,
-  "display": "12,722",
+  "value": 12725.0,
+  "display": "12,725",
   "owner_slug": "tfarr",
   "year": null,
   "detail": "all-time",
@@ -607,8 +607,8 @@
  {
   "category": "Most wins",
   "scope": "pitching",
-  "value": 764.0,
-  "display": "764",
+  "value": 765.0,
+  "display": "765",
   "owner_slug": "tfarr",
   "year": null,
   "detail": "all-time",
@@ -1159,22 +1159,22 @@
   "scope": "titles",
   "value": 3.0,
   "display": "3 finals",
-  "owner_slug": "sorgaard",
+  "owner_slug": "moellerreed",
   "year": null,
   "detail": "all-time",
   "note": null,
-  "set_at": null
+  "set_at": "2026-09-21"
  },
  {
   "category": "Most championship game losses",
   "scope": "titles",
   "value": 2.0,
   "display": "2 losses",
-  "owner_slug": "sorgaard",
+  "owner_slug": "moellerreed",
   "year": null,
   "detail": "all-time",
   "note": null,
-  "set_at": null
+  "set_at": "2026-09-21"
  },
  {
   "category": "Most championships",
@@ -1212,8 +1212,8 @@
  {
   "category": "Best career win pct",
   "scope": "wins",
-  "value": 0.6571428571428571,
-  "display": ".657",
+  "value": 0.6524822695035462,
+  "display": ".652",
   "owner_slug": "moellerreed",
   "year": null,
   "detail": "all-time",
@@ -1300,13 +1300,13 @@
  {
   "category": "Most career wins",
   "scope": "wins",
-  "value": 92.0,
-  "display": "92 wins",
-  "owner_slug": "moellerreed",
+  "value": 93.0,
+  "display": "93 wins",
+  "owner_slug": "tfarr",
   "year": null,
   "detail": "all-time",
   "note": null,
-  "set_at": null
+  "set_at": "2026-09-21"
  },
  {
   "category": "Most consecutive 15-win regular seasons",
