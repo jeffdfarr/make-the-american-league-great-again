@@ -707,6 +707,18 @@
     "round": "4th",
     "picks": [
      {
+      "num": 37,
+      "owner": "Zac"
+     },
+     {
+      "num": 38,
+      "owner": "Tessy (Ben (Nick S))"
+     },
+     {
+      "num": 39,
+      "owner": "Taylor (Andy (Taylor)"
+     },
+     {
       "num": 40,
       "owner": "Coirey"
      },
@@ -723,6 +735,10 @@
       "owner": "Jason"
      },
      {
+      "num": 44,
+      "owner": "Seth"
+     },
+     {
       "num": 45,
       "owner": "Taylor (Tessy)"
      },
@@ -733,6 +749,10 @@
      {
       "num": 47,
       "owner": "Nick S (Tessy (Karleton))"
+     },
+     {
+      "num": 48,
+      "owner": "Jason (Tyler)"
      }
     ]
    },
@@ -741,51 +761,51 @@
     "picks": [
      {
       "num": 49,
-      "owner": "Coirey"
-     },
-     {
-      "num": 50,
-      "owner": "Coirey (Karleton)"
-     },
-     {
-      "num": 51,
-      "owner": "Zac (Karleton (Jason)"
-     },
-     {
-      "num": 52,
-      "owner": "Jeff"
-     },
-     {
-      "num": 53,
-      "owner": "Tessy (Karleton (Tessy)"
-     },
-     {
-      "num": 54,
-      "owner": "Jason (Ben)"
-     },
-     {
-      "num": 55,
-      "owner": "Andy"
-     },
-     {
-      "num": 56,
-      "owner": "Jason (Tyler)"
-     },
-     {
-      "num": 57,
-      "owner": "Seth"
-     },
-     {
-      "num": 58,
-      "owner": "Seth (Nick S)"
-     },
-     {
-      "num": 59,
       "owner": "Zac"
      },
      {
-      "num": 60,
+      "num": 50,
+      "owner": "Seth (Nick S)"
+     },
+     {
+      "num": 51,
       "owner": "Tessy (Taylor)"
+     },
+     {
+      "num": 52,
+      "owner": "Coirey"
+     },
+     {
+      "num": 53,
+      "owner": "Jason (Ben)"
+     },
+     {
+      "num": 54,
+      "owner": "Jeff"
+     },
+     {
+      "num": 55,
+      "owner": "Zac (Karleton (Jason)"
+     },
+     {
+      "num": 56,
+      "owner": "Seth"
+     },
+     {
+      "num": 57,
+      "owner": "Tessy (Karleton (Tessy)"
+     },
+     {
+      "num": 58,
+      "owner": "Andy"
+     },
+     {
+      "num": 59,
+      "owner": "Coirey (Karleton)"
+     },
+     {
+      "num": 60,
+      "owner": "Jason (Tyler)"
      }
     ]
    }
