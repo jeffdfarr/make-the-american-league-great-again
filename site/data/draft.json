@@ -619,6 +619,34 @@
      {
       "num": 17,
       "owner": "Ben"
+     },
+     {
+      "num": 18,
+      "owner": "Ben (Tessy (Jeff))"
+     },
+     {
+      "num": 19,
+      "owner": "Jason"
+     },
+     {
+      "num": 20,
+      "owner": "Nick S (Tessy (Nick S (Seth)))"
+     },
+     {
+      "num": 21,
+      "owner": "Tessy"
+     },
+     {
+      "num": 22,
+      "owner": "Taylor (Andy)"
+     },
+     {
+      "num": 23,
+      "owner": "Jeff (Nick S (Karleton))"
+     },
+     {
+      "num": 24,
+      "owner": "Jason (Jeff (Tyler)"
      }
     ]
    },
@@ -627,51 +655,51 @@
     "picks": [
      {
       "num": 25,
-      "owner": "Coirey"
-     },
-     {
-      "num": 26,
-      "owner": "Taylor (Nick S (Karleton)"
-     },
-     {
-      "num": 27,
-      "owner": "Ben (Jason)"
-     },
-     {
-      "num": 28,
-      "owner": "Jeff"
-     },
-     {
-      "num": 29,
-      "owner": "Tessy"
-     },
-     {
-      "num": 30,
-      "owner": "Nick S (Ben)"
-     },
-     {
-      "num": 31,
-      "owner": "Tessy (Nick S (Andy))"
-     },
-     {
-      "num": 32,
-      "owner": "Jeff (Tyler)"
-     },
-     {
-      "num": 33,
-      "owner": "Tessy (Karleton (Ben (Seth)"
-     },
-     {
-      "num": 34,
-      "owner": "Tessy (Nick S)"
-     },
-     {
-      "num": 35,
       "owner": "Zac"
      },
      {
-      "num": 36,
+      "num": 26,
+      "owner": "Tessy (Nick S)"
+     },
+     {
+      "num": 27,
       "owner": "Taylor"
+     },
+     {
+      "num": 28,
+      "owner": "Coirey"
+     },
+     {
+      "num": 29,
+      "owner": "Nick S (Ben)"
+     },
+     {
+      "num": 30,
+      "owner": "Jeff"
+     },
+     {
+      "num": 31,
+      "owner": "Ben (Jason)"
+     },
+     {
+      "num": 32,
+      "owner": "Tessy (Karleton (Ben (Seth)"
+     },
+     {
+      "num": 33,
+      "owner": "Tessy"
+     },
+     {
+      "num": 34,
+      "owner": "Tessy (Nick S (Andy))"
+     },
+     {
+      "num": 35,
+      "owner": "Taylor (Nick S (Karleton)"
+     },
+     {
+      "num": 36,
+      "owner": "Jeff (Tyler)"
      }
     ]
    },
@@ -679,52 +707,32 @@
     "round": "4th",
     "picks": [
      {
-      "num": 37,
+      "num": 40,
       "owner": "Coirey"
      },
      {
-      "num": 38,
-      "owner": "Nick S (Tessy (Karleton))"
-     },
-     {
-      "num": 39,
-      "owner": "Jason"
-     },
-     {
-      "num": 40,
-      "owner": "Jeff"
-     },
-     {
       "num": 41,
-      "owner": "Taylor (Tessy)"
-     },
-     {
-      "num": 42,
       "owner": "Taylor (Andy (Ben)"
      },
      {
-      "num": 43,
-      "owner": "Taylor (Andy)"
+      "num": 42,
+      "owner": "Jeff"
      },
      {
-      "num": 44,
-      "owner": "Jason (Tyler)"
+      "num": 43,
+      "owner": "Jason"
      },
      {
       "num": 45,
-      "owner": "Seth"
+      "owner": "Taylor (Tessy)"
      },
      {
       "num": 46,
-      "owner": "Tessy (Ben (Nick S))"
+      "owner": "Taylor (Andy)"
      },
      {
       "num": 47,
-      "owner": "Zac"
-     },
-     {
-      "num": 48,
-      "owner": "Taylor (Andy (Taylor)"
+      "owner": "Nick S (Tessy (Karleton))"
      }
     ]
    },
